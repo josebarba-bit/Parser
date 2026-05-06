@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.0 on win32)" generated="20260407 17:31:02.354" rpa="false" schemaversion="3">
+<suite id="s1" name="TELUS-SANITY-ONYX" source="c:\Users\pepeb\Documents\ONYX\oreganqa-automation\ONYX\TELUS\TELUS-STB\TELUS-SANITY-STB\TELUS-SANITY-ONYX.robot">
+<test id="s1-t1" name="Menu Checks" line="41">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260407 17:31:14.428" endtime="20260407 17:31:15.438"/>
+</kw>
+<status status="PASS" starttime="20260407 17:31:14.428" endtime="20260407 17:31:15.439"/>
+</kw>
+<kw name="Ir.Press Back">
+<arg>${10}</arg>
+<msg timestamp="20260407 17:31:15.445" level="FAIL">No keyword with name 'Ir.Press Back' found.</msg>
+<status status="FAIL" starttime="20260407 17:31:15.445" endtime="20260407 17:31:15.447"/>
+</kw>
+<kw name="Verify Menu" library="keywords-optik">
+<status status="NOT RUN" starttime="20260407 17:31:15.448" endtime="20260407 17:31:15.448"/>
+</kw>
+<kw name="STB Get Info" library="keywords-optik">
+<status status="NOT RUN" starttime="20260407 17:31:15.449" endtime="20260407 17:31:15.449"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260407 17:31:15.453" endtime="20260407 17:31:16.203"/>
+</kw>
+<status status="PASS" starttime="20260407 17:31:15.452" endtime="20260407 17:31:16.203"/>
+</kw>
+<doc>STB should display menu correctly</doc>
+<tag>Menu</tag>
+<tag>Robot</tag>
+<tag>TUT-2182</tag>
+<status status="FAIL" starttime="20260407 17:31:14.426" endtime="20260407 17:31:16.204">No keyword with name 'Ir.Press Back' found.</status>
+</test>
+<doc>Optik-Robot</doc>
+<status status="FAIL" starttime="20260407 17:31:02.370" endtime="20260407 17:31:16.208"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Menu</stat>
+<stat pass="0" fail="1" skip="0">Robot</stat>
+<stat pass="0" fail="1" skip="0">TUT-2182</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TELUS-SANITY-ONYX">TELUS-SANITY-ONYX</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20260407 17:31:14.326" level="ERROR">Error in file 'c:\Users\pepeb\Documents\ONYX\oreganqa-automation\ONYX\TELUS\TELUS-STB\TELUS-SANITY-STB\TELUS-SANITY-ONYX.robot' on line 5: Initializing library 'oreganlibs.StbController.Ir' with arguments [ ONYX/TELUS/TELUS-STB | TELUS-SANITY-STB | optik_rcu | 192.168.104.14 ] failed: NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s
+Traceback (most recent call last):
+  File "c:\Users\pepeb\Documents\dev\lib\site-packages\broadlink\device.py", line 305, in send_packet
+    resp = conn.recvfrom(2048)[0]
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pepeb\Documents\ONYX\oreganqa-automation\oreganlibs\StbController.py", line 656, in __init__
+    self.ir_device.auth()
+  File "c:\Users\pepeb\Documents\dev\lib\site-packages\broadlink\device.py", line 184, in auth
+    response = self.send_packet(0x65, packet)
+  File "c:\Users\pepeb\Documents\dev\lib\site-packages\broadlink\device.py", line 309, in send_packet
+    raise e.NetworkTimeoutError(
+broadlink.exceptions.NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s</msg>
+</errors>
+</robot>
