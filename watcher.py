@@ -208,6 +208,7 @@ class ResultsHandler(FileSystemEventHandler):
                 return
             self._last_run = now
             print(f"\n[{datetime.now().strftime('%H:%M:%S')}] Change detected: {fname}")
+            time.sleep(3)
             generate_json()
 
     on_created = on_modified
