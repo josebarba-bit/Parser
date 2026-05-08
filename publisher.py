@@ -38,7 +38,7 @@ def git_push():
     commit_msg = f"{COMMIT_MSG_PREFIX} [{timestamp}]"
 
     commands = [
-        ["git", "add", WATCH_FILE],
+        ["git", "add", "./docs/results.json", "./docs/history/"],
         ["git", "commit", "-m", commit_msg],
         ["git", "push", "origin", GIT_BRANCH],
     ]

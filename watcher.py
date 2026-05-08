@@ -21,8 +21,8 @@ from watchdog.events import FileSystemEventHandler
 # ─── CONFIGURACIÓN ────────────────────────────────────────────────
 WATCH_FOLDER   = "./test_results"
 ROBOT_XML      = os.path.join(WATCH_FOLDER, "output.xml")
-OUTPUT_DIR     = "./dashboard/history"   # carpeta donde se guardan los JSON
-LATEST_JSON    = "./dashboard/results.json"  # siempre apunta al día actual
+OUTPUT_DIR     = "./docs/history"   # carpeta donde se guardan los JSON
+LATEST_JSON    = "./docs/results.json"  # siempre apunta al día actual
 HISTORY_DAYS   = 30  # cuántos días conservar
 # ──────────────────────────────────────────────────────────────────
 
