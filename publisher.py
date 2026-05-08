@@ -22,7 +22,7 @@ from watchdog.events import FileSystemEventHandler
 
 # ─── CONFIGURACIÓN ────────────────────────────────────────────────
 # Ruta al archivo que activa el push (generado por watcher.py)
-WATCH_FILE = "./dashboard/results.json"
+WATCH_FILE = "./docs/results.json"
 
 # Rama de git a usar
 GIT_BRANCH = "master"
