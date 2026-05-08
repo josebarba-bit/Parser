@@ -1,20 +1,11 @@
 {
-  "generated_at": "2026-05-08T16:07:45.182702",
+  "generated_at": "2026-05-08T16:08:11.472353",
   "date": "2026-05-08",
   "summary": {
-    "total": 1,
+    "total": 0,
     "passed": 0,
-    "failed": 1,
-    "rate": 0.0
+    "failed": 0,
+    "rate": 0
   },
-  "tests": [
-    {
-      "name": "Menu Checks",
-      "suite": "—",
-      "status": "FAIL",
-      "message": "No keyword with name 'Ir.Press Back' found.",
-      "time": "20260407 17:31:14.426",
-      "source": "RF"
-    }
-  ]
+  "tests": []
 }
