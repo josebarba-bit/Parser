@@ -25,7 +25,7 @@ from watchdog.events import FileSystemEventHandler
 WATCH_FILE = "./dashboard/results.json"
 
 # Rama de git a usar
-GIT_BRANCH = "main"
+GIT_BRANCH = "master"
 
 # Mensaje de commit (se agrega timestamp automáticamente)
 COMMIT_MSG_PREFIX = "chore: update test results"
