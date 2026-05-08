@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Test Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #f5f5f3;
+      --surface:  #ffffff;
+      --border:   rgba(0,0,0,0.1);
+      --text:     #1a1a18;
+      --muted:    #6b6a65;
+      --pass:     #27500a;
+      --pass-bg:  #eaf3de;
+      --fail:     #791f1f;
+      --fail-bg:  #fcebeb;
+      --warn-bg:  #faeeda;
+      --warn:     #633806;
+      --blue:     #0c447c;
+      --blue-bg:  #e6f1fb;
+      --green:    #085041;
+      --green-bg: #e1f5ee;
+      --amber:    #854f0b;
+      --amber-bg: #faeeda;
+      --radius:   10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:       #1a1a18;
+        --surface:  #242422;
+        --border:   rgba(255,255,255,0.1);
+        --text:     #e8e6de;
+        --muted:    #888780;
+        --pass:     #c0dd97;
+        --pass-bg:  #27500a;
+        --fail:     #f09595;
+        --fail-bg:  #501313;
+        --warn-bg:  #412402;
+        --warn:     #fac775;
+        --blue:     #85b7eb;
+        --blue-bg:  #042c53;
+        --green:    #5dcaa5;
+        --green-bg: #04342c;
+        --amber:    #fac775;
+        --amber-bg: #412402;
+      }
+    }
+
+    body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-size: 14px; }
+    .page { max-width: 1100px; margin: 0 auto; padding: 24px 16px; display: flex; flex-direction: column; gap: 20px; }
+
+    /* Header */
+    .header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .header h1 { font-size: 20px; font-weight: 500; }
+    .status-bar { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #639922; display: inline-block; }
+    .dot.stale { background: #BA7517; }
+    .dot.error { background: #A32D2D; }
+
+    .badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 500; }
+    .badge-blue   { background: var(--blue-bg);  color: var(--blue); }
+    .badge-green  { background: var(--green-bg); color: var(--green); }
+    .badge-amber  { background: var(--amber-bg); color: var(--amber); }
+
+    /* Date selector bar */
+    .date-bar {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .date-bar-label { font-size: 12px; color: var(--muted); white-space: nowrap; }
+    .date-scroll { display: flex; gap: 6px; overflow-x: auto; flex: 1; padding-bottom: 2px; }
+    .date-scroll::-webkit-scrollbar { height: 4px; }
+    .date-scroll::-webkit-scrollbar-track { background: transparent; }
+    .date-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .date-btn {
+      flex-shrink: 0;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 0.5px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .date-btn:hover { background: var(--surface); border-color: var(--muted); }
+    .date-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 500; }
+    .date-btn.today-btn { border-color: #639922; color: var(--pass); }
+    .date-btn.today-btn.active { background: var(--pass-bg); color: var(--pass); border-color: var(--pass); }
+    .viewing-badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; background: var(--amber-bg); color: var(--amber); font-weight: 500; white-space: nowrap; }
+
+    /* Metrics */
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+    .metric { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+    .metric-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+    .metric-value { font-size: 26px; font-weight: 500; }
+    .metric-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .v-pass { color: var(--pass); }
+    .v-fail { color: var(--fail); }
+
+    /* Charts */
+    .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .charts { grid-template-columns: 1fr; } }
+
+    /* Trend chart */
+    .trend-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .card-title { font-size: 13px; font-weight: 500; margin-bottom: 14px; }
+
+    /* Table */
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .filters select {
+      font-size: 12px; padding: 5px 10px; border-radius: 6px;
+      border: 0.5px solid var(--border); background: var(--surface);
+      color: var(--text); cursor: pointer;
+    }
+    .search-box {
+      flex: 1; min-width: 160px; font-size: 12px; padding: 5px 10px;
+      border-radius: 6px; border: 0.5px solid var(--border);
+      background: var(--surface); color: var(--text);
+    }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { text-align: left; padding: 7px 10px; font-size: 11px; font-weight: 500; color: var(--muted); border-bottom: 0.5px solid var(--border); white-space: nowrap; }
+    td { padding: 8px 10px; border-bottom: 0.5px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg); }
+
+    .pill { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; white-space: nowrap; }
+    .pass-pill { background: var(--pass-bg); color: var(--pass); }
+    .fail-pill { background: var(--fail-bg); color: var(--fail); }
+    .warn-pill { background: var(--warn-bg); color: var(--warn); }
+    .src-tag { font-size: 10px; padding: 2px 7px; border-radius: 8px; font-weight: 500; }
+    .src-rf  { background: var(--blue-bg);  color: var(--blue); }
+    .src-csv { background: var(--green-bg); color: var(--green); }
+    .msg-cell { max-width: 260px; color: var(--muted); font-size: 11px; word-break: break-word; }
+
+    .tabs { display: flex; gap: 2px; border-bottom: 0.5px solid var(--border); margin-bottom: 14px; }
+    .tab { font-size: 12px; padding: 7px 14px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; transition: all .15s; user-select: none; }
+    .tab.active { color: var(--text); border-bottom-color: var(--text); font-weight: 500; }
+    .empty-row td { text-align: center; padding: 2rem; color: var(--muted); }
+
+    .refresh-ring { width: 14px; height: 14px; border: 1.5px solid transparent; border-top-color: var(--muted); border-radius: 50%; display: none; }
+    .refresh-ring.spin { display: inline-block; animation: spin .7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <h1>QA Test Dashboard</h1>
+      <span class="badge badge-blue">PC 1 · Robot Framework</span>
+      <span class="badge badge-green">PC 2 · Python CSV</span>
+      <span class="viewing-badge" id="viewing-badge" style="display:none"></span>
+    </div>
+    <div class="status-bar">
+      <div class="refresh-ring" id="ring"></div>
+      <div class="dot" id="status-dot"></div>
+      <span id="status-text">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Date selector -->
+  <div class="date-bar">
+    <span class="date-bar-label">History:</span>
+    <div class="date-scroll" id="date-scroll">
+      <span style="font-size:12px;color:var(--muted)">Loading dates...</span>
+    </div>
+  </div>
+
+  <!-- Trend chart (last 7 days) -->
+  <div class="trend-card">
+    <div class="card-title">Pass rate — last 7 days</div>
+    <div style="position:relative;height:140px"><canvas id="chartTrend" role="img" aria-label="Line chart showing pass rate trend over the last 7 days"></canvas></div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Total tests</div><div class="metric-value" id="m-total">—</div></div>
+    <div class="metric"><div class="metric-label">Passed</div><div class="metric-value v-pass" id="m-pass">—</div><div class="metric-sub" id="m-pass-src"></div></div>
+    <div class="metric"><div class="metric-label">Failed</div><div class="metric-value v-fail" id="m-fail">—</div><div class="metric-sub" id="m-fail-src"></div></div>
+    <div class="metric"><div class="metric-label">Pass rate</div><div class="metric-value" id="m-rate">—</div></div>
+    <div class="metric"><div class="metric-label">Last updated</div><div class="metric-value" style="font-size:14px;padding-top:6px" id="m-ts">—</div></div>
+  </div>
+
+  <!-- Charts -->
+  <div class="charts">
+    <div class="card">
+      <div class="card-title">Results breakdown</div>
+      <div style="position:relative;height:180px"><canvas id="chartDist"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Failures by source</div>
+      <div style="position:relative;height:180px"><canvas id="chartSrc"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="card">
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('all',this)">All</div>
+      <div class="tab" onclick="switchTab('RF',this)">Robot Framework</div>
+      <div class="tab" onclick="switchTab('CSV',this)">Python CSV</div>
+      <div class="tab" onclick="switchTab('FAIL',this)">Failures only</div>
+    </div>
+    <div class="filters">
+      <input type="search" class="search-box" id="search" placeholder="Search by name, suite or message..." oninput="renderTable()">
+      <select id="f-status" onchange="renderTable()">
+        <option value="">All statuses</option>
+        <option value="PASS">PASS</option>
+        <option value="FAIL">FAIL</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Test name</th><th>Source</th><th>Suite / Module</th><th>Status</th><th>Message / Failure</th><th>Time / Date</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+// ─── State ────────────────────────────────────────────────────
+let allTests     = [];
+let activeTab    = 'all';
+let chartDist    = null, chartSrc = null, chartTrend = null;
+let lastGenerated = null;
+let availableDates = [];
+let selectedDate   = null;   // null = today / latest
+let historyCache   = {};     // date -> payload
+
+const REFRESH_MS  = 15000;
+const HISTORY_DIR = './history/';
+const LATEST_JSON = './results.json';
+
+// ─── Helpers ──────────────────────────────────────────────────
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function formatDateLabel(dateStr) {
+  if (dateStr === today()) return 'Today';
+  const d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('en', { month: 'short', day: 'numeric' });
+}
+
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ─── Load index of available dates ────────────────────────────
+async function loadDateIndex() {
+  try {
+    const r = await fetch(HISTORY_DIR + 'index.json?_t=' + Date.now());
+    if (!r.ok) return;
+    const data = await r.json();
+    availableDates = data.dates || [];
+    renderDateBar();
+    loadTrend();
+  } catch(e) {
+    console.warn('No history index found:', e.message);
+  }
+}
+
+// ─── Render date selector buttons ─────────────────────────────
+function renderDateBar() {
+  const scroll = document.getElementById('date-scroll');
+  if (!availableDates.length) {
+    scroll.innerHTML = '<span style="font-size:12px;color:var(--muted)">No history yet</span>';
+    return;
+  }
+
+  scroll.innerHTML = availableDates.map(d => {
+    const isToday   = d === today();
+    const isActive  = selectedDate === d || (selectedDate === null && isToday);
+    return `<button class="date-btn ${isToday ? 'today-btn' : ''} ${isActive ? 'active' : ''}"
+      onclick="selectDate('${d}')">${formatDateLabel(d)}</button>`;
+  }).join('');
+}
+
+// ─── Select a date ────────────────────────────────────────────
+async function selectDate(dateStr) {
+  selectedDate = dateStr === today() ? null : dateStr;
+  renderDateBar();
+
+  const badge = document.getElementById('viewing-badge');
+  if (selectedDate) {
+    const d = new Date(dateStr + 'T12:00:00');
+    badge.textContent = '📅 Viewing: ' + d.toLocaleDateString('en', { weekday:'short', month:'short', day:'numeric' });
+    badge.style.display = 'inline-block';
+  } else {
+    badge.style.display = 'none';
+  }
+
+  if (selectedDate) {
+    await loadHistoricalDate(selectedDate);
+  } else {
+    await loadLatest();
+  }
+}
+
+// ─── Load a historical date ────────────────────────────────────
+async function loadHistoricalDate(dateStr) {
+  if (historyCache[dateStr]) {
+    applyData(historyCache[dateStr], false);
+    return;
+  }
+  try {
+    const r = await fetch(HISTORY_DIR + 'results_' + dateStr + '.json?_t=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    historyCache[dateStr] = data;
+    applyData(data, false);
+  } catch(e) {
+    document.getElementById('status-text').textContent = 'Error loading ' + dateStr;
+    document.getElementById('status-dot').className = 'dot error';
+  }
+}
+
+// ─── Load latest (today) ──────────────────────────────────────
+async function loadLatest(silent) {
+  const ring = document.getElementById('ring');
+  const dot  = document.getElementById('status-dot');
+  const txt  = document.getElementById('status-text');
+  if (!silent) ring.classList.add('spin');
+
+  try {
+    const r = await fetch(LATEST_JSON + '?_t=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+
+    if (data.generated_at !== lastGenerated) {
+      lastGenerated = data.generated_at;
+      applyData(data, true);
+      await loadDateIndex();
+    }
+
+    const ts  = new Date(data.generated_at);
+    const ago = Math.round((Date.now() - ts) / 1000);
+    txt.textContent = 'Updated ' + (ago < 60 ? ago + 's ago' : Math.round(ago/60) + 'min ago');
+    dot.className = 'dot' + (ago > 120 ? ' stale' : '');
+  } catch(e) {
+    txt.textContent = 'No data — ' + e.message;
+    dot.className = 'dot error';
+  }
+
+  ring.classList.remove('spin');
+  // Only auto-poll when viewing today
+  if (!selectedDate) setTimeout(() => loadLatest(true), REFRESH_MS);
+}
+
+// ─── Apply data to dashboard ──────────────────────────────────
+function applyData(data, isLive) {
+  allTests = data.tests || [];
+  updateMetrics(data.summary, data.generated_at);
+  updateCharts();
+  renderTable();
+
+  if (!isLive) {
+    const ts = new Date(data.generated_at);
+    document.getElementById('status-text').textContent =
+      'Snapshot: ' + ts.toLocaleTimeString('en', {hour:'2-digit', minute:'2-digit'});
+    document.getElementById('status-dot').className = 'dot stale';
+  }
+}
+
+// ─── Metrics ──────────────────────────────────────────────────
+function updateMetrics(s, generatedAt) {
+  document.getElementById('m-total').textContent = s.total;
+  document.getElementById('m-pass').textContent  = s.passed;
+  document.getElementById('m-fail').textContent  = s.failed;
+  document.getElementById('m-rate').textContent  = s.rate + '%';
+
+  const rfP  = allTests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
+  const rfF  = allTests.filter(t=>t.source==='RF' &&t.status==='FAIL').length;
+  const csvP = allTests.filter(t=>t.source==='CSV'&&t.status==='PASS').length;
+  const csvF = allTests.filter(t=>t.source==='CSV'&&t.status==='FAIL').length;
+  document.getElementById('m-pass-src').textContent = 'RF: ' + rfP + '  CSV: ' + csvP;
+  document.getElementById('m-fail-src').textContent = 'RF: ' + rfF + '  CSV: ' + csvF;
+
+  if (generatedAt) {
+    const d = new Date(generatedAt);
+    document.getElementById('m-ts').textContent =
+      d.toLocaleTimeString('en', {hour:'2-digit', minute:'2-digit'}) + ' ' +
+      d.toLocaleDateString('en', {month:'2-digit', day:'2-digit'});
+  }
+}
+
+// ─── Charts ───────────────────────────────────────────────────
+function updateCharts() {
+  const pass    = allTests.filter(t=>t.status==='PASS').length;
+  const fail    = allTests.filter(t=>t.status==='FAIL').length;
+  const other   = allTests.length - pass - fail;
+  const rfFail  = allTests.filter(t=>t.source==='RF' &&t.status==='FAIL').length;
+  const csvFail = allTests.filter(t=>t.source==='CSV'&&t.status==='FAIL').length;
+  const rfPass  = allTests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
+  const csvPass = allTests.filter(t=>t.source==='CSV'&&t.status==='PASS').length;
+
+  if (chartDist) chartDist.destroy();
+  chartDist = new Chart(document.getElementById('chartDist'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Pass','Fail','Other'],
+      datasets: [{ data:[pass,fail,other], backgroundColor:['#639922','#E24B4A','#BA7517'], borderWidth:0 }]
+    },
+    options: { responsive:true, maintainAspectRatio:false, cutout:'65%',
+      plugins:{ legend:{ position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:10 } } } }
+  });
+
+  if (chartSrc) chartSrc.destroy();
+  chartSrc = new Chart(document.getElementById('chartSrc'), {
+    type: 'bar',
+    data: {
+      labels: ['Robot FW','Python CSV'],
+      datasets: [
+        { label:'Pass', data:[rfPass, csvPass], backgroundColor:'#639922' },
+        { label:'Fail', data:[rfFail, csvFail], backgroundColor:'#E24B4A' }
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      scales:{ x:{stacked:true,ticks:{font:{size:11}}}, y:{stacked:true,beginAtZero:true,ticks:{font:{size:11}}} },
+      plugins:{ legend:{ position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:10 } } }
+    }
+  });
+}
+
+// ─── Trend chart (last 7 days) ────────────────────────────────
+async function loadTrend() {
+  const last7 = availableDates.slice(0, 7).reverse();
+  const labels = [];
+  const rates  = [];
+
+  for (const d of last7) {
+    let payload = historyCache[d];
+    if (!payload) {
+      try {
+        const r = await fetch(HISTORY_DIR + 'results_' + d + '.json');
+        if (r.ok) { payload = await r.json(); historyCache[d] = payload; }
+      } catch(e) {}
+    }
+    labels.push(formatDateLabel(d));
+    rates.push(payload ? payload.summary.rate : null);
+  }
+
+  if (chartTrend) chartTrend.destroy();
+  chartTrend = new Chart(document.getElementById('chartTrend'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Pass rate %',
+        data: rates,
+        borderColor: '#639922',
+        backgroundColor: 'rgba(99,153,34,0.1)',
+        borderWidth: 2,
+        pointRadius: 4,
+        pointBackgroundColor: '#639922',
+        fill: true,
+        tension: 0.3,
+        spanGaps: true,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        y: { min:0, max:100, ticks:{ font:{size:11}, callback: v => v+'%' } },
+        x: { ticks:{ font:{size:11} } }
+      },
+      plugins: { legend:{ display:false } }
+    }
+  });
+}
+
+// ─── Table ────────────────────────────────────────────────────
+function switchTab(tab, el) {
+  activeTab = tab;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  renderTable();
+}
+
+function renderTable() {
+  const search  = document.getElementById('search').value.toLowerCase();
+  const fStatus = document.getElementById('f-status').value;
+
+  let rows = allTests.filter(t => {
+    if (activeTab==='RF'   && t.source!=='RF')   return false;
+    if (activeTab==='CSV'  && t.source!=='CSV')  return false;
+    if (activeTab==='FAIL' && t.status!=='FAIL') return false;
+    if (fStatus && t.status!==fStatus) return false;
+    if (search && ![t.name,t.suite,t.message].join(' ').toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  const tbody = document.getElementById('tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="7">No tests match the current filters</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = rows.map((t,i) => {
+    const pill   = t.status==='PASS'?'pass-pill':t.status==='FAIL'?'fail-pill':'warn-pill';
+    const src    = t.source==='RF'?'src-rf':'src-csv';
+    const srcLbl = t.source==='RF'?'Robot FW':'Python CSV';
+    return `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td style="font-weight:500;max-width:200px;word-break:break-word">${esc(t.name)}</td>
+      <td><span class="pill src-tag ${src}">${srcLbl}</span></td>
+      <td style="color:var(--muted);font-size:11px;max-width:140px;word-break:break-word">${esc(t.suite)}</td>
+      <td><span class="pill ${pill}">${esc(t.status)}</span></td>
+      <td class="msg-cell">${esc(t.message||'—')}</td>
+      <td style="font-size:11px;color:var(--muted);white-space:nowrap">${esc(t.time||'—')}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ─── Boot ─────────────────────────────────────────────────────
+loadLatest(false);
+</script>
+</body>
+</html>
