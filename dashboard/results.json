@@ -1,20 +1,11 @@
 {
-  "generated_at": "2026-05-08T16:02:00.939163",
+  "generated_at": "2026-05-08T16:04:11.965693",
   "date": "2026-05-08",
   "summary": {
-    "total": 1,
+    "total": 0,
     "passed": 0,
-    "failed": 1,
-    "rate": 0.0
+    "failed": 0,
+    "rate": 0
   },
-  "tests": [
-    {
-      "name": "Verify On Demand Opens",
-      "suite": "—",
-      "status": "FAIL",
-      "message": "No keyword with name 'Ir.Press Back' found.",
-      "time": "20240219 18:19:21.391",
-      "source": "RF"
-    }
-  ]
+  "tests": []
 }
