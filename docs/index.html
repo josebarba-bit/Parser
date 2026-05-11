@@ -319,7 +319,7 @@ async function selectDate(dateStr) {
   if (selectedDate) {
     await loadHistoricalDate(selectedDate);
   } else {
-    await loadLatest();
+    await loadLatest(false);
   }
 }
 
