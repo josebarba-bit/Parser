@@ -302,6 +302,9 @@ function renderDateBar() {
 // ─── Select a date ────────────────────────────────────────────
 async function selectDate(dateStr) {
   selectedDate = dateStr === today() ? null : dateStr;
+  if (!selectedDate) {
+    lastGenerated = null; // force reload when switching back to Today
+  }
   renderDateBar();
 
   const badge = document.getElementById('viewing-badge');
