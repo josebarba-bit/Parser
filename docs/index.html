@@ -377,10 +377,14 @@ async function loadLatest(silent) {
 
 // ─── Apply data to dashboard ──────────────────────────────────
 function applyData(data, isLive) {
+  const newData = JSON.stringify(data.tests);
+  const changed = newData !== JSON.stringify(allTests);
   allTests = data.tests || [];
   updateMetrics(data.summary, data.generated_at);
-  updateCharts();
-  renderTable();
+  if (changed) {
+    updateCharts();
+    renderTable();
+  }
 
   if (!isLive) {
     const ts = new Date(data.generated_at);
