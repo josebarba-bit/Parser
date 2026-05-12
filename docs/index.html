@@ -371,7 +371,6 @@ async function loadLatest(silent) {
   ring.classList.remove('spin');
   // Only auto-poll when viewing today
   setTimeout(() => {
-	loadDateIndex();
 	if (!selectedDate) loadLatest(true);
 }, REFRESH_MS);
 }
