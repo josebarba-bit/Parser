@@ -1,83 +1,107 @@
 {
-  "generated_at": "2026-05-12T13:05:39.452548",
+  "generated_at": "2026-05-12T16:39:37.850007",
   "date": "2026-05-12",
   "summary": {
-    "total": 9,
-    "passed": 7,
-    "failed": 2,
-    "rate": 77.8
+    "total": 12,
+    "passed": 0,
+    "failed": 12,
+    "rate": 0.0
   },
   "tests": [
     {
+      "name": "STB Power Up",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Missing Telus Logo.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Missing Telus Logo.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Missing On Now text.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 15:53:27.224",
+      "source": "RF"
+    },
+    {
       "name": "Standby Cycle Checks",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 12:51:55.801",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 15:54:37.070",
       "source": "RF"
     },
     {
       "name": "Menu Checks",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Recordings text is not displayed<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Recordings text is not displayed<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Recordings text is not displayed<br>",
-      "time": "20260512 13:03:32.666",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 15:54:54.442",
       "source": "RF"
     },
     {
       "name": "Verify Guide Opens by Key",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 12:52:58.977",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 15:54:58.041",
       "source": "RF"
     },
     {
       "name": "Verify Guide Opens from Menu",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 12:53:23.850",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 15:56:22.911",
       "source": "RF"
     },
     {
       "name": "Verify Channel Zap AV Playback",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 12:53:55.716",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 15:57:51.043",
       "source": "RF"
     },
     {
       "name": "Verify Menu panel is autodismissed",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 12:56:21.896",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 15:59:18.515",
       "source": "RF"
     },
     {
       "name": "Verify Live TV AV Playback in the background with PVR opened",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260512 13:03:44.240",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 16:00:07.095",
       "source": "RF"
     },
     {
       "name": "Verify Reboot by Settings Menu",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 12:58:34.244",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 16:02:15.193",
       "source": "RF"
     },
     {
       "name": "Verify Audio playback is heard on settings page",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 13:01:05.502",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> OSError: [Errno -9998] Invalid number of channels\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> OSError: [Errno -9998] Invalid number of channels\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nNetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s\n\nAlso teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 16:05:07.299",
+      "source": "RF"
+    },
+    {
+      "name": "Verify Screensaver triggers from Settings Menu",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 16:05:53.687",
+      "source": "RF"
+    },
+    {
+      "name": "Verify Screensaver triggers from Guide",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Teardown failed:\nNo keyword with name 'Streash Telnet Logging' found.<br>",
+      "time": "20260512 16:22:42.063",
       "source": "RF"
     }
   ]
