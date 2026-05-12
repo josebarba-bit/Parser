@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-12T12:30:38.463801",
+  "generated_at": "2026-05-12T13:05:36.441961",
   "date": "2026-05-12",
   "summary": {
     "total": 9,
-    "passed": 8,
-    "failed": 1,
-    "rate": 88.9
+    "passed": 7,
+    "failed": 2,
+    "rate": 77.8
   },
   "tests": [
     {
@@ -13,15 +13,15 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 12:09:39.475",
+      "time": "20260512 12:51:55.801",
       "source": "RF"
     },
     {
       "name": "Menu Checks",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 12:10:56.011",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Recordings text is not displayed<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Recordings text is not displayed<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Recordings text is not displayed<br>",
+      "time": "20260512 13:03:32.666",
       "source": "RF"
     },
     {
@@ -29,7 +29,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 12:11:25.559",
+      "time": "20260512 12:52:58.977",
       "source": "RF"
     },
     {
@@ -37,7 +37,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 12:11:50.239",
+      "time": "20260512 12:53:23.850",
       "source": "RF"
     },
     {
@@ -45,7 +45,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 12:12:22.028",
+      "time": "20260512 12:53:55.716",
       "source": "RF"
     },
     {
@@ -53,31 +53,31 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 12:13:55.021",
+      "time": "20260512 12:56:21.896",
       "source": "RF"
     },
     {
       "name": "Verify Live TV AV Playback in the background with PVR opened",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 12:14:24.891",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260512 13:03:44.240",
       "source": "RF"
     },
     {
       "name": "Verify Reboot by Settings Menu",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260512 12:26:41.294",
+      "message": "",
+      "time": "20260512 12:58:34.244",
       "source": "RF"
     },
     {
       "name": "Verify Audio playback is heard on settings page",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260512 12:29:35.043",
+      "status": "PASS",
+      "message": "",
+      "time": "20260512 13:01:05.502",
       "source": "RF"
     }
   ]
