@@ -1,19 +1,27 @@
 {
-  "generated_at": "2026-05-12T11:51:40.637051",
+  "generated_at": "2026-05-12T12:30:35.352792",
   "date": "2026-05-12",
   "summary": {
-    "total": 3,
-    "passed": 3,
-    "failed": 0,
-    "rate": 100.0
+    "total": 9,
+    "passed": 8,
+    "failed": 1,
+    "rate": 88.9
   },
   "tests": [
+    {
+      "name": "Standby Cycle Checks",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260512 12:09:39.475",
+      "source": "RF"
+    },
     {
       "name": "Menu Checks",
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 11:47:35.689",
+      "time": "20260512 12:10:56.011",
       "source": "RF"
     },
     {
@@ -21,7 +29,23 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 11:48:05.611",
+      "time": "20260512 12:11:25.559",
+      "source": "RF"
+    },
+    {
+      "name": "Verify Guide Opens from Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260512 12:11:50.239",
+      "source": "RF"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260512 12:12:22.028",
       "source": "RF"
     },
     {
@@ -29,7 +53,31 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 11:48:40.000",
+      "time": "20260512 12:13:55.021",
+      "source": "RF"
+    },
+    {
+      "name": "Verify Live TV AV Playback in the background with PVR opened",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260512 12:14:24.891",
+      "source": "RF"
+    },
+    {
+      "name": "Verify Reboot by Settings Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260512 12:26:41.294",
+      "source": "RF"
+    },
+    {
+      "name": "Verify Audio playback is heard on settings page",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260512 12:29:35.043",
       "source": "RF"
     }
   ]
