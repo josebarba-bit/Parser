@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-12T11:29:32.098905",
+  "generated_at": "2026-05-12T11:49:23.187904",
   "date": "2026-05-12",
   "summary": {
-    "total": 2,
-    "passed": 2,
+    "total": 3,
+    "passed": 3,
     "failed": 0,
     "rate": 100.0
   },
@@ -13,7 +13,15 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 11:28:16.386",
+      "time": "20260512 11:47:35.689",
+      "source": "RF"
+    },
+    {
+      "name": "Verify Guide Opens by Key",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260512 11:48:05.611",
       "source": "RF"
     },
     {
@@ -21,7 +29,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260512 11:28:46.116",
+      "time": "20260512 11:48:40.000",
       "source": "RF"
     }
   ]
