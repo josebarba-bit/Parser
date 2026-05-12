@@ -1,28 +1,11 @@
 {
-  "generated_at": "2026-05-12T11:00:07.631708",
+  "generated_at": "2026-05-12T11:04:26.338390",
   "date": "2026-05-12",
   "summary": {
-    "total": 2,
-    "passed": 2,
+    "total": 0,
+    "passed": 0,
     "failed": 0,
-    "rate": 100.0
+    "rate": 0
   },
-  "tests": [
-    {
-      "name": "Menu Checks",
-      "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 10:28:02.066",
-      "source": "RF"
-    },
-    {
-      "name": "Verify Menu panel is autodismissed",
-      "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260512 10:28:31.740",
-      "source": "RF"
-    }
-  ]
+  "tests": []
 }
