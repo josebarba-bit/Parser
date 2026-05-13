@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-05-13T13:35:56.475232",
+  "generated_at": "2026-05-13T13:40:59.947378",
   "date": "2026-05-13",
   "clients": [
     "telus"
   ],
   "summary": {
-    "total": 5,
-    "passed": 4,
+    "total": 6,
+    "passed": 5,
     "failed": 0,
-    "rate": 80.0
+    "rate": 83.3
   },
   "summaries": {
     "telus": {
       "all": {
-        "total": 5,
-        "passed": 4,
+        "total": 6,
+        "passed": 5,
         "failed": 0,
-        "rate": 80.0
+        "rate": 83.3
       },
       "sanity": {
-        "total": 2,
-        "passed": 2,
+        "total": 3,
+        "passed": 3,
         "failed": 0,
         "rate": 100.0
       },
@@ -37,8 +37,18 @@
       "name": "Menu Checks",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is not displayed<br>",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
       "time": "20260513 13:33:45.150",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Guide Opens by Key",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 13:39:42.511",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -48,7 +58,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 13:33:13.306",
+      "time": "20260513 13:40:20.282",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
