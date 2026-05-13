@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-05-13T12:43:18.712176",
+  "generated_at": "2026-05-13T12:46:04.842226",
   "date": "2026-05-13",
   "clients": [
     "telus"
   ],
   "summary": {
-    "total": 2,
+    "total": 19,
     "passed": 2,
-    "failed": 0,
-    "rate": 100.0
+    "failed": 16,
+    "rate": 10.5
   },
   "summaries": {
     "telus": {
       "all": {
-        "total": 2,
+        "total": 19,
         "passed": 2,
-        "failed": 0,
-        "rate": 100.0
+        "failed": 16,
+        "rate": 10.5
       },
       "sanity": {
         "total": 2,
@@ -25,10 +25,10 @@
         "rate": 100.0
       },
       "smoke": {
-        "total": 0,
+        "total": 17,
         "passed": 0,
-        "failed": 0,
-        "rate": 0
+        "failed": 16,
+        "rate": 0.0
       }
     }
   },
@@ -52,6 +52,176 @@
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Settings Opens from Menu",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260513 03:27:29.117",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Menu",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 12:45:46.226",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify AV Playback on LiveTV",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 10 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:19:57.319",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Adjust the LiveTV Volume",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>OSError: [Errno -9999] Unanticipated host error",
+      "time": "20260513 03:23:31.043",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify AV background with Menu",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:23:48.545",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens & Bkgn Video",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:24:42.953",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens from Menu & Bkgn Video",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:26:04.284",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:28:01.276",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Select and Play a content from Guide",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:29:32.332",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Live TV",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:30:53.706",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Guide",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:32:17.705",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Channel Zap",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:33:38.990",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by OK Key",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:34:54.927",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Dpad Up",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:35:27.992",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Button",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:36:19.089",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Play a Recording",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260513 03:38:05.314",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check volume bar icons",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* Test added from merged output.<hr>Reason: Volume min animation does not appear.",
+      "time": "20260513 03:40:06.653",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
     }
   ]
 }
