@@ -356,9 +356,10 @@ function selectClient(client) {
   renderTable();
   updateSuiteSummary(fullData);
   loadTrend();
-  const title = activeClient === 'all' ? 'Pass rate — last 7 days' :
-    `Pass rate — last 7 days (${cap(activeClient)}${activeSuite !== 'all' ? ' · ' + cap(activeSuite) : ''})`;
-  document.getElementById('trend-title').textContent = title;
+  const clientLabel = activeClient !== 'all' ? cap(activeClient) : null;
+  const suiteLabel  = activeSuite  !== 'all' ? cap(activeSuite)  : null;
+  const suffix = [clientLabel, suiteLabel].filter(Boolean).join(' · ');
+  document.getElementById('trend-title').textContent = 'Pass rate — last 7 days' + (suffix ? ' (' + suffix + ')' : '');
 }
 
 // ─── Suite selector ───────────────────────────────────────────
@@ -372,6 +373,11 @@ function selectSuite(suite) {
   renderTable();
   if (fullData) updateSuiteSummary(fullData);
   loadTrend();
+// Update trend title
+  const clientLabel = activeClient !== 'all' ? cap(activeClient) : null;
+  const suiteLabel  = activeSuite  !== 'all' ? cap(activeSuite)  : null;
+  const suffix = [clientLabel, suiteLabel].filter(Boolean).join(' · ');
+  document.getElementById('trend-title').textContent = 'Pass rate — last 7 days' + (suffix ? ' (' + suffix + ')' : '');
 }
 
 // ─── Filter tests ─────────────────────────────────────────────
