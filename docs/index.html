@@ -600,13 +600,24 @@ async function loadTrend() {
     labels.push(formatDateLabel(d));
     let rate = null;
     if (payload) {
-      if (activeClient !== 'all' && payload.summaries && payload.summaries[activeClient]) {
-        const s = payload.summaries[activeClient];
-        rate = activeSuite !== 'all' ? (s[activeSuite]?.rate ?? null) : (s.all?.rate ?? null);
+      if (payload.summaries) {
+        if (activeClient !== 'all' && payload.summaries[activeClient]) {
+          const s = payload.summaries[activeClient];
+          rate = activeSuite !== 'all' ? (s[activeSuite]?.rate ?? null) : (s.all?.rate ?? null);
+        } else {
+          // Aggregate all clients
+          let totalPass = 0, totalTests = 0;
+          for (const c of Object.keys(payload.summaries)) {
+            const s = activeSuite !== 'all'
+              ? (payload.summaries[c][activeSuite] || {})
+              : (payload.summaries[c].all || {});
+            totalPass  += s.passed || 0;
+            totalTests += s.total  || 0;
+          }
+          rate = totalTests > 0 ? Math.round(totalPass/totalTests*1000)/10 : null;
+        }
       } else {
-        rate = activeSuite !== 'all'
-          ? (payload['summary_' + activeSuite]?.rate ?? null)
-          : (payload.summary?.rate ?? null);
+        rate = payload.summary?.rate ?? null;
       }
     }
     rates.push(rate);
