@@ -25,6 +25,10 @@
       --green-bg: #e1f5ee;
       --amber:    #854f0b;
       --amber-bg: #faeeda;
+      --purple:   #4a1d96;
+      --purple-bg:#ede9fe;
+      --red:      #7f1d1d;
+      --red-bg:   #fee2e2;
       --radius:   10px;
     }
 
@@ -47,6 +51,10 @@
         --green-bg: #04342c;
         --amber:    #fac775;
         --amber-bg: #412402;
+        --purple:   #c4b5fd;
+        --purple-bg:#2e1065;
+        --red:      #fca5a5;
+        --red-bg:   #450a0a;
       }
     }
 
@@ -62,43 +70,70 @@
     .dot.error { background: #A32D2D; }
 
     .badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 500; }
-    .badge-blue   { background: var(--blue-bg);  color: var(--blue); }
-    .badge-green  { background: var(--green-bg); color: var(--green); }
-    .badge-amber  { background: var(--amber-bg); color: var(--amber); }
+    .badge-blue   { background: var(--blue-bg);   color: var(--blue); }
+    .badge-green  { background: var(--green-bg);  color: var(--green); }
+    .badge-amber  { background: var(--amber-bg);  color: var(--amber); }
 
-    /* Date selector bar */
-    .date-bar {
+    /* Filter bar */
+    .filter-bar {
       background: var(--surface);
       border: 0.5px solid var(--border);
       border-radius: var(--radius);
       padding: 12px 16px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 20px;
       flex-wrap: wrap;
     }
+    .filter-group { display: flex; align-items: center; gap: 8px; }
+    .filter-label { font-size: 12px; color: var(--muted); white-space: nowrap; font-weight: 500; }
+    .filter-divider { width: 1px; height: 24px; background: var(--border); }
+
+    /* Client buttons */
+    .client-btn {
+      font-size: 12px; padding: 6px 16px; border-radius: 6px;
+      border: 0.5px solid var(--border); background: var(--bg);
+      color: var(--text); cursor: pointer; transition: all .15s; font-weight: 500;
+    }
+    .client-btn:hover { background: var(--surface); border-color: var(--muted); }
+    .client-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+    /* Client-specific active colors */
+    .client-btn.active-telus { background: #0c447c; color: #fff; border-color: #0c447c; }
+    .client-btn.active-mega  { background: #4a1d96; color: #fff; border-color: #4a1d96; }
+
+    /* Suite buttons */
+    .suite-btn {
+      font-size: 12px; padding: 6px 14px; border-radius: 6px;
+      border: 0.5px solid var(--border); background: var(--bg);
+      color: var(--text); cursor: pointer; transition: all .15s;
+    }
+    .suite-btn:hover { background: var(--surface); border-color: var(--muted); }
+    .suite-btn.active-all    { background: var(--text);       color: var(--bg);     border-color: var(--text); }
+    .suite-btn.active-sanity { background: var(--blue-bg);    color: var(--blue);   border-color: var(--blue); }
+    .suite-btn.active-smoke  { background: var(--purple-bg);  color: var(--purple); border-color: var(--purple); }
+
+    /* Date bar */
+    .date-bar { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .date-bar-label { font-size: 12px; color: var(--muted); white-space: nowrap; }
     .date-scroll { display: flex; gap: 6px; overflow-x: auto; flex: 1; padding-bottom: 2px; }
     .date-scroll::-webkit-scrollbar { height: 4px; }
-    .date-scroll::-webkit-scrollbar-track { background: transparent; }
     .date-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-    .date-btn {
-      flex-shrink: 0;
-      font-size: 12px;
-      padding: 5px 12px;
-      border-radius: 6px;
-      border: 0.5px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-      cursor: pointer;
-      transition: all .15s;
-      white-space: nowrap;
-    }
+    .date-btn { flex-shrink: 0; font-size: 12px; padding: 5px 12px; border-radius: 6px; border: 0.5px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; transition: all .15s; white-space: nowrap; }
     .date-btn:hover { background: var(--surface); border-color: var(--muted); }
     .date-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 500; }
     .date-btn.today-btn { border-color: #639922; color: var(--pass); }
     .date-btn.today-btn.active { background: var(--pass-bg); color: var(--pass); border-color: var(--pass); }
     .viewing-badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; background: var(--amber-bg); color: var(--amber); font-weight: 500; white-space: nowrap; }
+
+    /* Suite summary cards */
+    .suite-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .suite-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+    .suite-card-title { font-size: 11px; font-weight: 500; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+    .suite-stats { display: flex; gap: 16px; }
+    .suite-stat { display: flex; flex-direction: column; gap: 2px; }
+    .suite-stat-val { font-size: 20px; font-weight: 500; }
+    .suite-stat-lbl { font-size: 10px; color: var(--muted); }
 
     /* Metrics */
     .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
@@ -111,25 +146,16 @@
 
     /* Charts */
     .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    @media (max-width: 600px) { .charts { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .charts { grid-template-columns: 1fr; } .suite-summary { grid-template-columns: 1fr; } }
 
-    /* Trend chart */
     .trend-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
     .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
     .card-title { font-size: 13px; font-weight: 500; margin-bottom: 14px; }
 
     /* Table */
     .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
-    .filters select {
-      font-size: 12px; padding: 5px 10px; border-radius: 6px;
-      border: 0.5px solid var(--border); background: var(--surface);
-      color: var(--text); cursor: pointer;
-    }
-    .search-box {
-      flex: 1; min-width: 160px; font-size: 12px; padding: 5px 10px;
-      border-radius: 6px; border: 0.5px solid var(--border);
-      background: var(--surface); color: var(--text);
-    }
+    .filters select { font-size: 12px; padding: 5px 10px; border-radius: 6px; border: 0.5px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
+    .search-box { flex: 1; min-width: 160px; font-size: 12px; padding: 5px 10px; border-radius: 6px; border: 0.5px solid var(--border); background: var(--surface); color: var(--text); }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 12px; }
     th { text-align: left; padding: 7px 10px; font-size: 11px; font-weight: 500; color: var(--muted); border-bottom: 0.5px solid var(--border); white-space: nowrap; }
@@ -138,13 +164,16 @@
     tr:hover td { background: var(--bg); }
 
     .pill { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; white-space: nowrap; }
-    .pass-pill { background: var(--pass-bg); color: var(--pass); }
-    .fail-pill { background: var(--fail-bg); color: var(--fail); }
-    .warn-pill { background: var(--warn-bg); color: var(--warn); }
-    .src-tag { font-size: 10px; padding: 2px 7px; border-radius: 8px; font-weight: 500; }
-    .src-rf  { background: var(--blue-bg);  color: var(--blue); }
-    .src-csv { background: var(--green-bg); color: var(--green); }
-    .msg-cell { max-width: 260px; color: var(--muted); font-size: 11px; word-break: break-word; }
+    .pass-pill   { background: var(--pass-bg);   color: var(--pass); }
+    .fail-pill   { background: var(--fail-bg);   color: var(--fail); }
+    .warn-pill   { background: var(--warn-bg);   color: var(--warn); }
+    .src-rf      { background: var(--blue-bg);   color: var(--blue); }
+    .src-csv     { background: var(--green-bg);  color: var(--green); }
+    .src-sanity  { background: var(--blue-bg);   color: var(--blue); }
+    .src-smoke   { background: var(--purple-bg); color: var(--purple); }
+    .src-telus   { background: #e6f1fb; color: #0c447c; }
+    .src-mega    { background: #ede9fe; color: #4a1d96; }
+    .msg-cell    { max-width: 260px; color: var(--muted); font-size: 11px; word-break: break-word; }
 
     .tabs { display: flex; gap: 2px; border-bottom: 0.5px solid var(--border); margin-bottom: 14px; }
     .tab { font-size: 12px; padding: 7px 14px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; transition: all .15s; user-select: none; }
@@ -163,8 +192,6 @@
   <div class="header">
     <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
       <h1>QA Test Dashboard</h1>
-      <span class="badge badge-blue">PC 1 · Robot Framework</span>
-      <span class="badge badge-green">PC 2 · Python CSV</span>
       <span class="viewing-badge" id="viewing-badge" style="display:none"></span>
     </div>
     <div class="status-bar">
@@ -174,7 +201,24 @@
     </div>
   </div>
 
-  <!-- Date selector -->
+  <!-- Client + Suite filter bar -->
+  <div class="filter-bar">
+    <div class="filter-group">
+      <span class="filter-label">Client:</span>
+      <div id="client-buttons"></div>
+    </div>
+    <div class="filter-divider"></div>
+    <div class="filter-group">
+      <span class="filter-label">Suite:</span>
+      <div style="display:flex;gap:6px">
+        <button class="suite-btn active-all"    id="btn-suite-all"    onclick="selectSuite('all')">All</button>
+        <button class="suite-btn"              id="btn-suite-sanity" onclick="selectSuite('sanity')">Sanity</button>
+        <button class="suite-btn"              id="btn-suite-smoke"  onclick="selectSuite('smoke')">Smoke</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Date bar -->
   <div class="date-bar">
     <span class="date-bar-label">History:</span>
     <div class="date-scroll" id="date-scroll">
@@ -182,10 +226,32 @@
     </div>
   </div>
 
-  <!-- Trend chart (last 7 days) -->
+  <!-- Suite summary cards -->
+  <div class="suite-summary">
+    <div class="suite-card">
+      <div class="suite-card-title"><span class="pill src-sanity">Sanity</span></div>
+      <div class="suite-stats">
+        <div class="suite-stat"><div class="suite-stat-val" id="s-sanity-total">—</div><div class="suite-stat-lbl">Total</div></div>
+        <div class="suite-stat"><div class="suite-stat-val v-pass" id="s-sanity-pass">—</div><div class="suite-stat-lbl">Passed</div></div>
+        <div class="suite-stat"><div class="suite-stat-val v-fail" id="s-sanity-fail">—</div><div class="suite-stat-lbl">Failed</div></div>
+        <div class="suite-stat"><div class="suite-stat-val" id="s-sanity-rate">—</div><div class="suite-stat-lbl">Pass rate</div></div>
+      </div>
+    </div>
+    <div class="suite-card">
+      <div class="suite-card-title"><span class="pill src-smoke">Smoke</span></div>
+      <div class="suite-stats">
+        <div class="suite-stat"><div class="suite-stat-val" id="s-smoke-total">—</div><div class="suite-stat-lbl">Total</div></div>
+        <div class="suite-stat"><div class="suite-stat-val v-pass" id="s-smoke-pass">—</div><div class="suite-stat-lbl">Passed</div></div>
+        <div class="suite-stat"><div class="suite-stat-val v-fail" id="s-smoke-fail">—</div><div class="suite-stat-lbl">Failed</div></div>
+        <div class="suite-stat"><div class="suite-stat-val" id="s-smoke-rate">—</div><div class="suite-stat-lbl">Pass rate</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trend -->
   <div class="trend-card">
-    <div class="card-title">Pass rate — last 7 days</div>
-    <div style="position:relative;height:140px"><canvas id="chartTrend" role="img" aria-label="Line chart showing pass rate trend over the last 7 days"></canvas></div>
+    <div class="card-title" id="trend-title">Pass rate — last 7 days</div>
+    <div style="position:relative;height:140px"><canvas id="chartTrend"></canvas></div>
   </div>
 
   <!-- Metrics -->
@@ -229,7 +295,7 @@
       <table>
         <thead>
           <tr>
-            <th>#</th><th>Test name</th><th>Source</th><th>Suite / Module</th><th>Status</th><th>Message / Failure</th><th>Time / Date</th>
+            <th>#</th><th>Test name</th><th>Client</th><th>Suite type</th><th>Suite / Module</th><th>Status</th><th>Message / Failure</th><th>Time / Date</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -241,94 +307,134 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-// ─── State ────────────────────────────────────────────────────
-let allTests     = [];
-let activeTab    = 'all';
-let chartDist    = null, chartSrc = null, chartTrend = null;
+let allTests      = [];
+let activeTab     = 'all';
+let activeClient  = 'all';
+let activeSuite   = 'all';
+let chartDist     = null, chartSrc = null, chartTrend = null;
 let lastGenerated = null;
-let availableDates = [];
-let selectedDate   = null;   // null = today / latest
-let historyCache   = {};     // date -> payload
+let availableDates= [];
+let selectedDate  = null;
+let historyCache  = {};
+let fullData      = null;
+let knownClients  = [];
 
 const REFRESH_MS  = 15000;
 const HISTORY_DIR = './history/';
 const LATEST_JSON = './results.json';
 
-// ─── Helpers ──────────────────────────────────────────────────
-function today() {
-  return new Date().toISOString().slice(0, 10);
+// Client display names and colors
+const CLIENT_META = {
+  telus: { label: 'Telus', color: '#0c447c', bg: '#e6f1fb' },
+  mega:  { label: 'Mega',  color: '#4a1d96', bg: '#ede9fe' },
+};
+
+function today() { return new Date().toISOString().slice(0,10); }
+function cap(s)  { return s.charAt(0).toUpperCase() + s.slice(1); }
+function esc(s)  { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ─── Client buttons ───────────────────────────────────────────
+function renderClientButtons(clients) {
+  const container = document.getElementById('client-buttons');
+  const btns = ['all', ...clients].map(c => {
+    const meta    = CLIENT_META[c] || { label: cap(c), color: '#444', bg: '#eee' };
+    const isAll   = c === 'all';
+    const isActive= activeClient === c;
+    const label   = isAll ? 'All' : meta.label;
+    const style   = isActive && !isAll ? `background:${meta.color};color:#fff;border-color:${meta.color}` : '';
+    const cls     = isActive && isAll  ? 'client-btn active' : 'client-btn';
+    return `<button class="${cls}" style="${style}" onclick="selectClient('${c}')">${label}</button>`;
+  });
+  container.innerHTML = `<div style="display:flex;gap:6px">${btns.join('')}</div>`;
 }
 
-function formatDateLabel(dateStr) {
-  if (dateStr === today()) return 'Today';
-  const d = new Date(dateStr + 'T12:00:00');
-  return d.toLocaleDateString('en', { month: 'short', day: 'numeric' });
+function selectClient(client) {
+  activeClient = client;
+  renderClientButtons(knownClients);
+  updateMetrics();
+  updateCharts();
+  renderTable();
+  updateSuiteSummary(fullData);
+  loadTrend();
+  const title = activeClient === 'all' ? 'Pass rate — last 7 days' :
+    `Pass rate — last 7 days (${cap(activeClient)}${activeSuite !== 'all' ? ' · ' + cap(activeSuite) : ''})`;
+  document.getElementById('trend-title').textContent = title;
 }
 
-function esc(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+// ─── Suite selector ───────────────────────────────────────────
+function selectSuite(suite) {
+  activeSuite = suite;
+  document.getElementById('btn-suite-all').className    = 'suite-btn' + (suite==='all'    ? ' active-all'    : '');
+  document.getElementById('btn-suite-sanity').className = 'suite-btn' + (suite==='sanity' ? ' active-sanity' : '');
+  document.getElementById('btn-suite-smoke').className  = 'suite-btn' + (suite==='smoke'  ? ' active-smoke'  : '');
+  updateMetrics();
+  updateCharts();
+  renderTable();
+  if (fullData) updateSuiteSummary(fullData);
+  loadTrend();
 }
 
-// ─── Load index of available dates ────────────────────────────
+// ─── Filter tests ─────────────────────────────────────────────
+function getFilteredTests() {
+  return allTests.filter(t => {
+    if (activeClient !== 'all' && t.client !== activeClient) return false;
+    if (activeSuite  !== 'all' && t.suite_type !== activeSuite) return false;
+    return true;
+  });
+}
+
+// ─── Date index ───────────────────────────────────────────────
 async function loadDateIndex() {
   try {
     const r = await fetch(HISTORY_DIR + 'index.json?_t=' + Date.now());
     if (!r.ok) return;
     const data = await r.json();
-    availableDates = data.dates || [];
+    availableDates = data.dates  || [];
+    knownClients   = data.clients || [];
     renderDateBar();
+    renderClientButtons(knownClients);
     loadTrend();
-  } catch(e) {
-    console.warn('No history index found:', e.message);
-  }
+  } catch(e) { console.warn('No history index:', e.message); }
 }
 
-// ─── Render date selector buttons ─────────────────────────────
 function renderDateBar() {
   const scroll = document.getElementById('date-scroll');
   if (!availableDates.length) {
     scroll.innerHTML = '<span style="font-size:12px;color:var(--muted)">No history yet</span>';
     return;
   }
-
   scroll.innerHTML = availableDates.map(d => {
-    const isToday   = d === today();
-    const isActive  = selectedDate === d || (selectedDate === null && isToday);
-    return `<button class="date-btn ${isToday ? 'today-btn' : ''} ${isActive ? 'active' : ''}"
-      onclick="selectDate('${d}')">${formatDateLabel(d)}</button>`;
+    const isToday  = d === today();
+    const isActive = selectedDate === d || (selectedDate === null && isToday);
+    return `<button class="date-btn ${isToday?'today-btn':''} ${isActive?'active':''}" onclick="selectDate('${d}')">${formatDateLabel(d)}</button>`;
   }).join('');
 }
 
-// ─── Select a date ────────────────────────────────────────────
+function formatDateLabel(d) {
+  if (d === today()) return 'Today';
+  const dt = new Date(d + 'T12:00:00');
+  return dt.toLocaleDateString('en', { month:'short', day:'numeric' });
+}
+
 async function selectDate(dateStr) {
   selectedDate = dateStr === today() ? null : dateStr;
-  if (!selectedDate) {
-    lastGenerated = null; // force reload when switching back to Today
-  }
+  if (!selectedDate) lastGenerated = null;
   renderDateBar();
-
   const badge = document.getElementById('viewing-badge');
   if (selectedDate) {
     const d = new Date(dateStr + 'T12:00:00');
-    badge.textContent = '📅 Viewing: ' + d.toLocaleDateString('en', { weekday:'short', month:'short', day:'numeric' });
+    badge.textContent = '📅 ' + d.toLocaleDateString('en', {weekday:'short', month:'short', day:'numeric'});
     badge.style.display = 'inline-block';
   } else {
     badge.style.display = 'none';
   }
-
-  if (selectedDate) {
-    await loadHistoricalDate(selectedDate);
-  } else {
-    await loadLatest(false);
-  }
+  if (selectedDate) await loadHistoricalDate(selectedDate);
+  else await loadLatest(false);
 }
 
-// ─── Load a historical date ────────────────────────────────────
+// ─── Data loading ─────────────────────────────────────────────
 async function loadHistoricalDate(dateStr) {
-  if (historyCache[dateStr]) {
-    applyData(historyCache[dateStr], false);
-    return;
-  }
+  if (historyCache[dateStr]) { applyData(historyCache[dateStr], false); return; }
   try {
     const r = await fetch(HISTORY_DIR + 'results_' + dateStr + '.json?_t=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -341,24 +447,20 @@ async function loadHistoricalDate(dateStr) {
   }
 }
 
-// ─── Load latest (today) ──────────────────────────────────────
 async function loadLatest(silent) {
   const ring = document.getElementById('ring');
   const dot  = document.getElementById('status-dot');
   const txt  = document.getElementById('status-text');
   if (!silent) ring.classList.add('spin');
-
   try {
     const r = await fetch(LATEST_JSON + '?_t=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const data = await r.json();
-
     if (data.generated_at !== lastGenerated) {
       lastGenerated = data.generated_at;
       applyData(data, true);
       await loadDateIndex();
     }
-
     const ts  = new Date(data.generated_at);
     const ago = Math.round((Date.now() - ts) / 1000);
     txt.textContent = 'Updated ' + (ago < 60 ? ago + 's ago' : Math.round(ago/60) + 'min ago');
@@ -367,24 +469,25 @@ async function loadLatest(silent) {
     txt.textContent = 'No data — ' + e.message;
     dot.className = 'dot error';
   }
-
   ring.classList.remove('spin');
-  // Only auto-poll when viewing today
-  setTimeout(() => {
-	if (!selectedDate) loadLatest(true);
-}, REFRESH_MS);
+  if (!selectedDate) setTimeout(() => loadLatest(true), REFRESH_MS);
 }
 
-// ─── Apply data to dashboard ──────────────────────────────────
 function applyData(data, isLive) {
+  fullData = data;
   const newData = JSON.stringify(data.tests);
   const changed = newData !== JSON.stringify(allTests);
   allTests = data.tests || [];
-  updateMetrics(data.summary, data.generated_at);
-  if (changed) {
-    updateCharts();
-    renderTable();
+
+  // Update known clients from data
+  if (data.clients && data.clients.length) {
+    knownClients = data.clients;
+    renderClientButtons(knownClients);
   }
+
+  updateSuiteSummary(data);
+  updateMetrics();
+  if (changed) { updateCharts(); renderTable(); }
 
   if (!isLive) {
     const ts = new Date(data.generated_at);
@@ -394,22 +497,62 @@ function applyData(data, isLive) {
   }
 }
 
-// ─── Metrics ──────────────────────────────────────────────────
-function updateMetrics(s, generatedAt) {
-  document.getElementById('m-total').textContent = s.total;
-  document.getElementById('m-pass').textContent  = s.passed;
-  document.getElementById('m-fail').textContent  = s.failed;
-  document.getElementById('m-rate').textContent  = s.rate + '%';
+// ─── Suite summary cards ──────────────────────────────────────
+function updateSuiteSummary(data) {
+  if (!data || !data.summaries) return;
+  const client = activeClient === 'all' ? null : activeClient;
 
-  const rfP  = allTests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
-  const rfF  = allTests.filter(t=>t.source==='RF' &&t.status==='FAIL').length;
-  const csvP = allTests.filter(t=>t.source==='CSV'&&t.status==='PASS').length;
-  const csvF = allTests.filter(t=>t.source==='CSV'&&t.status==='FAIL').length;
+  let sanity = { total:0, passed:0, failed:0, rate:0 };
+  let smoke  = { total:0, passed:0, failed:0, rate:0 };
+
+  if (client && data.summaries[client]) {
+    sanity = data.summaries[client].sanity || sanity;
+    smoke  = data.summaries[client].smoke  || smoke;
+  } else {
+    // Aggregate all clients
+    for (const c of Object.keys(data.summaries)) {
+      const cs = data.summaries[c].sanity || {};
+      const sk = data.summaries[c].smoke  || {};
+      sanity.total  += cs.total  || 0;
+      sanity.passed += cs.passed || 0;
+      sanity.failed += cs.failed || 0;
+      smoke.total   += sk.total  || 0;
+      smoke.passed  += sk.passed || 0;
+      smoke.failed  += sk.failed || 0;
+    }
+    sanity.rate = sanity.total > 0 ? Math.round(sanity.passed/sanity.total*1000)/10 : 0;
+    smoke.rate  = smoke.total  > 0 ? Math.round(smoke.passed/smoke.total*1000)/10   : 0;
+  }
+
+  document.getElementById('s-sanity-total').textContent = sanity.total;
+  document.getElementById('s-sanity-pass').textContent  = sanity.passed;
+  document.getElementById('s-sanity-fail').textContent  = sanity.failed;
+  document.getElementById('s-sanity-rate').textContent  = sanity.rate + '%';
+  document.getElementById('s-smoke-total').textContent  = smoke.total;
+  document.getElementById('s-smoke-pass').textContent   = smoke.passed;
+  document.getElementById('s-smoke-fail').textContent   = smoke.failed;
+  document.getElementById('s-smoke-rate').textContent   = smoke.rate + '%';
+}
+
+// ─── Metrics ──────────────────────────────────────────────────
+function updateMetrics() {
+  const tests = getFilteredTests();
+  const pass  = tests.filter(t=>t.status==='PASS').length;
+  const fail  = tests.filter(t=>t.status==='FAIL').length;
+  const total = tests.length;
+  const rate  = total > 0 ? Math.round(pass/total*1000)/10 : 0;
+  document.getElementById('m-total').textContent = total;
+  document.getElementById('m-pass').textContent  = pass;
+  document.getElementById('m-fail').textContent  = fail;
+  document.getElementById('m-rate').textContent  = rate + '%';
+  const rfP  = tests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
+  const rfF  = tests.filter(t=>t.source==='RF' &&t.status==='FAIL').length;
+  const csvP = tests.filter(t=>t.source==='CSV'&&t.status==='PASS').length;
+  const csvF = tests.filter(t=>t.source==='CSV'&&t.status==='FAIL').length;
   document.getElementById('m-pass-src').textContent = 'RF: ' + rfP + '  CSV: ' + csvP;
   document.getElementById('m-fail-src').textContent = 'RF: ' + rfF + '  CSV: ' + csvF;
-
-  if (generatedAt) {
-    const d = new Date(generatedAt);
+  if (fullData && fullData.generated_at) {
+    const d = new Date(fullData.generated_at);
     document.getElementById('m-ts').textContent =
       d.toLocaleTimeString('en', {hour:'2-digit', minute:'2-digit'}) + ' ' +
       d.toLocaleDateString('en', {month:'2-digit', day:'2-digit'});
@@ -418,49 +561,34 @@ function updateMetrics(s, generatedAt) {
 
 // ─── Charts ───────────────────────────────────────────────────
 function updateCharts() {
-  const pass    = allTests.filter(t=>t.status==='PASS').length;
-  const fail    = allTests.filter(t=>t.status==='FAIL').length;
-  const other   = allTests.length - pass - fail;
-  const rfFail  = allTests.filter(t=>t.source==='RF' &&t.status==='FAIL').length;
-  const csvFail = allTests.filter(t=>t.source==='CSV'&&t.status==='FAIL').length;
-  const rfPass  = allTests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
-  const csvPass = allTests.filter(t=>t.source==='CSV'&&t.status==='PASS').length;
+  const tests = getFilteredTests();
+  const pass  = tests.filter(t=>t.status==='PASS').length;
+  const fail  = tests.filter(t=>t.status==='FAIL').length;
+  const other = tests.length - pass - fail;
+  const rfF   = tests.filter(t=>t.source==='RF' &&t.status==='FAIL').length;
+  const csvF  = tests.filter(t=>t.source==='CSV'&&t.status==='FAIL').length;
+  const rfP   = tests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
+  const csvP  = tests.filter(t=>t.source==='CSV'&&t.status==='PASS').length;
 
   if (chartDist) chartDist.destroy();
   chartDist = new Chart(document.getElementById('chartDist'), {
     type: 'doughnut',
-    data: {
-      labels: ['Pass','Fail','Other'],
-      datasets: [{ data:[pass,fail,other], backgroundColor:['#639922','#E24B4A','#BA7517'], borderWidth:0 }]
-    },
-    options: { responsive:true, maintainAspectRatio:false, cutout:'65%',
-      plugins:{ legend:{ position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:10 } } } }
+    data: { labels:['Pass','Fail','Other'], datasets:[{ data:[pass,fail,other], backgroundColor:['#639922','#E24B4A','#BA7517'], borderWidth:0 }] },
+    options: { responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{ position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:10 } } } }
   });
 
   if (chartSrc) chartSrc.destroy();
   chartSrc = new Chart(document.getElementById('chartSrc'), {
     type: 'bar',
-    data: {
-      labels: ['Robot FW','Python CSV'],
-      datasets: [
-        { label:'Pass', data:[rfPass, csvPass], backgroundColor:'#639922' },
-        { label:'Fail', data:[rfFail, csvFail], backgroundColor:'#E24B4A' }
-      ]
-    },
-    options: {
-      responsive:true, maintainAspectRatio:false,
-      scales:{ x:{stacked:true,ticks:{font:{size:11}}}, y:{stacked:true,beginAtZero:true,ticks:{font:{size:11}}} },
-      plugins:{ legend:{ position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:10 } } }
-    }
+    data: { labels:['Robot FW','Python CSV'], datasets:[{ label:'Pass', data:[rfP,csvP], backgroundColor:'#639922' },{ label:'Fail', data:[rfF,csvF], backgroundColor:'#E24B4A' }] },
+    options: { responsive:true, maintainAspectRatio:false, scales:{ x:{stacked:true,ticks:{font:{size:11}}}, y:{stacked:true,beginAtZero:true,ticks:{font:{size:11}}} }, plugins:{ legend:{ position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:10 } } } }
   });
 }
 
-// ─── Trend chart (last 7 days) ────────────────────────────────
+// ─── Trend ────────────────────────────────────────────────────
 async function loadTrend() {
-  const last7 = availableDates.slice(0, 7).reverse();
-  const labels = [];
-  const rates  = [];
-
+  const last7  = availableDates.slice(0,7).reverse();
+  const labels = [], rates = [];
   for (const d of last7) {
     let payload = historyCache[d];
     if (!payload) {
@@ -470,35 +598,24 @@ async function loadTrend() {
       } catch(e) {}
     }
     labels.push(formatDateLabel(d));
-    rates.push(payload ? payload.summary.rate : null);
+    let rate = null;
+    if (payload) {
+      if (activeClient !== 'all' && payload.summaries && payload.summaries[activeClient]) {
+        const s = payload.summaries[activeClient];
+        rate = activeSuite !== 'all' ? (s[activeSuite]?.rate ?? null) : (s.all?.rate ?? null);
+      } else {
+        rate = activeSuite !== 'all'
+          ? (payload['summary_' + activeSuite]?.rate ?? null)
+          : (payload.summary?.rate ?? null);
+      }
+    }
+    rates.push(rate);
   }
-
   if (chartTrend) chartTrend.destroy();
   chartTrend = new Chart(document.getElementById('chartTrend'), {
     type: 'line',
-    data: {
-      labels,
-      datasets: [{
-        label: 'Pass rate %',
-        data: rates,
-        borderColor: '#639922',
-        backgroundColor: 'rgba(99,153,34,0.1)',
-        borderWidth: 2,
-        pointRadius: 4,
-        pointBackgroundColor: '#639922',
-        fill: true,
-        tension: 0.3,
-        spanGaps: true,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      scales: {
-        y: { min:0, max:100, ticks:{ font:{size:11}, callback: v => v+'%' } },
-        x: { ticks:{ font:{size:11} } }
-      },
-      plugins: { legend:{ display:false } }
-    }
+    data: { labels, datasets:[{ label:'Pass rate %', data:rates, borderColor:'#639922', backgroundColor:'rgba(99,153,34,0.1)', borderWidth:2, pointRadius:4, pointBackgroundColor:'#639922', fill:true, tension:0.3, spanGaps:true }] },
+    options: { responsive:true, maintainAspectRatio:false, scales:{ y:{ min:0, max:100, ticks:{ font:{size:11}, callback:v=>v+'%' } }, x:{ ticks:{ font:{size:11} } } }, plugins:{ legend:{ display:false } } }
   });
 }
 
@@ -513,8 +630,7 @@ function switchTab(tab, el) {
 function renderTable() {
   const search  = document.getElementById('search').value.toLowerCase();
   const fStatus = document.getElementById('f-status').value;
-
-  let rows = allTests.filter(t => {
+  let rows = getFilteredTests().filter(t => {
     if (activeTab==='RF'   && t.source!=='RF')   return false;
     if (activeTab==='CSV'  && t.source!=='CSV')  return false;
     if (activeTab==='FAIL' && t.status!=='FAIL') return false;
@@ -525,19 +641,24 @@ function renderTable() {
 
   const tbody = document.getElementById('tbody');
   if (!rows.length) {
-    tbody.innerHTML = '<tr class="empty-row"><td colspan="7">No tests match the current filters</td></tr>';
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No tests match the current filters</td></tr>';
     return;
   }
 
   tbody.innerHTML = rows.map((t,i) => {
-    const pill   = t.status==='PASS'?'pass-pill':t.status==='FAIL'?'fail-pill':'warn-pill';
-    const src    = t.source==='RF'?'src-rf':'src-csv';
-    const srcLbl = t.source==='RF'?'Robot FW':'Python CSV';
+    const pill      = t.status==='PASS'?'pass-pill':t.status==='FAIL'?'fail-pill':'warn-pill';
+    const srcCls    = t.source==='RF'?'src-rf':'src-csv';
+    const srcLbl    = t.source==='RF'?'Robot FW':'Python CSV';
+    const suiteCls  = t.suite_type==='smoke'?'src-smoke':'src-sanity';
+    const suiteLbl  = cap(t.suite_type||'—');
+    const meta      = CLIENT_META[t.client] || { label: cap(t.client||'—'), color:'#444', bg:'#eee' };
+    const clientTag = `<span class="pill" style="background:${meta.bg};color:${meta.color}">${meta.label}</span>`;
     return `<tr>
       <td style="color:var(--muted)">${i+1}</td>
-      <td style="font-weight:500;max-width:200px;word-break:break-word">${esc(t.name)}</td>
-      <td><span class="pill src-tag ${src}">${srcLbl}</span></td>
-      <td style="color:var(--muted);font-size:11px;max-width:140px;word-break:break-word">${esc(t.suite)}</td>
+      <td style="font-weight:500;max-width:180px;word-break:break-word">${esc(t.name)}</td>
+      <td>${clientTag}</td>
+      <td><span class="pill ${suiteCls}">${suiteLbl}</span></td>
+      <td style="color:var(--muted);font-size:11px;max-width:130px;word-break:break-word">${esc(t.suite)}</td>
       <td><span class="pill ${pill}">${esc(t.status)}</span></td>
       <td class="msg-cell">${esc(t.message||'—')}</td>
       <td style="font-size:11px;color:var(--muted);white-space:nowrap">${esc(t.time||'—')}</td>

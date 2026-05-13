@@ -1,6 +1,15 @@
 """
-watcher.py — Detecta cambios en output.xml y archivos .csv,
-genera results_YYYY-MM-DD.json por día y mantiene 30 días de historial.
+watcher.py — Detecta cambios en archivos de resultados por cliente y suite,
+genera JSON por día y mantiene 30 días de historial.
+
+Estructura esperada:
+    test_results/
+    ├── telus/
+    │   ├── sanity/output.xml
+    │   └── smoke/output.xml
+    └── mega/
+        ├── sanity/output.xml
+        └── smoke/output.xml
 
 Instalar dependencias:
     pip install watchdog
@@ -19,15 +28,21 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 # ─── CONFIGURACIÓN ────────────────────────────────────────────────
-WATCH_FOLDER   = "./test_results"
-ROBOT_XML      = os.path.join(WATCH_FOLDER, "output.xml")
-OUTPUT_DIR     = "./docs/history"   # carpeta donde se guardan los JSON
-LATEST_JSON    = "./docs/results.json"  # siempre apunta al día actual
-HISTORY_DAYS   = 30  # cuántos días conservar
+WATCH_FOLDER = "./test_results"
+OUTPUT_DIR   = "./docs/history"
+LATEST_JSON  = "./docs/results.json"
+HISTORY_DAYS = 30
+
+# Define los clientes y sus suites aquí
+# Para agregar un cliente nuevo: agrega una entrada con su nombre y suites
+CLIENTS = {
+    "telus": ["sanity", "smoke"],
+    # "mega": ["sanity", "smoke"],  # descomentar cuando se agregue Mega
+}
 # ──────────────────────────────────────────────────────────────────
 
 
-def parse_robot_xml(filepath):
+def parse_robot_xml(filepath, client, suite_type):
     tests = []
     if not os.path.exists(filepath):
         return tests
@@ -35,32 +50,34 @@ def parse_robot_xml(filepath):
         tree = ET.parse(filepath)
         root = tree.getroot()
         for test in root.iter("test"):
-            status_el = test.find("status")
-            suite = test.find("../..") or test.find("..")
+            status_el  = test.find("status")
+            suite      = test.find("../..") or test.find("..")
             suite_name = suite.get("name", "—") if suite is not None else "—"
-            status  = status_el.get("status", "UNKNOWN") if status_el is not None else "UNKNOWN"
-            message = (status_el.get("message") or (status_el.text or "")).strip() if status_el is not None else ""
-            elapsed = status_el.get("elapsed", "") if status_el is not None else ""
-            start   = status_el.get("starttime", status_el.get("start", "")) if status_el is not None else ""
+            status     = status_el.get("status", "UNKNOWN") if status_el is not None else "UNKNOWN"
+            message    = (status_el.get("message") or (status_el.text or "")).strip() if status_el is not None else ""
+            elapsed    = status_el.get("elapsed", "") if status_el is not None else ""
+            start      = status_el.get("starttime", status_el.get("start", "")) if status_el is not None else ""
             tests.append({
-                "name":    test.get("name", "No name"),
-                "suite":   suite_name,
-                "status":  status,
-                "message": message,
-                "time":    elapsed + "s" if elapsed else start,
-                "source":  "RF",
+                "name":       test.get("name", "No name"),
+                "suite":      suite_name,
+                "status":     status,
+                "message":    message,
+                "time":       elapsed + "s" if elapsed else start,
+                "source":     "RF",
+                "client":     client,
+                "suite_type": suite_type,
             })
     except Exception as e:
         print(f"  [!] Error parsing {filepath}: {e}")
     return tests
 
 
-def parse_csv_file(filepath):
+def parse_csv_file(filepath, client, suite_type):
     tests = []
     filename = os.path.basename(filepath)
     try:
         with open(filepath, newline="", encoding="utf-8-sig") as f:
-            reader = csv.DictReader(f)
+            reader  = csv.DictReader(f)
             headers = [h.lower().strip() for h in (reader.fieldnames or [])]
 
             def find_col(*keys):
@@ -77,7 +94,7 @@ def parse_csv_file(filepath):
             col_time   = find_col("time", "fecha", "date", "timestamp", "hora")
 
             for i, row in enumerate(reader, start=1):
-                row_lower = {k.lower().strip(): v for k, v in row.items()}
+                row_lower  = {k.lower().strip(): v for k, v in row.items()}
                 raw_status = row_lower.get(col_status, "").upper() if col_status else ""
 
                 if any(x in raw_status for x in ["PASS", "OK", "TRUE", "1", "EXITO", "ÉXITO"]):
@@ -86,49 +103,45 @@ def parse_csv_file(filepath):
                     status = "FAIL"
                 else:
                     msg_val = row_lower.get(col_msg, "").strip() if col_msg else ""
-                    status = "FAIL" if msg_val else "PASS"
+                    status  = "FAIL" if msg_val else "PASS"
 
                 tests.append({
-                    "name":    row_lower.get(col_name, f"Row {i}") if col_name else f"Row {i}",
-                    "suite":   row_lower.get(col_suite, filename) if col_suite else filename,
-                    "status":  status,
-                    "message": row_lower.get(col_msg, "") if col_msg else "",
-                    "time":    row_lower.get(col_time, "") if col_time else "",
-                    "source":  "CSV",
+                    "name":       row_lower.get(col_name, f"Row {i}") if col_name else f"Row {i}",
+                    "suite":      row_lower.get(col_suite, filename) if col_suite else filename,
+                    "status":     status,
+                    "message":    row_lower.get(col_msg, "") if col_msg else "",
+                    "time":       row_lower.get(col_time, "") if col_time else "",
+                    "source":     "CSV",
+                    "client":     client,
+                    "suite_type": suite_type,
                 })
     except Exception as e:
         print(f"  [!] Error parsing {filepath}: {e}")
     return tests
 
 
-def build_payload(all_tests):
-    total  = len(all_tests)
-    passed = sum(1 for t in all_tests if t["status"] == "PASS")
-    failed = sum(1 for t in all_tests if t["status"] == "FAIL")
+def build_summary(tests):
+    total  = len(tests)
+    passed = sum(1 for t in tests if t["status"] == "PASS")
+    failed = sum(1 for t in tests if t["status"] == "FAIL")
     return {
-        "generated_at": datetime.now().isoformat(),
-        "date":         datetime.now().strftime("%Y-%m-%d"),
-        "summary": {
-            "total":  total,
-            "passed": passed,
-            "failed": failed,
-            "rate":   round((passed / total * 100), 1) if total > 0 else 0,
-        },
-        "tests": all_tests,
+        "total":  total,
+        "passed": passed,
+        "failed": failed,
+        "rate":   round((passed / total * 100), 1) if total > 0 else 0,
     }
 
 
 def cleanup_old_files():
-    """Elimina archivos JSON con más de HISTORY_DAYS días."""
     if not os.path.exists(OUTPUT_DIR):
         return
-    cutoff = datetime.now() - timedelta(days=HISTORY_DAYS)
+    cutoff  = datetime.now() - timedelta(days=HISTORY_DAYS)
     removed = 0
     for fname in os.listdir(OUTPUT_DIR):
         if not fname.startswith("results_") or not fname.endswith(".json"):
             continue
         try:
-            date_str = fname.replace("results_", "").replace(".json", "")
+            date_str  = fname.replace("results_", "").replace(".json", "")
             file_date = datetime.strptime(date_str, "%Y-%m-%d")
             if file_date < cutoff:
                 os.remove(os.path.join(OUTPUT_DIR, fname))
@@ -140,7 +153,6 @@ def cleanup_old_files():
 
 
 def update_index():
-    """Regenera history/index.json con la lista de fechas disponibles."""
     if not os.path.exists(OUTPUT_DIR):
         return
     dates = []
@@ -148,39 +160,55 @@ def update_index():
         if fname.startswith("results_") and fname.endswith(".json"):
             date_str = fname.replace("results_", "").replace(".json", "")
             dates.append(date_str)
-
-    index_path = os.path.join(OUTPUT_DIR, "index.json")
-    with open(index_path, "w", encoding="utf-8") as f:
-        json.dump({"dates": dates}, f)
+    with open(os.path.join(OUTPUT_DIR, "index.json"), "w", encoding="utf-8") as f:
+        json.dump({"dates": dates, "clients": list(CLIENTS.keys())}, f)
 
 
 def generate_json():
-    """Lee todos los archivos de resultados y guarda el JSON del día."""
     all_tests = []
 
-    rf_tests = parse_robot_xml(ROBOT_XML)
-    all_tests.extend(rf_tests)
-    print(f"  RF:  {len(rf_tests)} tests from output.xml")
+    for client, suites in CLIENTS.items():
+        for suite_type in suites:
+            xml_path = os.path.join(WATCH_FOLDER, client, suite_type, "output.xml")
+            tests    = parse_robot_xml(xml_path, client, suite_type)
+            all_tests.extend(tests)
+            print(f"  {client.capitalize()} {suite_type}: {len(tests)} tests from RF")
 
-    csv_count = 0
-    if os.path.exists(WATCH_FOLDER):
-        for fname in os.listdir(WATCH_FOLDER):
-            if fname.endswith(".csv"):
-                csv_tests = parse_csv_file(os.path.join(WATCH_FOLDER, fname))
-                all_tests.extend(csv_tests)
-                csv_count += len(csv_tests)
-    print(f"  CSV: {csv_count} tests from .csv files")
+        # CSV files para este cliente
+        client_folder = os.path.join(WATCH_FOLDER, client)
+        if os.path.exists(client_folder):
+            for fname in os.listdir(client_folder):
+                if fname.endswith(".csv"):
+                    csv_tests = parse_csv_file(os.path.join(client_folder, fname), client, "sanity")
+                    all_tests.extend(csv_tests)
+                    print(f"  {client.capitalize()} CSV: {len(csv_tests)} tests from {fname}")
 
-    payload = build_payload(all_tests)
+    # Construir summaries por cliente y suite
+    summaries = {}
+    for client in CLIENTS:
+        client_tests = [t for t in all_tests if t["client"] == client]
+        summaries[client] = {
+            "all": build_summary(client_tests),
+        }
+        for suite_type in CLIENTS[client]:
+            suite_tests = [t for t in client_tests if t["suite_type"] == suite_type]
+            summaries[client][suite_type] = build_summary(suite_tests)
 
-    # Guardar archivo del día actual
+    payload = {
+        "generated_at": datetime.now().isoformat(),
+        "date":         datetime.now().strftime("%Y-%m-%d"),
+        "clients":      list(CLIENTS.keys()),
+        "summary":      build_summary(all_tests),
+        "summaries":    summaries,
+        "tests":        all_tests,
+    }
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    today = datetime.now().strftime("%Y-%m-%d")
+    today      = datetime.now().strftime("%Y-%m-%d")
     daily_path = os.path.join(OUTPUT_DIR, f"results_{today}.json")
     with open(daily_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    # Actualizar results.json (siempre apunta a hoy)
     os.makedirs(os.path.dirname(LATEST_JSON), exist_ok=True)
     with open(LATEST_JSON, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
@@ -188,7 +216,7 @@ def generate_json():
     total  = payload["summary"]["total"]
     passed = payload["summary"]["passed"]
     failed = payload["summary"]["failed"]
-    print(f"  ✓ Saved results_{today}.json — {total} tests ({passed} pass / {failed} fail)")
+    print(f"  ✓ results_{today}.json saved — {total} tests ({passed} pass / {failed} fail)")
 
     cleanup_old_files()
     update_index()
@@ -215,23 +243,27 @@ class ResultsHandler(FileSystemEventHandler):
 
 
 if __name__ == "__main__":
-    os.makedirs(WATCH_FOLDER, exist_ok=True)
+    # Crear carpetas para cada cliente y suite
+    for client, suites in CLIENTS.items():
+        for suite_type in suites:
+            os.makedirs(os.path.join(WATCH_FOLDER, client, suite_type), exist_ok=True)
 
     print("=" * 50)
     print("  QA Dashboard Watcher")
-    print(f"  Watching:      {os.path.abspath(WATCH_FOLDER)}")
-    print(f"  History folder:{os.path.abspath(OUTPUT_DIR)}")
-    print(f"  Retention:     {HISTORY_DAYS} days")
+    print(f"  Clients: {', '.join(CLIENTS.keys())}")
+    print(f"  Watching: {os.path.abspath(WATCH_FOLDER)}")
+    print(f"  History:  {os.path.abspath(OUTPUT_DIR)}")
+    print(f"  Retention: {HISTORY_DAYS} days")
     print("=" * 50)
 
     print(f"\n[Start] Generating initial results.json...")
     generate_json()
 
-    handler = ResultsHandler()
+    handler  = ResultsHandler()
     observer = Observer()
-    observer.schedule(handler, WATCH_FOLDER, recursive=False)
+    observer.schedule(handler, WATCH_FOLDER, recursive=True)
     observer.start()
-    print(f"\nListening for changes in '{WATCH_FOLDER}'... (Ctrl+C to stop)\n")
+    print(f"\nListening for changes... (Ctrl+C to stop)\n")
 
     try:
         while True:
