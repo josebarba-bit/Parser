@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-05-13T13:13:17.878636",
+  "generated_at": "2026-05-13T13:42:54.888983",
   "date": "2026-05-13",
   "clients": [
     "telus"
   ],
   "summary": {
-    "total": 5,
-    "passed": 4,
+    "total": 7,
+    "passed": 6,
     "failed": 0,
-    "rate": 80.0
+    "rate": 85.7
   },
   "summaries": {
     "telus": {
       "all": {
-        "total": 5,
-        "passed": 4,
+        "total": 7,
+        "passed": 6,
         "failed": 0,
-        "rate": 80.0
+        "rate": 85.7
       },
       "sanity": {
-        "total": 2,
-        "passed": 2,
+        "total": 3,
+        "passed": 3,
         "failed": 0,
         "rate": 100.0
       },
       "smoke": {
-        "total": 3,
-        "passed": 2,
+        "total": 4,
+        "passed": 3,
         "failed": 0,
-        "rate": 66.7
+        "rate": 75.0
       }
     }
   },
@@ -37,8 +37,18 @@
       "name": "Menu Checks",
       "suite": "—",
       "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260513 13:33:45.150",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Guide Opens by Key",
+      "suite": "—",
+      "status": "PASS",
       "message": "",
-      "time": "20260513 12:07:15.675",
+      "time": "20260513 13:39:42.511",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -48,7 +58,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 12:07:45.546",
+      "time": "20260513 13:40:20.282",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -58,7 +68,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 13:12:09.881",
+      "time": "20260513 13:41:30.364",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -68,7 +78,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 13:12:29.785",
+      "time": "20260513 13:41:50.240",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -78,7 +88,17 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260513 13:12:56.725",
+      "time": "20260513 13:42:19.074",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Button",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 13:42:19.075",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
