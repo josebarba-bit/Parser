@@ -229,7 +229,10 @@
   <!-- Suite summary cards -->
   <div class="suite-summary">
     <div class="suite-card">
-      <div class="suite-card-title"><span class="pill src-sanity">Sanity</span></div>
+      <div class="suite-card-title">
+		<span class="pill src-sanity">Sanity</span>
+		<span style="font-size:11px;color:var(--muted);margin-left:auto" id="s-sanity-lastrun"></span>
+	  </div>
       <div class="suite-stats">
         <div class="suite-stat"><div class="suite-stat-val" id="s-sanity-total">—</div><div class="suite-stat-lbl">Total</div></div>
         <div class="suite-stat"><div class="suite-stat-val v-pass" id="s-sanity-pass">—</div><div class="suite-stat-lbl">Passed</div></div>
@@ -238,7 +241,10 @@
       </div>
     </div>
     <div class="suite-card">
-      <div class="suite-card-title"><span class="pill src-smoke">Smoke</span></div>
+      <div class="suite-card-title">
+		<span class="pill src-smoke">Smoke</span>
+		<span style="font-size:11px;color:var(--muted);margin-left:auto" id="s-smoke-lastrun"></span>
+	  </div>
       <div class="suite-stats">
         <div class="suite-stat"><div class="suite-stat-val" id="s-smoke-total">—</div><div class="suite-stat-lbl">Total</div></div>
         <div class="suite-stat"><div class="suite-stat-val v-pass" id="s-smoke-pass">—</div><div class="suite-stat-lbl">Passed</div></div>
@@ -510,12 +516,16 @@ function updateSuiteSummary(data) {
 
   let sanity = { total:0, passed:0, failed:0, rate:0 };
   let smoke  = { total:0, passed:0, failed:0, rate:0 };
+  let sanityRun = null, smokeRun = null;
 
   if (client && data.summaries[client]) {
     sanity = data.summaries[client].sanity || sanity;
     smoke  = data.summaries[client].smoke  || smoke;
+    if (data.last_run && data.last_run[client]) {
+      sanityRun = data.last_run[client].sanity || null;
+      smokeRun  = data.last_run[client].smoke  || null;
+    }
   } else {
-    // Aggregate all clients
     for (const c of Object.keys(data.summaries)) {
       const cs = data.summaries[c].sanity || {};
       const sk = data.summaries[c].smoke  || {};
@@ -525,6 +535,10 @@ function updateSuiteSummary(data) {
       smoke.total   += sk.total  || 0;
       smoke.passed  += sk.passed || 0;
       smoke.failed  += sk.failed || 0;
+      if (data.last_run && data.last_run[c]) {
+        if (!sanityRun || data.last_run[c].sanity > sanityRun) sanityRun = data.last_run[c].sanity;
+        if (!smokeRun  || data.last_run[c].smoke  > smokeRun)  smokeRun  = data.last_run[c].smoke;
+      }
     }
     sanity.rate = sanity.total > 0 ? Math.round(sanity.passed/sanity.total*1000)/10 : 0;
     smoke.rate  = smoke.total  > 0 ? Math.round(smoke.passed/smoke.total*1000)/10   : 0;
@@ -538,6 +552,11 @@ function updateSuiteSummary(data) {
   document.getElementById('s-smoke-pass').textContent   = smoke.passed;
   document.getElementById('s-smoke-fail').textContent   = smoke.failed;
   document.getElementById('s-smoke-rate').textContent   = smoke.rate + '%';
+
+  // Last run labels
+  const fmt = d => d ? 'Last run: ' + d : 'Not run yet';
+  document.getElementById('s-sanity-lastrun').textContent = fmt(sanityRun);
+  document.getElementById('s-smoke-lastrun').textContent  = fmt(smokeRun);
 }
 
 // ─── Metrics ──────────────────────────────────────────────────

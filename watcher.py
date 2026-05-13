@@ -194,12 +194,25 @@ def generate_json():
             suite_tests = [t for t in client_tests if t["suite_type"] == suite_type]
             summaries[client][suite_type] = build_summary(suite_tests)
 
+    # Obtener fecha de último run por cliente y suite
+    last_run = {}
+    for client, suites in CLIENTS.items():
+        last_run[client] = {}
+        for suite_type in suites:
+            xml_path = os.path.join(WATCH_FOLDER, client, suite_type, "output.xml")
+            if os.path.exists(xml_path):
+                mtime = os.path.getmtime(xml_path)
+                last_run[client][suite_type] = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M")
+            else:
+                last_run[client][suite_type] = None
+
     payload = {
         "generated_at": datetime.now().isoformat(),
         "date":         datetime.now().strftime("%Y-%m-%d"),
         "clients":      list(CLIENTS.keys()),
         "summary":      build_summary(all_tests),
         "summaries":    summaries,
+        "last_run":     last_run,
         "tests":        all_tests,
     }
 
