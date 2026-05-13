@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-05-13T13:41:02.957717",
+  "generated_at": "2026-05-13T13:42:51.880000",
   "date": "2026-05-13",
   "clients": [
     "telus"
   ],
   "summary": {
-    "total": 6,
-    "passed": 5,
+    "total": 7,
+    "passed": 6,
     "failed": 0,
-    "rate": 83.3
+    "rate": 85.7
   },
   "summaries": {
     "telus": {
       "all": {
-        "total": 6,
-        "passed": 5,
+        "total": 7,
+        "passed": 6,
         "failed": 0,
-        "rate": 83.3
+        "rate": 85.7
       },
       "sanity": {
         "total": 3,
@@ -25,10 +25,10 @@
         "rate": 100.0
       },
       "smoke": {
-        "total": 3,
-        "passed": 2,
+        "total": 4,
+        "passed": 3,
         "failed": 0,
-        "rate": 66.7
+        "rate": 75.0
       }
     }
   },
@@ -68,7 +68,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 13:34:54.685",
+      "time": "20260513 13:41:30.364",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -78,7 +78,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 13:35:14.526",
+      "time": "20260513 13:41:50.240",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -88,7 +88,17 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260513 13:35:41.286",
+      "time": "20260513 13:42:19.074",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Button",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 13:42:19.075",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
