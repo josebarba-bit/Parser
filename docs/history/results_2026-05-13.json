@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-05-13T14:11:45.029178",
+  "generated_at": "2026-05-13T16:34:44.900341",
   "date": "2026-05-13",
   "clients": [
     "telus"
   ],
   "summary": {
-    "total": 9,
-    "passed": 8,
+    "total": 15,
+    "passed": 14,
     "failed": 0,
-    "rate": 88.9
+    "rate": 93.3
   },
   "summaries": {
     "telus": {
       "all": {
-        "total": 9,
-        "passed": 8,
+        "total": 15,
+        "passed": 14,
         "failed": 0,
-        "rate": 88.9
+        "rate": 93.3
       },
       "sanity": {
-        "total": 4,
-        "passed": 4,
+        "total": 10,
+        "passed": 10,
         "failed": 0,
         "rate": 100.0
       },
@@ -34,17 +34,27 @@
   },
   "last_run": {
     "telus": {
-      "sanity": "2026-05-13 14:06",
+      "sanity": "2026-05-13 16:34",
       "smoke": "2026-05-13 14:11"
     }
   },
   "tests": [
     {
+      "name": "Standby Cycle Checks",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 15:54:45.297",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
       "name": "Menu Checks",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is not displayed<br>",
-      "time": "20260513 14:06:23.421",
+      "message": "",
+      "time": "20260513 15:55:40.390",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -54,7 +64,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 14:04:54.546",
+      "time": "20260513 15:56:14.674",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -64,7 +74,17 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 14:05:19.330",
+      "time": "20260513 15:56:43.817",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 15:57:20.016",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -74,7 +94,47 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260513 14:05:51.163",
+      "time": "20260513 15:59:47.032",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Live TV AV Playback in the background with PVR opened",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 16:00:20.729",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Audio playback is heard on settings page",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 16:01:04.506",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Screensaver triggers from Settings Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 16:01:37.548",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Screensaver triggers from Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260513 16:18:08.384",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
