@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-05-13T16:34:50.937386",
+  "generated_at": "2026-05-13T16:36:55.224949",
   "date": "2026-05-13",
   "clients": [
     "telus"
   ],
   "summary": {
-    "total": 15,
-    "passed": 14,
-    "failed": 0,
-    "rate": 93.3
+    "total": 35,
+    "passed": 10,
+    "failed": 16,
+    "rate": 28.6
   },
   "summaries": {
     "telus": {
       "all": {
-        "total": 15,
-        "passed": 14,
-        "failed": 0,
-        "rate": 93.3
+        "total": 35,
+        "passed": 10,
+        "failed": 16,
+        "rate": 28.6
       },
       "sanity": {
         "total": 10,
@@ -25,17 +25,17 @@
         "rate": 100.0
       },
       "smoke": {
-        "total": 5,
-        "passed": 4,
-        "failed": 0,
-        "rate": 80.0
+        "total": 25,
+        "passed": 0,
+        "failed": 16,
+        "rate": 0.0
       }
     }
   },
   "last_run": {
     "telus": {
       "sanity": "2026-05-13 16:34",
-      "smoke": "2026-05-13 14:11"
+      "smoke": "2026-05-13 16:36"
     }
   },
   "tests": [
@@ -142,9 +142,79 @@
     {
       "name": "Verify AV Playback on LiveTV",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260513 14:09:18.756",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:12.153",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Adjust the LiveTV Volume",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:13.780",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify AV background with Menu",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:15.351",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens & Bkgn Video",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:16.904",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens from Menu & Bkgn Video",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:18.451",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify On Demand Opens & Bkgn Video",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 16:35:24.385",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify On Demand Opens from Menu & Bkgn Video",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 16:35:24.386",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Adjust the On Demand Volume",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 16:35:24.387",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -152,9 +222,89 @@
     {
       "name": "Verify Settings Opens from Menu",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260513 14:09:38.632",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:20.008",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify AV Playback On Demand",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 16:35:26.004",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:21.562",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Select and Play a content from Guide",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:23.198",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Live TV",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:24.760",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Guide",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:26.345",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Channel Zap",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:27.921",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by OK Key",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:29.497",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Dpad Up",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:31.098",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -164,7 +314,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260513 14:10:05.529",
+      "time": "20260513 16:35:37.063",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -172,9 +322,49 @@
     {
       "name": "Launch PVR via Button",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260513 14:10:05.530",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:32.656",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Play an ongoing Recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 16:35:38.658",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Play a Recording",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:34.267",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Progress bar on a series recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 16:35:40.223",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Progress bar on and on Single Recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 16:35:40.226",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -182,9 +372,19 @@
     {
       "name": "Check volume bar icons",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260513 14:10:23.115",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260513 16:36:35.851",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Mute button",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260513 16:35:41.783",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
