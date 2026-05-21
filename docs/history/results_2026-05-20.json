@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T23:42:29.038800",
+  "generated_at": "2026-05-20T23:44:42.696893",
   "date": "2026-05-20",
   "clients": [
     "telus"
@@ -35,7 +35,7 @@
   "last_run": {
     "telus": {
       "sanity": "2026-05-20 23:42",
-      "smoke": "2026-05-18 23:44"
+      "smoke": "2026-05-20 23:44"
     }
   },
   "tests": [
@@ -144,7 +144,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:43:53.997",
+      "time": "20260520 23:44:01.666",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -154,7 +154,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:43:55.542",
+      "time": "20260520 23:44:03.211",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -164,7 +164,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:43:57.048",
+      "time": "20260520 23:44:04.717",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -174,7 +174,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:43:58.555",
+      "time": "20260520 23:44:06.223",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -184,7 +184,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:00.062",
+      "time": "20260520 23:44:07.730",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -194,7 +194,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:08.593",
+      "time": "20260520 23:43:16.133",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -204,7 +204,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:08.594",
+      "time": "20260520 23:43:16.134",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -214,7 +214,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:08.595",
+      "time": "20260520 23:43:16.135",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -224,7 +224,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:01.568",
+      "time": "20260520 23:44:09.236",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -234,7 +234,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:10.101",
+      "time": "20260520 23:43:17.642",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -244,7 +244,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:03.074",
+      "time": "20260520 23:44:10.743",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -254,7 +254,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:04.580",
+      "time": "20260520 23:44:12.249",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -264,7 +264,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:06.086",
+      "time": "20260520 23:44:13.755",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -274,7 +274,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:07.592",
+      "time": "20260520 23:44:15.261",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -284,7 +284,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:09.098",
+      "time": "20260520 23:44:16.767",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -294,7 +294,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:10.605",
+      "time": "20260520 23:44:18.274",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -304,7 +304,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:12.110",
+      "time": "20260520 23:44:19.780",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -314,7 +314,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:20.646",
+      "time": "20260520 23:43:28.190",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -324,7 +324,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:13.617",
+      "time": "20260520 23:44:21.287",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -334,7 +334,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:22.153",
+      "time": "20260520 23:43:29.697",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -344,7 +344,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:15.122",
+      "time": "20260520 23:44:22.793",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -354,7 +354,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:23.660",
+      "time": "20260520 23:43:31.204",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -364,7 +364,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:23.661",
+      "time": "20260520 23:43:31.205",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -374,7 +374,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nVariable '${HOST}' not found.\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260518 23:44:16.628",
+      "time": "20260520 23:44:24.299",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -384,7 +384,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260518 23:43:25.168",
+      "time": "20260520 23:43:32.711",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
