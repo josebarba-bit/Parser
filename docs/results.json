@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-05-21T11:23:10.681707",
+  "generated_at": "2026-05-21T12:32:20.708812",
   "date": "2026-05-21",
   "clients": [
     "telus"
   ],
   "summary": {
     "total": 35,
-    "passed": 0,
-    "failed": 26,
-    "rate": 0.0
+    "passed": 6,
+    "failed": 20,
+    "rate": 17.1
   },
   "summaries": {
     "telus": {
       "all": {
         "total": 35,
-        "passed": 0,
-        "failed": 26,
-        "rate": 0.0
+        "passed": 6,
+        "failed": 20,
+        "rate": 17.1
       },
       "sanity": {
         "total": 10,
-        "passed": 0,
-        "failed": 10,
-        "rate": 0.0
+        "passed": 6,
+        "failed": 4,
+        "rate": 60.0
       },
       "smoke": {
         "total": 25,
@@ -34,7 +34,7 @@
   },
   "last_run": {
     "telus": {
-      "sanity": "2026-05-21 11:22",
+      "sanity": "2026-05-21 12:32",
       "smoke": "2026-05-20 23:44"
     }
   },
@@ -42,9 +42,9 @@
     {
       "name": "Standby Cycle Checks",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:38:24.464",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 11:38:00.099",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -52,9 +52,9 @@
     {
       "name": "Menu Checks",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:38:47.119",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu overlay is not completely opaque.<br>",
+      "time": "20260521 12:21:07.826",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -62,9 +62,9 @@
     {
       "name": "Verify Guide Opens by Key",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:39:09.726",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 11:39:10.938",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -72,9 +72,9 @@
     {
       "name": "Verify Guide Opens from Menu",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:39:32.357",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 11:39:51.769",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -83,8 +83,8 @@
       "name": "Verify Channel Zap AV Playback",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:39:54.960",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260521 12:27:49.594",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -93,8 +93,8 @@
       "name": "Verify Menu panel is autodismissed",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:40:17.558",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260521 12:29:02.326",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -103,8 +103,8 @@
       "name": "Verify Live TV AV Playback in the background with PVR opened",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:40:40.172",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260521 12:29:33.979",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -113,8 +113,8 @@
       "name": "Verify Audio playback is heard on settings page",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:41:02.785",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260521 12:31:19.260",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -122,9 +122,9 @@
     {
       "name": "Verify Screensaver triggers from Settings Menu",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:41:25.403",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 11:48:09.084",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -132,9 +132,9 @@
     {
       "name": "Verify Screensaver triggers from Guide",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260520 23:41:48.025",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 12:04:40.070",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
