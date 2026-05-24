@@ -1,0 +1,393 @@
+{
+  "generated_at": "2026-05-23T23:31:51.487338",
+  "date": "2026-05-23",
+  "clients": [
+    "telus"
+  ],
+  "summary": {
+    "total": 35,
+    "passed": 21,
+    "failed": 5,
+    "rate": 60.0
+  },
+  "summaries": {
+    "telus": {
+      "all": {
+        "total": 35,
+        "passed": 21,
+        "failed": 5,
+        "rate": 60.0
+      },
+      "sanity": {
+        "total": 10,
+        "passed": 6,
+        "failed": 4,
+        "rate": 60.0
+      },
+      "smoke": {
+        "total": 25,
+        "passed": 15,
+        "failed": 1,
+        "rate": 60.0
+      }
+    }
+  },
+  "last_run": {
+    "telus": {
+      "sanity": "2026-05-21 12:32",
+      "smoke": "2026-05-22 23:53"
+    }
+  },
+  "tests": [
+    {
+      "name": "Standby Cycle Checks",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 11:38:00.099",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Menu Checks",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu overlay is not completely opaque.<br>",
+      "time": "20260521 12:21:07.826",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Guide Opens by Key",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 11:39:10.938",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Guide Opens from Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 11:39:51.769",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260521 12:27:49.594",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Menu panel is autodismissed",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260521 12:29:02.326",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Live TV AV Playback in the background with PVR opened",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260521 12:29:33.979",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Audio playback is heard on settings page",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260521 12:31:19.260",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Screensaver triggers from Settings Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 11:48:09.084",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Screensaver triggers from Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260521 12:04:40.070",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify AV Playback on LiveTV",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:32:28.322",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Adjust the LiveTV Volume",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:33:31.714",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify AV background with Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:34:44.696",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens & Bkgn Video",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:35:30.140",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens from Menu & Bkgn Video",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br>",
+      "time": "20260522 23:51:59.367",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify On Demand Opens & Bkgn Video",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:37:52.314",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify On Demand Opens from Menu & Bkgn Video",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:37:52.315",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Adjust the On Demand Volume",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:37:52.315",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Settings Opens from Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:37:52.316",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify AV Playback On Demand",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:38:25.184",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:38:25.184",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Select and Play a content from Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:40:51.400",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Live TV",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:42:26.790",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:43:53.824",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Channel Zap",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:45:31.879",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by OK Key",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:46:21.363",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Dpad Up",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:46:41.625",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Menu",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:47:15.213",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Button",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:47:15.214",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Play an ongoing Recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:47:41.099",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Play a Recording",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260522 23:47:41.099",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Progress bar on a series recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:48:58.138",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Progress bar on and on Single Recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:48:58.139",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check volume bar icons",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
+      "time": "20260522 23:50:47.355",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Mute button",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260522 23:49:40.122",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    }
+  ]
+}
