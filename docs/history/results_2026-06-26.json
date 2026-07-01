@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-05-26T23:31:06.047598",
-  "date": "2026-05-26",
+  "generated_at": "2026-06-26T00:58:02.597830",
+  "date": "2026-06-26",
   "clients": [
     "telus"
   ],
   "summary": {
     "total": 35,
-    "passed": 8,
-    "failed": 18,
-    "rate": 22.9
+    "passed": 6,
+    "failed": 20,
+    "rate": 17.1
   },
   "summaries": {
     "telus": {
       "all": {
         "total": 35,
-        "passed": 8,
-        "failed": 18,
-        "rate": 22.9
+        "passed": 6,
+        "failed": 20,
+        "rate": 17.1
       },
       "sanity": {
         "total": 10,
@@ -26,16 +26,16 @@
       },
       "smoke": {
         "total": 25,
-        "passed": 2,
-        "failed": 14,
-        "rate": 8.0
+        "passed": 0,
+        "failed": 16,
+        "rate": 0.0
       }
     }
   },
   "last_run": {
     "telus": {
       "sanity": "2026-05-21 12:32",
-      "smoke": "2026-05-26 00:25"
+      "smoke": "2026-05-28 00:32"
     }
   },
   "tests": [
@@ -144,7 +144,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> OSError: [Errno -9999] Unanticipated host error<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> OSError: [Errno -9999] Unanticipated host error<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> OSError: [Errno -9999] Unanticipated host error<br>",
-      "time": "20260526 00:08:07.274",
+      "time": "20260528 00:12:01.859",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -154,7 +154,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> OSError: [Errno -9999] Unanticipated host error<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> OSError: [Errno -9999] Unanticipated host error<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> OSError: [Errno -9999] Unanticipated host error<br>",
-      "time": "20260526 00:09:07.142",
+      "time": "20260528 00:13:23.305",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -164,7 +164,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:09:29.005",
+      "time": "20260528 00:13:46.352",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -174,7 +174,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:10:17.662",
+      "time": "20260528 00:14:35.944",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -184,7 +184,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:11:45.903",
+      "time": "20260528 00:16:02.222",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -194,7 +194,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:36:49.643",
+      "time": "20260527 23:37:02.063",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -204,7 +204,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:36:49.643",
+      "time": "20260527 23:37:02.063",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -214,7 +214,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:36:49.644",
+      "time": "20260527 23:37:02.064",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -224,7 +224,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:13:14.703",
+      "time": "20260528 00:17:31.463",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -234,7 +234,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:37:28.192",
+      "time": "20260527 23:38:21.760",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -244,7 +244,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:13:51.213",
+      "time": "20260528 00:18:08.677",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -254,7 +254,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:15:18.754",
+      "time": "20260528 00:19:57.354",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -264,7 +264,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:16:47.556",
+      "time": "20260528 00:21:28.241",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -274,7 +274,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:18:17.660",
+      "time": "20260528 00:22:54.742",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -282,9 +282,9 @@
     {
       "name": "Progress Bar on Live TV by Channel Zap",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260525 23:44:03.418",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260528 00:24:23.659",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -294,7 +294,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:20:01.530",
+      "time": "20260528 00:25:45.789",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -302,9 +302,9 @@
     {
       "name": "Progress Bar on Live TV by Dpad Up",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260525 23:45:16.810",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260528 00:26:27.995",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -314,7 +314,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:45:49.349",
+      "time": "20260527 23:47:16.549",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -324,7 +324,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:20:41.084",
+      "time": "20260528 00:27:24.739",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -334,7 +334,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:47:41.957",
+      "time": "20260527 23:49:11.615",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -344,7 +344,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260526 00:22:31.451",
+      "time": "20260528 00:29:17.595",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -354,7 +354,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:49:52.338",
+      "time": "20260527 23:51:22.552",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -364,7 +364,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:49:52.339",
+      "time": "20260527 23:51:22.553",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -374,7 +374,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
-      "time": "20260526 00:24:42.201",
+      "time": "20260528 00:31:28.032",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -384,7 +384,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260525 23:50:34.517",
+      "time": "20260527 23:52:24.714",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
