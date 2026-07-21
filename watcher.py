@@ -37,7 +37,7 @@ HISTORY_DAYS = 30
 # Para agregar un cliente nuevo: agrega una entrada con su nombre y suites
 CLIENTS = {
     "telus": ["sanity", "smoke"],
-    # "mega": ["sanity", "smoke"],  # descomentar cuando se agregue Mega
+    "mega": ["sanity"],
 }
 # ──────────────────────────────────────────────────────────────────
 
