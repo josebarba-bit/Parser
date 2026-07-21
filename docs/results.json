@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-07-21T07:35:49.218908",
+  "generated_at": "2026-07-21T12:07:02.927352",
   "date": "2026-07-21",
   "clients": [
-    "telus"
+    "telus",
+    "mega"
   ],
   "summary": {
     "total": 35,
@@ -30,12 +31,29 @@
         "failed": 2,
         "rate": 56.0
       }
+    },
+    "mega": {
+      "all": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0,
+        "rate": 0
+      },
+      "sanity": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0,
+        "rate": 0
+      }
     }
   },
   "last_run": {
     "telus": {
       "sanity": "2026-07-21 00:23",
       "smoke": "2026-07-21 00:45"
+    },
+    "mega": {
+      "sanity": null
     }
   },
   "tests": [
