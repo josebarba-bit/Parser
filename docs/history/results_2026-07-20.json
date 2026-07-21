@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-07-20T17:58:33.098450",
+  "generated_at": "2026-07-20T18:21:23.439914",
   "date": "2026-07-20",
   "clients": [
     "telus"
   ],
   "summary": {
     "total": 35,
-    "passed": 6,
-    "failed": 20,
-    "rate": 17.1
+    "passed": 20,
+    "failed": 6,
+    "rate": 57.1
   },
   "summaries": {
     "telus": {
       "all": {
         "total": 35,
-        "passed": 6,
-        "failed": 20,
-        "rate": 17.1
+        "passed": 20,
+        "failed": 6,
+        "rate": 57.1
       },
       "sanity": {
         "total": 10,
@@ -26,16 +26,16 @@
       },
       "smoke": {
         "total": 25,
-        "passed": 0,
-        "failed": 16,
-        "rate": 0.0
+        "passed": 14,
+        "failed": 2,
+        "rate": 56.0
       }
     }
   },
   "last_run": {
     "telus": {
       "sanity": "2026-07-20 17:58",
-      "smoke": "2026-07-19 00:04"
+      "smoke": "2026-07-20 18:21"
     }
   },
   "tests": [
@@ -142,9 +142,9 @@
     {
       "name": "Verify AV Playback on LiveTV",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260718 23:58:03.132",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 17:59:14.660",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -152,9 +152,9 @@
     {
       "name": "Adjust the LiveTV Volume",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260718 23:58:25.816",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:00:21.988",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -162,9 +162,9 @@
     {
       "name": "Verify AV background with Menu",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260718 23:58:48.513",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:01:35.086",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -172,9 +172,9 @@
     {
       "name": "Verify Guide Opens & Bkgn Video",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260718 23:59:11.222",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:02:31.120",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -183,8 +183,8 @@
       "name": "Verify Guide Opens from Menu & Bkgn Video",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260718 23:59:33.903",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br>",
+      "time": "20260720 18:18:45.712",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -194,7 +194,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:47:43.903",
+      "time": "20260720 18:04:50.326",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -204,7 +204,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:47:43.904",
+      "time": "20260720 18:04:50.326",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -214,7 +214,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:47:43.905",
+      "time": "20260720 18:04:50.327",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -222,9 +222,9 @@
     {
       "name": "Verify Settings Opens from Menu",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260718 23:59:56.588",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:04:50.328",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -234,7 +234,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:48:06.565",
+      "time": "20260720 18:05:25.893",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -242,9 +242,9 @@
     {
       "name": "Verify Channel Zap AV Playback",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:00:19.332",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:05:25.894",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -252,9 +252,9 @@
     {
       "name": "Select and Play a content from Guide",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:00:42.003",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:07:39.838",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -262,9 +262,9 @@
     {
       "name": "Audio mute on Live TV",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:01:04.742",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:09:10.577",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -272,9 +272,9 @@
     {
       "name": "Audio mute on Guide",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:01:27.401",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:10:46.320",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -282,9 +282,9 @@
     {
       "name": "Progress Bar on Live TV by Channel Zap",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:01:50.089",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:12:23.801",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -292,9 +292,9 @@
     {
       "name": "Progress Bar on Live TV by OK Key",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:02:12.837",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:13:35.492",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -302,9 +302,9 @@
     {
       "name": "Progress Bar on Live TV by Dpad Up",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:02:35.549",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:13:54.987",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -314,7 +314,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:50:46.128",
+      "time": "20260720 18:14:28.711",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -322,9 +322,9 @@
     {
       "name": "Launch PVR via Button",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:02:58.228",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:14:28.711",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -334,7 +334,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:51:08.814",
+      "time": "20260720 18:14:51.479",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -342,9 +342,9 @@
     {
       "name": "Play a Recording",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:03:20.897",
+      "status": "PASS",
+      "message": "",
+      "time": "20260720 18:14:51.479",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -354,7 +354,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:51:31.562",
+      "time": "20260720 18:15:59.223",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -364,7 +364,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:51:31.563",
+      "time": "20260720 18:15:59.223",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -373,8 +373,8 @@
       "name": "Check volume bar icons",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nTimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
-      "time": "20260719 00:03:43.615",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> 'False' should be true.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
+      "time": "20260720 18:19:53.722",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -384,7 +384,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260718 23:51:54.210",
+      "time": "20260720 18:16:41.773",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
