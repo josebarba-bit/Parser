@@ -626,9 +626,13 @@ async function loadTrend() {
     let rate = null;
     if (payload) {
       if (payload.summaries) {
-        if (activeClient !== 'all' && payload.summaries[activeClient]) {
-          const s = payload.summaries[activeClient];
-          rate = activeSuite !== 'all' ? (s[activeSuite]?.rate ?? null) : (s.all?.rate ?? null);
+        if (activeClient !== 'all') {
+		  if (payload.summaries && payload.summaries[activeClient]) {
+			const s = payload.summaries[activeClient];
+			rate = activeSuite !== 'all' ? (s[activeSuite]?.rate ?? null) : (s.all?.rate ?? null);
+		  } else {
+			rate = null;
+		  }
         } else {
           // Aggregate all clients
           let totalPass = 0, totalTests = 0;
