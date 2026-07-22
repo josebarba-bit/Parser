@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T06:00:47.140301",
+  "generated_at": "2026-07-22T09:00:42.173914",
   "date": "2026-07-22",
   "clients": [
     "telus",
@@ -7,23 +7,23 @@
   ],
   "summary": {
     "total": 66,
-    "passed": 45,
-    "failed": 7,
-    "rate": 68.2
+    "passed": 49,
+    "failed": 3,
+    "rate": 74.2
   },
   "summaries": {
     "telus": {
       "all": {
         "total": 35,
-        "passed": 19,
-        "failed": 7,
-        "rate": 54.3
+        "passed": 23,
+        "failed": 3,
+        "rate": 65.7
       },
       "sanity": {
         "total": 10,
-        "passed": 5,
-        "failed": 5,
-        "rate": 50.0
+        "passed": 9,
+        "failed": 1,
+        "rate": 90.0
       },
       "smoke": {
         "total": 25,
@@ -49,7 +49,7 @@
   },
   "last_run": {
     "telus": {
-      "sanity": "2026-07-21 00:23",
+      "sanity": "2026-07-22 09:00",
       "smoke": "2026-07-21 00:45"
     },
     "mega": {
@@ -61,8 +61,8 @@
       "name": "Standby Cycle Checks",
       "suite": "—",
       "status": "PASS",
-      "message": "",
-      "time": "20260720 23:30:22.893",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Setup failed:\nConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it\n\nAlso teardown failed:\nAttributeError: 'SerialControl' object has no attribute 'tn'<br>",
+      "time": "20260722 08:54:50.154",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -71,8 +71,8 @@
       "name": "Menu Checks",
       "suite": "—",
       "status": "PASS",
-      "message": "",
-      "time": "20260720 23:31:16.709",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is not displayed<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is not displayed<br>",
+      "time": "20260722 08:59:16.294",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -82,7 +82,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260720 23:31:50.917",
+      "time": "20260722 08:16:25.402",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -90,9 +90,9 @@
     {
       "name": "Verify Guide Opens from Menu",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br>",
-      "time": "20260721 00:17:17.987",
+      "status": "PASS",
+      "message": "",
+      "time": "20260722 08:17:03.597",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -100,9 +100,9 @@
     {
       "name": "Verify Channel Zap AV Playback",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260721 00:18:06.029",
+      "status": "PASS",
+      "message": "",
+      "time": "20260722 08:17:50.706",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -112,7 +112,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Menu is shown<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is shown<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is shown<br>",
-      "time": "20260721 00:19:51.771",
+      "time": "20260722 08:59:55.992",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -120,9 +120,9 @@
     {
       "name": "Verify Live TV AV Playback in the background with PVR opened",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260721 00:20:24.140",
+      "status": "PASS",
+      "message": "",
+      "time": "20260722 08:20:17.559",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -130,9 +130,9 @@
     {
       "name": "Verify Audio playback is heard on settings page",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260721 00:22:25.518",
+      "status": "PASS",
+      "message": "",
+      "time": "20260722 08:21:14.327",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -142,7 +142,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260720 23:38:14.127",
+      "time": "20260722 08:21:48.288",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -152,7 +152,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260720 23:54:44.863",
+      "time": "20260722 08:38:20.099",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
