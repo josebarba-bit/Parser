@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T09:00:51.782914",
+  "generated_at": "2026-07-22T09:22:04.583213",
   "date": "2026-07-22",
   "clients": [
     "telus",
@@ -50,7 +50,7 @@
   "last_run": {
     "telus": {
       "sanity": "2026-07-22 09:00",
-      "smoke": "2026-07-21 00:45"
+      "smoke": "2026-07-22 09:21"
     },
     "mega": {
       "sanity": "2026-07-22 06:00"
@@ -162,7 +162,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:23:57.920",
+      "time": "20260722 09:01:11.924",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -172,7 +172,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:25:02.142",
+      "time": "20260722 09:02:15.645",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -182,7 +182,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:26:14.057",
+      "time": "20260722 09:03:25.826",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -192,7 +192,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:27:18.599",
+      "time": "20260722 09:04:09.702",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -202,7 +202,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br>",
-      "time": "20260721 00:43:11.895",
+      "time": "20260722 09:19:49.913",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -212,7 +212,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:29:42.151",
+      "time": "20260722 09:06:24.489",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -222,7 +222,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:29:42.151",
+      "time": "20260722 09:06:24.490",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -232,7 +232,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:29:42.152",
+      "time": "20260722 09:06:24.491",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -242,7 +242,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:29:42.153",
+      "time": "20260722 09:06:24.492",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -252,7 +252,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:30:14.295",
+      "time": "20260722 09:06:57.401",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -262,7 +262,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:30:14.296",
+      "time": "20260722 09:06:57.402",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -272,7 +272,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:32:44.565",
+      "time": "20260722 09:09:17.160",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -282,7 +282,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:34:27.506",
+      "time": "20260722 09:10:48.838",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -292,7 +292,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:35:55.157",
+      "time": "20260722 09:12:15.876",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -302,7 +302,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:37:33.766",
+      "time": "20260722 09:13:54.452",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -312,7 +312,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:38:08.046",
+      "time": "20260722 09:14:27.408",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -322,7 +322,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:38:29.498",
+      "time": "20260722 09:15:03.733",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -332,7 +332,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:39:03.293",
+      "time": "20260722 09:15:36.200",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -342,7 +342,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:39:03.294",
+      "time": "20260722 09:15:36.200",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -352,7 +352,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:39:26.324",
+      "time": "20260722 09:16:00.141",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -362,7 +362,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 00:39:26.325",
+      "time": "20260722 09:16:00.141",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -372,7 +372,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:40:35.508",
+      "time": "20260722 09:17:07.656",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -382,7 +382,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:40:35.509",
+      "time": "20260722 09:17:07.656",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -391,8 +391,8 @@
       "name": "Check volume bar icons",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> 'False' should be true.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
-      "time": "20260721 00:44:16.696",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> 'False' should be true.<br>",
+      "time": "20260722 09:21:04.535",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -402,7 +402,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 00:41:18.763",
+      "time": "20260722 09:17:58.097",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
