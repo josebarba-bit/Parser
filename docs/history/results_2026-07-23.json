@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T16:39:44.408440",
+  "generated_at": "2026-07-23T16:44:32.620425",
   "date": "2026-07-23",
   "clients": [
     "telus",
@@ -60,6 +60,31 @@
     },
     "mega": {
       "sanity": "2026-07-23 06:00"
+    }
+  },
+  "stability": {
+    "longevity": {
+      "total_iterations": 280,
+      "hangs": 11,
+      "success_rate": 96.1
+    },
+    "performance": {
+      "avg_response_time": 2.61,
+      "max_response_time": 10.03,
+      "min_response_time": 2.06,
+      "total_iterations": 269
+    },
+    "resource_contention": {
+      "avg_drift_pct": 2.98,
+      "max_drift_pct": 383.1,
+      "out_of_baseline": 75,
+      "total_iterations": 269,
+      "drift_threshold_pct": 20
+    },
+    "last_updated": {
+      "longevity": "2026-07-23 16:39",
+      "performance": "2026-07-23 16:39",
+      "resource_contention": "2026-07-23 16:39"
     }
   },
   "tests": [
