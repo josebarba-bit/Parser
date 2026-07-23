@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T16:44:32.620425",
+  "generated_at": "2026-07-23T17:01:07.255793",
   "date": "2026-07-23",
   "clients": [
     "telus",
@@ -64,27 +64,27 @@
   },
   "stability": {
     "longevity": {
-      "total_iterations": 280,
-      "hangs": 11,
-      "success_rate": 96.1
+      "total_iterations": 27,
+      "hangs": 1,
+      "success_rate": 96.3
     },
     "performance": {
-      "avg_response_time": 2.61,
-      "max_response_time": 10.03,
+      "avg_response_time": 2.78,
+      "max_response_time": 7.61,
       "min_response_time": 2.06,
-      "total_iterations": 269
+      "total_iterations": 26
     },
     "resource_contention": {
-      "avg_drift_pct": 2.98,
-      "max_drift_pct": 383.1,
-      "out_of_baseline": 75,
-      "total_iterations": 269,
+      "avg_drift_pct": 2.65,
+      "max_drift_pct": 93.0,
+      "out_of_baseline": 3,
+      "total_iterations": 26,
       "drift_threshold_pct": 20
     },
     "last_updated": {
-      "longevity": "2026-07-23 16:39",
-      "performance": "2026-07-23 16:39",
-      "resource_contention": "2026-07-23 16:39"
+      "longevity": "2026-07-23 17:01",
+      "performance": "2026-07-23 17:01",
+      "resource_contention": "2026-07-23 17:01"
     }
   },
   "tests": [
