@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T18:35:32.330245",
+  "generated_at": "2026-07-22T18:52:58.981749",
   "date": "2026-07-22",
   "clients": [
     "telus",
@@ -9,6 +9,7 @@
     "total": 66,
     "passed": 47,
     "failed": 5,
+    "skipped": 14,
     "rate": 71.2
   },
   "summaries": {
@@ -17,18 +18,21 @@
         "total": 35,
         "passed": 23,
         "failed": 3,
+        "skipped": 9,
         "rate": 65.7
       },
       "sanity": {
         "total": 10,
         "passed": 9,
         "failed": 1,
+        "skipped": 0,
         "rate": 90.0
       },
       "smoke": {
         "total": 25,
         "passed": 14,
         "failed": 2,
+        "skipped": 9,
         "rate": 56.0
       }
     },
@@ -37,12 +41,14 @@
         "total": 31,
         "passed": 24,
         "failed": 2,
+        "skipped": 5,
         "rate": 77.4
       },
       "sanity": {
         "total": 31,
         "passed": 24,
         "failed": 2,
+        "skipped": 5,
         "rate": 77.4
       }
     }
