@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T18:53:08.831286",
+  "generated_at": "2026-07-22T23:30:59.094647",
   "date": "2026-07-22",
   "clients": [
     "telus",
@@ -7,10 +7,10 @@
   ],
   "summary": {
     "total": 66,
-    "passed": 47,
-    "failed": 5,
+    "passed": 49,
+    "failed": 3,
     "skipped": 14,
-    "rate": 71.2
+    "rate": 74.2
   },
   "summaries": {
     "telus": {
@@ -39,17 +39,17 @@
     "mega": {
       "all": {
         "total": 31,
-        "passed": 24,
-        "failed": 2,
+        "passed": 26,
+        "failed": 0,
         "skipped": 5,
-        "rate": 77.4
+        "rate": 83.9
       },
       "sanity": {
         "total": 31,
-        "passed": 24,
-        "failed": 2,
+        "passed": 26,
+        "failed": 0,
         "skipped": 5,
-        "rate": 77.4
+        "rate": 83.9
       }
     }
   },
@@ -59,7 +59,7 @@
       "smoke": "2026-07-22 09:21"
     },
     "mega": {
-      "sanity": "2026-07-21 06:00"
+      "sanity": "2026-07-22 06:00"
     }
   },
   "tests": [
@@ -416,9 +416,9 @@
     {
       "name": "Verifying the Login Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "Reason: The Page Header Login doesn't match with the reference.",
-      "time": "20260721 05:43:00.067",
+      "status": "PASS",
+      "message": "",
+      "time": "20260722 05:43:13.820",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -428,7 +428,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:43:11.556",
+      "time": "20260722 05:43:24.287",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -438,7 +438,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:43:33.105",
+      "time": "20260722 05:43:45.551",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -448,7 +448,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 05:43:52.393",
+      "time": "20260722 05:44:03.889",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -456,9 +456,9 @@
     {
       "name": "Verifying the Home Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "Reason: The Settings Rail doesn't match with the reference.",
-      "time": "20260721 05:43:52.394",
+      "status": "PASS",
+      "message": "",
+      "time": "20260722 05:44:03.890",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -468,7 +468,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:44:21.422",
+      "time": "20260722 05:44:32.400",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -478,7 +478,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:45:26.829",
+      "time": "20260722 05:45:37.677",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -488,7 +488,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:45:51.684",
+      "time": "20260722 05:46:02.698",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -498,7 +498,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:46:20.230",
+      "time": "20260722 05:46:31.371",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -508,7 +508,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:46:51.369",
+      "time": "20260722 05:47:02.247",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -518,7 +518,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:47:35.285",
+      "time": "20260722 05:47:45.608",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -528,7 +528,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:47:59.362",
+      "time": "20260722 05:48:09.198",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -538,7 +538,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:48:24.251",
+      "time": "20260722 05:48:33.661",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -548,7 +548,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:49:25.557",
+      "time": "20260722 05:49:34.728",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -558,7 +558,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:49:49.142",
+      "time": "20260722 05:49:58.528",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -568,7 +568,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:50:17.713",
+      "time": "20260722 05:50:27.540",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -578,7 +578,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:50:42.399",
+      "time": "20260722 05:50:52.144",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -588,7 +588,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:51:07.133",
+      "time": "20260722 05:51:17.839",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -598,7 +598,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:51:48.802",
+      "time": "20260722 05:51:59.367",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -608,7 +608,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 05:52:42.943",
+      "time": "20260722 05:52:53.154",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -618,7 +618,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:52:42.944",
+      "time": "20260722 05:52:53.154",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -628,7 +628,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:53:09.563",
+      "time": "20260722 05:53:19.628",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -638,7 +638,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:54:09.981",
+      "time": "20260722 05:54:19.793",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -648,7 +648,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 05:55:05.931",
+      "time": "20260722 05:55:16.420",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -658,7 +658,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:55:05.931",
+      "time": "20260722 05:55:16.420",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -668,7 +668,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:55:54.322",
+      "time": "20260722 05:56:04.631",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -678,7 +678,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 05:56:22.125",
+      "time": "20260722 05:56:32.902",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -688,7 +688,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260721 05:56:22.126",
+      "time": "20260722 05:56:32.902",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -698,7 +698,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:56:22.126",
+      "time": "20260722 05:56:32.903",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -708,7 +708,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:57:30.474",
+      "time": "20260722 05:57:40.848",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -718,7 +718,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260721 05:58:25.817",
+      "time": "20260722 05:58:35.975",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
