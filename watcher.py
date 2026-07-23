@@ -1,15 +1,19 @@
 """
 watcher.py — Detecta cambios en archivos de resultados por cliente y suite,
 genera JSON por día y mantiene 30 días de historial.
+Incluye soporte para pruebas de stability (longevity, performance, resource_contention).
 
 Estructura esperada:
     test_results/
     ├── telus/
     │   ├── sanity/output.xml
     │   └── smoke/output.xml
-    └── mega/
-        ├── sanity/output.xml
-        └── smoke/output.xml
+    ├── mega/
+    │   └── sanity/output.xml
+    └── stability/
+        ├── longevity.csv
+        ├── performance.csv
+        └── resource_contention.csv
 
 Instalar dependencias:
     pip install watchdog
@@ -33,12 +37,13 @@ OUTPUT_DIR   = "./docs/history"
 LATEST_JSON  = "./docs/results.json"
 HISTORY_DAYS = 30
 
-# Define los clientes y sus suites aquí
-# Para agregar un cliente nuevo: agrega una entrada con su nombre y suites
 CLIENTS = {
     "telus": ["sanity", "smoke"],
-    "mega": ["sanity"],
+    "mega":  ["sanity"],
+    # "mega": ["sanity", "smoke"],
 }
+
+STABILITY_FOLDER = os.path.join(WATCH_FOLDER, "stability")
 # ──────────────────────────────────────────────────────────────────
 
 
@@ -101,6 +106,8 @@ def parse_csv_file(filepath, client, suite_type):
                     status = "PASS"
                 elif any(x in raw_status for x in ["FAIL", "ERROR", "FALSE", "0", "FALLA"]):
                     status = "FAIL"
+                elif "SKIP" in raw_status:
+                    status = "SKIP"
                 else:
                     msg_val = row_lower.get(col_msg, "").strip() if col_msg else ""
                     status  = "FAIL" if msg_val else "PASS"
@@ -118,6 +125,88 @@ def parse_csv_file(filepath, client, suite_type):
     except Exception as e:
         print(f"  [!] Error parsing {filepath}: {e}")
     return tests
+
+
+def parse_longevity(filepath):
+    """Parsea longevity.csv y extrae métricas."""
+    if not os.path.exists(filepath):
+        return None
+    try:
+        total = 0
+        hangs = 0
+        with open(filepath, newline="", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                total += 1
+                result = row.get("result", "").strip().upper()
+                if result == "HANG":
+                    hangs += 1
+        success_rate = round((total - hangs) / total * 100, 1) if total > 0 else 0
+        return {
+            "total_iterations": total,
+            "hangs":            hangs,
+            "success_rate":     success_rate,
+        }
+    except Exception as e:
+        print(f"  [!] Error parsing longevity.csv: {e}")
+        return None
+
+
+def parse_performance(filepath):
+    """Parsea performance.csv y extrae métricas."""
+    if not os.path.exists(filepath):
+        return None
+    try:
+        times = []
+        with open(filepath, newline="", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    times.append(float(row.get("response_time_sec", 0)))
+                except ValueError:
+                    pass
+        if not times:
+            return None
+        return {
+            "avg_response_time": round(sum(times) / len(times), 2),
+            "max_response_time": round(max(times), 2),
+            "min_response_time": round(min(times), 2),
+            "total_iterations":  len(times),
+        }
+    except Exception as e:
+        print(f"  [!] Error parsing performance.csv: {e}")
+        return None
+
+
+def parse_resource_contention(filepath, drift_threshold=20):
+    """Parsea resource_contention.csv y extrae métricas."""
+    if not os.path.exists(filepath):
+        return None
+    try:
+        drifts = []
+        out_of_baseline = 0
+        with open(filepath, newline="", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    drift = float(row.get("drift_pct", 0))
+                    drifts.append(drift)
+                    if abs(drift) > drift_threshold:
+                        out_of_baseline += 1
+                except ValueError:
+                    pass
+        if not drifts:
+            return None
+        return {
+            "avg_drift_pct":      round(sum(drifts) / len(drifts), 2),
+            "max_drift_pct":      round(max(drifts, key=abs), 2),
+            "out_of_baseline":    out_of_baseline,
+            "total_iterations":   len(drifts),
+            "drift_threshold_pct": drift_threshold,
+        }
+    except Exception as e:
+        print(f"  [!] Error parsing resource_contention.csv: {e}")
+        return None
 
 
 def build_summary(tests):
@@ -166,9 +255,16 @@ def update_index():
         json.dump({"dates": dates, "clients": list(CLIENTS.keys())}, f)
 
 
+def get_file_mtime(filepath):
+    if os.path.exists(filepath):
+        return datetime.fromtimestamp(os.path.getmtime(filepath)).strftime("%Y-%m-%d %H:%M")
+    return None
+
+
 def generate_json():
     all_tests = []
 
+    # Pruebas por cliente
     for client, suites in CLIENTS.items():
         for suite_type in suites:
             xml_path = os.path.join(WATCH_FOLDER, client, suite_type, "output.xml")
@@ -176,37 +272,49 @@ def generate_json():
             all_tests.extend(tests)
             print(f"  {client.capitalize()} {suite_type}: {len(tests)} tests from RF")
 
-        # CSV files para este cliente
         client_folder = os.path.join(WATCH_FOLDER, client)
         if os.path.exists(client_folder):
             for fname in os.listdir(client_folder):
                 if fname.endswith(".csv"):
                     csv_tests = parse_csv_file(os.path.join(client_folder, fname), client, "sanity")
                     all_tests.extend(csv_tests)
-                    print(f"  {client.capitalize()} CSV: {len(csv_tests)} tests from {fname}")
 
-    # Construir summaries por cliente y suite
+    # Summaries por cliente y suite
     summaries = {}
     for client in CLIENTS:
         client_tests = [t for t in all_tests if t["client"] == client]
-        summaries[client] = {
-            "all": build_summary(client_tests),
-        }
+        summaries[client] = {"all": build_summary(client_tests)}
         for suite_type in CLIENTS[client]:
             suite_tests = [t for t in client_tests if t["suite_type"] == suite_type]
             summaries[client][suite_type] = build_summary(suite_tests)
 
-    # Obtener fecha de último run por cliente y suite
+    # Last run por cliente y suite
     last_run = {}
     for client, suites in CLIENTS.items():
         last_run[client] = {}
         for suite_type in suites:
             xml_path = os.path.join(WATCH_FOLDER, client, suite_type, "output.xml")
-            if os.path.exists(xml_path):
-                mtime = os.path.getmtime(xml_path)
-                last_run[client][suite_type] = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M")
-            else:
-                last_run[client][suite_type] = None
+            last_run[client][suite_type] = get_file_mtime(xml_path)
+
+    # Stability metrics
+    longevity_path    = os.path.join(STABILITY_FOLDER, "longevity.csv")
+    performance_path  = os.path.join(STABILITY_FOLDER, "performance.csv")
+    contention_path   = os.path.join(STABILITY_FOLDER, "resource_contention.csv")
+
+    stability = {
+        "longevity":            parse_longevity(longevity_path),
+        "performance":          parse_performance(performance_path),
+        "resource_contention":  parse_resource_contention(contention_path),
+        "last_updated": {
+            "longevity":           get_file_mtime(longevity_path),
+            "performance":         get_file_mtime(performance_path),
+            "resource_contention": get_file_mtime(contention_path),
+        }
+    }
+
+    print(f"  Stability longevity:           {stability['longevity']}")
+    print(f"  Stability performance:         {stability['performance']}")
+    print(f"  Stability resource_contention: {stability['resource_contention']}")
 
     payload = {
         "generated_at": datetime.now().isoformat(),
@@ -215,6 +323,7 @@ def generate_json():
         "summary":      build_summary(all_tests),
         "summaries":    summaries,
         "last_run":     last_run,
+        "stability":    stability,
         "tests":        all_tests,
     }
 
@@ -258,16 +367,16 @@ class ResultsHandler(FileSystemEventHandler):
 
 
 if __name__ == "__main__":
-    # Crear carpetas para cada cliente y suite
     for client, suites in CLIENTS.items():
         for suite_type in suites:
             os.makedirs(os.path.join(WATCH_FOLDER, client, suite_type), exist_ok=True)
+    os.makedirs(STABILITY_FOLDER, exist_ok=True)
 
     print("=" * 50)
     print("  QA Dashboard Watcher")
-    print(f"  Clients: {', '.join(CLIENTS.keys())}")
-    print(f"  Watching: {os.path.abspath(WATCH_FOLDER)}")
-    print(f"  History:  {os.path.abspath(OUTPUT_DIR)}")
+    print(f"  Clients:   {', '.join(CLIENTS.keys())}")
+    print(f"  Stability: {os.path.abspath(STABILITY_FOLDER)}")
+    print(f"  History:   {os.path.abspath(OUTPUT_DIR)}")
     print(f"  Retention: {HISTORY_DAYS} days")
     print("=" * 50)
 
