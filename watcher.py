@@ -121,14 +121,16 @@ def parse_csv_file(filepath, client, suite_type):
 
 
 def build_summary(tests):
-    total  = len(tests)
-    passed = sum(1 for t in tests if t["status"] == "PASS")
-    failed = sum(1 for t in tests if t["status"] == "FAIL")
+    total   = len(tests)
+    passed  = sum(1 for t in tests if t["status"] == "PASS")
+    failed  = sum(1 for t in tests if t["status"] == "FAIL")
+    skipped = sum(1 for t in tests if t["status"] == "SKIP")
     return {
-        "total":  total,
-        "passed": passed,
-        "failed": failed,
-        "rate":   round((passed / total * 100), 1) if total > 0 else 0,
+        "total":   total,
+        "passed":  passed,
+        "failed":  failed,
+        "skipped": skipped,
+        "rate":    round((passed / total * 100), 1) if total > 0 else 0,
     }
 
 
