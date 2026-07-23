@@ -121,7 +121,7 @@ if __name__ == "__main__":
     print(f"\nWaiting for {PUBLISH_TIME}... (Ctrl+C to stop)\n")
 
     # También correr al iniciar para hacer un push inmediato si se quiere
-    # run_daily()  # descomentar si quieres que corra al arrancar
+    run_daily()  # descomentar si quieres que corra al arrancar
 
     try:
         while True:
