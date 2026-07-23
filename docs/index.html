@@ -267,6 +267,7 @@
     <div class="metric"><div class="metric-label">Total tests</div><div class="metric-value" id="m-total">—</div></div>
     <div class="metric"><div class="metric-label">Passed</div><div class="metric-value v-pass" id="m-pass">—</div><div class="metric-sub" id="m-pass-src"></div></div>
     <div class="metric"><div class="metric-label">Failed</div><div class="metric-value v-fail" id="m-fail">—</div><div class="metric-sub" id="m-fail-src"></div></div>
+	<div class="metric"><div class="metric-label">Skipped</div><div class="metric-value" style="color:var(--warn)" id="m-skip">—</div></div>
     <div class="metric"><div class="metric-label">Pass rate</div><div class="metric-value" id="m-rate">—</div></div>
     <div class="metric"><div class="metric-label">Last updated</div><div class="metric-value" style="font-size:14px;padding-top:6px" id="m-ts">—</div></div>
   </div>
@@ -565,11 +566,13 @@ function updateMetrics() {
   const tests = getFilteredTests();
   const pass  = tests.filter(t=>t.status==='PASS').length;
   const fail  = tests.filter(t=>t.status==='FAIL').length;
+  const skip  = tests.filter(t=>t.status==='SKIP').length;
   const total = tests.length;
   const rate  = total > 0 ? Math.round(pass/total*1000)/10 : 0;
   document.getElementById('m-total').textContent = total;
   document.getElementById('m-pass').textContent  = pass;
   document.getElementById('m-fail').textContent  = fail;
+  document.getElementById('m-skip').textContent  = skip;
   document.getElementById('m-rate').textContent  = rate + '%';
   const rfP  = tests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
   const rfF  = tests.filter(t=>t.source==='RF' &&t.status==='FAIL').length;
