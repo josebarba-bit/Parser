@@ -250,6 +250,7 @@
         <div class="suite-stat"><div class="suite-stat-val" id="s-smoke-total">—</div><div class="suite-stat-lbl">Total</div></div>
         <div class="suite-stat"><div class="suite-stat-val v-pass" id="s-smoke-pass">—</div><div class="suite-stat-lbl">Passed</div></div>
         <div class="suite-stat"><div class="suite-stat-val v-fail" id="s-smoke-fail">—</div><div class="suite-stat-lbl">Failed</div></div>
+		<div class="suite-stat"><div class="suite-stat-val" style="color:var(--warn)" id="s-smoke-skip">—</div><div class="suite-stat-lbl">Skipped</div></div>
         <div class="suite-stat"><div class="suite-stat-val" id="s-smoke-rate">—</div><div class="suite-stat-lbl">Pass rate</div></div>
       </div>
     </div>
@@ -266,6 +267,7 @@
     <div class="metric"><div class="metric-label">Total tests</div><div class="metric-value" id="m-total">—</div></div>
     <div class="metric"><div class="metric-label">Passed</div><div class="metric-value v-pass" id="m-pass">—</div><div class="metric-sub" id="m-pass-src"></div></div>
     <div class="metric"><div class="metric-label">Failed</div><div class="metric-value v-fail" id="m-fail">—</div><div class="metric-sub" id="m-fail-src"></div></div>
+	<div class="metric"><div class="metric-label">Skipped</div><div class="metric-value" style="color:var(--warn)" id="m-skip">—</div></div>
     <div class="metric"><div class="metric-label">Pass rate</div><div class="metric-value" id="m-rate">—</div></div>
     <div class="metric"><div class="metric-label">Last updated</div><div class="metric-value" style="font-size:14px;padding-top:6px" id="m-ts">—</div></div>
   </div>
@@ -510,15 +512,12 @@ function applyData(data, isLive) {
   }
 }
 
-// ─── Suite summary cards ──────────────────────────────────────
 function updateSuiteSummary(data) {
   if (!data || !data.summaries) return;
   const client = activeClient === 'all' ? null : activeClient;
-
-  let sanity = { total:0, passed:0, failed:0, rate:0 };
-  let smoke  = { total:0, passed:0, failed:0, rate:0 };
+  let sanity = { total:0, passed:0, failed:0, skipped:0, rate:0 };
+  let smoke  = { total:0, passed:0, failed:0, skipped:0, rate:0 };
   let sanityRun = null, smokeRun = null;
-
   if (client && data.summaries[client]) {
     sanity = data.summaries[client].sanity || sanity;
     smoke  = data.summaries[client].smoke  || smoke;
@@ -530,12 +529,14 @@ function updateSuiteSummary(data) {
     for (const c of Object.keys(data.summaries)) {
       const cs = data.summaries[c].sanity || {};
       const sk = data.summaries[c].smoke  || {};
-      sanity.total  += cs.total  || 0;
-      sanity.passed += cs.passed || 0;
-      sanity.failed += cs.failed || 0;
-      smoke.total   += sk.total  || 0;
-      smoke.passed  += sk.passed || 0;
-      smoke.failed  += sk.failed || 0;
+      sanity.total   += cs.total   || 0;
+      sanity.passed  += cs.passed  || 0;
+      sanity.failed  += cs.failed  || 0;
+      sanity.skipped += cs.skipped || 0;
+      smoke.total    += sk.total   || 0;
+      smoke.passed   += sk.passed  || 0;
+      smoke.failed   += sk.failed  || 0;
+      smoke.skipped  += sk.skipped || 0;
       if (data.last_run && data.last_run[c]) {
         if (!sanityRun || data.last_run[c].sanity > sanityRun) sanityRun = data.last_run[c].sanity;
         if (!smokeRun  || data.last_run[c].smoke  > smokeRun)  smokeRun  = data.last_run[c].smoke;
@@ -544,16 +545,16 @@ function updateSuiteSummary(data) {
     sanity.rate = sanity.total > 0 ? Math.round(sanity.passed/sanity.total*1000)/10 : 0;
     smoke.rate  = smoke.total  > 0 ? Math.round(smoke.passed/smoke.total*1000)/10   : 0;
   }
-
-  document.getElementById('s-sanity-total').textContent = sanity.total;
-  document.getElementById('s-sanity-pass').textContent  = sanity.passed;
-  document.getElementById('s-sanity-fail').textContent  = sanity.failed;
-  document.getElementById('s-sanity-rate').textContent  = sanity.rate + '%';
-  document.getElementById('s-smoke-total').textContent  = smoke.total;
-  document.getElementById('s-smoke-pass').textContent   = smoke.passed;
-  document.getElementById('s-smoke-fail').textContent   = smoke.failed;
-  document.getElementById('s-smoke-rate').textContent   = smoke.rate + '%';
-
+  document.getElementById('s-sanity-total').textContent  = sanity.total;
+  document.getElementById('s-sanity-pass').textContent   = sanity.passed;
+  document.getElementById('s-sanity-fail').textContent   = sanity.failed;
+  document.getElementById('s-sanity-skip').textContent   = sanity.skipped || 0;
+  document.getElementById('s-sanity-rate').textContent   = sanity.rate + '%';
+  document.getElementById('s-smoke-total').textContent   = smoke.total;
+  document.getElementById('s-smoke-pass').textContent    = smoke.passed;
+  document.getElementById('s-smoke-fail').textContent    = smoke.failed;
+  document.getElementById('s-smoke-skip').textContent    = smoke.skipped || 0;
+  document.getElementById('s-smoke-rate').textContent    = smoke.rate + '%';
   // Last run labels
   const fmt = d => d ? 'Last run: ' + d : 'Not run yet';
   document.getElementById('s-sanity-lastrun').textContent = fmt(sanityRun);
@@ -565,11 +566,13 @@ function updateMetrics() {
   const tests = getFilteredTests();
   const pass  = tests.filter(t=>t.status==='PASS').length;
   const fail  = tests.filter(t=>t.status==='FAIL').length;
+  const skip  = tests.filter(t=>t.status==='SKIP').length;
   const total = tests.length;
   const rate  = total > 0 ? Math.round(pass/total*1000)/10 : 0;
   document.getElementById('m-total').textContent = total;
   document.getElementById('m-pass').textContent  = pass;
   document.getElementById('m-fail').textContent  = fail;
+  document.getElementById('m-skip').textContent  = skip;
   document.getElementById('m-rate').textContent  = rate + '%';
   const rfP  = tests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
   const rfF  = tests.filter(t=>t.source==='RF' &&t.status==='FAIL').length;
