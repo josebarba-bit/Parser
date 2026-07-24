@@ -407,7 +407,6 @@ function selectModel(model) {
   document.getElementById('btn-model-all').className = 'model-btn' + (model==='all' ? ' active-all' : '');
   document.getElementById('btn-model-uiw').className = 'model-btn' + (model==='uiw' ? ' active-uiw' : '');
   document.getElementById('btn-model-vip').className = 'model-btn' + (model==='vip' ? ' active-vip' : '');
-  if (fullData) renderStabilityContent(fullData.stability);
   loadStabilityTrend();
 }
 
