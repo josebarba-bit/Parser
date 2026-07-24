@@ -29,6 +29,8 @@
       --purple-bg:#ede9fe;
       --teal:     #0f5156;
       --teal-bg:  #ccfbf1;
+      --rose:     #881337;
+      --rose-bg:  #ffe4e6;
       --radius:   10px;
     }
 
@@ -55,13 +57,14 @@
         --purple-bg:#2e1065;
         --teal:     #5eead4;
         --teal-bg:  #042f2e;
+        --rose:     #fda4af;
+        --rose-bg:  #4c0519;
       }
     }
 
     body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-size: 14px; }
     .page { max-width: 1100px; margin: 0 auto; padding: 24px 16px; display: flex; flex-direction: column; gap: 20px; }
 
-    /* Header */
     .header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     .header h1 { font-size: 20px; font-weight: 500; }
     .status-bar { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
@@ -69,17 +72,14 @@
     .dot.stale { background: #BA7517; }
     .dot.error { background: #A32D2D; }
 
-    /* Nav tabs (main sections) */
     .main-tabs { display: flex; gap: 4px; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 6px; }
     .main-tab { flex: 1; text-align: center; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 6px; cursor: pointer; color: var(--muted); transition: all .15s; user-select: none; }
     .main-tab.active { background: var(--text); color: var(--bg); }
     .main-tab:hover:not(.active) { background: var(--bg); color: var(--text); }
 
-    /* Section visibility */
     .section-panel { display: none; flex-direction: column; gap: 20px; }
     .section-panel.active { display: flex; }
 
-    /* Filter bar */
     .filter-bar { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 16px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     .filter-group { display: flex; align-items: center; gap: 8px; }
     .filter-label { font-size: 12px; color: var(--muted); white-space: nowrap; font-weight: 500; }
@@ -97,7 +97,13 @@
     .suite-btn.active-sanity { background: var(--blue-bg);    color: var(--blue);   border-color: var(--blue); }
     .suite-btn.active-smoke  { background: var(--purple-bg);  color: var(--purple); border-color: var(--purple); }
 
-    /* Date bar */
+    /* Model selector buttons for stability */
+    .model-btn { font-size: 12px; padding: 6px 16px; border-radius: 6px; border: 0.5px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; transition: all .15s; font-weight: 500; }
+    .model-btn:hover { background: var(--surface); border-color: var(--muted); }
+    .model-btn.active-all { background: var(--text);     color: var(--bg);   border-color: var(--text); }
+    .model-btn.active-uiw { background: var(--teal-bg);  color: var(--teal); border-color: var(--teal); }
+    .model-btn.active-vip { background: var(--rose-bg);  color: var(--rose); border-color: var(--rose); }
+
     .date-bar { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .date-bar-label { font-size: 12px; color: var(--muted); white-space: nowrap; }
     .date-scroll { display: flex; gap: 6px; overflow-x: auto; flex: 1; padding-bottom: 2px; }
@@ -110,7 +116,6 @@
     .date-btn.today-btn.active { background: var(--pass-bg); color: var(--pass); border-color: var(--pass); }
     .viewing-badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; background: var(--amber-bg); color: var(--amber); font-weight: 500; white-space: nowrap; }
 
-    /* Suite summary */
     .suite-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .suite-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
     .suite-card-title { font-size: 11px; font-weight: 500; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
@@ -119,22 +124,34 @@
     .suite-stat-val { font-size: 20px; font-weight: 500; }
     .suite-stat-lbl { font-size: 10px; color: var(--muted); }
 
-    /* Stability cards */
-    .stability-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-    .stability-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-    .stability-card-title { font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: space-between; }
-    .stability-card-lastrun { font-size: 11px; color: var(--muted); }
-    .stability-metrics { display: flex; gap: 20px; flex-wrap: wrap; }
-    .stability-metric { display: flex; flex-direction: column; gap: 2px; }
-    .stability-metric-val { font-size: 22px; font-weight: 500; }
-    .stability-metric-lbl { font-size: 10px; color: var(--muted); }
-    .stability-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
-    .stability-ok   { background: var(--pass-bg); color: var(--pass); }
-    .stability-warn { background: var(--warn-bg); color: var(--warn); }
-    .stability-fail { background: var(--fail-bg); color: var(--fail); }
-    .no-data { font-size: 12px; color: var(--muted); padding: 12px 0; }
+    /* Stability */
+    .stability-model-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stability-model-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+    .stability-model-title { font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+    .model-tag { font-size: 11px; padding: 2px 10px; border-radius: 10px; font-weight: 500; }
+    .model-tag-uiw { background: var(--teal-bg); color: var(--teal); }
+    .model-tag-vip { background: var(--rose-bg); color: var(--rose); }
 
-    /* Metrics */
+    .stability-cards { display: flex; flex-direction: column; gap: 10px; }
+    .stability-card { background: var(--bg); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .stability-card-title { font-size: 11px; font-weight: 500; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+    .stability-card-lastrun { font-size: 10px; color: var(--muted); }
+    .stability-metrics { display: flex; gap: 16px; flex-wrap: wrap; }
+    .stability-metric { display: flex; flex-direction: column; gap: 2px; }
+    .stability-metric-val { font-size: 18px; font-weight: 500; }
+    .stability-metric-lbl { font-size: 10px; color: var(--muted); }
+
+    /* Combined stability view */
+    .stability-combined { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .stability-combined-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .stability-combined-title { font-size: 13px; font-weight: 500; margin-bottom: 12px; }
+    .model-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 0.5px solid var(--border); flex-wrap: wrap; }
+    .model-row:last-child { border-bottom: none; }
+    .model-row-metrics { display: flex; gap: 16px; flex-wrap: wrap; }
+    .model-row-metric { display: flex; flex-direction: column; gap: 1px; }
+    .model-row-val { font-size: 16px; font-weight: 500; }
+    .model-row-lbl { font-size: 10px; color: var(--muted); }
+
     .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
     .metric { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
     .metric-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
@@ -144,14 +161,12 @@
     .v-fail { color: var(--fail); }
     .v-warn { color: var(--warn); }
 
-    /* Charts */
     .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    @media (max-width: 600px) { .charts { grid-template-columns: 1fr; } .suite-summary { grid-template-columns: 1fr; } .stability-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .charts { grid-template-columns: 1fr; } .suite-summary { grid-template-columns: 1fr; } .stability-model-grid { grid-template-columns: 1fr; } }
     .trend-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
     .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
     .card-title { font-size: 13px; font-weight: 500; margin-bottom: 14px; }
 
-    /* Table */
     .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
     .filters select { font-size: 12px; padding: 5px 10px; border-radius: 6px; border: 0.5px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
     .search-box { flex: 1; min-width: 160px; font-size: 12px; padding: 5px 10px; border-radius: 6px; border: 0.5px solid var(--border); background: var(--surface); color: var(--text); }
@@ -179,8 +194,6 @@
     .refresh-ring { width: 14px; height: 14px; border: 1.5px solid transparent; border-top-color: var(--muted); border-radius: 50%; display: none; }
     .refresh-ring.spin { display: inline-block; animation: spin .7s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
-
-    .badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 500; }
   </style>
 </head>
 <body>
@@ -199,7 +212,7 @@
     </div>
   </div>
 
-  <!-- Main navigation tabs -->
+  <!-- Main tabs -->
   <div class="main-tabs">
     <div class="main-tab active" onclick="switchMainTab('automation', this)">🤖 Automation</div>
     <div class="main-tab" onclick="switchMainTab('stability', this)">🔬 Stability</div>
@@ -213,12 +226,9 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- AUTOMATION SECTION                              -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ AUTOMATION SECTION ═══ -->
   <div class="section-panel active" id="panel-automation">
 
-    <!-- Client + Suite filter -->
     <div class="filter-bar">
       <div class="filter-group">
         <span class="filter-label">Client:</span>
@@ -235,7 +245,6 @@
       </div>
     </div>
 
-    <!-- Suite summary cards -->
     <div class="suite-summary">
       <div class="suite-card">
         <div class="suite-card-title">
@@ -265,13 +274,11 @@
       </div>
     </div>
 
-    <!-- Trend -->
     <div class="trend-card">
       <div class="card-title" id="trend-title">Pass rate — last 7 days</div>
       <div style="position:relative;height:140px"><canvas id="chartTrend"></canvas></div>
     </div>
 
-    <!-- Metrics -->
     <div class="metrics">
       <div class="metric"><div class="metric-label">Total tests</div><div class="metric-value" id="m-total">—</div></div>
       <div class="metric"><div class="metric-label">Passed</div><div class="metric-value v-pass" id="m-pass">—</div><div class="metric-sub" id="m-pass-src"></div></div>
@@ -281,7 +288,6 @@
       <div class="metric"><div class="metric-label">Last updated</div><div class="metric-value" style="font-size:14px;padding-top:6px" id="m-ts">—</div></div>
     </div>
 
-    <!-- Charts -->
     <div class="charts">
       <div class="card">
         <div class="card-title">Results breakdown</div>
@@ -293,7 +299,6 @@
       </div>
     </div>
 
-    <!-- Table -->
     <div class="card">
       <div class="tabs">
         <div class="tab active" onclick="switchTab('all',this)">All</div>
@@ -313,9 +318,7 @@
       <div class="table-wrap">
         <table>
           <thead>
-            <tr>
-              <th>#</th><th>Test name</th><th>Client</th><th>Suite type</th><th>Suite / Module</th><th>Status</th><th>Message / Failure</th><th>Time / Date</th>
-            </tr>
+            <tr><th>#</th><th>Test name</th><th>Client</th><th>Suite type</th><th>Suite / Module</th><th>Status</th><th>Message / Failure</th><th>Time / Date</th></tr>
           </thead>
           <tbody id="tbody"></tbody>
         </table>
@@ -323,61 +326,28 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- STABILITY SECTION                               -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ STABILITY SECTION ═══ -->
   <div class="section-panel" id="panel-stability">
 
-    <!-- Stability cards -->
-    <div class="stability-grid">
-
-      <!-- Longevity -->
-      <div class="stability-card">
-        <div class="stability-card-title">
-          <span>📊 Longevity</span>
-          <span class="stability-card-lastrun" id="stab-long-lastrun"></span>
-        </div>
-        <div class="stability-metrics" id="stab-long-metrics">
-          <div class="stability-metric"><div class="stability-metric-val" id="stab-long-total">—</div><div class="stability-metric-lbl">Total iterations</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-fail" id="stab-long-hangs">—</div><div class="stability-metric-lbl">HANGs</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-pass" id="stab-long-rate">—</div><div class="stability-metric-lbl">Success rate</div></div>
+    <!-- Model selector -->
+    <div class="filter-bar">
+      <div class="filter-group">
+        <span class="filter-label">Model:</span>
+        <div style="display:flex;gap:6px">
+          <button class="model-btn active-all" id="btn-model-all" onclick="selectModel('all')">All</button>
+          <button class="model-btn"            id="btn-model-uiw" onclick="selectModel('uiw')">UIW</button>
+          <button class="model-btn"            id="btn-model-vip" onclick="selectModel('vip')">VIP</button>
         </div>
       </div>
-
-      <!-- Performance -->
-      <div class="stability-card">
-        <div class="stability-card-title">
-          <span>⚡ Performance</span>
-          <span class="stability-card-lastrun" id="stab-perf-lastrun"></span>
-        </div>
-        <div class="stability-metrics" id="stab-perf-metrics">
-          <div class="stability-metric"><div class="stability-metric-val" id="stab-perf-avg">—</div><div class="stability-metric-lbl">Avg response (s)</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-fail" id="stab-perf-max">—</div><div class="stability-metric-lbl">Max response (s)</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-pass" id="stab-perf-min">—</div><div class="stability-metric-lbl">Min response (s)</div></div>
-          <div class="stability-metric"><div class="stability-metric-val" id="stab-perf-total">—</div><div class="stability-metric-lbl">Iterations</div></div>
-        </div>
-      </div>
-
-      <!-- Resource Contention -->
-      <div class="stability-card">
-        <div class="stability-card-title">
-          <span>🔀 Resource Contention</span>
-          <span class="stability-card-lastrun" id="stab-cont-lastrun"></span>
-        </div>
-        <div class="stability-metrics" id="stab-cont-metrics">
-          <div class="stability-metric"><div class="stability-metric-val" id="stab-cont-avg">—</div><div class="stability-metric-lbl">Avg drift %</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-fail" id="stab-cont-max">—</div><div class="stability-metric-lbl">Max drift %</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-warn" id="stab-cont-oob">—</div><div class="stability-metric-lbl">Out of baseline</div></div>
-          <div class="stability-metric"><div class="stability-metric-val" id="stab-cont-total">—</div><div class="stability-metric-lbl">Iterations</div></div>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Stability trend chart -->
+    <!-- Stability content -->
+    <div id="stability-content"></div>
+
+    <!-- Stability trend -->
     <div class="trend-card">
-      <div class="card-title">Stability trend — last 7 days</div>
-      <div style="position:relative;height:200px"><canvas id="chartStabilityTrend"></canvas></div>
+      <div class="card-title" id="stability-trend-title">Stability trend — last 7 days</div>
+      <div style="position:relative;height:220px"><canvas id="chartStabilityTrend"></canvas></div>
     </div>
 
   </div>
@@ -386,18 +356,20 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-let allTests      = [];
-let activeTab     = 'all';
-let activeClient  = 'all';
-let activeSuite   = 'all';
-let activeMainTab = 'automation';
-let chartDist     = null, chartSrc = null, chartTrend = null, chartStabilityTrend = null;
-let lastGenerated = null;
-let availableDates= [];
-let selectedDate  = null;
-let historyCache  = {};
-let fullData      = null;
-let knownClients  = [];
+let allTests       = [];
+let activeTab      = 'all';
+let activeClient   = 'all';
+let activeSuite    = 'all';
+let activeMainTab  = 'automation';
+let activeModel    = 'all';
+let chartDist      = null, chartSrc = null, chartTrend = null, chartStabilityTrend = null;
+let lastGenerated  = null;
+let availableDates = [];
+let selectedDate   = null;
+let historyCache   = {};
+let fullData       = null;
+let knownClients   = [];
+let knownModels    = [];
 
 const REFRESH_MS  = 15000;
 const HISTORY_DIR = './history/';
@@ -407,24 +379,180 @@ const CLIENT_META = {
   telus: { label: 'Telus', color: '#0c447c', bg: '#e6f1fb' },
   mega:  { label: 'Mega',  color: '#4a1d96', bg: '#ede9fe' },
 };
+const MODEL_META = {
+  uiw: { label: 'UIW', color: '#0f5156', bg: '#ccfbf1' },
+  vip: { label: 'VIP', color: '#881337', bg: '#ffe4e6' },
+};
 
 function today() { return new Date().toISOString().slice(0,10); }
 function cap(s)  { return s.charAt(0).toUpperCase() + s.slice(1); }
 function esc(s)  { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function fmt(v, suffix='') { return v !== null && v !== undefined ? v + suffix : '—'; }
 
-// ─── Main tab switch ──────────────────────────────────────────
+// ─── Main tab ────────────────────────────────────────────────
 function switchMainTab(tab, el) {
   activeMainTab = tab;
   document.querySelectorAll('.main-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('panel-' + tab).classList.add('active');
-
   if (tab === 'stability' && fullData) {
-    updateStability(fullData.stability);
+    renderStabilityContent(fullData.stability);
     loadStabilityTrend();
   }
+}
+
+// ─── Model selector ───────────────────────────────────────────
+function selectModel(model) {
+  activeModel = model;
+  document.getElementById('btn-model-all').className = 'model-btn' + (model==='all' ? ' active-all' : '');
+  document.getElementById('btn-model-uiw').className = 'model-btn' + (model==='uiw' ? ' active-uiw' : '');
+  document.getElementById('btn-model-vip').className = 'model-btn' + (model==='vip' ? ' active-vip' : '');
+  if (fullData) renderStabilityContent(fullData.stability);
+  loadStabilityTrend();
+}
+
+// ─── Render stability content ─────────────────────────────────
+function renderStabilityContent(stability) {
+  if (!stability) return;
+  const container = document.getElementById('stability-content');
+
+  if (activeModel === 'all') {
+    // Side by side comparison
+    container.innerHTML = `<div class="stability-model-grid" id="stability-model-grid"></div>`;
+    const grid = document.getElementById('stability-model-grid');
+    for (const model of knownModels.length ? knownModels : ['uiw','vip']) {
+      const meta = MODEL_META[model] || { label: model.toUpperCase(), color:'#444', bg:'#eee' };
+      const data = stability[model];
+      grid.innerHTML += renderModelSection(model, meta, data);
+    }
+  } else {
+    // Single model view
+    const meta = MODEL_META[activeModel] || { label: activeModel.toUpperCase(), color:'#444', bg:'#eee' };
+    const data = stability[activeModel];
+    container.innerHTML = `<div class="stability-model-grid">${renderModelSection(activeModel, meta, data)}</div>`;
+  }
+}
+
+function renderModelSection(model, meta, data) {
+  if (!data) return `<div class="stability-model-section"><div class="stability-model-title"><span class="model-tag" style="background:${meta.bg};color:${meta.color}">${meta.label}</span></div><div style="color:var(--muted);font-size:12px">No data available</div></div>`;
+
+  const long = data.longevity;
+  const perf = data.performance;
+  const cont = data.resource_contention;
+  const lu   = data.last_updated || {};
+
+  return `
+  <div class="stability-model-section">
+    <div class="stability-model-title">
+      <span class="model-tag" style="background:${meta.bg};color:${meta.color}">${meta.label}</span>
+    </div>
+    <div class="stability-cards">
+
+      <div class="stability-card">
+        <div class="stability-card-title">
+          📊 Longevity
+          <span class="stability-card-lastrun">${lu.longevity ? 'Updated: ' + lu.longevity : ''}</span>
+        </div>
+        ${long ? `<div class="stability-metrics">
+          <div class="stability-metric"><div class="stability-metric-val">${long.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-fail">${long.hangs}</div><div class="stability-metric-lbl">HANGs</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-pass">${long.success_rate}%</div><div class="stability-metric-lbl">Success rate</div></div>
+        </div>` : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+      </div>
+
+      <div class="stability-card">
+        <div class="stability-card-title">
+          ⚡ Performance
+          <span class="stability-card-lastrun">${lu.performance ? 'Updated: ' + lu.performance : ''}</span>
+        </div>
+        ${perf ? `<div class="stability-metrics">
+          <div class="stability-metric"><div class="stability-metric-val">${perf.avg_response_time}s</div><div class="stability-metric-lbl">Avg response</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-fail">${perf.max_response_time}s</div><div class="stability-metric-lbl">Max response</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-pass">${perf.min_response_time}s</div><div class="stability-metric-lbl">Min response</div></div>
+          <div class="stability-metric"><div class="stability-metric-val">${perf.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
+        </div>` : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+      </div>
+
+      <div class="stability-card">
+        <div class="stability-card-title">
+          🔀 Resource Contention
+          <span class="stability-card-lastrun">${lu.resource_contention ? 'Updated: ' + lu.resource_contention : ''}</span>
+        </div>
+        ${cont ? `<div class="stability-metrics">
+          <div class="stability-metric"><div class="stability-metric-val">${cont.avg_drift_pct}%</div><div class="stability-metric-lbl">Avg drift</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-fail">${cont.max_drift_pct}%</div><div class="stability-metric-lbl">Max drift</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-warn">${cont.out_of_baseline}</div><div class="stability-metric-lbl">Out of baseline</div></div>
+          <div class="stability-metric"><div class="stability-metric-val">${cont.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
+        </div>` : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+      </div>
+
+    </div>
+  </div>`;
+}
+
+// ─── Stability trend ──────────────────────────────────────────
+async function loadStabilityTrend() {
+  const last7  = availableDates.slice(0,7).reverse();
+  const labels = [];
+  const datasets = [];
+
+  const models = activeModel === 'all' ? (knownModels.length ? knownModels : ['uiw','vip']) : [activeModel];
+
+  // Colors per metric per model
+  const colors = {
+    uiw: { longevity: '#0f5156', performance: '#0891b2', contention: '#22d3ee' },
+    vip: { longevity: '#881337', performance: '#e11d48', contention: '#fb7185' },
+  };
+
+  // Prepare dataset arrays
+  const dataMap = {};
+  for (const model of models) {
+    dataMap[model] = { longevity: [], performance: [], contention: [] };
+  }
+
+  for (const d of last7) {
+    let payload = historyCache[d];
+    if (!payload) {
+      try {
+        const r = await fetch(HISTORY_DIR + 'results_' + d + '.json');
+        if (r.ok) { payload = await r.json(); historyCache[d] = payload; }
+      } catch(e) {}
+    }
+    labels.push(formatDateLabel(d));
+    for (const model of models) {
+      const stab = payload?.stability?.[model];
+      dataMap[model].longevity.push(stab?.longevity?.success_rate ?? null);
+      dataMap[model].performance.push(stab?.performance?.avg_response_time ?? null);
+      dataMap[model].contention.push(stab?.resource_contention?.avg_drift_pct ?? null);
+    }
+  }
+
+  // Build datasets
+  for (const model of models) {
+    const c = colors[model] || { longevity:'#639922', performance:'#0c447c', contention:'#BA7517' };
+    const lbl = (MODEL_META[model]?.label || model.toUpperCase());
+    datasets.push({ label: `${lbl} Longevity %`,   data: dataMap[model].longevity,    borderColor: c.longevity,    borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y' });
+    datasets.push({ label: `${lbl} Avg resp (s)`,  data: dataMap[model].performance,  borderColor: c.performance,  borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y1', borderDash:[4,2] });
+    datasets.push({ label: `${lbl} Avg drift %`,   data: dataMap[model].contention,   borderColor: c.contention,   borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y1', borderDash:[2,2] });
+  }
+
+  const titleSuffix = activeModel !== 'all' ? ` (${MODEL_META[activeModel]?.label || activeModel.toUpperCase()})` : '';
+  document.getElementById('stability-trend-title').textContent = `Stability trend — last 7 days${titleSuffix}`;
+
+  if (chartStabilityTrend) chartStabilityTrend.destroy();
+  chartStabilityTrend = new Chart(document.getElementById('chartStabilityTrend'), {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        y:  { type:'linear', position:'left',  min:0, max:100, ticks:{ font:{size:10}, callback:v=>v+'%' } },
+        y1: { type:'linear', position:'right', beginAtZero:true, ticks:{ font:{size:10} }, grid:{ drawOnChartArea:false } },
+        x:  { ticks:{ font:{size:10} } }
+      },
+      plugins: { legend:{ position:'bottom', labels:{ font:{size:10}, boxWidth:8, padding:8 } } }
+    }
+  });
 }
 
 // ─── Client buttons ───────────────────────────────────────────
@@ -445,12 +573,9 @@ function renderClientButtons(clients) {
 function selectClient(client) {
   activeClient = client;
   renderClientButtons(knownClients);
-  updateMetrics();
-  updateCharts();
-  renderTable();
+  updateMetrics(); updateCharts(); renderTable();
   updateSuiteSummary(fullData);
-  loadTrend();
-  updateTrendTitle();
+  loadTrend(); updateTrendTitle();
 }
 
 function selectSuite(suite) {
@@ -458,19 +583,16 @@ function selectSuite(suite) {
   document.getElementById('btn-suite-all').className    = 'suite-btn' + (suite==='all'    ? ' active-all'    : '');
   document.getElementById('btn-suite-sanity').className = 'suite-btn' + (suite==='sanity' ? ' active-sanity' : '');
   document.getElementById('btn-suite-smoke').className  = 'suite-btn' + (suite==='smoke'  ? ' active-smoke'  : '');
-  updateMetrics();
-  updateCharts();
-  renderTable();
+  updateMetrics(); updateCharts(); renderTable();
   if (fullData) updateSuiteSummary(fullData);
-  loadTrend();
-  updateTrendTitle();
+  loadTrend(); updateTrendTitle();
 }
 
 function updateTrendTitle() {
-  const clientLabel = activeClient !== 'all' ? cap(activeClient) : null;
-  const suiteLabel  = activeSuite  !== 'all' ? cap(activeSuite)  : null;
-  const suffix = [clientLabel, suiteLabel].filter(Boolean).join(' · ');
-  document.getElementById('trend-title').textContent = 'Pass rate — last 7 days' + (suffix ? ' (' + suffix + ')' : '');
+  const c = activeClient !== 'all' ? cap(activeClient) : null;
+  const s = activeSuite  !== 'all' ? cap(activeSuite)  : null;
+  const suffix = [c, s].filter(Boolean).join(' · ');
+  document.getElementById('trend-title').textContent = 'Pass rate — last 7 days' + (suffix ? ` (${suffix})` : '');
 }
 
 function getFilteredTests() {
@@ -487,8 +609,9 @@ async function loadDateIndex() {
     const r = await fetch(HISTORY_DIR + 'index.json?_t=' + Date.now());
     if (!r.ok) return;
     const data = await r.json();
-    availableDates = data.dates   || [];
-    knownClients   = data.clients || [];
+    availableDates = data.dates            || [];
+    knownClients   = data.clients          || [];
+    knownModels    = data.stability_models || [];
     renderDateBar();
     renderClientButtons(knownClients);
     loadTrend();
@@ -498,10 +621,7 @@ async function loadDateIndex() {
 
 function renderDateBar() {
   const scroll = document.getElementById('date-scroll');
-  if (!availableDates.length) {
-    scroll.innerHTML = '<span style="font-size:12px;color:var(--muted)">No history yet</span>';
-    return;
-  }
+  if (!availableDates.length) { scroll.innerHTML = '<span style="font-size:12px;color:var(--muted)">No history yet</span>'; return; }
   scroll.innerHTML = availableDates.map(d => {
     const isToday  = d === today();
     const isActive = selectedDate === d || (selectedDate === null && isToday);
@@ -524,16 +644,13 @@ async function selectDate(dateStr) {
     const d = new Date(dateStr + 'T12:00:00');
     badge.textContent = '📅 ' + d.toLocaleDateString('en', {weekday:'short', month:'short', day:'numeric'});
     badge.style.display = 'inline-block';
-  } else {
-    badge.style.display = 'none';
-  }
+  } else { badge.style.display = 'none'; }
   if (selectedDate) await loadHistoricalDate(selectedDate);
   else await loadLatest(false);
 }
 
-// ─── Data loading ─────────────────────────────────────────────
 async function loadHistoricalDate(dateStr) {
-  if (historyCache[dateStr]) { applyData(historyCache[dateStr], false); return; }
+  if (historyCache[dateStr] && dateStr !== today()) { applyData(historyCache[dateStr], false); return; }
   try {
     const r = await fetch(HISTORY_DIR + 'results_' + dateStr + '.json?_t=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -577,33 +694,28 @@ function applyData(data, isLive) {
   const newData = JSON.stringify(data.tests);
   const changed = newData !== JSON.stringify(allTests);
   allTests = data.tests || [];
-
-  if (data.clients && data.clients.length) {
-    knownClients = data.clients;
-    renderClientButtons(knownClients);
-  }
-
+  if (data.clients && data.clients.length) { knownClients = data.clients; renderClientButtons(knownClients); }
+  if (data.stability_models) knownModels = data.stability_models;
   updateSuiteSummary(data);
   updateMetrics();
   if (changed) { updateCharts(); renderTable(); }
-  if (data.stability) updateStability(data.stability);
-
+  if (data.stability && activeMainTab === 'stability') {
+    renderStabilityContent(data.stability);
+    loadStabilityTrend();
+  }
   if (!isLive) {
     const ts = new Date(data.generated_at);
-    document.getElementById('status-text').textContent =
-      'Snapshot: ' + ts.toLocaleTimeString('en', {hour:'2-digit', minute:'2-digit'});
+    document.getElementById('status-text').textContent = 'Snapshot: ' + ts.toLocaleTimeString('en', {hour:'2-digit', minute:'2-digit'});
     document.getElementById('status-dot').className = 'dot stale';
   }
 }
 
-// ─── Suite summary ────────────────────────────────────────────
 function updateSuiteSummary(data) {
   if (!data || !data.summaries) return;
   const client = activeClient === 'all' ? null : activeClient;
   let sanity = { total:0, passed:0, failed:0, skipped:0, rate:0 };
   let smoke  = { total:0, passed:0, failed:0, skipped:0, rate:0 };
   let sanityRun = null, smokeRun = null;
-
   if (client && data.summaries[client]) {
     sanity = data.summaries[client].sanity || sanity;
     smoke  = data.summaries[client].smoke  || smoke;
@@ -615,14 +727,10 @@ function updateSuiteSummary(data) {
     for (const c of Object.keys(data.summaries)) {
       const cs = data.summaries[c].sanity || {};
       const sk = data.summaries[c].smoke  || {};
-      sanity.total   += cs.total   || 0;
-      sanity.passed  += cs.passed  || 0;
-      sanity.failed  += cs.failed  || 0;
-      sanity.skipped += cs.skipped || 0;
-      smoke.total    += sk.total   || 0;
-      smoke.passed   += sk.passed  || 0;
-      smoke.failed   += sk.failed  || 0;
-      smoke.skipped  += sk.skipped || 0;
+      sanity.total   += cs.total   || 0; sanity.passed  += cs.passed  || 0;
+      sanity.failed  += cs.failed  || 0; sanity.skipped += cs.skipped || 0;
+      smoke.total    += sk.total   || 0; smoke.passed   += sk.passed  || 0;
+      smoke.failed   += sk.failed  || 0; smoke.skipped  += sk.skipped || 0;
       if (data.last_run && data.last_run[c]) {
         if (!sanityRun || data.last_run[c].sanity > sanityRun) sanityRun = data.last_run[c].sanity;
         if (!smokeRun  || data.last_run[c].smoke  > smokeRun)  smokeRun  = data.last_run[c].smoke;
@@ -631,7 +739,6 @@ function updateSuiteSummary(data) {
     sanity.rate = sanity.total > 0 ? Math.round(sanity.passed/sanity.total*1000)/10 : 0;
     smoke.rate  = smoke.total  > 0 ? Math.round(smoke.passed/smoke.total*1000)/10   : 0;
   }
-
   document.getElementById('s-sanity-total').textContent  = sanity.total;
   document.getElementById('s-sanity-pass').textContent   = sanity.passed;
   document.getElementById('s-sanity-fail').textContent   = sanity.failed;
@@ -647,88 +754,6 @@ function updateSuiteSummary(data) {
   document.getElementById('s-smoke-lastrun').textContent  = fmtRun(smokeRun);
 }
 
-// ─── Stability section ────────────────────────────────────────
-function updateStability(stability) {
-  if (!stability) return;
-
-  // Longevity
-  const long = stability.longevity;
-  const longRun = stability.last_updated?.longevity;
-  document.getElementById('stab-long-lastrun').textContent = longRun ? 'Last updated: ' + longRun : '';
-  if (long) {
-    document.getElementById('stab-long-total').textContent = long.total_iterations;
-    document.getElementById('stab-long-hangs').textContent = long.hangs;
-    document.getElementById('stab-long-rate').textContent  = long.success_rate + '%';
-  }
-
-  // Performance
-  const perf = stability.performance;
-  const perfRun = stability.last_updated?.performance;
-  document.getElementById('stab-perf-lastrun').textContent = perfRun ? 'Last updated: ' + perfRun : '';
-  if (perf) {
-    document.getElementById('stab-perf-avg').textContent   = perf.avg_response_time + 's';
-    document.getElementById('stab-perf-max').textContent   = perf.max_response_time + 's';
-    document.getElementById('stab-perf-min').textContent   = perf.min_response_time + 's';
-    document.getElementById('stab-perf-total').textContent = perf.total_iterations;
-  }
-
-  // Resource Contention
-  const cont = stability.resource_contention;
-  const contRun = stability.last_updated?.resource_contention;
-  document.getElementById('stab-cont-lastrun').textContent = contRun ? 'Last updated: ' + contRun : '';
-  if (cont) {
-    document.getElementById('stab-cont-avg').textContent   = cont.avg_drift_pct + '%';
-    document.getElementById('stab-cont-max').textContent   = cont.max_drift_pct + '%';
-    document.getElementById('stab-cont-oob').textContent   = cont.out_of_baseline;
-    document.getElementById('stab-cont-total').textContent = cont.total_iterations;
-  }
-}
-
-// ─── Stability trend ──────────────────────────────────────────
-async function loadStabilityTrend() {
-  const last7  = availableDates.slice(0,7).reverse();
-  const labels = [];
-  const longRates  = [], perfAvgs = [], contDrifts = [];
-
-  for (const d of last7) {
-    let payload = historyCache[d];
-    if (!payload) {
-      try {
-        const r = await fetch(HISTORY_DIR + 'results_' + d + '.json');
-        if (r.ok) { payload = await r.json(); historyCache[d] = payload; }
-      } catch(e) {}
-    }
-    labels.push(formatDateLabel(d));
-    const stab = payload?.stability;
-    longRates.push(stab?.longevity?.success_rate ?? null);
-    perfAvgs.push(stab?.performance?.avg_response_time ?? null);
-    contDrifts.push(stab?.resource_contention?.avg_drift_pct ?? null);
-  }
-
-  if (chartStabilityTrend) chartStabilityTrend.destroy();
-  chartStabilityTrend = new Chart(document.getElementById('chartStabilityTrend'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        { label: 'Longevity success %', data: longRates,  borderColor: '#639922', backgroundColor: 'rgba(99,153,34,0.1)',   borderWidth: 2, pointRadius: 4, fill: false, tension: 0.3, spanGaps: true, yAxisID: 'y' },
-        { label: 'Avg response (s)',    data: perfAvgs,   borderColor: '#0c447c', backgroundColor: 'rgba(12,68,124,0.1)',   borderWidth: 2, pointRadius: 4, fill: false, tension: 0.3, spanGaps: true, yAxisID: 'y1' },
-        { label: 'Avg drift %',         data: contDrifts, borderColor: '#BA7517', backgroundColor: 'rgba(186,117,23,0.1)', borderWidth: 2, pointRadius: 4, fill: false, tension: 0.3, spanGaps: true, yAxisID: 'y1' },
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      scales: {
-        y:  { type:'linear', position:'left',  min:0, max:100, ticks:{ font:{size:11}, callback:v=>v+'%' } },
-        y1: { type:'linear', position:'right', beginAtZero:true, ticks:{ font:{size:11} }, grid:{ drawOnChartArea:false } },
-        x:  { ticks:{ font:{size:11} } }
-      },
-      plugins: { legend:{ position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:10 } } }
-    }
-  });
-}
-
-// ─── Metrics ──────────────────────────────────────────────────
 function updateMetrics() {
   const tests = getFilteredTests();
   const pass  = tests.filter(t=>t.status==='PASS').length;
@@ -755,7 +780,6 @@ function updateMetrics() {
   }
 }
 
-// ─── Charts ───────────────────────────────────────────────────
 function updateCharts() {
   const tests = getFilteredTests();
   const pass  = tests.filter(t=>t.status==='PASS').length;
@@ -765,14 +789,12 @@ function updateCharts() {
   const csvF  = tests.filter(t=>t.source==='CSV'&&t.status==='FAIL').length;
   const rfP   = tests.filter(t=>t.source==='RF' &&t.status==='PASS').length;
   const csvP  = tests.filter(t=>t.source==='CSV'&&t.status==='PASS').length;
-
   if (chartDist) chartDist.destroy();
   chartDist = new Chart(document.getElementById('chartDist'), {
     type: 'doughnut',
     data: { labels:['Pass','Fail','Skipped'], datasets:[{ data:[pass,fail,skip], backgroundColor:['#639922','#E24B4A','#BA7517'], borderWidth:0 }] },
     options: { responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{ position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:10 } } } }
   });
-
   if (chartSrc) chartSrc.destroy();
   chartSrc = new Chart(document.getElementById('chartSrc'), {
     type: 'bar',
@@ -781,7 +803,6 @@ function updateCharts() {
   });
 }
 
-// ─── Trend ────────────────────────────────────────────────────
 async function loadTrend() {
   const last7  = availableDates.slice(0,7).reverse();
   const labels = [], rates = [];
@@ -800,21 +821,16 @@ async function loadTrend() {
         if (payload.summaries && payload.summaries[activeClient]) {
           const s = payload.summaries[activeClient];
           rate = activeSuite !== 'all' ? (s[activeSuite]?.rate ?? null) : (s.all?.rate ?? null);
-        } else {
-          rate = null;
-        }
+        } else { rate = null; }
       } else {
-        let totalPass = 0, totalTests = 0;
+        let tp = 0, tt = 0;
         if (payload.summaries) {
           for (const c of Object.keys(payload.summaries)) {
-            const s = activeSuite !== 'all'
-              ? (payload.summaries[c][activeSuite] || {})
-              : (payload.summaries[c].all || {});
-            totalPass  += s.passed || 0;
-            totalTests += s.total  || 0;
+            const s = activeSuite !== 'all' ? (payload.summaries[c][activeSuite]||{}) : (payload.summaries[c].all||{});
+            tp += s.passed||0; tt += s.total||0;
           }
         }
-        rate = totalTests > 0 ? Math.round(totalPass/totalTests*1000)/10 : null;
+        rate = tt > 0 ? Math.round(tp/tt*1000)/10 : null;
       }
     }
     rates.push(rate);
@@ -827,7 +843,6 @@ async function loadTrend() {
   });
 }
 
-// ─── Table ────────────────────────────────────────────────────
 function switchTab(tab, el) {
   activeTab = tab;
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
@@ -846,13 +861,8 @@ function renderTable() {
     if (search && ![t.name,t.suite,t.message].join(' ').toLowerCase().includes(search)) return false;
     return true;
   });
-
   const tbody = document.getElementById('tbody');
-  if (!rows.length) {
-    tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No tests match the current filters</td></tr>';
-    return;
-  }
-
+  if (!rows.length) { tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No tests match the current filters</td></tr>'; return; }
   tbody.innerHTML = rows.map((t,i) => {
     const pill      = t.status==='PASS'?'pass-pill':t.status==='FAIL'?'fail-pill':'warn-pill';
     const srcCls    = t.source==='RF'?'src-rf':'src-csv';
@@ -874,7 +884,6 @@ function renderTable() {
   }).join('');
 }
 
-// ─── Boot ─────────────────────────────────────────────────────
 loadLatest(false);
 </script>
 </body>

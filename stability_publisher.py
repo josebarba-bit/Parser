@@ -1,12 +1,12 @@
 """
-stability_publisher.py — Corre en PC 2
-Copia los CSV de stability del dia actual a la carpeta del repo
-y hace git push a GitHub automaticamente a las 11 PM.
+stability_publisher.py — Runs on PC 2
+Copies stability CSV files for UIW and VIP models from today's folder
+to the repo and pushes to GitHub automatically at 11 PM.
 
-Instalar dependencias:
+Install dependencies:
     pip install schedule
 
-Uso:
+Usage:
     python stability_publisher.py
 """
 
@@ -17,58 +17,67 @@ import schedule
 import time
 from datetime import datetime
 
-# ─── CONFIGURACIÓN ────────────────────────────────────────────────
-# Carpeta base donde se generan los CSV con subcarpeta de fecha
-BASE_RESULTS = r"C:\Users\Auto-KPI\Desktop\Repos\ONYX\oreganqa-automation\ONYX\MIDDLEWARE_STABILITY\RACK_01\TestResults"
+# ─── CONFIGURATION ────────────────────────────────────────────────
+# Base paths for each model
+MODELS = {
+    "uiw": r"C:\Users\Auto-KPI\Desktop\Repos\ONYX\oreganqa-automation\ONYX\MIDDLEWARE_STABILITY\UIW\TestResults",
+    "vip": r"C:\Users\Auto-KPI\Desktop\Repos\ONYX1\oreganqa-automation\ONYX\MIDDLEWARE_STABILITY\VIP\TestResults",
+}
 
-# Ruta del repo clonado en PC 2
-REPO_PATH = r"C:\Users\Auto-KPI\Documents\Publisher\Parser"  # ← ajusta esta ruta
+# Path to the cloned repo on PC 2
+REPO_PATH = r"C:\Users\Auto-KPI\Documents\Publisher\Parser"
 
-# Carpeta destino dentro del repo
+# Destination folder inside the repo
 STABILITY_DEST = os.path.join(REPO_PATH, "test_results", "stability")
 
-# Archivos a copiar
+# CSV files to copy
 CSV_FILES = ["longevity.csv", "performance.csv", "resource_contention.csv"]
 
-# Rama de git
+# Git branch
 GIT_BRANCH = "master"
 
-# Hora de publicación (formato 24h)
+# Publish time (24h format)
 PUBLISH_TIME = "23:00"
 # ──────────────────────────────────────────────────────────────────
 
 
-def get_today_folder():
-    """Retorna la ruta de la carpeta de hoy."""
+def get_today_folder(base_path):
+    """Returns today's results folder path."""
     today = datetime.now().strftime("%Y-%m-%d")
-    return os.path.join(BASE_RESULTS, today)
+    return os.path.join(base_path, today)
 
 
 def copy_csvs():
-    """Copia los CSV del día actual al repo."""
-    today_folder = get_today_folder()
-    if not os.path.exists(today_folder):
-        print(f"  [!] Folder not found: {today_folder}")
-        return False
+    """Copies CSV files from today's folder for each model to the repo."""
+    total_copied = 0
 
-    os.makedirs(STABILITY_DEST, exist_ok=True)
-    copied = 0
-    for fname in CSV_FILES:
-        src = os.path.join(today_folder, fname)
-        dst = os.path.join(STABILITY_DEST, fname)
-        if os.path.exists(src):
-            shutil.copy2(src, dst)
-            print(f"  ✓ Copied: {fname}")
-            copied += 1
-        else:
-            print(f"  [!] Not found: {fname}")
+    for model, base_path in MODELS.items():
+        today_folder = get_today_folder(base_path)
+        dest_folder  = os.path.join(STABILITY_DEST, model)
 
-    return copied > 0
+        if not os.path.exists(today_folder):
+            print(f"  [!] {model.upper()} folder not found: {today_folder}")
+            continue
+
+        os.makedirs(dest_folder, exist_ok=True)
+        copied = 0
+        for fname in CSV_FILES:
+            src = os.path.join(today_folder, fname)
+            dst = os.path.join(dest_folder, fname)
+            if os.path.exists(src):
+                shutil.copy2(src, dst)
+                print(f"  ✓ {model.upper()} — Copied: {fname}")
+                copied += 1
+            else:
+                print(f"  [!] {model.upper()} — Not found: {fname}")
+        total_copied += copied
+
+    return total_copied > 0
 
 
 def git_push():
-    """Hace add + commit + push de los CSV al repo."""
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    """Adds, commits and pushes CSV files to GitHub."""
+    timestamp  = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     commit_msg = f"chore: update stability results [{timestamp}]"
 
     commands = [
@@ -92,7 +101,7 @@ def git_push():
 
 
 def run_daily():
-    """Tarea principal: copia CSV y publica a GitHub."""
+    """Main task: copy CSVs and publish to GitHub."""
     print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Running stability publish...")
     if copy_csvs():
         git_push()
@@ -103,25 +112,18 @@ def run_daily():
 if __name__ == "__main__":
     print("=" * 50)
     print("  Stability Publisher — PC 2")
-    print(f"  Source: {BASE_RESULTS}")
+    print(f"  Models: {', '.join(m.upper() for m in MODELS.keys())}")
+    for model, path in MODELS.items():
+        print(f"  {model.upper()}: {path}")
     print(f"  Destination: {STABILITY_DEST}")
     print(f"  Scheduled: {PUBLISH_TIME} daily")
     print("=" * 50)
 
-    # Instalar schedule si no está
-    try:
-        import schedule
-    except ImportError:
-        print("Installing schedule...")
-        subprocess.run(["pip", "install", "schedule"])
-        import schedule
-
-    # Programar tarea diaria
     schedule.every().day.at(PUBLISH_TIME).do(run_daily)
     print(f"\nWaiting for {PUBLISH_TIME}... (Ctrl+C to stop)\n")
 
-    # También correr al iniciar para hacer un push inmediato si se quiere
-    #run_daily()  # descomentar si quieres que corra al arrancar
+    # Uncomment to run immediately on startup (for testing)
+    # run_daily()
 
     try:
         while True:

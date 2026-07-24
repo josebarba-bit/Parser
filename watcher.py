@@ -1,9 +1,10 @@
 """
-watcher.py — Detecta cambios en archivos de resultados por cliente y suite,
-genera JSON por día y mantiene 30 días de historial.
-Incluye soporte para pruebas de stability (longevity, performance, resource_contention).
+watcher.py — Detects changes in test result files by client and suite,
+generates a JSON per day and keeps 30 days of history.
+Includes support for stability tests (longevity, performance, resource_contention)
+for UIW and VIP models.
 
-Estructura esperada:
+Expected folder structure:
     test_results/
     ├── telus/
     │   ├── sanity/output.xml
@@ -11,14 +12,19 @@ Estructura esperada:
     ├── mega/
     │   └── sanity/output.xml
     └── stability/
-        ├── longevity.csv
-        ├── performance.csv
-        └── resource_contention.csv
+        ├── uiw/
+        │   ├── longevity.csv
+        │   ├── performance.csv
+        │   └── resource_contention.csv
+        └── vip/
+            ├── longevity.csv
+            ├── performance.csv
+            └── resource_contention.csv
 
-Instalar dependencias:
+Install dependencies:
     pip install watchdog
 
-Uso:
+Usage:
     python watcher.py
 """
 
@@ -33,23 +39,26 @@ from datetime import datetime, timedelta
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-# ─── CONFIGURACIÓN ────────────────────────────────────────────────
+# ─── CONFIGURATION ────────────────────────────────────────────────
 WATCH_FOLDER = "./test_results"
 OUTPUT_DIR   = "./docs/history"
 LATEST_JSON  = "./docs/results.json"
 HISTORY_DAYS = 30
 
+# Automation clients and their suites
 CLIENTS = {
     "telus": ["sanity", "smoke"],
     "mega":  ["sanity"],
-    # "mega": ["sanity", "smoke"],
 }
 
+# Stability models
+STABILITY_MODELS = ["uiw", "vip"]
 STABILITY_FOLDER = os.path.join(WATCH_FOLDER, "stability")
 # ──────────────────────────────────────────────────────────────────
 
 
 def parse_robot_xml(filepath, client, suite_type):
+    """Parses a Robot Framework output.xml file."""
     tests = []
     if not os.path.exists(filepath):
         return tests
@@ -80,6 +89,7 @@ def parse_robot_xml(filepath, client, suite_type):
 
 
 def parse_csv_file(filepath, client, suite_type):
+    """Parses a Python CSV test results file."""
     tests = []
     filename = os.path.basename(filepath)
     try:
@@ -130,7 +140,7 @@ def parse_csv_file(filepath, client, suite_type):
 
 
 def parse_longevity(filepath):
-    """Parsea longevity.csv y extrae métricas."""
+    """Parses longevity.csv and extracts metrics."""
     if not os.path.exists(filepath):
         return None
     try:
@@ -140,14 +150,12 @@ def parse_longevity(filepath):
             reader = csv.DictReader(f)
             for row in reader:
                 total += 1
-                result = row.get("result", "").strip().upper()
-                if result == "HANG":
+                if row.get("result", "").strip().upper() == "HANG":
                     hangs += 1
-        success_rate = round((total - hangs) / total * 100, 1) if total > 0 else 0
         return {
             "total_iterations": total,
             "hangs":            hangs,
-            "success_rate":     success_rate,
+            "success_rate":     round((total - hangs) / total * 100, 1) if total > 0 else 0,
         }
     except Exception as e:
         print(f"  [!] Error parsing longevity.csv: {e}")
@@ -155,7 +163,7 @@ def parse_longevity(filepath):
 
 
 def parse_performance(filepath):
-    """Parsea performance.csv y extrae métricas."""
+    """Parses performance.csv and extracts metrics."""
     if not os.path.exists(filepath):
         return None
     try:
@@ -181,7 +189,7 @@ def parse_performance(filepath):
 
 
 def parse_resource_contention(filepath, drift_threshold=20):
-    """Parsea resource_contention.csv y extrae métricas."""
+    """Parses resource_contention.csv and extracts metrics."""
     if not os.path.exists(filepath):
         return None
     try:
@@ -200,10 +208,10 @@ def parse_resource_contention(filepath, drift_threshold=20):
         if not drifts:
             return None
         return {
-            "avg_drift_pct":      round(sum(drifts) / len(drifts), 2),
-            "max_drift_pct":      round(max(drifts, key=abs), 2),
-            "out_of_baseline":    out_of_baseline,
-            "total_iterations":   len(drifts),
+            "avg_drift_pct":       round(sum(drifts) / len(drifts), 2),
+            "max_drift_pct":       round(max(drifts, key=abs), 2),
+            "out_of_baseline":     out_of_baseline,
+            "total_iterations":    len(drifts),
             "drift_threshold_pct": drift_threshold,
         }
     except Exception as e:
@@ -211,7 +219,23 @@ def parse_resource_contention(filepath, drift_threshold=20):
         return None
 
 
+def parse_stability_model(model):
+    """Parses all stability CSV files for a given model."""
+    model_folder = os.path.join(STABILITY_FOLDER, model)
+    return {
+        "longevity":           parse_longevity(os.path.join(model_folder, "longevity.csv")),
+        "performance":         parse_performance(os.path.join(model_folder, "performance.csv")),
+        "resource_contention": parse_resource_contention(os.path.join(model_folder, "resource_contention.csv")),
+        "last_updated": {
+            "longevity":           get_file_mtime(os.path.join(model_folder, "longevity.csv")),
+            "performance":         get_file_mtime(os.path.join(model_folder, "performance.csv")),
+            "resource_contention": get_file_mtime(os.path.join(model_folder, "resource_contention.csv")),
+        }
+    }
+
+
 def build_summary(tests):
+    """Builds a summary dict from a list of tests."""
     total   = len(tests)
     passed  = sum(1 for t in tests if t["status"] == "PASS")
     failed  = sum(1 for t in tests if t["status"] == "FAIL")
@@ -225,7 +249,15 @@ def build_summary(tests):
     }
 
 
+def get_file_mtime(filepath):
+    """Returns the last modified time of a file as a formatted string."""
+    if os.path.exists(filepath):
+        return datetime.fromtimestamp(os.path.getmtime(filepath)).strftime("%Y-%m-%d %H:%M")
+    return None
+
+
 def cleanup_old_files():
+    """Removes history files older than HISTORY_DAYS."""
     if not os.path.exists(OUTPUT_DIR):
         return
     cutoff  = datetime.now() - timedelta(days=HISTORY_DAYS)
@@ -246,27 +278,26 @@ def cleanup_old_files():
 
 
 def update_index():
+    """Regenerates history/index.json with available dates and clients."""
     if not os.path.exists(OUTPUT_DIR):
         return
     dates = []
     for fname in sorted(os.listdir(OUTPUT_DIR), reverse=True):
         if fname.startswith("results_") and fname.endswith(".json"):
-            date_str = fname.replace("results_", "").replace(".json", "")
-            dates.append(date_str)
+            dates.append(fname.replace("results_", "").replace(".json", ""))
     with open(os.path.join(OUTPUT_DIR, "index.json"), "w", encoding="utf-8") as f:
-        json.dump({"dates": dates, "clients": list(CLIENTS.keys())}, f)
-
-
-def get_file_mtime(filepath):
-    if os.path.exists(filepath):
-        return datetime.fromtimestamp(os.path.getmtime(filepath)).strftime("%Y-%m-%d %H:%M")
-    return None
+        json.dump({
+            "dates":            dates,
+            "clients":          list(CLIENTS.keys()),
+            "stability_models": STABILITY_MODELS,
+        }, f)
 
 
 def generate_json():
+    """Reads all result files and generates the unified JSON."""
     all_tests = []
 
-    # Pruebas por cliente
+    # Automation tests per client
     for client, suites in CLIENTS.items():
         for suite_type in suites:
             xml_path = os.path.join(WATCH_FOLDER, client, suite_type, "output.xml")
@@ -281,7 +312,7 @@ def generate_json():
                     csv_tests = parse_csv_file(os.path.join(client_folder, fname), client, "sanity")
                     all_tests.extend(csv_tests)
 
-    # Summaries por cliente y suite
+    # Summaries per client and suite
     summaries = {}
     for client in CLIENTS:
         client_tests = [t for t in all_tests if t["client"] == client]
@@ -290,7 +321,7 @@ def generate_json():
             suite_tests = [t for t in client_tests if t["suite_type"] == suite_type]
             summaries[client][suite_type] = build_summary(suite_tests)
 
-    # Last run por cliente y suite
+    # Last run per client and suite
     last_run = {}
     for client, suites in CLIENTS.items():
         last_run[client] = {}
@@ -298,35 +329,24 @@ def generate_json():
             xml_path = os.path.join(WATCH_FOLDER, client, suite_type, "output.xml")
             last_run[client][suite_type] = get_file_mtime(xml_path)
 
-    # Stability metrics
-    longevity_path    = os.path.join(STABILITY_FOLDER, "longevity.csv")
-    performance_path  = os.path.join(STABILITY_FOLDER, "performance.csv")
-    contention_path   = os.path.join(STABILITY_FOLDER, "resource_contention.csv")
-
-    stability = {
-        "longevity":            parse_longevity(longevity_path),
-        "performance":          parse_performance(performance_path),
-        "resource_contention":  parse_resource_contention(contention_path),
-        "last_updated": {
-            "longevity":           get_file_mtime(longevity_path),
-            "performance":         get_file_mtime(performance_path),
-            "resource_contention": get_file_mtime(contention_path),
-        }
-    }
-
-    print(f"  Stability longevity:           {stability['longevity']}")
-    print(f"  Stability performance:         {stability['performance']}")
-    print(f"  Stability resource_contention: {stability['resource_contention']}")
+    # Stability metrics per model
+    stability = {}
+    for model in STABILITY_MODELS:
+        stability[model] = parse_stability_model(model)
+        print(f"  Stability {model.upper()} longevity:           {stability[model]['longevity']}")
+        print(f"  Stability {model.upper()} performance:         {stability[model]['performance']}")
+        print(f"  Stability {model.upper()} resource_contention: {stability[model]['resource_contention']}")
 
     payload = {
-        "generated_at": datetime.now().isoformat(),
-        "date":         datetime.now().strftime("%Y-%m-%d"),
-        "clients":      list(CLIENTS.keys()),
-        "summary":      build_summary(all_tests),
-        "summaries":    summaries,
-        "last_run":     last_run,
-        "stability":    stability,
-        "tests":        all_tests,
+        "generated_at":    datetime.now().isoformat(),
+        "date":            datetime.now().strftime("%Y-%m-%d"),
+        "clients":         list(CLIENTS.keys()),
+        "stability_models": STABILITY_MODELS,
+        "summary":         build_summary(all_tests),
+        "summaries":       summaries,
+        "last_run":        last_run,
+        "stability":       stability,
+        "tests":           all_tests,
     }
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -348,29 +368,10 @@ def generate_json():
     update_index()
 
 
-class ResultsHandler(FileSystemEventHandler):
-    def __init__(self):
-        self._last_run = 0
-
-    def on_modified(self, event):
-        if event.is_directory:
-            return
-        fname = os.path.basename(event.src_path)
-        if fname.endswith(".xml") or fname.endswith(".csv"):
-            now = time.time()
-            if now - self._last_run < 1:
-                return
-            self._last_run = now
-            print(f"\n[{datetime.now().strftime('%H:%M:%S')}] Change detected: {fname}")
-            time.sleep(3)
-            generate_json()
-
-    on_created = on_modified
-    
 def auto_pull():
-    """Hace git pull a las 11:05 PM para traer CSV de stability de PC2."""
+    """Pulls from GitHub at 23:05 to get new stability CSV files from PC2."""
     while True:
-        now = datetime.now()
+        now    = datetime.now()
         target = now.replace(hour=23, minute=5, second=0, microsecond=0)
         if now >= target:
             target = target.replace(day=target.day + 1)
@@ -391,31 +392,58 @@ def auto_pull():
             print(f"  [!] git pull error: {e}")
 
 
+class ResultsHandler(FileSystemEventHandler):
+    def __init__(self):
+        self._last_run = 0
+
+    def on_modified(self, event):
+        if event.is_directory:
+            return
+        fname = os.path.basename(event.src_path)
+        if fname.endswith(".xml") or fname.endswith(".csv"):
+            now = time.time()
+            if now - self._last_run < 1:
+                return
+            self._last_run = now
+            print(f"\n[{datetime.now().strftime('%H:%M:%S')}] Change detected: {fname}")
+            time.sleep(3)
+            generate_json()
+
+    on_created = on_modified
+
+
 if __name__ == "__main__":
+    # Create folders for each client and suite
     for client, suites in CLIENTS.items():
         for suite_type in suites:
             os.makedirs(os.path.join(WATCH_FOLDER, client, suite_type), exist_ok=True)
-    os.makedirs(STABILITY_FOLDER, exist_ok=True)
+
+    # Create stability folders for each model
+    for model in STABILITY_MODELS:
+        os.makedirs(os.path.join(STABILITY_FOLDER, model), exist_ok=True)
 
     print("=" * 50)
     print("  QA Dashboard Watcher")
-    print(f"  Clients:   {', '.join(CLIENTS.keys())}")
-    print(f"  Stability: {os.path.abspath(STABILITY_FOLDER)}")
-    print(f"  History:   {os.path.abspath(OUTPUT_DIR)}")
-    print(f"  Retention: {HISTORY_DAYS} days")
+    print(f"  Clients:          {', '.join(CLIENTS.keys())}")
+    print(f"  Stability models: {', '.join(m.upper() for m in STABILITY_MODELS)}")
+    print(f"  Stability folder: {os.path.abspath(STABILITY_FOLDER)}")
+    print(f"  History:          {os.path.abspath(OUTPUT_DIR)}")
+    print(f"  Retention:        {HISTORY_DAYS} days")
     print("=" * 50)
 
     print(f"\n[Start] Generating initial results.json...")
     generate_json()
 
-    handler  = ResultsHandler()
-    observer = Observer()
-    observer.schedule(handler, WATCH_FOLDER, recursive=True)
+    # Start auto git pull thread at 23:05
     pull_thread = threading.Thread(target=auto_pull, daemon=True)
     pull_thread.start()
     print("Auto git pull scheduled at 23:05 for stability CSV\n")
+
+    handler  = ResultsHandler()
+    observer = Observer()
+    observer.schedule(handler, WATCH_FOLDER, recursive=True)
     observer.start()
-    print(f"\nListening for changes... (Ctrl+C to stop)\n")
+    print(f"Listening for changes... (Ctrl+C to stop)\n")
 
     try:
         while True:
