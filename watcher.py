@@ -26,6 +26,8 @@ import json
 import os
 import time
 import csv
+import subprocess
+import threading
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 from watchdog.observers import Observer
@@ -364,6 +366,29 @@ class ResultsHandler(FileSystemEventHandler):
             generate_json()
 
     on_created = on_modified
+    
+def auto_pull():
+    """Hace git pull a las 11:05 PM para traer CSV de stability de PC2."""
+    while True:
+        now = datetime.now()
+        target = now.replace(hour=23, minute=5, second=0, microsecond=0)
+        if now >= target:
+            target = target.replace(day=target.day + 1)
+        wait_seconds = (target - now).total_seconds()
+        time.sleep(wait_seconds)
+        try:
+            result = subprocess.run(
+                ["git", "pull", "origin", "master"],
+                capture_output=True, text=True,
+                cwd=os.path.dirname(os.path.abspath(__file__))
+            )
+            print(f"\n[{datetime.now().strftime('%H:%M:%S')}] Auto git pull:")
+            print(f"  {result.stdout.strip()}")
+            if "Already up to date" not in result.stdout:
+                print(f"  New stability data detected, regenerating JSON...")
+                generate_json()
+        except Exception as e:
+            print(f"  [!] git pull error: {e}")
 
 
 if __name__ == "__main__":
@@ -386,6 +411,9 @@ if __name__ == "__main__":
     handler  = ResultsHandler()
     observer = Observer()
     observer.schedule(handler, WATCH_FOLDER, recursive=True)
+    pull_thread = threading.Thread(target=auto_pull, daemon=True)
+    pull_thread.start()
+    print("Auto git pull scheduled at 23:05 for stability CSV\n")
     observer.start()
     print(f"\nListening for changes... (Ctrl+C to stop)\n")
 
