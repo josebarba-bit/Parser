@@ -2,7 +2,7 @@
 watcher.py — Detects changes in test result files by client and suite,
 generates a JSON per day and keeps 30 days of history.
 Includes support for stability tests (longevity, performance, resource_contention)
-for UIW and VIP models.
+for UIW and VIP models, and reads version.txt for each model.
 
 Expected folder structure:
     test_results/
@@ -13,10 +13,12 @@ Expected folder structure:
     │   └── sanity/output.xml
     └── stability/
         ├── uiw/
+        │   ├── version.txt
         │   ├── longevity.csv
         │   ├── performance.csv
         │   └── resource_contention.csv
         └── vip/
+            ├── version.txt
             ├── longevity.csv
             ├── performance.csv
             └── resource_contention.csv
@@ -219,10 +221,23 @@ def parse_resource_contention(filepath, drift_threshold=20):
         return None
 
 
+def read_version(filepath):
+    """Reads the SW version from version.txt."""
+    if not os.path.exists(filepath):
+        return None
+    try:
+        with open(filepath, encoding="utf-8") as f:
+            return f.read().strip()
+    except Exception as e:
+        print(f"  [!] Error reading version.txt: {e}")
+        return None
+
+
 def parse_stability_model(model):
-    """Parses all stability CSV files for a given model."""
+    """Parses all stability files for a given model including version.txt."""
     model_folder = os.path.join(STABILITY_FOLDER, model)
     return {
+        "version":             read_version(os.path.join(model_folder, "version.txt")),
         "longevity":           parse_longevity(os.path.join(model_folder, "longevity.csv")),
         "performance":         parse_performance(os.path.join(model_folder, "performance.csv")),
         "resource_contention": parse_resource_contention(os.path.join(model_folder, "resource_contention.csv")),
@@ -333,20 +348,22 @@ def generate_json():
     stability = {}
     for model in STABILITY_MODELS:
         stability[model] = parse_stability_model(model)
-        print(f"  Stability {model.upper()} longevity:           {stability[model]['longevity']}")
-        print(f"  Stability {model.upper()} performance:         {stability[model]['performance']}")
-        print(f"  Stability {model.upper()} resource_contention: {stability[model]['resource_contention']}")
+        version = stability[model].get('version') or 'N/A'
+        print(f"  Stability {model.upper()} version:            {version}")
+        print(f"  Stability {model.upper()} longevity:          {stability[model]['longevity']}")
+        print(f"  Stability {model.upper()} performance:        {stability[model]['performance']}")
+        print(f"  Stability {model.upper()} resource_contention:{stability[model]['resource_contention']}")
 
     payload = {
-        "generated_at":    datetime.now().isoformat(),
-        "date":            datetime.now().strftime("%Y-%m-%d"),
-        "clients":         list(CLIENTS.keys()),
+        "generated_at":     datetime.now().isoformat(),
+        "date":             datetime.now().strftime("%Y-%m-%d"),
+        "clients":          list(CLIENTS.keys()),
         "stability_models": STABILITY_MODELS,
-        "summary":         build_summary(all_tests),
-        "summaries":       summaries,
-        "last_run":        last_run,
-        "stability":       stability,
-        "tests":           all_tests,
+        "summary":          build_summary(all_tests),
+        "summaries":        summaries,
+        "last_run":         last_run,
+        "stability":        stability,
+        "tests":            all_tests,
     }
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -400,7 +417,7 @@ class ResultsHandler(FileSystemEventHandler):
         if event.is_directory:
             return
         fname = os.path.basename(event.src_path)
-        if fname.endswith(".xml") or fname.endswith(".csv"):
+        if fname.endswith(".xml") or fname.endswith(".csv") or fname == "version.txt":
             now = time.time()
             if now - self._last_run < 1:
                 return
