@@ -1,9 +1,13 @@
 {
-  "generated_at": "2026-07-24T11:20:51.863970",
+  "generated_at": "2026-07-24T14:13:58.037990",
   "date": "2026-07-24",
   "clients": [
     "telus",
     "mega"
+  ],
+  "stability_models": [
+    "uiw",
+    "vip"
   ],
   "summary": {
     "total": 66,
@@ -63,28 +67,55 @@
     }
   },
   "stability": {
-    "longevity": {
-      "total_iterations": 2432,
-      "hangs": 95,
-      "success_rate": 96.1
+    "uiw": {
+      "longevity": {
+        "total_iterations": 220,
+        "hangs": 5,
+        "success_rate": 97.7
+      },
+      "performance": {
+        "avg_response_time": 2.86,
+        "max_response_time": 10.73,
+        "min_response_time": 2.06,
+        "total_iterations": 213
+      },
+      "resource_contention": {
+        "avg_drift_pct": 8.23,
+        "max_drift_pct": 392.5,
+        "out_of_baseline": 50,
+        "total_iterations": 213,
+        "drift_threshold_pct": 20
+      },
+      "last_updated": {
+        "longevity": "2026-07-24 14:13",
+        "performance": "2026-07-24 14:13",
+        "resource_contention": "2026-07-24 14:13"
+      }
     },
-    "performance": {
-      "avg_response_time": 2.71,
-      "max_response_time": 16.59,
-      "min_response_time": 2.05,
-      "total_iterations": 2329
-    },
-    "resource_contention": {
-      "avg_drift_pct": 11.76,
-      "max_drift_pct": 625.4,
-      "out_of_baseline": 623,
-      "total_iterations": 2329,
-      "drift_threshold_pct": 20
-    },
-    "last_updated": {
-      "longevity": "2026-07-23 23:04",
-      "performance": "2026-07-23 23:04",
-      "resource_contention": "2026-07-23 23:04"
+    "vip": {
+      "longevity": {
+        "total_iterations": 209,
+        "hangs": 6,
+        "success_rate": 97.1
+      },
+      "performance": {
+        "avg_response_time": 3.03,
+        "max_response_time": 15.02,
+        "min_response_time": 2.07,
+        "total_iterations": 203
+      },
+      "resource_contention": {
+        "avg_drift_pct": 8.62,
+        "max_drift_pct": 459.0,
+        "out_of_baseline": 72,
+        "total_iterations": 203,
+        "drift_threshold_pct": 20
+      },
+      "last_updated": {
+        "longevity": "2026-07-24 14:13",
+        "performance": "2026-07-24 14:13",
+        "resource_contention": "2026-07-24 14:13"
+      }
     }
   },
   "tests": [
