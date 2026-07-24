@@ -123,7 +123,7 @@ if __name__ == "__main__":
     print(f"\nWaiting for {PUBLISH_TIME}... (Ctrl+C to stop)\n")
 
     # Uncomment to run immediately on startup (for testing)
-    # run_daily()
+    run_daily()
 
     try:
         while True:
