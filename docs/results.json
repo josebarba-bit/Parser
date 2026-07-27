@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T06:00:52.577133",
+  "generated_at": "2026-07-27T08:00:07.978212",
   "date": "2026-07-27",
   "clients": [
     "telus",
@@ -68,7 +68,7 @@
   },
   "stability": {
     "uiw": {
-      "version": "TELUS4K 1.12.1 debug build #402 v142",
+      "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
         "total_iterations": 2,
         "hangs": 2,
@@ -83,7 +83,7 @@
       }
     },
     "vip": {
-      "version": "TELUS4K 1.12.1 debug build #402 v142",
+      "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
         "total_iterations": 1,
         "hangs": 1,
