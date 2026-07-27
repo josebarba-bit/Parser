@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T14:25:28.606142",
+  "generated_at": "2026-07-27T15:33:44.141695",
   "date": "2026-07-27",
   "clients": [
     "telus",
@@ -59,7 +59,7 @@
   },
   "last_run": {
     "telus": {
-      "sanity": "2026-07-27 10:53",
+      "sanity": "2026-07-27 15:33",
       "smoke": "2026-07-27 11:15"
     },
     "mega": {
@@ -104,7 +104,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:00:45.675",
+      "time": "20260727 14:41:37.178",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -114,7 +114,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:02:48.743",
+      "time": "20260727 14:43:37.606",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -124,7 +124,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:03:25.282",
+      "time": "20260727 14:44:10.603",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -134,7 +134,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:04:06.293",
+      "time": "20260727 14:44:50.965",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -144,7 +144,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260727 10:48:30.490",
+      "time": "20260727 15:28:40.577",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -154,7 +154,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Menu is shown<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is shown<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is shown<br>",
-      "time": "20260727 10:50:17.337",
+      "time": "20260727 15:30:27.563",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -164,7 +164,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260727 10:50:49.680",
+      "time": "20260727 15:30:59.789",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -174,7 +174,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260727 10:52:42.564",
+      "time": "20260727 15:32:47.280",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -184,7 +184,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:10:29.869",
+      "time": "20260727 14:50:40.238",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -194,7 +194,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:27:02.012",
+      "time": "20260727 15:07:12.772",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
