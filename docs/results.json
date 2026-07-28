@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T12:01:33.914490",
+  "generated_at": "2026-07-28T15:30:07.009953",
   "date": "2026-07-28",
   "clients": [
     "telus",
@@ -119,6 +119,265 @@
         "resource_contention": "2026-07-27 23:05"
       }
     }
+  },
+  "sbs": {
+    "last_updated": "2026-07-28 15:29",
+    "summary": {
+      "total": 22,
+      "comparable": 8,
+      "not_comparable": 14,
+      "uiw_pass": 18,
+      "uiw_fail": 4,
+      "vip_pass": 8,
+      "vip_fail": 14,
+      "ok": 5,
+      "warn": 3,
+      "vip_faster": 0
+    },
+    "rows": [
+      {
+        "test_case": "Standby Cycle Checks",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "44.29",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "147.54",
+        "time_diff": "+233.1%",
+        "verdict": "WARN (VIP slower)"
+      },
+      {
+        "test_case": "Menu Checks",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "71.84",
+        "vip_result": "FAIL",
+        "vip_reason": "Reason: Menu is still shown after standby cycle.",
+        "vip_time": "147.01",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify Guide Opens by Key",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "44.29",
+        "vip_result": "FAIL",
+        "vip_reason": "Reason: Guide is not open, string \"Today\" not detected",
+        "vip_time": "45.51",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify Guide Opens from Menu",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "43.84",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "42.47",
+        "time_diff": "-3.1%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify Channel Zap AV Playback",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "94.07",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "99.15",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify Menu Does Not Auto-Dismiss",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "27.01",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "31.92",
+        "time_diff": "+18.2%",
+        "verdict": "WARN (VIP slower)"
+      },
+      {
+        "test_case": "Verify Live TV Background During PVR",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "38.03",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "99.19",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify Audio Playback on Settings Page",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "23.11",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "41.41",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Play a Recording",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "61.64",
+        "vip_result": "FAIL",
+        "vip_reason": "Reason: Audio playback no detected.",
+        "vip_time": "73.03",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify AV Playback on LiveTV",
+        "uiw_result": "FAIL",
+        "uiw_reason": "Reason: Video playback no detected.",
+        "uiw_time": "64.27",
+        "vip_result": "FAIL",
+        "vip_reason": "Reason: Audio playback no detected.",
+        "vip_time": "62.21",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Adjust the LiveTV Volume",
+        "uiw_result": "FAIL",
+        "uiw_reason": "Reason: Audio playback detected.",
+        "uiw_time": "20.93",
+        "vip_result": "FAIL",
+        "vip_reason": "Reason: \"Audio does not change\".",
+        "vip_time": "49.24",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify AV background with Menu",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "37.79",
+        "vip_result": "FAIL",
+        "vip_reason": "Reason: Audio playback no detected.",
+        "vip_time": "37.54",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify Guide Opens & Bkgn Video",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "67.93",
+        "vip_result": "FAIL",
+        "vip_reason": "NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s",
+        "vip_time": "34.47",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify Guide Opens from Menu & Bkgn Video",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "75.2",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "137.47",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Verify Settings Opens from Menu",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "25.07",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "27.97",
+        "time_diff": "+11.6%",
+        "verdict": "WARN (VIP slower)"
+      },
+      {
+        "test_case": "Select and Play a content from Guide",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "83.88",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "155.11",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Audio mute on Live TV",
+        "uiw_result": "FAIL",
+        "uiw_reason": "NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s",
+        "uiw_time": "35.63",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "94.67",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Audio mute on Guide",
+        "uiw_result": "FAIL",
+        "uiw_reason": "Reason: Audio playback detected.",
+        "uiw_time": "88.84",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "99.89",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Progress Bar on Live TV by Channel Zap",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "26.12",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "26.7",
+        "time_diff": "+2.2%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Progress Bar on Live TV by OK Key",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "11.09",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "11.3",
+        "time_diff": "+1.8%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Progress Bar on Live TV by Dpad Up",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "27.06",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "25.71",
+        "time_diff": "-5.0%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Launch PVR via Button",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "16.21",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "15.87",
+        "time_diff": "-2.1%",
+        "verdict": "OK"
+      }
+    ]
   },
   "tests": [
     {
