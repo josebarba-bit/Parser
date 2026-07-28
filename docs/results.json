@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T15:30:07.009953",
+  "generated_at": "2026-07-28T16:16:38.885231",
   "date": "2026-07-28",
   "clients": [
     "telus",
@@ -121,15 +121,15 @@
     }
   },
   "sbs": {
-    "last_updated": "2026-07-28 15:29",
+    "last_updated": "2026-07-28 16:16",
     "summary": {
       "total": 22,
       "comparable": 8,
       "not_comparable": 14,
       "uiw_pass": 18,
       "uiw_fail": 4,
-      "vip_pass": 8,
-      "vip_fail": 14,
+      "vip_pass": 22,
+      "vip_fail": 0,
       "ok": 5,
       "warn": 3,
       "vip_faster": 0
@@ -143,7 +143,7 @@
         "vip_result": "PASS",
         "vip_reason": "",
         "vip_time": "147.54",
-        "time_diff": "+233.1%",
+        "time_diff": "233.10%",
         "verdict": "WARN (VIP slower)"
       },
       {
@@ -151,7 +151,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "71.84",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "Reason: Menu is still shown after standby cycle.",
         "vip_time": "147.01",
         "time_diff": "N/A (different outcome)",
@@ -162,7 +162,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "44.29",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "Reason: Guide is not open, string \"Today\" not detected",
         "vip_time": "45.51",
         "time_diff": "N/A (different outcome)",
@@ -176,7 +176,7 @@
         "vip_result": "PASS",
         "vip_reason": "",
         "vip_time": "42.47",
-        "time_diff": "-3.1%",
+        "time_diff": "-3.10%",
         "verdict": "OK"
       },
       {
@@ -184,7 +184,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "94.07",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
         "vip_time": "99.15",
         "time_diff": "N/A (different outcome)",
@@ -198,7 +198,7 @@
         "vip_result": "PASS",
         "vip_reason": "",
         "vip_time": "31.92",
-        "time_diff": "+18.2%",
+        "time_diff": "18.20%",
         "verdict": "WARN (VIP slower)"
       },
       {
@@ -206,7 +206,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "38.03",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
         "vip_time": "99.19",
         "time_diff": "N/A (different outcome)",
@@ -217,7 +217,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "23.11",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
         "vip_time": "41.41",
         "time_diff": "N/A (different outcome)",
@@ -228,7 +228,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "61.64",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "Reason: Audio playback no detected.",
         "vip_time": "73.03",
         "time_diff": "N/A (different outcome)",
@@ -239,7 +239,7 @@
         "uiw_result": "FAIL",
         "uiw_reason": "Reason: Video playback no detected.",
         "uiw_time": "64.27",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "Reason: Audio playback no detected.",
         "vip_time": "62.21",
         "time_diff": "N/A (different outcome)",
@@ -250,7 +250,7 @@
         "uiw_result": "FAIL",
         "uiw_reason": "Reason: Audio playback detected.",
         "uiw_time": "20.93",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "Reason: \"Audio does not change\".",
         "vip_time": "49.24",
         "time_diff": "N/A (different outcome)",
@@ -261,7 +261,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "37.79",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "Reason: Audio playback no detected.",
         "vip_time": "37.54",
         "time_diff": "N/A (different outcome)",
@@ -272,7 +272,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "67.93",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s",
         "vip_time": "34.47",
         "time_diff": "N/A (different outcome)",
@@ -283,7 +283,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "75.2",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
         "vip_time": "137.47",
         "time_diff": "N/A (different outcome)",
@@ -297,7 +297,7 @@
         "vip_result": "PASS",
         "vip_reason": "",
         "vip_time": "27.97",
-        "time_diff": "+11.6%",
+        "time_diff": "11.60%",
         "verdict": "WARN (VIP slower)"
       },
       {
@@ -305,7 +305,7 @@
         "uiw_result": "PASS",
         "uiw_reason": "",
         "uiw_time": "83.88",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
         "vip_time": "155.11",
         "time_diff": "N/A (different outcome)",
@@ -316,7 +316,7 @@
         "uiw_result": "FAIL",
         "uiw_reason": "NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s",
         "uiw_time": "35.63",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
         "vip_time": "94.67",
         "time_diff": "N/A (different outcome)",
@@ -327,7 +327,7 @@
         "uiw_result": "FAIL",
         "uiw_reason": "Reason: Audio playback detected.",
         "uiw_time": "88.84",
-        "vip_result": "FAIL",
+        "vip_result": "PASS",
         "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
         "vip_time": "99.89",
         "time_diff": "N/A (different outcome)",
@@ -341,7 +341,7 @@
         "vip_result": "PASS",
         "vip_reason": "",
         "vip_time": "26.7",
-        "time_diff": "+2.2%",
+        "time_diff": "2.20%",
         "verdict": "OK"
       },
       {
@@ -352,7 +352,7 @@
         "vip_result": "PASS",
         "vip_reason": "",
         "vip_time": "11.3",
-        "time_diff": "+1.8%",
+        "time_diff": "1.80%",
         "verdict": "OK"
       },
       {
@@ -363,7 +363,7 @@
         "vip_result": "PASS",
         "vip_reason": "",
         "vip_time": "25.71",
-        "time_diff": "-5.0%",
+        "time_diff": "-5.00%",
         "verdict": "OK"
       },
       {
@@ -374,7 +374,7 @@
         "vip_result": "PASS",
         "vip_reason": "",
         "vip_time": "15.87",
-        "time_diff": "-2.1%",
+        "time_diff": "-2.10%",
         "verdict": "OK"
       }
     ]
