@@ -1,10 +1,10 @@
 Test Case,UIW Result,UIW Reason,UIW Time (s),VIP Result,VIP Reason,VIP Time (s),Time Diff (VIP vs UIW),Verdict
-Standby Cycle Checks,PASS,,56.38,PASS,,107.5,+90.7%,WARN (VIP slower)
-Menu Checks,PASS,,70.86,FAIL,Reason: Menu is not displayed,11.65,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens by Key,PASS,,43.86,PASS,,57.26,+30.6%,WARN (VIP slower)
-Verify Guide Opens from Menu,PASS,,43.09,PASS,,43.59,+1.2%,OK
+Standby Cycle Checks,PASS,,56.38,PASS,,107.5,90.70%,WARN (VIP slower)
+Menu Checks,PASS,,70.86,Pass,Reason: Menu is not displayed,11.65,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens by Key,PASS,,43.86,PASS,,57.26,30.60%,WARN (VIP slower)
+Verify Guide Opens from Menu,PASS,,43.09,PASS,,43.59,1.20%,OK
 Verify Channel Zap AV Playback,PASS,,94.09,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,97.54,N/A (different outcome),NOT COMPARABLE
-Verify Menu Does Not Auto-Dismiss,PASS,,31.95,PASS,,33.81,+5.8%,OK
+Verify Menu Does Not Auto-Dismiss,PASS,,31.95,PASS,,33.81,5.80%,OK
 Verify Live TV Background During PVR,PASS,,37.89,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,98.85,N/A (different outcome),NOT COMPARABLE
 Verify Audio Playback on Settings Page,PASS,,22.99,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,42.27,N/A (different outcome),NOT COMPARABLE
 Play a Recording,PASS,,61.05,FAIL,Reason: Audio playback no detected.,61.88,N/A (different outcome),NOT COMPARABLE
