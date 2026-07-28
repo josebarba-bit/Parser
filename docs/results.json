@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T17:14:01.589302",
+  "generated_at": "2026-07-27T23:05:05.767626",
   "date": "2026-07-27",
   "clients": [
     "telus",
@@ -70,31 +70,53 @@
     "uiw": {
       "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
-        "total_iterations": 2,
-        "hangs": 2,
-        "success_rate": 0.0
+        "total_iterations": 885,
+        "hangs": 279,
+        "success_rate": 68.5
       },
-      "performance": null,
-      "resource_contention": null,
+      "performance": {
+        "avg_response_time": 2.3,
+        "max_response_time": 15.02,
+        "min_response_time": 2.06,
+        "total_iterations": 606
+      },
+      "resource_contention": {
+        "avg_drift_pct": -3.24,
+        "max_drift_pct": 589.0,
+        "out_of_baseline": 147,
+        "total_iterations": 606,
+        "drift_threshold_pct": 20
+      },
       "last_updated": {
-        "longevity": "2026-07-25 23:05",
-        "performance": "2026-07-25 23:05",
-        "resource_contention": "2026-07-25 23:05"
+        "longevity": "2026-07-27 23:05",
+        "performance": "2026-07-27 23:05",
+        "resource_contention": "2026-07-27 23:05"
       }
     },
     "vip": {
       "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
-        "total_iterations": 1,
-        "hangs": 1,
-        "success_rate": 0.0
+        "total_iterations": 1778,
+        "hangs": 255,
+        "success_rate": 85.7
       },
-      "performance": null,
-      "resource_contention": null,
+      "performance": {
+        "avg_response_time": 3.05,
+        "max_response_time": 16.47,
+        "min_response_time": 2.06,
+        "total_iterations": 1485
+      },
+      "resource_contention": {
+        "avg_drift_pct": 2.29,
+        "max_drift_pct": 617.7,
+        "out_of_baseline": 887,
+        "total_iterations": 1485,
+        "drift_threshold_pct": 20
+      },
       "last_updated": {
-        "longevity": "2026-07-25 23:05",
-        "performance": "2026-07-25 23:05",
-        "resource_contention": "2026-07-25 23:05"
+        "longevity": "2026-07-27 23:05",
+        "performance": "2026-07-27 23:05",
+        "resource_contention": "2026-07-27 23:05"
       }
     }
   },
