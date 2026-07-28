@@ -135,12 +135,47 @@
 
     .stability-cards { display: flex; flex-direction: column; gap: 10px; }
     .stability-card { background: var(--bg); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
-    .stability-card-title { font-size: 11px; font-weight: 500; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+    .stability-card-header { display: flex; justify-content: space-between; align-items: center; }
+    .stability-card-title { font-size: 11px; font-weight: 500; color: var(--muted); }
     .stability-card-lastrun { font-size: 10px; color: var(--muted); }
     .stability-metrics { display: flex; gap: 16px; flex-wrap: wrap; }
     .stability-metric { display: flex; flex-direction: column; gap: 2px; }
     .stability-metric-val { font-size: 18px; font-weight: 500; }
     .stability-metric-lbl { font-size: 10px; color: var(--muted); }
+
+    /* Help button */
+    .help-btn { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--muted); background: transparent; color: var(--muted); font-size: 11px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .15s; flex-shrink: 0; }
+    .help-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+    /* OOB status colors */
+    .oob-stable   { color: var(--pass); }
+    .oob-ok       { color: #639922; }
+    .oob-warn     { color: var(--warn); }
+    .oob-critical { color: var(--fail); }
+
+    /* Modal */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; display: none; align-items: center; justify-content: center; padding: 16px; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--surface); border-radius: 12px; width: 100%; max-width: 600px; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    .modal-header { padding: 20px 24px 0; display: flex; align-items: center; justify-content: space-between; }
+    .modal-title { font-size: 16px; font-weight: 500; }
+    .modal-close { width: 28px; height: 28px; border-radius: 50%; border: none; background: var(--bg); color: var(--text); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .modal-body { padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 20px; }
+
+    .help-section { display: flex; flex-direction: column; gap: 10px; }
+    .help-section-title { font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; padding-bottom: 8px; border-bottom: 0.5px solid var(--border); }
+    .help-metric { display: flex; flex-direction: column; gap: 4px; }
+    .help-metric-name { font-size: 12px; font-weight: 500; }
+    .help-metric-desc { font-size: 12px; color: var(--muted); }
+    .help-ranges { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+    .help-range { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+    .range-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .range-stable   { background: #639922; }
+    .range-ok       { background: #85b336; }
+    .range-warn     { background: #BA7517; }
+    .range-critical { background: #E24B4A; }
+    .range-label { font-weight: 500; min-width: 80px; }
+    .range-desc { color: var(--muted); }
 
     .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
     .metric { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
@@ -187,6 +222,18 @@
   </style>
 </head>
 <body>
+
+<!-- Help Modal -->
+<div class="modal-overlay" id="helpModal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Stability Metrics Guide</div>
+      <button class="modal-close" onclick="document.getElementById('helpModal').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
 <div class="page">
 
   <div class="header">
@@ -372,6 +419,153 @@ function today() { return new Date().toISOString().slice(0,10); }
 function cap(s)  { return s.charAt(0).toUpperCase() + s.slice(1); }
 function esc(s)  { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
+// ─── OOB rate helpers ─────────────────────────────────────────
+function oobRate(out_of_baseline, total) {
+  if (!total) return null;
+  return Math.round(out_of_baseline / total * 1000) / 10;
+}
+
+function oobClass(rate) {
+  if (rate === null) return '';
+  if (rate < 5)  return 'oob-stable';
+  if (rate < 10) return 'oob-ok';
+  if (rate < 20) return 'oob-warn';
+  return 'oob-critical';
+}
+
+function oobLabel(rate) {
+  if (rate === null) return '';
+  if (rate < 5)  return '✅ Stable';
+  if (rate < 10) return '✅ Acceptable';
+  if (rate < 20) return '⚠️ Concerning';
+  return '❌ Critical';
+}
+
+// ─── Modal ────────────────────────────────────────────────────
+function openModal(section) {
+  const modal = document.getElementById('helpModal');
+  const title = document.getElementById('modalTitle');
+  const body  = document.getElementById('modalBody');
+
+  const content = {
+    longevity: {
+      title: '📊 Longevity — Interpretation Guide',
+      html: `
+        <div class="help-section">
+          <div class="help-section-title">What is it?</div>
+          <div class="help-metric">
+            <div class="help-metric-desc">Longevity measures how stable the system is during continuous 24/7 operation by running commands repeatedly and counting how many times the STB freezes (HANGs).</div>
+          </div>
+        </div>
+        <div class="help-section">
+          <div class="help-section-title">Metrics</div>
+          <div class="help-metric">
+            <div class="help-metric-name">Total Iterations</div>
+            <div class="help-metric-desc">Total number of commands executed. Higher is better — more iterations means more confidence in the results.</div>
+          </div>
+          <div class="help-metric">
+            <div class="help-metric-name">HANGs</div>
+            <div class="help-metric-desc">Number of times the STB froze and stopped responding. A HANG requires recovery before the test can continue. Lower is better.</div>
+          </div>
+          <div class="help-metric">
+            <div class="help-metric-name">Success Rate</div>
+            <div class="help-metric-desc">Percentage of commands that completed without a HANG. Formula: (Total - HANGs) / Total × 100</div>
+            <div class="help-ranges">
+              <div class="help-range"><div class="range-dot range-stable"></div><span class="range-label">≥ 99%</span><span class="range-desc">Stable — very few hangs</span></div>
+              <div class="help-range"><div class="range-dot range-ok"></div><span class="range-label">95% – 99%</span><span class="range-desc">Acceptable — occasional hangs</span></div>
+              <div class="help-range"><div class="range-dot range-warn"></div><span class="range-label">90% – 95%</span><span class="range-desc">Concerning — investigate hang patterns</span></div>
+              <div class="help-range"><div class="range-dot range-critical"></div><span class="range-label">< 90%</span><span class="range-desc">Critical — system is unstable</span></div>
+            </div>
+          </div>
+        </div>`
+    },
+    performance: {
+      title: '⚡ Performance — Interpretation Guide',
+      html: `
+        <div class="help-section">
+          <div class="help-section-title">What is it?</div>
+          <div class="help-metric">
+            <div class="help-metric-desc">Performance measures how long each command takes to respond. It tracks the average, maximum and minimum response times across all iterations.</div>
+          </div>
+        </div>
+        <div class="help-section">
+          <div class="help-section-title">Metrics</div>
+          <div class="help-metric">
+            <div class="help-metric-name">Avg Response (s)</div>
+            <div class="help-metric-desc">The typical response time across all commands. This is your baseline for normal system behavior. Watch for this value increasing over time — it may indicate performance degradation.</div>
+            <div class="help-ranges">
+              <div class="help-range"><div class="range-dot range-stable"></div><span class="range-label">< 3s</span><span class="range-desc">Stable — fast and consistent</span></div>
+              <div class="help-range"><div class="range-dot range-ok"></div><span class="range-label">3s – 5s</span><span class="range-desc">Acceptable</span></div>
+              <div class="help-range"><div class="range-dot range-warn"></div><span class="range-label">5s – 8s</span><span class="range-desc">Concerning — sluggish responses</span></div>
+              <div class="help-range"><div class="range-dot range-critical"></div><span class="range-label">> 8s</span><span class="range-desc">Critical — unacceptable latency</span></div>
+            </div>
+          </div>
+          <div class="help-metric">
+            <div class="help-metric-name">Max Response (s)</div>
+            <div class="help-metric-desc">The slowest single response recorded. A high Max with a low Avg means isolated spikes — not a systemic problem. If Max keeps growing day over day, investigate.</div>
+          </div>
+          <div class="help-metric">
+            <div class="help-metric-name">Min Response (s)</div>
+            <div class="help-metric-desc">The fastest response recorded. Represents the best-case scenario for the system under test conditions.</div>
+          </div>
+        </div>`
+    },
+    contention: {
+      title: '🔀 Resource Contention — Interpretation Guide',
+      html: `
+        <div class="help-section">
+          <div class="help-section-title">What is it?</div>
+          <div class="help-metric">
+            <div class="help-metric-desc">Resource Contention measures how much actual response times deviate from the expected baseline. A positive drift means slower than expected; negative means faster than expected.</div>
+          </div>
+        </div>
+        <div class="help-section">
+          <div class="help-section-title">Metrics</div>
+          <div class="help-metric">
+            <div class="help-metric-name">Avg Drift %</div>
+            <div class="help-metric-desc">Average deviation from baseline across all iterations. Can be negative (faster than baseline) or positive (slower). A low absolute value is good, but a negative Avg alone doesn't mean the system is healthy — check OOB Rate too.</div>
+          </div>
+          <div class="help-metric">
+            <div class="help-metric-name">Max Drift %</div>
+            <div class="help-metric-desc">The worst single deviation recorded. Indicates the severity of peak slowdowns. Even if Avg is low, a very high Max suggests isolated but serious performance spikes.</div>
+          </div>
+          <div class="help-metric">
+            <div class="help-metric-name">Out of Baseline</div>
+            <div class="help-metric-desc">Number of iterations where drift exceeded the 20% threshold. Use OOB Rate (%) for a better picture since it accounts for total iterations.</div>
+          </div>
+          <div class="help-metric">
+            <div class="help-metric-name">OOB Rate % — the most important metric</div>
+            <div class="help-metric-desc">Percentage of commands that exceeded the 20% drift threshold. This is the best single indicator of overall resource contention health.</div>
+            <div class="help-ranges">
+              <div class="help-range"><div class="range-dot range-stable"></div><span class="range-label">< 5%</span><span class="range-desc">Stable — system responds consistently</span></div>
+              <div class="help-range"><div class="range-dot range-ok"></div><span class="range-label">5% – 10%</span><span class="range-desc">Acceptable — minor variations</span></div>
+              <div class="help-range"><div class="range-dot range-warn"></div><span class="range-label">10% – 20%</span><span class="range-desc">Concerning — worth investigating</span></div>
+              <div class="help-range"><div class="range-dot range-critical"></div><span class="range-label">> 20%</span><span class="range-desc">Critical — system is not stable</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="help-section">
+          <div class="help-section-title">⚠️ Important note on Avg Drift</div>
+          <div class="help-metric">
+            <div class="help-metric-desc">A negative Avg Drift can be misleading. If most commands are slightly faster than baseline but a significant portion have large positive spikes, the average can still look good. Always read Avg Drift alongside OOB Rate to get the full picture.</div>
+          </div>
+        </div>`
+    }
+  };
+
+  const c = content[section];
+  if (!c) return;
+  title.textContent = c.title;
+  body.innerHTML = c.html;
+  modal.classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('helpModal')) {
+    document.getElementById('helpModal').classList.remove('open');
+  }
+}
+
 // ─── Main tab ────────────────────────────────────────────────
 function switchMainTab(tab, el) {
   activeMainTab = tab;
@@ -424,6 +618,11 @@ function renderModelSection(model, meta, data) {
   const lu   = data.last_updated || {};
   const ver  = data.version;
 
+  // OOB rate
+  const oob     = cont ? oobRate(cont.out_of_baseline, cont.total_iterations) : null;
+  const oobCls  = oobClass(oob);
+  const oobLbl  = oobLabel(oob);
+
   return `
   <div class="stability-model-section">
     <div class="stability-model-header">
@@ -436,9 +635,12 @@ function renderModelSection(model, meta, data) {
     <div class="stability-cards">
 
       <div class="stability-card">
-        <div class="stability-card-title">
-          📊 Longevity
-          <span class="stability-card-lastrun">${lu.longevity ? 'Updated: ' + lu.longevity : ''}</span>
+        <div class="stability-card-header">
+          <div class="stability-card-title">📊 Longevity</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="stability-card-lastrun">${lu.longevity ? 'Updated: ' + lu.longevity : ''}</span>
+            <button class="help-btn" onclick="openModal('longevity')">?</button>
+          </div>
         </div>
         ${long ? `<div class="stability-metrics">
           <div class="stability-metric"><div class="stability-metric-val">${long.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
@@ -448,9 +650,12 @@ function renderModelSection(model, meta, data) {
       </div>
 
       <div class="stability-card">
-        <div class="stability-card-title">
-          ⚡ Performance
-          <span class="stability-card-lastrun">${lu.performance ? 'Updated: ' + lu.performance : ''}</span>
+        <div class="stability-card-header">
+          <div class="stability-card-title">⚡ Performance</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="stability-card-lastrun">${lu.performance ? 'Updated: ' + lu.performance : ''}</span>
+            <button class="help-btn" onclick="openModal('performance')">?</button>
+          </div>
         </div>
         ${perf ? `<div class="stability-metrics">
           <div class="stability-metric"><div class="stability-metric-val">${perf.avg_response_time}s</div><div class="stability-metric-lbl">Avg response</div></div>
@@ -461,16 +666,22 @@ function renderModelSection(model, meta, data) {
       </div>
 
       <div class="stability-card">
-        <div class="stability-card-title">
-          🔀 Resource Contention
-          <span class="stability-card-lastrun">${lu.resource_contention ? 'Updated: ' + lu.resource_contention : ''}</span>
+        <div class="stability-card-header">
+          <div class="stability-card-title">🔀 Resource Contention</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="stability-card-lastrun">${lu.resource_contention ? 'Updated: ' + lu.resource_contention : ''}</span>
+            <button class="help-btn" onclick="openModal('contention')">?</button>
+          </div>
         </div>
         ${cont ? `<div class="stability-metrics">
           <div class="stability-metric"><div class="stability-metric-val">${cont.avg_drift_pct}%</div><div class="stability-metric-lbl">Avg drift</div></div>
           <div class="stability-metric"><div class="stability-metric-val v-fail">${cont.max_drift_pct}%</div><div class="stability-metric-lbl">Max drift</div></div>
           <div class="stability-metric"><div class="stability-metric-val v-warn">${cont.out_of_baseline}</div><div class="stability-metric-lbl">Out of baseline</div></div>
+          ${oob !== null ? `<div class="stability-metric"><div class="stability-metric-val ${oobCls}">${oob}%</div><div class="stability-metric-lbl">OOB rate</div></div>` : ''}
           <div class="stability-metric"><div class="stability-metric-val">${cont.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
-        </div>` : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+        </div>
+        ${oob !== null ? `<div style="font-size:11px;${oob >= 20 ? 'color:var(--fail)' : oob >= 10 ? 'color:var(--warn)' : 'color:var(--pass)'}">${oobLbl}</div>` : ''}` 
+        : '<div style="color:var(--muted);font-size:12px">No data</div>'}
       </div>
 
     </div>
@@ -510,9 +721,9 @@ async function loadStabilityTrend() {
   for (const m of models) {
     const c   = colors[m] || { longevity:'#639922', performance:'#0c447c', contention:'#BA7517' };
     const lbl = MODEL_META[m]?.label || m.toUpperCase();
-    datasets.push({ label:`${lbl} Longevity %`,  data:dataMap[m].longevity,    borderColor:c.longevity,    borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y' });
-    datasets.push({ label:`${lbl} Avg resp (s)`, data:dataMap[m].performance,  borderColor:c.performance,  borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y1', borderDash:[4,2] });
-    datasets.push({ label:`${lbl} Avg drift %`,  data:dataMap[m].contention,   borderColor:c.contention,   borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y1', borderDash:[2,2] });
+    datasets.push({ label:`${lbl} Longevity %`,  data:dataMap[m].longevity,   borderColor:c.longevity,   borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y' });
+    datasets.push({ label:`${lbl} Avg resp (s)`, data:dataMap[m].performance, borderColor:c.performance, borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y1', borderDash:[4,2] });
+    datasets.push({ label:`${lbl} Avg drift %`,  data:dataMap[m].contention,  borderColor:c.contention,  borderWidth:2, pointRadius:3, fill:false, tension:0.3, spanGaps:true, yAxisID:'y1', borderDash:[2,2] });
   }
 
   if (chartStabilityTrend) chartStabilityTrend.destroy();
