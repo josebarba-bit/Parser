@@ -1,3 +1,886 @@
 iteration,timestamp,uptime_sec,command,result,notes
-1,16:46:41,1.0,Down,HANG,STB unresponsive - manual check needed
-2,16:48:03,82.2,Right,HANG,STB unresponsive - manual check needed
+1,16:01:45,1.1,Channel_Down,OK,
+2,16:01:50,6.7,Info,OK,
+3,16:01:56,12.2,Channel_Down,OK,
+4,16:02:01,17.5,Guide,OK,
+5,16:02:06,22.9,Left,OK,
+6,16:02:12,28.4,Menu,OK,
+7,16:02:17,33.7,Menu,OK,
+8,16:02:23,39.1,Channel_Up,OK,
+9,16:02:30,46.1,Right,OK,
+10,16:02:35,51.5,Guide,OK,
+11,16:02:40,56.8,Left,OK,
+12,16:02:46,62.3,Menu,OK,
+13,16:02:51,67.7,Guide,OK,
+14,16:02:57,73.1,Guide,OK,
+15,16:03:02,78.6,Info,OK,
+16,16:03:08,84.0,Right,OK,
+17,16:03:13,89.3,OK,OK,
+18,16:03:18,94.7,Channel_Up,OK,
+19,16:03:24,100.1,Menu,OK,
+20,16:03:29,105.5,Menu,OK,
+21,16:03:34,110.9,Channel_Up,OK,
+22,16:03:40,116.2,Right,OK,
+23,16:03:45,121.5,Down,OK,
+24,16:03:50,126.8,Down,OK,
+25,16:03:56,132.4,Left,OK,
+26,16:04:01,137.7,Info,OK,
+27,16:04:07,143.1,Guide,OK,
+28,16:04:12,148.7,OK,OK,
+29,16:04:18,154.4,Channel_Up,OK,
+30,16:04:24,160.0,Guide,OK,
+31,16:04:29,165.3,PVR,OK,
+32,16:04:34,170.8,OK,OK,
+33,16:04:40,176.2,Info,OK,
+34,16:04:50,186.7,Channel_Up,OK,
+35,16:05:01,197.1,PVR,OK,
+36,16:05:08,204.4,Right,OK,
+37,16:05:17,213.1,Right,OK,
+38,16:05:22,218.4,Down,OK,
+39,16:05:27,223.7,Left,OK,
+40,16:05:33,229.1,Menu,OK,
+41,16:05:38,234.5,Info,OK,
+42,16:05:44,240.0,Channel_Up,OK,
+43,16:05:51,247.0,Channel_Up,OK,
+44,16:05:59,255.7,Up,OK,
+45,16:06:05,261.0,Right,OK,
+46,16:06:10,266.2,PVR,OK,
+47,16:06:15,271.8,PVR,OK,
+48,16:06:21,277.1,Menu,OK,
+49,16:06:26,282.4,Menu,OK,
+50,16:06:31,287.8,Down,OK,
+51,16:06:37,293.1,Menu,OK,
+52,16:06:42,298.4,Left,OK,
+53,16:06:47,303.7,Guide,OK,
+54,16:06:52,308.9,Guide,OK,
+55,16:06:58,314.2,Up,OK,
+56,16:07:03,319.7,Right,OK,
+57,16:07:08,324.9,Right,OK,
+58,16:07:14,330.5,Up,OK,
+59,16:07:19,335.9,OK,OK,
+60,16:07:25,341.2,Left,OK,
+61,16:07:30,346.6,Guide,OK,
+62,16:07:35,351.9,Back,OK,
+63,16:07:41,357.5,Back,OK,
+64,16:07:46,362.9,Down,OK,
+65,16:07:52,368.2,Menu,OK,
+66,16:07:57,373.6,Left,OK,
+67,16:08:02,379.0,Right,OK,
+68,16:08:08,384.4,Down,OK,
+69,16:08:13,389.8,Up,OK,
+70,16:08:19,395.2,Guide,OK,
+71,16:08:24,400.5,Channel_Up,OK,
+72,16:08:29,405.9,Guide,OK,
+73,16:08:35,411.5,Back,OK,
+74,16:08:41,417.0,OK,OK,
+75,16:08:46,422.4,Channel_Up,OK,
+76,16:08:51,427.7,Right,OK,
+77,16:08:57,433.1,Guide,OK,
+78,16:09:02,438.6,Left,OK,
+79,16:09:07,443.9,Channel_Down,OK,
+80,16:09:13,449.5,Down,OK,
+81,16:09:18,454.9,Channel_Up,OK,
+82,16:09:24,460.4,Channel_Up,OK,
+83,16:09:29,465.8,Channel_Down,OK,
+84,16:09:35,471.1,Menu,OK,
+85,16:09:40,476.4,Right,OK,
+86,16:09:45,481.7,OK,OK,
+87,16:09:51,487.1,Menu,OK,
+88,16:09:56,492.4,Menu,OK,
+89,16:10:01,497.8,Left,OK,
+90,16:10:07,503.0,Channel_Down,OK,
+91,16:10:12,508.3,Down,OK,
+92,16:10:17,513.6,Up,OK,
+93,16:10:22,518.9,Guide,OK,
+94,16:10:28,524.2,Info,OK,
+95,16:10:33,529.5,Info,OK,
+96,16:10:38,534.8,Menu,OK,
+97,16:10:44,540.1,Right,OK,
+98,16:10:49,545.4,Info,OK,
+99,16:10:54,550.8,PVR,OK,
+100,16:11:00,556.2,Down,OK,
+101,16:11:05,561.5,Up,OK,
+102,16:11:10,566.9,OK,OK,
+103,16:11:16,572.2,Down,OK,
+104,16:11:21,577.5,Channel_Up,OK,
+105,16:11:26,582.9,Channel_Down,OK,
+106,16:11:32,588.2,PVR,OK,
+107,16:11:37,593.5,Channel_Down,OK,
+108,16:11:42,598.8,Left,OK,
+109,16:11:49,605.9,Up,OK,
+110,16:11:55,611.3,OK,OK,
+111,16:12:00,616.6,Menu,OK,
+112,16:12:05,621.8,Up,OK,
+113,16:12:11,627.2,OK,OK,
+114,16:12:16,632.5,Channel_Up,OK,
+115,16:12:21,637.7,OK,OK,
+116,16:12:26,642.9,Down,OK,
+117,16:12:32,648.2,Channel_Up,OK,
+118,16:12:37,653.4,Left,OK,
+119,16:12:42,658.7,Left,OK,
+120,16:12:49,665.5,Up,OK,
+121,16:12:54,670.9,OK,OK,
+122,16:13:00,676.3,PVR,OK,
+123,16:13:05,681.5,Back,OK,
+124,16:13:10,686.8,Up,OK,
+125,16:13:20,696.8,Channel_Down,OK,
+126,16:13:27,703.7,Channel_Down,OK,
+127,16:13:45,721.8,Channel_Up,OK,
+128,16:13:51,727.1,Down,OK,
+129,16:13:56,732.3,Left,OK,
+130,16:14:01,737.5,PVR,OK,
+131,16:14:06,742.7,OK,OK,
+132,16:14:12,748.0,Up,OK,
+133,16:14:18,754.9,Up,OK,
+134,16:14:30,766.8,OK,OK,
+135,16:14:36,772.1,Channel_Up,OK,
+136,16:14:41,777.3,Channel_Down,OK,
+137,16:14:46,782.6,Down,OK,
+138,16:14:51,787.8,Right,OK,
+139,16:14:57,793.1,Back,OK,
+140,16:15:02,798.3,Info,OK,
+141,16:15:07,803.5,Channel_Down,OK,
+142,16:15:12,808.8,Channel_Up,OK,
+143,16:15:18,814.0,Right,OK,
+144,16:15:23,819.2,Down,OK,
+145,16:15:28,824.4,Menu,OK,
+146,16:15:33,829.7,Menu,OK,
+147,16:15:39,835.1,Menu,OK,
+148,16:15:44,840.3,Channel_Down,HANG,Recovered after hang
+149,16:16:10,866.9,Back,OK,
+150,16:16:16,872.2,Up,OK,
+151,16:16:21,877.4,Menu,OK,
+152,16:16:26,882.7,Up,OK,
+153,16:16:31,887.9,Back,OK,
+154,16:16:37,893.1,Channel_Down,OK,
+155,16:16:42,898.4,Guide,OK,
+156,16:16:47,903.7,PVR,OK,
+157,16:16:53,909.3,OK,OK,
+158,16:16:58,914.6,Back,OK,
+159,16:17:03,919.9,Down,OK,
+160,16:17:09,925.3,Guide,OK,
+161,16:17:14,930.8,Back,OK,
+162,16:17:20,936.1,Menu,OK,
+163,16:17:25,941.4,OK,OK,
+164,16:17:30,946.6,Menu,OK,
+165,16:17:35,951.8,Info,OK,
+166,16:17:41,957.1,Down,OK,
+167,16:17:46,962.3,Back,OK,
+168,16:17:51,967.5,Channel_Up,OK,
+169,16:17:56,972.8,OK,OK,
+170,16:18:02,978.1,PVR,OK,
+171,16:18:07,983.3,OK,OK,
+172,16:18:12,988.5,Channel_Up,OK,
+173,16:18:17,993.7,Back,OK,
+174,16:18:23,999.2,Channel_Up,OK,
+175,16:18:28,1004.5,Down,OK,
+176,16:18:33,1009.9,PVR,OK,
+177,16:18:39,1015.2,Guide,OK,
+178,16:18:44,1020.5,Guide,OK,
+179,16:18:49,1025.8,OK,OK,
+180,16:18:55,1031.2,PVR,OK,
+181,16:19:00,1036.5,Left,OK,
+182,16:19:05,1041.8,Back,OK,
+183,16:19:11,1047.1,Down,OK,
+184,16:19:16,1052.4,Left,OK,
+185,16:19:21,1057.7,OK,OK,
+186,16:19:26,1062.9,Up,OK,
+187,16:19:32,1068.1,OK,OK,
+188,16:19:37,1073.4,Channel_Down,OK,
+189,16:19:42,1078.6,OK,OK,
+190,16:19:47,1083.9,Channel_Up,OK,
+191,16:19:53,1089.2,Menu,OK,
+192,16:19:58,1094.4,OK,OK,
+193,16:20:03,1099.8,Left,OK,
+194,16:20:09,1105.2,Down,OK,
+195,16:20:14,1110.5,Down,OK,
+196,16:20:19,1115.8,Up,OK,
+197,16:20:25,1121.1,Guide,OK,
+198,16:20:30,1126.4,OK,OK,
+199,16:20:35,1131.7,Back,OK,
+200,16:20:41,1137.0,OK,OK,
+201,16:20:46,1142.3,Left,OK,
+202,16:20:51,1147.5,Menu,OK,
+203,16:20:56,1152.8,Channel_Down,OK,
+204,16:21:02,1158.0,Right,OK,
+205,16:21:07,1163.2,OK,OK,
+206,16:21:12,1168.5,Down,OK,
+207,16:21:19,1175.5,Left,OK,
+208,16:21:24,1180.9,Channel_Up,OK,
+209,16:21:30,1186.1,PVR,OK,
+210,16:21:35,1191.5,Menu,OK,
+211,16:21:40,1196.7,OK,OK,
+212,16:21:46,1202.0,PVR,OK,
+213,16:21:51,1207.3,Guide,OK,
+214,16:21:56,1212.6,Info,OK,
+215,16:22:01,1217.8,PVR,OK,
+216,16:22:07,1223.1,Guide,OK,
+217,16:22:12,1228.4,Left,OK,
+218,16:22:17,1233.7,Channel_Down,OK,
+219,16:22:23,1239.0,Menu,OK,
+220,16:22:28,1244.4,Channel_Down,OK,
+221,16:22:33,1249.7,Guide,OK,
+222,16:22:39,1255.0,Left,OK,
+223,16:22:44,1260.3,Menu,OK,
+224,16:22:49,1265.6,PVR,OK,
+225,16:22:55,1271.0,Channel_Down,OK,
+226,16:23:00,1276.2,Back,OK,
+227,16:23:05,1281.5,Right,OK,
+228,16:23:10,1286.7,Left,OK,
+229,16:23:16,1292.0,PVR,OK,
+230,16:23:21,1297.3,PVR,HANG,Recovered after hang
+231,16:23:46,1322.5,Up,OK,
+232,16:23:51,1327.7,Info,OK,
+233,16:23:57,1333.0,Left,OK,
+234,16:24:02,1338.3,Left,OK,
+235,16:24:07,1343.6,Up,OK,
+236,16:24:12,1348.9,Right,OK,
+237,16:24:18,1354.1,Down,OK,
+238,16:24:23,1359.4,Channel_Down,OK,
+239,16:24:28,1364.6,Down,OK,
+240,16:24:34,1370.1,OK,OK,
+241,16:24:39,1375.4,Down,OK,
+242,16:24:44,1380.8,OK,OK,
+243,16:24:50,1386.1,Guide,OK,
+244,16:24:55,1391.4,Down,OK,
+245,16:25:00,1396.8,Up,OK,
+246,16:25:06,1402.1,Menu,OK,
+247,16:25:11,1407.4,PVR,OK,
+248,16:25:16,1412.7,OK,OK,
+249,16:25:21,1417.9,Back,OK,
+250,16:25:27,1423.2,Left,OK,
+251,16:25:32,1428.6,Left,OK,
+252,16:25:38,1434.0,Guide,OK,
+253,16:25:43,1439.3,Guide,OK,
+254,16:25:48,1444.6,Channel_Up,OK,
+255,16:25:53,1449.9,Menu,OK,
+256,16:25:59,1455.2,Info,OK,
+257,16:26:09,1465.3,Left,OK,
+258,16:26:14,1470.6,Back,OK,
+259,16:26:19,1475.9,Info,OK,
+260,16:26:25,1481.2,Down,OK,
+261,16:26:30,1486.5,Back,OK,
+262,16:26:35,1491.7,Down,OK,
+263,16:26:41,1497.0,Channel_Up,OK,
+264,16:26:46,1502.2,Menu,OK,
+265,16:26:51,1507.5,Left,OK,
+266,16:26:59,1515.9,Channel_Down,OK,
+267,16:27:05,1521.2,Channel_Down,OK,
+268,16:27:10,1526.5,Back,OK,
+269,16:27:15,1531.8,PVR,OK,
+270,16:27:21,1537.1,Guide,OK,
+271,16:27:26,1542.4,Down,OK,
+272,16:27:31,1547.7,Up,OK,
+273,16:27:37,1553.0,Up,OK,
+274,16:27:42,1558.3,Left,OK,
+275,16:27:47,1563.6,Up,OK,
+276,16:27:53,1569.1,Menu,OK,
+277,16:27:58,1574.3,OK,OK,
+278,16:28:03,1579.7,Channel_Up,OK,
+279,16:28:09,1585.1,Guide,OK,
+280,16:28:14,1590.5,OK,OK,
+281,16:28:19,1595.8,Left,OK,
+282,16:28:25,1601.4,Down,OK,
+283,16:28:30,1606.7,Right,OK,
+284,16:28:36,1612.2,PVR,OK,
+285,16:28:41,1617.4,Back,OK,
+286,16:28:46,1622.6,Up,OK,
+287,16:28:51,1627.9,PVR,OK,
+288,16:28:57,1633.1,Channel_Up,OK,
+289,16:29:02,1638.4,Back,OK,
+290,16:29:07,1643.6,Down,OK,
+291,16:29:12,1648.8,Right,OK,
+292,16:29:18,1654.2,Guide,OK,
+293,16:29:23,1659.5,Menu,OK,
+294,16:29:28,1664.8,Menu,OK,
+295,16:29:34,1670.2,Down,OK,
+296,16:29:39,1675.5,Channel_Up,OK,
+297,16:29:44,1680.7,Menu,OK,
+298,16:29:50,1686.0,Right,OK,
+299,16:29:55,1691.4,Menu,OK,
+300,16:30:00,1696.9,Left,OK,
+301,16:30:06,1702.3,OK,OK,
+302,16:30:11,1707.6,Down,OK,
+303,16:30:16,1712.9,Down,OK,
+304,16:30:22,1718.2,Right,OK,
+305,16:30:27,1723.5,Info,OK,
+306,16:30:35,1731.0,Up,HANG,Recovered after hang
+307,16:31:11,1767.6,Down,OK,
+308,16:31:16,1772.9,PVR,OK,
+309,16:31:22,1778.3,Back,OK,
+310,16:31:27,1783.6,Guide,OK,
+311,16:31:32,1788.8,Left,OK,
+312,16:31:38,1794.2,PVR,OK,
+313,16:31:43,1799.6,Back,OK,
+314,16:31:48,1804.9,Info,OK,
+315,16:31:54,1810.1,Menu,OK,
+316,16:31:59,1815.4,Back,OK,
+317,16:32:04,1820.6,Guide,OK,
+318,16:32:09,1825.9,PVR,OK,
+319,16:32:16,1832.9,Menu,OK,
+320,16:32:22,1838.2,Back,OK,
+321,16:32:27,1843.5,OK,OK,
+322,16:32:32,1848.7,Guide,OK,
+323,16:32:38,1854.0,Back,OK,
+324,16:32:43,1859.3,PVR,OK,
+325,16:32:48,1864.7,Info,OK,
+326,16:32:54,1870.0,Left,OK,
+327,16:32:59,1875.2,Left,OK,
+328,16:33:04,1880.6,Info,OK,
+329,16:33:09,1885.8,Up,OK,
+330,16:33:15,1891.1,Right,OK,
+331,16:33:20,1896.4,Channel_Down,OK,
+332,16:33:25,1901.7,Guide,OK,
+333,16:33:31,1907.0,Back,OK,
+334,16:33:36,1912.2,Right,OK,
+335,16:33:41,1917.4,Left,OK,
+336,16:33:46,1922.7,Channel_Down,OK,
+337,16:33:52,1928.0,Right,OK,
+338,16:33:57,1933.3,Guide,OK,
+339,16:34:02,1938.6,Info,OK,
+340,16:34:08,1944.0,Menu,OK,
+341,16:34:13,1949.3,PVR,OK,
+342,16:34:18,1954.6,Up,OK,
+343,16:34:23,1959.9,PVR,OK,
+344,16:34:29,1965.3,Up,OK,
+345,16:34:34,1970.7,Right,OK,
+346,16:34:39,1975.9,Channel_Down,OK,
+347,16:34:45,1981.2,Back,OK,
+348,16:34:50,1986.5,Left,OK,
+349,16:34:55,1991.8,Left,OK,
+350,16:35:01,1997.1,Channel_Up,OK,
+351,16:35:06,2002.4,Down,OK,
+352,16:35:11,2007.7,Back,OK,
+353,16:35:17,2013.1,Channel_Up,OK,
+354,16:35:22,2018.4,Channel_Up,OK,
+355,16:35:27,2023.8,Menu,OK,
+356,16:35:33,2029.2,Channel_Up,OK,
+357,16:35:38,2034.5,Right,OK,
+358,16:35:43,2039.9,Info,OK,
+359,16:35:49,2045.2,Channel_Up,OK,
+360,16:35:54,2050.7,Up,OK,
+361,16:36:00,2056.0,Channel_Down,OK,
+362,16:36:05,2061.3,Right,OK,
+363,16:36:10,2066.6,Right,OK,
+364,16:36:16,2072.0,Right,OK,
+365,16:36:21,2077.3,Guide,OK,
+366,16:36:26,2082.7,Guide,OK,
+367,16:36:32,2088.0,PVR,OK,
+368,16:36:37,2093.2,Up,OK,
+369,16:36:42,2098.7,Guide,OK,
+370,16:36:48,2104.0,PVR,OK,
+371,16:36:53,2109.4,PVR,OK,
+372,16:36:58,2114.6,Info,OK,
+373,16:37:05,2121.6,PVR,OK,
+374,16:37:12,2128.6,Info,OK,
+375,16:37:17,2133.8,PVR,OK,
+376,16:37:23,2139.1,Up,OK,
+377,16:37:28,2144.4,Down,OK,
+378,16:37:33,2149.8,Back,OK,
+379,16:37:39,2155.0,Info,OK,
+380,16:37:44,2160.3,Right,OK,
+381,16:37:49,2165.5,Down,OK,
+382,16:37:54,2170.9,Guide,OK,
+383,16:38:00,2176.1,Menu,OK,
+384,16:38:05,2181.3,Guide,OK,
+385,16:38:10,2186.5,Left,OK,
+386,16:38:15,2191.9,Down,OK,
+387,16:38:21,2197.1,Channel_Down,OK,
+388,16:38:26,2202.5,Channel_Down,OK,
+389,16:38:31,2207.8,PVR,OK,
+390,16:38:37,2213.1,Channel_Down,OK,
+391,16:38:42,2218.4,OK,OK,
+392,16:38:47,2223.6,Menu,OK,
+393,16:38:52,2228.8,Channel_Up,OK,
+394,16:39:06,2242.3,Info,OK,
+395,16:39:11,2247.5,PVR,OK,
+396,16:39:16,2252.8,Right,OK,
+397,16:39:22,2258.0,Back,OK,
+398,16:39:27,2263.3,Up,OK,
+399,16:39:32,2268.6,PVR,OK,
+400,16:39:37,2273.9,Down,OK,
+401,16:39:43,2279.2,Channel_Down,OK,
+402,16:39:48,2284.5,Menu,OK,
+403,16:39:53,2289.8,Menu,OK,
+404,16:39:59,2295.1,Up,OK,
+405,16:40:04,2300.4,Down,OK,
+406,16:40:09,2305.7,Up,OK,
+407,16:40:14,2310.9,Channel_Up,OK,
+408,16:40:21,2317.8,Down,OK,
+409,16:40:27,2323.1,Down,OK,
+410,16:40:32,2328.4,Right,OK,
+411,16:40:37,2333.7,Channel_Up,OK,
+412,16:40:43,2339.1,Guide,OK,
+413,16:40:48,2344.3,Back,OK,
+414,16:40:53,2349.7,Channel_Down,OK,
+415,16:40:59,2355.0,Info,OK,
+416,16:41:04,2360.3,Down,OK,
+417,16:41:09,2365.5,Right,OK,
+418,16:41:14,2370.8,Right,OK,
+419,16:41:20,2376.1,OK,OK,
+420,16:41:25,2381.3,Guide,OK,
+421,16:41:30,2386.5,Guide,OK,
+422,16:41:35,2391.8,Channel_Up,OK,
+423,16:41:41,2397.1,OK,OK,
+424,16:41:46,2402.4,Left,OK,
+425,16:41:51,2407.6,Channel_Up,OK,
+426,16:41:57,2413.0,Guide,OK,
+427,16:42:02,2418.2,Info,OK,
+428,16:42:07,2423.4,Info,OK,
+429,16:42:12,2428.7,Channel_Up,OK,
+430,16:42:17,2433.9,Down,OK,
+431,16:42:23,2439.3,Back,OK,
+432,16:42:28,2444.7,Channel_Down,OK,
+433,16:42:33,2449.9,Back,OK,
+434,16:42:39,2455.2,Channel_Up,OK,
+435,16:42:44,2460.5,Guide,OK,
+436,16:42:49,2465.9,Channel_Up,OK,
+437,16:42:55,2471.2,Down,OK,
+438,16:43:00,2476.5,OK,OK,
+439,16:43:05,2481.8,Guide,OK,
+440,16:43:11,2487.2,PVR,OK,
+441,16:43:16,2492.6,Channel_Up,OK,
+442,16:43:32,2508.0,Channel_Down,OK,
+443,16:43:39,2515.0,Guide,OK,
+444,16:43:44,2520.3,Info,OK,
+445,16:43:49,2525.5,Up,OK,
+446,16:43:54,2530.9,Right,OK,
+447,16:44:00,2536.2,Channel_Up,OK,
+448,16:44:05,2541.5,PVR,OK,
+449,16:44:10,2546.7,Down,OK,
+450,16:44:16,2552.1,Guide,OK,
+451,16:44:21,2557.4,Info,OK,
+452,16:44:26,2562.6,Info,OK,
+453,16:44:31,2567.9,Up,OK,
+454,16:44:37,2573.2,Channel_Up,OK,
+455,16:44:42,2578.5,Down,OK,
+456,16:44:47,2583.7,Menu,OK,
+457,16:44:52,2589.0,OK,OK,
+458,16:44:58,2594.2,OK,OK,
+459,16:45:03,2599.6,Menu,OK,
+460,16:45:09,2605.0,Left,OK,
+461,16:45:14,2610.2,Channel_Up,OK,
+462,16:45:19,2615.5,Channel_Up,OK,
+463,16:45:24,2620.8,Menu,OK,
+464,16:45:30,2626.1,Right,OK,
+465,16:45:35,2631.5,Up,OK,
+466,16:45:40,2636.8,Back,OK,
+467,16:45:48,2644.3,OK,OK,
+468,16:45:53,2649.6,Left,OK,
+469,16:45:58,2654.9,Back,OK,
+470,16:46:04,2660.2,Up,OK,
+471,16:46:09,2665.5,Channel_Down,OK,
+472,16:46:14,2670.8,Left,OK,
+473,16:46:20,2676.1,PVR,OK,
+474,16:46:25,2681.5,Down,OK,
+475,16:46:30,2686.7,PVR,OK,
+476,16:46:36,2692.1,Channel_Up,OK,
+477,16:46:42,2698.9,Channel_Up,OK,
+478,16:46:49,2705.8,Right,OK,
+479,16:46:55,2711.1,Back,OK,
+480,16:47:00,2716.4,Menu,OK,
+481,16:47:05,2721.6,OK,OK,
+482,16:47:10,2726.9,OK,OK,
+483,16:47:21,2737.0,Up,HANG,Recovered after hang
+484,16:48:08,2784.7,Channel_Down,OK,
+485,16:48:14,2790.2,Channel_Up,OK,
+486,16:48:19,2795.5,Left,OK,
+487,16:48:24,2800.8,OK,OK,
+488,16:48:30,2806.1,Info,OK,
+489,16:48:35,2811.4,Menu,OK,
+490,16:48:40,2816.6,Guide,OK,
+491,16:48:45,2821.9,PVR,OK,
+492,16:48:51,2827.1,Channel_Up,OK,
+493,16:48:56,2832.4,Guide,OK,
+494,16:49:01,2837.8,Up,OK,
+495,16:49:07,2843.0,Right,OK,
+496,16:49:12,2848.3,Guide,OK,
+497,16:49:17,2853.7,Channel_Up,OK,
+498,16:49:23,2859.0,Up,OK,
+499,16:49:29,2865.9,Channel_Up,OK,
+500,16:49:35,2871.2,Channel_Down,OK,
+501,16:49:40,2876.5,Up,OK,
+502,16:49:45,2881.7,Up,OK,
+503,16:49:51,2887.0,Menu,OK,
+504,16:49:56,2892.2,Right,OK,
+505,16:50:01,2897.4,Up,OK,
+506,16:50:06,2902.7,Menu,OK,
+507,16:50:11,2907.9,Right,OK,
+508,16:50:17,2913.1,Channel_Down,OK,
+509,16:50:22,2918.4,Guide,OK,
+510,16:50:27,2923.7,Left,OK,
+511,16:50:33,2929.0,Menu,OK,
+512,16:50:38,2934.3,Info,OK,
+513,16:50:43,2939.8,Back,OK,
+514,16:50:49,2945.1,Right,OK,
+515,16:50:54,2950.5,PVR,OK,
+516,16:50:59,2955.9,Channel_Down,OK,
+517,16:51:06,2962.9,Back,OK,
+518,16:51:12,2968.2,Back,OK,
+519,16:51:17,2973.6,Down,OK,
+520,16:51:22,2978.8,Left,OK,
+521,16:51:28,2984.2,Channel_Up,OK,
+522,16:51:33,2989.6,Menu,OK,
+523,16:51:38,2994.9,OK,OK,
+524,16:51:44,3000.2,PVR,OK,
+525,16:51:49,3005.5,Channel_Up,OK,
+526,16:51:56,3012.4,Channel_Up,OK,
+527,16:52:01,3017.7,Guide,OK,
+528,16:52:06,3022.9,Left,OK,
+529,16:52:12,3028.2,Info,OK,
+530,16:52:17,3033.6,Menu,OK,
+531,16:52:22,3038.9,Right,OK,
+532,16:52:28,3044.1,Down,OK,
+533,16:52:33,3049.5,Guide,OK,
+534,16:52:38,3054.9,Channel_Up,OK,
+535,16:52:44,3060.2,Channel_Up,OK,
+536,16:52:49,3065.7,Back,OK,
+537,16:52:55,3071.1,OK,OK,
+538,16:53:00,3076.4,Down,OK,
+539,16:53:05,3081.7,Guide,OK,
+540,16:53:11,3087.0,Back,OK,
+541,16:53:16,3092.3,Menu,OK,
+542,16:53:21,3097.5,Menu,OK,
+543,16:53:26,3102.8,Up,OK,
+544,16:53:32,3108.1,Up,OK,
+545,16:53:37,3113.3,Right,OK,
+546,16:53:42,3118.7,Back,OK,
+547,16:53:48,3124.0,PVR,OK,
+548,16:53:53,3129.3,Info,OK,
+549,16:53:58,3134.6,Up,OK,
+550,16:54:03,3139.9,OK,OK,
+551,16:54:09,3145.1,Info,OK,
+552,16:54:14,3150.4,Channel_Down,OK,
+553,16:54:19,3155.7,PVR,OK,
+554,16:54:25,3161.0,Channel_Up,OK,
+555,16:54:30,3166.3,Channel_Down,OK,
+556,16:54:35,3171.7,Right,OK,
+557,16:54:41,3177.0,Down,OK,
+558,16:54:46,3182.3,Channel_Down,OK,
+559,16:54:51,3187.6,Up,OK,
+560,16:54:56,3192.9,OK,OK,
+561,16:55:02,3198.3,Left,OK,
+562,16:55:07,3203.6,OK,OK,
+563,16:55:12,3208.8,OK,OK,
+564,16:55:18,3214.1,PVR,OK,
+565,16:55:23,3219.4,Menu,OK,
+566,16:55:28,3224.7,OK,OK,
+567,16:55:34,3230.0,Info,OK,
+568,16:55:39,3235.3,OK,OK,
+569,16:55:44,3240.7,Channel_Down,OK,
+570,16:55:50,3246.2,Menu,OK,
+571,16:55:55,3251.5,OK,OK,
+572,16:56:00,3256.8,Channel_Down,OK,
+573,16:56:06,3262.1,Down,OK,
+574,16:56:11,3267.5,Channel_Down,OK,
+575,16:56:18,3274.5,Menu,OK,
+576,16:56:24,3280.0,Guide,OK,
+577,16:56:29,3285.2,PVR,OK,
+578,16:56:34,3290.6,Up,OK,
+579,16:56:39,3295.9,Guide,OK,
+580,16:56:45,3301.3,Left,OK,
+581,16:56:50,3306.6,OK,OK,
+582,16:56:55,3311.9,Back,OK,
+583,16:57:01,3317.2,Guide,OK,
+584,16:57:06,3322.6,Menu,OK,
+585,16:57:12,3328.0,Right,OK,
+586,16:57:17,3333.4,Channel_Down,OK,
+587,16:57:22,3338.7,Left,OK,
+588,16:57:28,3344.2,Menu,OK,
+589,16:57:33,3349.6,Down,OK,
+590,16:57:39,3355.0,Guide,OK,
+591,16:57:44,3360.3,Guide,OK,
+592,16:57:49,3365.6,Menu,OK,
+593,16:57:54,3370.9,Down,OK,
+594,16:58:00,3376.2,Right,OK,
+595,16:58:05,3381.4,OK,OK,
+596,16:58:10,3386.7,Info,OK,
+597,16:58:16,3392.0,Down,OK,
+598,16:58:21,3397.3,Back,OK,
+599,16:58:26,3402.5,OK,OK,
+600,16:58:31,3407.9,Menu,OK,
+601,16:58:37,3413.1,OK,OK,
+602,16:58:42,3418.4,Back,OK,
+603,16:58:47,3423.7,OK,OK,
+604,16:58:53,3429.0,PVR,OK,
+605,16:58:58,3434.3,Up,OK,
+606,16:59:03,3439.6,Info,OK,
+607,16:59:08,3444.9,Up,OK,
+608,16:59:14,3450.3,Right,OK,
+609,16:59:19,3455.7,Up,OK,
+610,16:59:25,3461.1,Channel_Up,OK,
+611,16:59:30,3466.3,Channel_Up,HANG,Recovered after hang
+612,16:59:55,3491.8,OK,HANG,STB unresponsive - manual check needed
+613,17:01:14,3570.3,Right,HANG,STB unresponsive - manual check needed
+614,17:02:32,3648.8,Down,HANG,STB unresponsive - manual check needed
+615,17:03:51,3727.1,Left,HANG,STB unresponsive - manual check needed
+616,17:05:10,3806.0,Info,HANG,STB unresponsive - manual check needed
+617,17:06:28,3884.7,Guide,HANG,STB unresponsive - manual check needed
+618,17:07:47,3963.2,OK,HANG,STB unresponsive - manual check needed
+619,17:09:05,4041.9,Info,HANG,STB unresponsive - manual check needed
+620,17:10:24,4120.4,Back,HANG,STB unresponsive - manual check needed
+621,17:11:43,4199.1,Down,HANG,STB unresponsive - manual check needed
+622,17:13:01,4277.8,Up,HANG,STB unresponsive - manual check needed
+623,17:14:20,4356.4,Up,HANG,STB unresponsive - manual check needed
+624,17:15:38,4434.9,OK,HANG,STB unresponsive - manual check needed
+625,17:16:57,4513.6,Channel_Up,HANG,STB unresponsive - manual check needed
+626,17:18:16,4592.1,Guide,HANG,STB unresponsive - manual check needed
+627,17:19:34,4670.7,Channel_Up,HANG,STB unresponsive - manual check needed
+628,17:20:53,4749.6,Back,HANG,STB unresponsive - manual check needed
+629,17:22:12,4828.4,Back,HANG,STB unresponsive - manual check needed
+630,17:23:31,4907.4,OK,HANG,STB unresponsive - manual check needed
+631,17:24:50,4986.1,Up,HANG,STB unresponsive - manual check needed
+632,17:26:08,5064.7,Info,HANG,STB unresponsive - manual check needed
+633,17:27:27,5143.5,Channel_Down,HANG,STB unresponsive - manual check needed
+634,17:28:46,5222.2,Up,HANG,STB unresponsive - manual check needed
+635,17:30:05,5301.0,Left,HANG,STB unresponsive - manual check needed
+636,17:31:23,5379.5,Menu,HANG,STB unresponsive - manual check needed
+637,17:32:42,5458.2,Channel_Down,HANG,STB unresponsive - manual check needed
+638,17:34:00,5536.6,OK,HANG,STB unresponsive - manual check needed
+639,17:35:19,5615.5,Left,HANG,STB unresponsive - manual check needed
+640,17:36:38,5694.4,Channel_Down,HANG,STB unresponsive - manual check needed
+641,17:37:56,5772.9,Menu,HANG,STB unresponsive - manual check needed
+642,17:39:15,5851.8,PVR,HANG,STB unresponsive - manual check needed
+643,17:40:34,5930.5,OK,HANG,STB unresponsive - manual check needed
+644,17:41:53,6009.3,Channel_Down,HANG,STB unresponsive - manual check needed
+645,17:43:12,6088.2,Channel_Down,HANG,STB unresponsive - manual check needed
+646,17:44:31,6167.1,OK,HANG,STB unresponsive - manual check needed
+647,17:45:49,6245.7,Guide,HANG,STB unresponsive - manual check needed
+648,17:47:08,6324.5,Down,HANG,STB unresponsive - manual check needed
+649,17:48:27,6403.4,Guide,HANG,STB unresponsive - manual check needed
+650,17:49:46,6482.5,Back,HANG,STB unresponsive - manual check needed
+651,17:51:05,6561.4,Channel_Up,HANG,STB unresponsive - manual check needed
+652,17:52:24,6640.1,Info,HANG,STB unresponsive - manual check needed
+653,17:53:43,6719.0,Left,HANG,STB unresponsive - manual check needed
+654,17:55:01,6797.6,Guide,HANG,STB unresponsive - manual check needed
+655,17:56:20,6876.6,Menu,HANG,STB unresponsive - manual check needed
+656,17:57:39,6955.6,Channel_Down,HANG,STB unresponsive - manual check needed
+657,17:58:58,7034.4,OK,HANG,STB unresponsive - manual check needed
+658,18:00:17,7113.0,Back,HANG,STB unresponsive - manual check needed
+659,18:01:35,7191.8,Down,HANG,STB unresponsive - manual check needed
+660,18:02:54,7270.7,Guide,HANG,STB unresponsive - manual check needed
+661,18:04:13,7349.5,Menu,HANG,STB unresponsive - manual check needed
+662,18:05:32,7428.6,Channel_Up,HANG,STB unresponsive - manual check needed
+663,18:06:51,7507.3,Channel_Down,HANG,STB unresponsive - manual check needed
+664,18:08:10,7586.6,PVR,HANG,STB unresponsive - manual check needed
+665,18:09:29,7665.4,Down,HANG,STB unresponsive - manual check needed
+666,18:10:48,7744.3,Right,HANG,STB unresponsive - manual check needed
+667,18:12:07,7823.4,Right,HANG,STB unresponsive - manual check needed
+668,18:13:26,7902.2,OK,HANG,STB unresponsive - manual check needed
+669,18:14:45,7981.0,Right,HANG,STB unresponsive - manual check needed
+670,18:16:04,8060.0,Channel_Down,HANG,STB unresponsive - manual check needed
+671,18:17:22,8138.7,Info,HANG,STB unresponsive - manual check needed
+672,18:18:41,8217.6,Info,HANG,STB unresponsive - manual check needed
+673,18:20:00,8296.5,Guide,HANG,STB unresponsive - manual check needed
+674,18:21:19,8375.4,PVR,HANG,STB unresponsive - manual check needed
+675,18:22:38,8454.1,Menu,HANG,STB unresponsive - manual check needed
+676,18:23:56,8532.7,Info,HANG,STB unresponsive - manual check needed
+677,18:25:15,8611.2,PVR,HANG,STB unresponsive - manual check needed
+678,18:26:34,8690.0,Down,HANG,STB unresponsive - manual check needed
+679,18:27:52,8768.7,Info,HANG,STB unresponsive - manual check needed
+680,18:29:11,8847.4,Down,HANG,STB unresponsive - manual check needed
+681,18:30:30,8926.4,Down,HANG,STB unresponsive - manual check needed
+682,18:31:49,9005.1,Right,HANG,STB unresponsive - manual check needed
+683,18:33:08,9084.2,Up,HANG,STB unresponsive - manual check needed
+684,18:34:27,9163.0,Down,HANG,STB unresponsive - manual check needed
+685,18:35:45,9241.8,Left,HANG,STB unresponsive - manual check needed
+686,18:37:04,9320.6,Channel_Down,HANG,STB unresponsive - manual check needed
+687,18:38:23,9399.4,Channel_Down,HANG,STB unresponsive - manual check needed
+688,18:39:41,9477.9,Info,HANG,STB unresponsive - manual check needed
+689,18:41:00,9556.8,Info,HANG,STB unresponsive - manual check needed
+690,18:42:19,9635.4,Down,HANG,STB unresponsive - manual check needed
+691,18:43:38,9714.0,OK,HANG,STB unresponsive - manual check needed
+692,18:44:56,9792.6,PVR,HANG,STB unresponsive - manual check needed
+693,18:46:15,9871.4,Guide,HANG,STB unresponsive - manual check needed
+694,18:47:34,9950.2,Menu,HANG,STB unresponsive - manual check needed
+695,18:48:52,10028.9,Guide,HANG,STB unresponsive - manual check needed
+696,18:50:12,10108.2,Back,HANG,STB unresponsive - manual check needed
+697,18:51:31,10187.0,Channel_Up,HANG,STB unresponsive - manual check needed
+698,18:52:51,10267.0,Left,HANG,STB unresponsive - manual check needed
+699,18:54:09,10345.7,Back,HANG,STB unresponsive - manual check needed
+700,18:55:28,10424.5,Back,HANG,STB unresponsive - manual check needed
+701,18:56:47,10503.6,Menu,HANG,STB unresponsive - manual check needed
+702,18:58:06,10582.5,OK,HANG,STB unresponsive - manual check needed
+703,18:59:25,10661.5,Up,HANG,STB unresponsive - manual check needed
+704,19:00:44,10740.1,Right,HANG,STB unresponsive - manual check needed
+705,19:02:02,10818.6,Channel_Up,HANG,STB unresponsive - manual check needed
+706,19:03:21,10897.3,Guide,HANG,STB unresponsive - manual check needed
+707,19:04:39,10975.7,Info,HANG,STB unresponsive - manual check needed
+708,19:05:58,11054.5,OK,HANG,STB unresponsive - manual check needed
+709,19:07:17,11133.2,Up,HANG,STB unresponsive - manual check needed
+710,19:08:35,11211.5,Channel_Down,HANG,STB unresponsive - manual check needed
+711,19:09:54,11290.1,OK,HANG,STB unresponsive - manual check needed
+712,19:11:12,11368.8,Back,HANG,STB unresponsive - manual check needed
+713,19:12:31,11447.3,PVR,HANG,STB unresponsive - manual check needed
+714,19:13:50,11526.2,Guide,HANG,STB unresponsive - manual check needed
+715,19:15:08,11604.7,PVR,HANG,STB unresponsive - manual check needed
+716,19:16:27,11683.5,Channel_Up,HANG,STB unresponsive - manual check needed
+717,19:17:46,11762.3,Info,HANG,STB unresponsive - manual check needed
+718,19:19:05,11841.2,PVR,HANG,STB unresponsive - manual check needed
+719,19:20:24,11920.1,Channel_Up,HANG,STB unresponsive - manual check needed
+720,19:21:42,11998.5,Right,HANG,STB unresponsive - manual check needed
+721,19:23:01,12077.4,Guide,HANG,STB unresponsive - manual check needed
+722,19:24:20,12156.2,Down,HANG,STB unresponsive - manual check needed
+723,19:25:38,12234.9,Right,HANG,STB unresponsive - manual check needed
+724,19:26:57,12313.6,Info,HANG,STB unresponsive - manual check needed
+725,19:28:16,12392.1,PVR,HANG,STB unresponsive - manual check needed
+726,19:29:34,12470.6,Guide,HANG,STB unresponsive - manual check needed
+727,19:30:53,12549.2,Info,HANG,STB unresponsive - manual check needed
+728,19:32:12,12628.2,OK,HANG,STB unresponsive - manual check needed
+729,19:33:30,12706.8,Left,HANG,STB unresponsive - manual check needed
+730,19:34:49,12785.4,PVR,HANG,STB unresponsive - manual check needed
+731,19:36:08,12864.1,Menu,HANG,STB unresponsive - manual check needed
+732,19:37:26,12942.8,Up,HANG,STB unresponsive - manual check needed
+733,19:38:45,13021.7,PVR,HANG,STB unresponsive - manual check needed
+734,19:40:04,13100.6,OK,HANG,STB unresponsive - manual check needed
+735,19:41:23,13179.0,OK,HANG,STB unresponsive - manual check needed
+736,19:42:41,13257.7,Channel_Down,HANG,STB unresponsive - manual check needed
+737,19:44:00,13336.5,Down,HANG,STB unresponsive - manual check needed
+738,19:45:19,13415.1,Channel_Down,HANG,STB unresponsive - manual check needed
+739,19:46:38,13494.2,Menu,HANG,STB unresponsive - manual check needed
+740,19:47:56,13572.8,Info,HANG,STB unresponsive - manual check needed
+741,19:49:15,13651.2,Menu,HANG,STB unresponsive - manual check needed
+742,19:50:33,13729.7,Channel_Up,HANG,STB unresponsive - manual check needed
+743,19:51:52,13808.2,Left,HANG,STB unresponsive - manual check needed
+744,19:53:10,13886.8,OK,HANG,STB unresponsive - manual check needed
+745,19:54:29,13965.5,Info,HANG,STB unresponsive - manual check needed
+746,19:55:48,14044.1,Right,HANG,STB unresponsive - manual check needed
+747,19:57:06,14122.6,Info,HANG,STB unresponsive - manual check needed
+748,19:58:25,14201.5,Up,HANG,STB unresponsive - manual check needed
+749,19:59:44,14280.5,Channel_Up,HANG,STB unresponsive - manual check needed
+750,20:01:02,14358.9,Menu,HANG,STB unresponsive - manual check needed
+751,20:02:21,14437.5,Down,HANG,STB unresponsive - manual check needed
+752,20:03:40,14516.6,Left,HANG,STB unresponsive - manual check needed
+753,20:04:59,14595.5,Right,HANG,STB unresponsive - manual check needed
+754,20:06:18,14674.4,PVR,HANG,STB unresponsive - manual check needed
+755,20:07:37,14753.1,OK,HANG,STB unresponsive - manual check needed
+756,20:08:55,14831.5,OK,HANG,STB unresponsive - manual check needed
+757,20:10:14,14910.1,PVR,HANG,STB unresponsive - manual check needed
+758,20:11:32,14988.8,Menu,HANG,STB unresponsive - manual check needed
+759,20:12:51,15067.5,Channel_Up,HANG,STB unresponsive - manual check needed
+760,20:14:09,15145.9,Left,HANG,STB unresponsive - manual check needed
+761,20:15:28,15224.2,Guide,HANG,STB unresponsive - manual check needed
+762,20:16:47,15303.2,PVR,HANG,STB unresponsive - manual check needed
+763,20:18:05,15381.8,Info,HANG,STB unresponsive - manual check needed
+764,20:19:24,15460.3,Right,HANG,STB unresponsive - manual check needed
+765,20:20:42,15538.9,Left,HANG,STB unresponsive - manual check needed
+766,20:22:01,15617.5,Left,HANG,STB unresponsive - manual check needed
+767,20:23:20,15696.1,Menu,HANG,STB unresponsive - manual check needed
+768,20:24:38,15774.9,OK,HANG,STB unresponsive - manual check needed
+769,20:25:58,15854.1,Channel_Up,HANG,STB unresponsive - manual check needed
+770,20:27:16,15932.8,Left,HANG,STB unresponsive - manual check needed
+771,20:28:35,16011.6,OK,HANG,STB unresponsive - manual check needed
+772,20:29:54,16090.6,Right,HANG,STB unresponsive - manual check needed
+773,20:31:13,16169.3,PVR,HANG,STB unresponsive - manual check needed
+774,20:32:32,16248.1,Back,HANG,STB unresponsive - manual check needed
+775,20:33:50,16326.8,Channel_Up,HANG,STB unresponsive - manual check needed
+776,20:35:09,16405.6,Up,HANG,STB unresponsive - manual check needed
+777,20:36:28,16484.7,Guide,HANG,STB unresponsive - manual check needed
+778,20:37:47,16563.5,Info,HANG,STB unresponsive - manual check needed
+779,20:39:06,16642.2,Menu,HANG,STB unresponsive - manual check needed
+780,20:40:25,16721.1,PVR,HANG,STB unresponsive - manual check needed
+781,20:41:43,16799.9,Menu,HANG,STB unresponsive - manual check needed
+782,20:43:03,16879.0,Channel_Down,HANG,STB unresponsive - manual check needed
+783,20:44:22,16958.2,Channel_Up,HANG,STB unresponsive - manual check needed
+784,20:45:41,17037.0,Guide,HANG,STB unresponsive - manual check needed
+785,20:46:59,17115.6,Down,HANG,STB unresponsive - manual check needed
+786,20:48:18,17194.4,Info,HANG,STB unresponsive - manual check needed
+787,20:49:37,17273.4,Channel_Down,HANG,STB unresponsive - manual check needed
+788,20:50:56,17352.2,Menu,HANG,STB unresponsive - manual check needed
+789,20:52:15,17431.4,Menu,HANG,STB unresponsive - manual check needed
+790,20:53:34,17510.4,Channel_Down,HANG,STB unresponsive - manual check needed
+791,20:54:53,17589.5,Back,HANG,STB unresponsive - manual check needed
+792,20:56:12,17668.7,Channel_Down,HANG,STB unresponsive - manual check needed
+793,20:57:31,17747.8,Menu,HANG,STB unresponsive - manual check needed
+794,20:58:50,17826.9,Right,HANG,STB unresponsive - manual check needed
+795,21:00:09,17905.8,Menu,HANG,STB unresponsive - manual check needed
+796,21:01:28,17984.9,Up,HANG,STB unresponsive - manual check needed
+797,21:02:47,18063.9,Up,HANG,STB unresponsive - manual check needed
+798,21:04:06,18142.8,Channel_Up,HANG,STB unresponsive - manual check needed
+799,21:05:25,18221.9,Back,HANG,STB unresponsive - manual check needed
+800,21:06:45,18301.3,Channel_Up,HANG,STB unresponsive - manual check needed
+801,21:08:04,18380.1,Back,HANG,STB unresponsive - manual check needed
+802,21:09:23,18459.2,Back,HANG,STB unresponsive - manual check needed
+803,21:10:42,18538.2,Up,HANG,STB unresponsive - manual check needed
+804,21:12:01,18617.1,Down,HANG,STB unresponsive - manual check needed
+805,21:13:20,18696.2,Left,HANG,STB unresponsive - manual check needed
+806,21:14:39,18775.3,Back,HANG,STB unresponsive - manual check needed
+807,21:15:58,18854.4,Guide,HANG,STB unresponsive - manual check needed
+808,21:17:17,18933.6,Down,HANG,STB unresponsive - manual check needed
+809,21:18:36,19012.8,Guide,HANG,STB unresponsive - manual check needed
+810,21:19:55,19091.7,Right,HANG,STB unresponsive - manual check needed
+811,21:21:14,19170.6,Channel_Up,HANG,STB unresponsive - manual check needed
+812,21:22:33,19249.5,Left,HANG,STB unresponsive - manual check needed
+813,21:23:52,19328.4,PVR,HANG,STB unresponsive - manual check needed
+814,21:25:11,19407.6,Channel_Down,HANG,STB unresponsive - manual check needed
+815,21:26:30,19486.4,Channel_Up,HANG,STB unresponsive - manual check needed
+816,21:27:49,19565.0,Info,HANG,STB unresponsive - manual check needed
+817,21:29:07,19643.8,Left,HANG,STB unresponsive - manual check needed
+818,21:30:26,19722.9,Channel_Up,HANG,STB unresponsive - manual check needed
+819,21:31:45,19801.9,OK,HANG,STB unresponsive - manual check needed
+820,21:33:04,19880.9,Guide,HANG,STB unresponsive - manual check needed
+821,21:34:23,19959.7,Guide,HANG,STB unresponsive - manual check needed
+822,21:35:42,20038.5,OK,HANG,STB unresponsive - manual check needed
+823,21:37:01,20117.3,Guide,HANG,STB unresponsive - manual check needed
+824,21:38:20,20196.3,Channel_Down,HANG,STB unresponsive - manual check needed
+825,21:39:39,20275.2,Left,HANG,STB unresponsive - manual check needed
+826,21:40:58,20354.0,Left,HANG,STB unresponsive - manual check needed
+827,21:42:17,20433.0,Menu,HANG,STB unresponsive - manual check needed
+828,21:43:35,20511.7,Up,HANG,STB unresponsive - manual check needed
+829,21:44:54,20590.4,OK,HANG,STB unresponsive - manual check needed
+830,21:46:13,20669.3,Left,HANG,STB unresponsive - manual check needed
+831,21:47:32,20748.0,Left,HANG,STB unresponsive - manual check needed
+832,21:48:50,20826.5,Channel_Up,HANG,STB unresponsive - manual check needed
+833,21:50:09,20905.4,PVR,HANG,STB unresponsive - manual check needed
+834,21:51:28,20984.1,Guide,HANG,STB unresponsive - manual check needed
+835,21:52:46,21062.9,Back,HANG,STB unresponsive - manual check needed
+836,21:54:05,21141.7,Channel_Down,HANG,STB unresponsive - manual check needed
+837,21:55:24,21220.5,Menu,HANG,STB unresponsive - manual check needed
+838,21:56:43,21299.2,Back,HANG,STB unresponsive - manual check needed
+839,21:58:02,21378.3,Back,HANG,STB unresponsive - manual check needed
+840,21:59:20,21456.8,Menu,HANG,STB unresponsive - manual check needed
+841,22:00:39,21535.3,Up,HANG,STB unresponsive - manual check needed
+842,22:01:58,21614.4,Info,HANG,STB unresponsive - manual check needed
+843,22:03:17,21693.3,Down,HANG,STB unresponsive - manual check needed
+844,22:04:35,21771.8,Up,HANG,STB unresponsive - manual check needed
+845,22:05:54,21850.6,PVR,HANG,STB unresponsive - manual check needed
+846,22:07:13,21929.5,Up,HANG,STB unresponsive - manual check needed
+847,22:08:32,22008.2,Menu,HANG,STB unresponsive - manual check needed
+848,22:09:50,22086.8,Down,HANG,STB unresponsive - manual check needed
+849,22:11:09,22165.5,Guide,HANG,STB unresponsive - manual check needed
+850,22:12:28,22244.0,Info,HANG,STB unresponsive - manual check needed
+851,22:13:46,22322.6,Right,HANG,STB unresponsive - manual check needed
+852,22:15:05,22401.2,Info,HANG,STB unresponsive - manual check needed
+853,22:16:23,22479.8,Left,HANG,STB unresponsive - manual check needed
+854,22:17:42,22558.4,Channel_Down,HANG,STB unresponsive - manual check needed
+855,22:19:01,22637.1,Down,HANG,STB unresponsive - manual check needed
+856,22:20:19,22715.9,Up,HANG,STB unresponsive - manual check needed
+857,22:21:38,22794.3,Down,HANG,STB unresponsive - manual check needed
+858,22:22:57,22873.5,Left,HANG,STB unresponsive - manual check needed
+859,22:24:16,22952.0,Info,HANG,STB unresponsive - manual check needed
+860,22:25:34,23030.4,Right,HANG,STB unresponsive - manual check needed
+861,22:26:53,23109.0,Down,HANG,STB unresponsive - manual check needed
+862,22:28:11,23187.7,OK,HANG,STB unresponsive - manual check needed
+863,22:29:30,23266.3,Right,HANG,STB unresponsive - manual check needed
+864,22:30:49,23345.0,Channel_Down,HANG,STB unresponsive - manual check needed
+865,22:32:08,23424.0,PVR,HANG,STB unresponsive - manual check needed
+866,22:33:26,23502.5,Channel_Up,HANG,STB unresponsive - manual check needed
+867,22:34:45,23581.5,PVR,HANG,STB unresponsive - manual check needed
+868,22:36:04,23660.2,Info,HANG,STB unresponsive - manual check needed
+869,22:37:22,23738.9,Channel_Up,HANG,STB unresponsive - manual check needed
+870,22:38:41,23817.6,Menu,HANG,STB unresponsive - manual check needed
+871,22:40:00,23896.4,PVR,HANG,STB unresponsive - manual check needed
+872,22:41:18,23974.9,PVR,HANG,STB unresponsive - manual check needed
+873,22:42:37,24053.5,Guide,HANG,STB unresponsive - manual check needed
+874,22:43:56,24132.3,Channel_Down,HANG,STB unresponsive - manual check needed
+875,22:45:14,24210.6,Left,HANG,STB unresponsive - manual check needed
+876,22:46:33,24289.2,PVR,HANG,STB unresponsive - manual check needed
+877,22:47:51,24367.8,Right,HANG,STB unresponsive - manual check needed
+878,22:49:10,24446.5,OK,HANG,STB unresponsive - manual check needed
+879,22:50:29,24525.2,Channel_Down,HANG,STB unresponsive - manual check needed
+880,22:51:47,24603.9,Guide,HANG,STB unresponsive - manual check needed
+881,22:53:06,24682.6,Guide,HANG,STB unresponsive - manual check needed
+882,22:54:25,24761.3,Guide,HANG,STB unresponsive - manual check needed
+883,22:55:44,24840.0,Back,HANG,STB unresponsive - manual check needed
+884,22:57:02,24918.8,Info,HANG,STB unresponsive - manual check needed
+885,22:58:21,24997.5,Channel_Down,HANG,STB unresponsive - manual check needed
