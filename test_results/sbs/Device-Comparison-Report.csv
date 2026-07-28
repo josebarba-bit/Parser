@@ -1,7 +1,7 @@
 Test Case,UIW Result,UIW Reason,UIW Time (s),VIP Result,VIP Reason,VIP Time (s),Time Diff (VIP vs UIW),Verdict
 Standby Cycle Checks,PASS,,44.29,PASS,,147.54,233.10%,WARN (VIP slower)
 Menu Checks,PASS,,71.84,PASS,Reason: Menu is still shown after standby cycle.,147.01,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens by Key,PASS,,44.29,FAIL,"Reason: Guide is not open, string ""Today"" not detected",45.51,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens by Key,PASS,,44.29,PASS,"Reason: Guide is not open, string ""Today"" not detected",45.51,N/A (different outcome),NOT COMPARABLE
 Verify Guide Opens from Menu,PASS,,43.84,PASS,,42.47,-3.10%,OK
 Verify Channel Zap AV Playback,PASS,,94.07,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,99.15,N/A (different outcome),NOT COMPARABLE
 Verify Menu Does Not Auto-Dismiss,PASS,,27.01,PASS,,31.92,18.20%,WARN (VIP slower)
