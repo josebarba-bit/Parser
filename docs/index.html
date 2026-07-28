@@ -403,6 +403,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
 let allTests       = [];
 let activeTab      = 'all';
@@ -1262,6 +1263,28 @@ async function exportPDF(section) {
         doc.line(margin, y-1, pageW-margin, y-1);
       });
       y += 8;
+
+      // Capture automation charts (doughnut + bar)
+      const distCanvas = document.getElementById('chartDist');
+      const srcCanvas  = document.getElementById('chartSrc');
+      if (distCanvas && srcCanvas) {
+        checkPage(55);
+        doc.setFontSize(10);
+        doc.setFont('helvetica','bold');
+        doc.setTextColor(26,26,24);
+        doc.text('Results Charts', margin, y);
+        y += 4;
+        try {
+          const halfW = (pageW - margin*2 - 4) / 2;
+          const distImg = distCanvas.toDataURL('image/png');
+          const srcImg  = srcCanvas.toDataURL('image/png');
+          const chartH  = halfW * (distCanvas.height / distCanvas.width);
+          checkPage(chartH + 6);
+          doc.addImage(distImg, 'PNG', margin,          y, halfW, Math.min(chartH, 50));
+          doc.addImage(srcImg,  'PNG', margin+halfW+4,  y, halfW, Math.min(chartH, 50));
+          y += Math.min(chartH, 50) + 8;
+        } catch(e) { console.warn('Could not capture charts:', e); }
+      }
     }
 
     // ── STABILITY ──
@@ -1330,6 +1353,25 @@ async function exportPDF(section) {
           doc.line(margin, y, pageW-margin, y);
           y += 6;
         }
+      }
+
+      // Capture stability trend chart
+      const trendCanvas = document.getElementById('chartStabilityTrend');
+      if (trendCanvas && activeMainTab === 'stability') {
+        checkPage(70);
+        doc.setFontSize(10);
+        doc.setFont('helvetica','bold');
+        doc.setTextColor(26,26,24);
+        doc.text('Stability Trend — Last 7 days', margin, y);
+        y += 4;
+        try {
+          const chartImg = trendCanvas.toDataURL('image/png');
+          const chartW   = pageW - margin*2;
+          const chartH   = chartW * (trendCanvas.height / trendCanvas.width);
+          checkPage(chartH + 5);
+          doc.addImage(chartImg, 'PNG', margin, y, chartW, Math.min(chartH, 70));
+          y += Math.min(chartH, 70) + 6;
+        } catch(e) { console.warn('Could not capture stability trend chart:', e); }
       }
     }
 
