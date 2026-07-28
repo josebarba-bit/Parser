@@ -910,101 +910,6 @@ async function selectDate(dateStr) {
   } else { badge.style.display = 'none'; }
   if (selectedDate) await loadHistoricalDate(selectedDate);
   else await 
-// ─── Stability sub-tabs ───────────────────────────────────────
-let activeStabTab = 'metrics';
-
-function switchStabTab(tab, el) {
-  activeStabTab = tab;
-  document.querySelectorAll('[id^="stab-tab-"]').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('stab-panel-metrics').style.display = tab === 'metrics' ? 'flex' : 'none';
-  document.getElementById('stab-panel-sbs').style.display     = tab === 'sbs'     ? 'flex' : 'none';
-  if (tab === 'sbs' && fullData?.sbs) renderSBSContent(fullData.sbs);
-}
-
-// ─── SBS content ──────────────────────────────────────────────
-function verdictClass(verdict) {
-  const v = (verdict || '').toUpperCase();
-  if (v === 'OK')                    return 'verdict-ok';
-  if (v.includes('WARN'))            return 'verdict-warn';
-  if (v.includes('NOTE'))            return 'verdict-note';
-  if (v.includes('NOT COMPARABLE'))  return 'verdict-nocomp';
-  return 'verdict-nocomp';
-}
-
-function verdictShort(verdict) {
-  const v = (verdict || '').trim();
-  if (v.toUpperCase() === 'OK')             return 'OK';
-  if (v.toUpperCase().includes('WARN'))     return '⚠️ WARN';
-  if (v.toUpperCase().includes('NOTE') && v.toUpperCase().includes('FASTER')) return '🔵 VIP faster';
-  if (v.toUpperCase().includes('NOT COMPARABLE')) return '— N/A';
-  return v;
-}
-
-function renderSBSContent(sbs) {
-  if (!sbs) return;
-
-  // Update title and last run
-  document.getElementById('sbs-lastrun').textContent = sbs.last_updated ? 'Last updated: ' + sbs.last_updated : '';
-
-  // Summary cards
-  const s = sbs.summary;
-  const summaryEl = document.getElementById('sbs-summary');
-  summaryEl.innerHTML = [
-    { label: 'Total tests',     value: s.total,        color: 'var(--text)' },
-    { label: 'UIW Passed',      value: s.uiw_pass,     color: 'var(--pass)' },
-    { label: 'UIW Failed',      value: s.uiw_fail,     color: 'var(--fail)' },
-    { label: 'VIP Passed',      value: s.vip_pass,     color: 'var(--pass)' },
-    { label: 'VIP Failed',      value: s.vip_fail,     color: 'var(--fail)' },
-    { label: 'Comparable',      value: s.comparable,   color: 'var(--blue)' },
-    { label: 'OK',              value: s.ok,            color: 'var(--pass)' },
-    { label: 'VIP slower',      value: s.warn,          color: 'var(--warn)' },
-    { label: 'VIP faster',      value: s.vip_faster,   color: 'var(--blue)' },
-    { label: 'Not comparable',  value: s.not_comparable, color: 'var(--muted)' },
-  ].map(m => `
-    <div class="metric">
-      <div class="metric-label">${m.label}</div>
-      <div class="metric-value" style="color:${m.color}">${m.value}</div>
-    </div>
-  `).join('');
-
-  renderSBSTable();
-}
-
-function renderSBSTable() {
-  if (!fullData?.sbs?.rows) return;
-  const search  = document.getElementById('sbs-search').value.toLowerCase();
-  const fVerdict = document.getElementById('sbs-filter-verdict').value.toUpperCase();
-
-  const rows = fullData.sbs.rows.filter(r => {
-    if (search && !r.test_case.toLowerCase().includes(search)) return false;
-    if (fVerdict && !r.verdict.toUpperCase().includes(fVerdict)) return false;
-    return true;
-  });
-
-  const tbody = document.getElementById('sbs-tbody');
-  if (!rows.length) {
-    tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No tests match the current filters</td></tr>';
-    return;
-  }
-
-  tbody.innerHTML = rows.map((r, i) => {
-    const uiwCls = r.uiw_result.toUpperCase() === 'PASS' ? 'pass-pill' : 'fail-pill';
-    const vipCls = r.vip_result.toUpperCase() === 'PASS' ? 'pass-pill' : 'fail-pill';
-    const vCls   = verdictClass(r.verdict);
-    return `<tr>
-      <td style="color:var(--muted)">${i+1}</td>
-      <td style="font-weight:500;max-width:180px;word-break:break-word">${esc(r.test_case)}</td>
-      <td><span class="pill ${uiwCls}">${esc(r.uiw_result)}</span></td>
-      <td style="color:var(--muted);font-size:12px">${esc(r.uiw_time)}s</td>
-      <td><span class="pill ${vipCls}">${esc(r.vip_result)}</span></td>
-      <td style="color:var(--muted);font-size:12px">${esc(r.vip_time)}s</td>
-      <td style="font-size:12px;color:var(--muted)">${esc(r.time_diff)}</td>
-      <td><span class="pill ${vCls}">${verdictShort(r.verdict)}</span></td>
-    </tr>`;
-  }).join('');
-}
-
 loadLatest(false);
 }
 
@@ -1340,6 +1245,103 @@ function renderSBSTable() {
 }
 
 loadLatest(false);
+
+// ─── Stability sub-tabs ───────────────────────────────────────
+let activeStabTab = 'metrics';
+
+function switchStabTab(tab, el) {
+  activeStabTab = tab;
+  document.querySelectorAll('[id^="stab-tab-"]').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('stab-panel-metrics').style.display = tab === 'metrics' ? 'flex' : 'none';
+  document.getElementById('stab-panel-sbs').style.display     = tab === 'sbs'     ? 'flex' : 'none';
+  if (tab === 'sbs' && fullData?.sbs) renderSBSContent(fullData.sbs);
+}
+
+// ─── SBS content ──────────────────────────────────────────────
+function verdictClass(verdict) {
+  const v = (verdict || '').toUpperCase();
+  if (v === 'OK')                    return 'verdict-ok';
+  if (v.includes('WARN'))            return 'verdict-warn';
+  if (v.includes('NOTE'))            return 'verdict-note';
+  if (v.includes('NOT COMPARABLE'))  return 'verdict-nocomp';
+  return 'verdict-nocomp';
+}
+
+function verdictShort(verdict) {
+  const v = (verdict || '').trim();
+  if (v.toUpperCase() === 'OK')             return 'OK';
+  if (v.toUpperCase().includes('WARN'))     return '⚠️ WARN';
+  if (v.toUpperCase().includes('NOTE') && v.toUpperCase().includes('FASTER')) return '🔵 VIP faster';
+  if (v.toUpperCase().includes('NOT COMPARABLE')) return '— N/A';
+  return v;
+}
+
+function renderSBSContent(sbs) {
+  if (!sbs) return;
+
+  // Update title and last run
+  document.getElementById('sbs-lastrun').textContent = sbs.last_updated ? 'Last updated: ' + sbs.last_updated : '';
+
+  // Summary cards
+  const s = sbs.summary;
+  const summaryEl = document.getElementById('sbs-summary');
+  summaryEl.innerHTML = [
+    { label: 'Total tests',     value: s.total,        color: 'var(--text)' },
+    { label: 'UIW Passed',      value: s.uiw_pass,     color: 'var(--pass)' },
+    { label: 'UIW Failed',      value: s.uiw_fail,     color: 'var(--fail)' },
+    { label: 'VIP Passed',      value: s.vip_pass,     color: 'var(--pass)' },
+    { label: 'VIP Failed',      value: s.vip_fail,     color: 'var(--fail)' },
+    { label: 'Comparable',      value: s.comparable,   color: 'var(--blue)' },
+    { label: 'OK',              value: s.ok,            color: 'var(--pass)' },
+    { label: 'VIP slower',      value: s.warn,          color: 'var(--warn)' },
+    { label: 'VIP faster',      value: s.vip_faster,   color: 'var(--blue)' },
+    { label: 'Not comparable',  value: s.not_comparable, color: 'var(--muted)' },
+  ].map(m => `
+    <div class="metric">
+      <div class="metric-label">${m.label}</div>
+      <div class="metric-value" style="color:${m.color}">${m.value}</div>
+    </div>
+  `).join('');
+
+  renderSBSTable();
+}
+
+function renderSBSTable() {
+  if (!fullData?.sbs?.rows) return;
+  const search  = document.getElementById('sbs-search').value.toLowerCase();
+  const fVerdict = document.getElementById('sbs-filter-verdict').value.toUpperCase();
+
+  const rows = fullData.sbs.rows.filter(r => {
+    if (search && !r.test_case.toLowerCase().includes(search)) return false;
+    if (fVerdict && !r.verdict.toUpperCase().includes(fVerdict)) return false;
+    return true;
+  });
+
+  const tbody = document.getElementById('sbs-tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No tests match the current filters</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = rows.map((r, i) => {
+    const uiwCls = r.uiw_result.toUpperCase() === 'PASS' ? 'pass-pill' : 'fail-pill';
+    const vipCls = r.vip_result.toUpperCase() === 'PASS' ? 'pass-pill' : 'fail-pill';
+    const vCls   = verdictClass(r.verdict);
+    return `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td style="font-weight:500;max-width:180px;word-break:break-word">${esc(r.test_case)}</td>
+      <td><span class="pill ${uiwCls}">${esc(r.uiw_result)}</span></td>
+      <td style="color:var(--muted);font-size:12px">${esc(r.uiw_time)}s</td>
+      <td><span class="pill ${vipCls}">${esc(r.vip_result)}</span></td>
+      <td style="color:var(--muted);font-size:12px">${esc(r.vip_time)}s</td>
+      <td style="font-size:12px;color:var(--muted)">${esc(r.time_diff)}</td>
+      <td><span class="pill ${vCls}">${verdictShort(r.verdict)}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+
 
 
 // ─── PDF Export ───────────────────────────────────────────────
