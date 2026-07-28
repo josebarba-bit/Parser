@@ -226,6 +226,12 @@
     .export-btn { font-size: 12px; padding: 6px 14px; border-radius: 6px; border: 0.5px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; transition: all .15s; }
     .export-btn:hover { background: var(--blue-bg); color: var(--blue); border-color: var(--blue); }
     .export-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* SBS verdicts */
+    .verdict-ok       { background: var(--pass-bg);   color: var(--pass);   }
+    .verdict-warn     { background: var(--warn-bg);   color: var(--warn);   }
+    .verdict-note     { background: var(--blue-bg);   color: var(--blue);   }
+    .verdict-nocomp   { background: var(--bg);        color: var(--muted);  border: 0.5px solid var(--border); }
   </style>
 </head>
 <body>
@@ -379,22 +385,74 @@
   <!-- ═══ STABILITY ═══ -->
   <div class="section-panel" id="panel-stability">
 
-    <div class="filter-bar">
-      <div class="filter-group">
-        <span class="filter-label">Model:</span>
-        <div style="display:flex;gap:6px">
-          <button class="model-btn active-all" id="btn-model-all" onclick="selectModel('all')">All</button>
-          <button class="model-btn"            id="btn-model-uiw" onclick="selectModel('uiw')">UIW</button>
-          <button class="model-btn"            id="btn-model-vip" onclick="selectModel('vip')">VIP</button>
-        </div>
-      </div>
+    <!-- Stability sub-tabs -->
+    <div style="display:flex;gap:4px;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:6px">
+      <div class="main-tab active" id="stab-tab-metrics" onclick="switchStabTab('metrics',this)" style="flex:1">📊 Metrics</div>
+      <div class="main-tab" id="stab-tab-sbs" onclick="switchStabTab('sbs',this)" style="flex:1">⚡ Side-by-Side</div>
     </div>
 
-    <div id="stability-content"></div>
+    <!-- Metrics sub-panel -->
+    <div id="stab-panel-metrics" style="display:flex;flex-direction:column;gap:20px">
 
-    <div class="trend-card">
-      <div class="card-title" id="stability-trend-title">Stability trend — last 7 days</div>
-      <div style="position:relative;height:220px"><canvas id="chartStabilityTrend"></canvas></div>
+      <div class="filter-bar">
+        <div class="filter-group">
+          <span class="filter-label">Model:</span>
+          <div style="display:flex;gap:6px">
+            <button class="model-btn active-all" id="btn-model-all" onclick="selectModel('all')">All</button>
+            <button class="model-btn"            id="btn-model-uiw" onclick="selectModel('uiw')">UIW</button>
+            <button class="model-btn"            id="btn-model-vip" onclick="selectModel('vip')">VIP</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="stability-content"></div>
+
+      <div class="trend-card">
+        <div class="card-title" id="stability-trend-title">Stability trend — last 7 days</div>
+        <div style="position:relative;height:220px"><canvas id="chartStabilityTrend"></canvas></div>
+      </div>
+
+    </div>
+
+    <!-- SBS sub-panel -->
+    <div id="stab-panel-sbs" style="display:none;flex-direction:column;gap:20px">
+
+      <!-- SBS Summary cards -->
+      <div id="sbs-summary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px"></div>
+
+      <!-- SBS Table -->
+      <div class="card">
+        <div class="card-title" id="sbs-title">UIW vs VIP — Side-by-Side Comparison</div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px" id="sbs-lastrun"></div>
+        <div class="filters">
+          <input type="search" class="search-box" id="sbs-search" placeholder="Search test case..." oninput="renderSBSTable()">
+          <select id="sbs-filter-verdict" onchange="renderSBSTable()">
+            <option value="">All verdicts</option>
+            <option value="OK">OK</option>
+            <option value="WARN">WARN (VIP slower)</option>
+            <option value="NOTE">NOTE (VIP faster)</option>
+            <option value="NOT COMPARABLE">Not Comparable</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Test Case</th>
+                <th>UIW Result</th>
+                <th>UIW Time (s)</th>
+                <th>VIP Result</th>
+                <th>VIP Time (s)</th>
+                <th>Time Diff</th>
+                <th>Verdict</th>
+              </tr>
+            </thead>
+            <tbody id="sbs-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -851,7 +909,103 @@ async function selectDate(dateStr) {
     badge.style.display = 'inline-block';
   } else { badge.style.display = 'none'; }
   if (selectedDate) await loadHistoricalDate(selectedDate);
-  else await loadLatest(false);
+  else await 
+// ─── Stability sub-tabs ───────────────────────────────────────
+let activeStabTab = 'metrics';
+
+function switchStabTab(tab, el) {
+  activeStabTab = tab;
+  document.querySelectorAll('[id^="stab-tab-"]').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('stab-panel-metrics').style.display = tab === 'metrics' ? 'flex' : 'none';
+  document.getElementById('stab-panel-sbs').style.display     = tab === 'sbs'     ? 'flex' : 'none';
+  if (tab === 'sbs' && fullData?.sbs) renderSBSContent(fullData.sbs);
+}
+
+// ─── SBS content ──────────────────────────────────────────────
+function verdictClass(verdict) {
+  const v = (verdict || '').toUpperCase();
+  if (v === 'OK')                    return 'verdict-ok';
+  if (v.includes('WARN'))            return 'verdict-warn';
+  if (v.includes('NOTE'))            return 'verdict-note';
+  if (v.includes('NOT COMPARABLE'))  return 'verdict-nocomp';
+  return 'verdict-nocomp';
+}
+
+function verdictShort(verdict) {
+  const v = (verdict || '').trim();
+  if (v.toUpperCase() === 'OK')             return 'OK';
+  if (v.toUpperCase().includes('WARN'))     return '⚠️ WARN';
+  if (v.toUpperCase().includes('NOTE') && v.toUpperCase().includes('FASTER')) return '🔵 VIP faster';
+  if (v.toUpperCase().includes('NOT COMPARABLE')) return '— N/A';
+  return v;
+}
+
+function renderSBSContent(sbs) {
+  if (!sbs) return;
+
+  // Update title and last run
+  document.getElementById('sbs-lastrun').textContent = sbs.last_updated ? 'Last updated: ' + sbs.last_updated : '';
+
+  // Summary cards
+  const s = sbs.summary;
+  const summaryEl = document.getElementById('sbs-summary');
+  summaryEl.innerHTML = [
+    { label: 'Total tests',     value: s.total,        color: 'var(--text)' },
+    { label: 'UIW Passed',      value: s.uiw_pass,     color: 'var(--pass)' },
+    { label: 'UIW Failed',      value: s.uiw_fail,     color: 'var(--fail)' },
+    { label: 'VIP Passed',      value: s.vip_pass,     color: 'var(--pass)' },
+    { label: 'VIP Failed',      value: s.vip_fail,     color: 'var(--fail)' },
+    { label: 'Comparable',      value: s.comparable,   color: 'var(--blue)' },
+    { label: 'OK',              value: s.ok,            color: 'var(--pass)' },
+    { label: 'VIP slower',      value: s.warn,          color: 'var(--warn)' },
+    { label: 'VIP faster',      value: s.vip_faster,   color: 'var(--blue)' },
+    { label: 'Not comparable',  value: s.not_comparable, color: 'var(--muted)' },
+  ].map(m => `
+    <div class="metric">
+      <div class="metric-label">${m.label}</div>
+      <div class="metric-value" style="color:${m.color}">${m.value}</div>
+    </div>
+  `).join('');
+
+  renderSBSTable();
+}
+
+function renderSBSTable() {
+  if (!fullData?.sbs?.rows) return;
+  const search  = document.getElementById('sbs-search').value.toLowerCase();
+  const fVerdict = document.getElementById('sbs-filter-verdict').value.toUpperCase();
+
+  const rows = fullData.sbs.rows.filter(r => {
+    if (search && !r.test_case.toLowerCase().includes(search)) return false;
+    if (fVerdict && !r.verdict.toUpperCase().includes(fVerdict)) return false;
+    return true;
+  });
+
+  const tbody = document.getElementById('sbs-tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No tests match the current filters</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = rows.map((r, i) => {
+    const uiwCls = r.uiw_result.toUpperCase() === 'PASS' ? 'pass-pill' : 'fail-pill';
+    const vipCls = r.vip_result.toUpperCase() === 'PASS' ? 'pass-pill' : 'fail-pill';
+    const vCls   = verdictClass(r.verdict);
+    return `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td style="font-weight:500;max-width:180px;word-break:break-word">${esc(r.test_case)}</td>
+      <td><span class="pill ${uiwCls}">${esc(r.uiw_result)}</span></td>
+      <td style="color:var(--muted);font-size:12px">${esc(r.uiw_time)}s</td>
+      <td><span class="pill ${vipCls}">${esc(r.vip_result)}</span></td>
+      <td style="color:var(--muted);font-size:12px">${esc(r.vip_time)}s</td>
+      <td style="font-size:12px;color:var(--muted)">${esc(r.time_diff)}</td>
+      <td><span class="pill ${vCls}">${verdictShort(r.verdict)}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+loadLatest(false);
 }
 
 async function loadHistoricalDate(dateStr) {
@@ -905,6 +1059,7 @@ function applyData(data, isLive) {
   updateMetrics();
   if (changed) { updateCharts(); renderTable(); }
   if (data.stability) renderStabilityContent(data.stability);
+  if (data.sbs && activeStabTab === 'sbs') renderSBSContent(data.sbs);
   if (data.stability && activeMainTab === 'stability') loadStabilityTrend();
   document.getElementById('export-bar').style.display = 'flex';
   if (!isLive) {
@@ -1084,6 +1239,102 @@ function renderTable() {
       <td><span class="pill ${pill}">${esc(t.status)}</span></td>
       <td class="msg-cell">${esc(t.message||'—')}</td>
       <td style="font-size:11px;color:var(--muted);white-space:nowrap">${esc(t.time||'—')}</td>
+    </tr>`;
+  }).join('');
+}
+
+
+// ─── Stability sub-tabs ───────────────────────────────────────
+let activeStabTab = 'metrics';
+
+function switchStabTab(tab, el) {
+  activeStabTab = tab;
+  document.querySelectorAll('[id^="stab-tab-"]').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('stab-panel-metrics').style.display = tab === 'metrics' ? 'flex' : 'none';
+  document.getElementById('stab-panel-sbs').style.display     = tab === 'sbs'     ? 'flex' : 'none';
+  if (tab === 'sbs' && fullData?.sbs) renderSBSContent(fullData.sbs);
+}
+
+// ─── SBS content ──────────────────────────────────────────────
+function verdictClass(verdict) {
+  const v = (verdict || '').toUpperCase();
+  if (v === 'OK')                    return 'verdict-ok';
+  if (v.includes('WARN'))            return 'verdict-warn';
+  if (v.includes('NOTE'))            return 'verdict-note';
+  if (v.includes('NOT COMPARABLE'))  return 'verdict-nocomp';
+  return 'verdict-nocomp';
+}
+
+function verdictShort(verdict) {
+  const v = (verdict || '').trim();
+  if (v.toUpperCase() === 'OK')             return 'OK';
+  if (v.toUpperCase().includes('WARN'))     return '⚠️ WARN';
+  if (v.toUpperCase().includes('NOTE') && v.toUpperCase().includes('FASTER')) return '🔵 VIP faster';
+  if (v.toUpperCase().includes('NOT COMPARABLE')) return '— N/A';
+  return v;
+}
+
+function renderSBSContent(sbs) {
+  if (!sbs) return;
+
+  // Update title and last run
+  document.getElementById('sbs-lastrun').textContent = sbs.last_updated ? 'Last updated: ' + sbs.last_updated : '';
+
+  // Summary cards
+  const s = sbs.summary;
+  const summaryEl = document.getElementById('sbs-summary');
+  summaryEl.innerHTML = [
+    { label: 'Total tests',     value: s.total,        color: 'var(--text)' },
+    { label: 'UIW Passed',      value: s.uiw_pass,     color: 'var(--pass)' },
+    { label: 'UIW Failed',      value: s.uiw_fail,     color: 'var(--fail)' },
+    { label: 'VIP Passed',      value: s.vip_pass,     color: 'var(--pass)' },
+    { label: 'VIP Failed',      value: s.vip_fail,     color: 'var(--fail)' },
+    { label: 'Comparable',      value: s.comparable,   color: 'var(--blue)' },
+    { label: 'OK',              value: s.ok,            color: 'var(--pass)' },
+    { label: 'VIP slower',      value: s.warn,          color: 'var(--warn)' },
+    { label: 'VIP faster',      value: s.vip_faster,   color: 'var(--blue)' },
+    { label: 'Not comparable',  value: s.not_comparable, color: 'var(--muted)' },
+  ].map(m => `
+    <div class="metric">
+      <div class="metric-label">${m.label}</div>
+      <div class="metric-value" style="color:${m.color}">${m.value}</div>
+    </div>
+  `).join('');
+
+  renderSBSTable();
+}
+
+function renderSBSTable() {
+  if (!fullData?.sbs?.rows) return;
+  const search  = document.getElementById('sbs-search').value.toLowerCase();
+  const fVerdict = document.getElementById('sbs-filter-verdict').value.toUpperCase();
+
+  const rows = fullData.sbs.rows.filter(r => {
+    if (search && !r.test_case.toLowerCase().includes(search)) return false;
+    if (fVerdict && !r.verdict.toUpperCase().includes(fVerdict)) return false;
+    return true;
+  });
+
+  const tbody = document.getElementById('sbs-tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No tests match the current filters</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = rows.map((r, i) => {
+    const uiwCls = r.uiw_result.toUpperCase() === 'PASS' ? 'pass-pill' : 'fail-pill';
+    const vipCls = r.vip_result.toUpperCase() === 'PASS' ? 'pass-pill' : 'fail-pill';
+    const vCls   = verdictClass(r.verdict);
+    return `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td style="font-weight:500;max-width:180px;word-break:break-word">${esc(r.test_case)}</td>
+      <td><span class="pill ${uiwCls}">${esc(r.uiw_result)}</span></td>
+      <td style="color:var(--muted);font-size:12px">${esc(r.uiw_time)}s</td>
+      <td><span class="pill ${vipCls}">${esc(r.vip_result)}</span></td>
+      <td style="color:var(--muted);font-size:12px">${esc(r.vip_time)}s</td>
+      <td style="font-size:12px;color:var(--muted)">${esc(r.time_diff)}</td>
+      <td><span class="pill ${vCls}">${verdictShort(r.verdict)}</span></td>
     </tr>`;
   }).join('');
 }
