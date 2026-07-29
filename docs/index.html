@@ -1572,7 +1572,7 @@ async function exportPDF(section) {
           doc.text(r.vip_result, cx+1, y); cx+=14;
           doc.setTextColor(107,106,101);
           doc.text(r.vip_time+'s', cx+1, y); cx+=18;
-          doc.text(r.time_diff, cx+1, y); cx+=16;
+          doc.text(doc.splitTextToSize(r.time_diff, 14)[0], cx+1, y); cx+=16;
           doc.setTextColor(26,26,24);
           doc.text(r.verdict, cx+1, y);
           y += 5;
