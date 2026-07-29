@@ -279,7 +279,8 @@
     <span class="export-label">📄 Export PDF:</span>
     <button class="export-btn" onclick="exportPDF('automation')" id="btn-export-auto">🤖 Automation</button>
     <button class="export-btn" onclick="exportPDF('stability')" id="btn-export-stab">🔬 Stability</button>
-    <button class="export-btn" onclick="exportPDF('full')" id="btn-export-full">📋 Full Report</button>
+    <button class="export-btn" onclick="exportPDF('sbs')" id="btn-export-sbs">⚡ Side-by-Side</button>
+	<button class="export-btn" onclick="exportPDF('full')" id="btn-export-full">📋 Full Report</button>
   </div>
 
   <!-- ═══ AUTOMATION ═══ -->
@@ -1524,6 +1525,62 @@ async function exportPDF(section) {
         } catch(e) { console.warn('Could not capture stability trend chart:', e); }
       }
     }
+	// SBS
+    if (section === 'sbs' || section === 'full') {
+      checkPage(20);
+      sectionTitle('Side-by-Side Comparison — UIW vs VIP');
+
+      if (fullData?.sbs) {
+        const s = fullData.sbs.summary;
+        doc.setFontSize(9);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(107,106,101);
+        doc.text(`Total: ${s.total} | Comparable: ${s.comparable} | Not comparable: ${s.not_comparable}`, margin, y); y += 5;
+        doc.text(`UIW: ${s.uiw_pass} pass / ${s.uiw_fail} fail  |  VIP: ${s.vip_pass} pass / ${s.vip_fail} fail`, margin, y); y += 5;
+        doc.text(`OK: ${s.ok} | VIP slower: ${s.warn} | VIP faster: ${s.vip_faster}`, margin, y); y += 10;
+
+        const cols = [['#',8],['Test Case',80],['UIW',16],['UIW Time',20],['VIP',16],['VIP Time',20],['Diff',18],['Verdict',30]];
+        doc.setFillColor(240,240,238);
+        doc.rect(margin, y-4, pageW-margin*2, 7, 'F');
+        doc.setFontSize(7.5);
+        doc.setFont('helvetica','bold');
+        doc.setTextColor(107,106,101);
+        let cx = margin;
+        cols.forEach(([lbl,w]) => { doc.text(lbl, cx+1, y); cx+=w; });
+        y += 4;
+        doc.setLineWidth(0.2);
+        doc.setDrawColor(220,220,220);
+        doc.line(margin, y, pageW-margin, y);
+        y += 3;
+
+        doc.setFont('helvetica','normal');
+        doc.setFontSize(7.5);
+        fullData.sbs.rows.forEach((r, i) => {
+          checkPage(6);
+          const uiwColor = r.uiw_result.toUpperCase() === 'PASS' ? [39,80,10] : [121,31,31];
+          const vipColor = r.vip_result.toUpperCase() === 'PASS' ? [39,80,10] : [121,31,31];
+          cx = margin;
+          doc.setTextColor(107,106,101);
+          doc.text(String(i+1), cx+1, y); cx+=8;
+          doc.setTextColor(26,26,24);
+          doc.text(doc.splitTextToSize(r.test_case, 78)[0], cx+1, y); cx+=80;
+          doc.setTextColor(...uiwColor);
+          doc.text(r.uiw_result, cx+1, y); cx+=16;
+          doc.setTextColor(107,106,101);
+          doc.text(r.uiw_time+'s', cx+1, y); cx+=20;
+          doc.setTextColor(...vipColor);
+          doc.text(r.vip_result, cx+1, y); cx+=16;
+          doc.setTextColor(107,106,101);
+          doc.text(r.vip_time+'s', cx+1, y); cx+=20;
+          doc.text(r.time_diff, cx+1, y); cx+=18;
+          doc.setTextColor(26,26,24);
+          doc.text(r.verdict, cx+1, y);
+          y += 5;
+          doc.setDrawColor(235,235,233);
+          doc.line(margin, y-1, pageW-margin, y-1);
+        });
+      }
+    }
 
     // Footer
     const pages = doc.getNumberOfPages();
@@ -1550,6 +1607,7 @@ async function exportPDF(section) {
   btns.forEach(b => { b.disabled = false; });
   document.getElementById('btn-export-auto').textContent = '🤖 Automation';
   document.getElementById('btn-export-stab').textContent = '🔬 Stability';
+  document.getElementById('btn-export-sbs').textContent = '⚡ Side-by-Side';
   document.getElementById('btn-export-full').textContent = '📋 Full Report';
 }
 
