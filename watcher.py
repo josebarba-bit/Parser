@@ -157,7 +157,7 @@ def parse_longevity(filepath):
             reader = csv.DictReader(f)
             for row in reader:
                 total += 1
-                if row.get("result", "").strip().upper() == "HANG":
+                if (row.get("result") or "").strip().upper() == "HANG":
                     hangs += 1
         return {
             "total_iterations": total,
@@ -179,7 +179,7 @@ def parse_performance(filepath):
             reader = csv.DictReader(f)
             for row in reader:
                 try:
-                    times.append(float(row.get("response_time_sec", 0)))
+                    times.append(float(row.get("response_time_sec") or 0))
                 except ValueError:
                     pass
         if not times:
@@ -206,7 +206,7 @@ def parse_resource_contention(filepath, drift_threshold=20):
             reader = csv.DictReader(f)
             for row in reader:
                 try:
-                    drift = float(row.get("drift_pct", 0))
+                    drift = float(row.get("drift_pct") or 0)
                     drifts.append(drift)
                     if abs(drift) > drift_threshold:
                         out_of_baseline += 1
