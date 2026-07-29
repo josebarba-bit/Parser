@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T17:04:37.024857",
+  "generated_at": "2026-07-29T17:10:41.525629",
   "date": "2026-07-29",
   "clients": [
     "telus",
@@ -70,53 +70,53 @@
     "uiw": {
       "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
-        "total_iterations": 2675,
-        "hangs": 110,
-        "success_rate": 95.9
+        "total_iterations": 3149,
+        "hangs": 279,
+        "success_rate": 91.1
       },
       "performance": {
-        "avg_response_time": 2.73,
-        "max_response_time": 16.47,
-        "min_response_time": 0.0,
-        "total_iterations": 2560
+        "avg_response_time": 2.64,
+        "max_response_time": 16.56,
+        "min_response_time": 2.05,
+        "total_iterations": 2843
       },
       "resource_contention": {
-        "avg_drift_pct": -7.91,
-        "max_drift_pct": 676.9,
-        "out_of_baseline": 928,
-        "total_iterations": 2560,
+        "avg_drift_pct": 3.42,
+        "max_drift_pct": 542.1,
+        "out_of_baseline": 808,
+        "total_iterations": 2843,
         "drift_threshold_pct": 20
       },
       "last_updated": {
-        "longevity": "2026-07-29 16:08",
-        "performance": "2026-07-29 16:08",
-        "resource_contention": "2026-07-29 16:08"
+        "longevity": "2026-07-29 17:10",
+        "performance": "2026-07-29 17:10",
+        "resource_contention": "2026-07-29 17:10"
       }
     },
     "vip": {
       "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
-        "total_iterations": 2399,
-        "hangs": 123,
-        "success_rate": 94.9
+        "total_iterations": 3297,
+        "hangs": 249,
+        "success_rate": 92.4
       },
       "performance": {
-        "avg_response_time": 2.73,
-        "max_response_time": 16.41,
-        "min_response_time": 0.0,
-        "total_iterations": 2271
+        "avg_response_time": 2.63,
+        "max_response_time": 15.24,
+        "min_response_time": 2.06,
+        "total_iterations": 3008
       },
       "resource_contention": {
-        "avg_drift_pct": -18.61,
-        "max_drift_pct": 610.2,
-        "out_of_baseline": 1479,
-        "total_iterations": 2271,
+        "avg_drift_pct": 4.11,
+        "max_drift_pct": 625.0,
+        "out_of_baseline": 773,
+        "total_iterations": 3008,
         "drift_threshold_pct": 20
       },
       "last_updated": {
-        "longevity": "2026-07-29 16:08",
-        "performance": "2026-07-29 16:08",
-        "resource_contention": "2026-07-29 16:08"
+        "longevity": "2026-07-29 17:10",
+        "performance": "2026-07-29 17:10",
+        "resource_contention": "2026-07-29 17:10"
       }
     }
   },
