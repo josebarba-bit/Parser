@@ -73,8 +73,8 @@
     .dot.error { background: #A32D2D; }
 
     .main-tabs { display: flex; gap: 4px; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 6px; }
-    .main-tab { flex: 1; text-align: center; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 6px; cursor: pointer; color: var(--muted); transition: all .15s; user-select: none; }
-    .main-tab.active { background: var(--text); color: var(--bg); }
+    .main-tab { flex: 1; text-align: center; font-size: 13px; font-weight: 700; padding: 8px 16px; border-radius: 6px; cursor: pointer; color: var(--text); transition: all .15s; user-select: none; background: var(--bg); }
+	.main-tab.active { background: #4a4a48; color: #ffffff; }
     .main-tab:hover:not(.active) { background: var(--bg); color: var(--text); }
 
     .section-panel { display: none; flex-direction: column; gap: 20px; }
@@ -387,9 +387,9 @@
 
     <!-- Stability sub-tabs -->
     <div style="display:flex;gap:4px;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:6px">
-      <div class="main-tab active" id="stab-tab-metrics" onclick="switchStabTab('metrics',this)" style="flex:1">📊 Metrics</div>
-      <div class="main-tab" id="stab-tab-sbs" onclick="switchStabTab('sbs',this)" style="flex:1">⚡ Side-by-Side</div>
-    </div>
+	  <button class="main-tab active" id="stab-tab-metrics" onclick="switchStabTab('metrics',this)" style="flex:1;cursor:pointer;border:none">📊 Metrics</button>
+	  <button class="main-tab" id="stab-tab-sbs" onclick="switchStabTab('sbs',this)" style="flex:1;cursor:pointer;border:none">⚡ Side-by-Side</button>
+	</div>
 
     <!-- Metrics sub-panel -->
     <div id="stab-panel-metrics" style="display:flex;flex-direction:column;gap:20px">
