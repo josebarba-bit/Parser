@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T17:11:33.223371",
+  "generated_at": "2026-07-29T17:13:35.399590",
   "date": "2026-07-29",
   "clients": [
     "telus",
@@ -11,19 +11,19 @@
   ],
   "summary": {
     "total": 66,
-    "passed": 44,
-    "failed": 8,
+    "passed": 43,
+    "failed": 9,
     "skipped": 14,
-    "rate": 66.7
+    "rate": 65.2
   },
   "summaries": {
     "telus": {
       "all": {
         "total": 35,
-        "passed": 18,
-        "failed": 8,
+        "passed": 17,
+        "failed": 9,
         "skipped": 9,
-        "rate": 51.4
+        "rate": 48.6
       },
       "sanity": {
         "total": 10,
@@ -34,10 +34,10 @@
       },
       "smoke": {
         "total": 25,
-        "passed": 14,
-        "failed": 2,
+        "passed": 13,
+        "failed": 3,
         "skipped": 9,
-        "rate": 56.0
+        "rate": 52.0
       }
     },
     "mega": {
@@ -60,7 +60,7 @@
   "last_run": {
     "telus": {
       "sanity": "2026-07-29 16:45",
-      "smoke": "2026-07-27 11:15"
+      "smoke": "2026-07-29 17:13"
     },
     "mega": {
       "sanity": "2026-07-29 06:00"
@@ -452,7 +452,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:54:29.890",
+      "time": "20260729 16:46:18.844",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -462,7 +462,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:55:35.251",
+      "time": "20260729 16:47:24.154",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -472,7 +472,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:56:47.490",
+      "time": "20260729 16:48:36.129",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -482,7 +482,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:57:30.143",
+      "time": "20260729 16:49:23.383",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -492,7 +492,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br>",
-      "time": "20260727 11:13:27.902",
+      "time": "20260729 17:09:26.780",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -502,7 +502,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 10:59:44.212",
+      "time": "20260729 16:51:38.754",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -512,7 +512,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 10:59:44.213",
+      "time": "20260729 16:51:38.755",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -522,7 +522,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 10:59:44.214",
+      "time": "20260729 16:51:38.756",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -532,7 +532,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 10:59:44.214",
+      "time": "20260729 16:51:38.757",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -542,7 +542,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 11:00:20.082",
+      "time": "20260729 16:52:11.562",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -552,7 +552,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 11:00:20.083",
+      "time": "20260729 16:52:11.563",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -562,7 +562,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 11:02:41.647",
+      "time": "20260729 16:54:31.795",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -572,7 +572,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 11:04:14.116",
+      "time": "20260729 16:55:57.585",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -582,7 +582,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 11:05:41.101",
+      "time": "20260729 16:57:25.192",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -592,7 +592,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 11:07:18.717",
+      "time": "20260729 16:59:04.561",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -602,7 +602,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 11:07:52.589",
+      "time": "20260729 16:59:38.555",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -612,7 +612,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 11:08:21.299",
+      "time": "20260729 17:00:28.690",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -622,7 +622,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 11:08:54.543",
+      "time": "20260729 17:01:11.801",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -632,7 +632,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260727 11:08:54.543",
+      "time": "20260729 17:01:11.801",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -642,7 +642,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 11:09:17.553",
+      "time": "20260729 17:01:46.702",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -650,9 +650,9 @@
     {
       "name": "Play a Recording",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260727 11:09:17.554",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Audio playback no detected.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Audio playback no detected.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Audio playback no detected.<br>",
+      "time": "20260729 17:10:35.535",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -662,7 +662,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 11:10:23.707",
+      "time": "20260729 17:03:03.598",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -672,7 +672,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 11:10:23.707",
+      "time": "20260729 17:03:03.599",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -681,8 +681,8 @@
       "name": "Check volume bar icons",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> 'False' should be true.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> 'False' should be true.<br>",
-      "time": "20260727 11:14:40.328",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260729 17:11:48.740",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -692,7 +692,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260727 11:11:12.501",
+      "time": "20260729 17:04:56.511",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
