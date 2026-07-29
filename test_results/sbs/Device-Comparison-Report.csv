@@ -1,23 +1,23 @@
 Test Case,UIW Result,UIW Reason,UIW Time (s),VIP Result,VIP Reason,VIP Time (s),Time Diff (VIP vs UIW),Verdict
-Standby Cycle Checks,PASS,,56.05,PASS,,120.51,+115.0%,WARN (VIP slower)
-Menu Checks,PASS,,71.06,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,223.95,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens by Key,PASS,,44.08,PASS,,56.45,+28.1%,WARN (VIP slower)
-Verify Guide Opens from Menu,PASS,,42.07,PASS,,41.94,-0.3%,OK
-Verify Channel Zap AV Playback,PASS,,105.46,PASS,,94.02,-10.8%,NOTE (VIP faster)
-Verify Menu Does Not Auto-Dismiss,PASS,,30.86,PASS,,30.85,-0.0%,OK
-Verify Live TV Background During PVR,PASS,,43.1,PASS,,37.25,-13.6%,NOTE (VIP faster)
-Verify Audio Playback on Settings Page,PASS,,22.4,PASS,,22.84,+2.0%,OK
-Play a Recording,PASS,,61.9,PASS,,61.85,-0.1%,OK
-Verify AV Playback on LiveTV,FAIL,Reason: Video playback no detected.,64.21,PASS,,58.32,N/A (different outcome),NOT COMPARABLE
-Adjust the LiveTV Volume,FAIL,Reason: Audio playback detected.,21.62,FAIL,Reason: Audio playback detected.,20.78,-3.9%,OK
-Verify AV background with Menu,FAIL,Reason: Video playback no detected.,53.69,FAIL,NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s,32.63,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens & Bkgn Video,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,95.11,PASS,,60.64,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens from Menu & Bkgn Video,PASS,,75.19,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,140.35,N/A (different outcome),NOT COMPARABLE
-Verify Settings Opens from Menu,PASS,,26.7,PASS,,26.46,-0.9%,OK
-Select and Play a content from Guide,PASS,,82.52,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,166.43,N/A (different outcome),NOT COMPARABLE
-Audio mute on Live TV,FAIL,Reason: Audio playback detected.,75.26,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,86.59,N/A (different outcome),NOT COMPARABLE
-Audio mute on Guide,FAIL,Reason: Audio playback detected.,83.58,FAIL,NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s,34.52,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by Channel Zap,PASS,,25.89,PASS,,26.68,+3.1%,OK
-Progress Bar on Live TV by OK Key,PASS,,11.52,PASS,,11.5,-0.2%,OK
-Progress Bar on Live TV by Dpad Up,PASS,,25.26,PASS,,27.62,+9.4%,OK
-Launch PVR via Button,PASS,,16.48,PASS,,16.3,-1.1%,OK
+Standby Cycle Checks,PASS,,82.57,PASS,,220.03,+166.5%,WARN (VIP slower)
+Menu Checks,PASS,,82.33,FAIL,Reason: Menu overlay is not completely opaque.,8.93,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens by Key,PASS,,44.33,FAIL,"Reason: Guide is not open, string ""Today"" not detected",45.64,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens from Menu,FAIL,"Reason: Guide is not open, string ""Today"" not detected",44.87,PASS,,42.11,N/A (different outcome),NOT COMPARABLE
+Verify Channel Zap AV Playback,PASS,,106.22,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,107.59,N/A (different outcome),NOT COMPARABLE
+Verify Menu Does Not Auto-Dismiss,PASS,,32.12,PASS,,26.62,-17.1%,NOTE (VIP faster)
+Verify Live TV Background During PVR,PASS,,37.2,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,114.4,N/A (different outcome),NOT COMPARABLE
+Verify Audio Playback on Settings Page,PASS,,22.34,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,44.13,N/A (different outcome),NOT COMPARABLE
+Play a Recording,PASS,,61.2,FAIL,Reason: Audio playback no detected.,72.78,N/A (different outcome),NOT COMPARABLE
+Verify AV Playback on LiveTV,PASS,,58.2,FAIL,Reason: Video playback no detected.,64.35,N/A (different outcome),NOT COMPARABLE
+Adjust the LiveTV Volume,FAIL,Reason: Audio playback detected.,21.4,FAIL,"Reason: ""Audio does not change"".",49.23,N/A (different outcome),NOT COMPARABLE
+Verify AV background with Menu,PASS,,37.68,FAIL,Reason: Audio playback no detected.,38.15,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens & Bkgn Video,PASS,,66.99,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,77.7,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens from Menu & Bkgn Video,PASS,,76.8,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,83.9,N/A (different outcome),NOT COMPARABLE
+Verify Settings Opens from Menu,PASS,,26.99,FAIL,Reason: The settings page is not shown.,33.46,N/A (different outcome),NOT COMPARABLE
+Select and Play a content from Guide,FAIL,"Reason: Guide is not open, string ""Today"" not detected",49.65,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,81.25,N/A (different outcome),NOT COMPARABLE
+Audio mute on Live TV,FAIL,NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s,37.76,FAIL,NetworkTimeoutError: [Errno -4000] Network timeout: No response received within 10s,34.51,-8.6%,OK
+Audio mute on Guide,FAIL,Reason: Audio playback detected.,89.35,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,88.46,N/A (different outcome),NOT COMPARABLE
+Progress Bar on Live TV by Channel Zap,PASS,,27.32,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,75.41,N/A (different outcome),NOT COMPARABLE
+Progress Bar on Live TV by OK Key,PASS,,11.31,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,31.76,N/A (different outcome),NOT COMPARABLE
+Progress Bar on Live TV by Dpad Up,PASS,,25.73,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,50.73,N/A (different outcome),NOT COMPARABLE
+Launch PVR via Button,PASS,,15.91,PASS,,15.91,+0.0%,OK
