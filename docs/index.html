@@ -1539,7 +1539,7 @@ async function exportPDF(section) {
         doc.text(`UIW: ${s.uiw_pass} pass / ${s.uiw_fail} fail  |  VIP: ${s.vip_pass} pass / ${s.vip_fail} fail`, margin, y); y += 5;
         doc.text(`OK: ${s.ok} | VIP slower: ${s.warn} | VIP faster: ${s.vip_faster}`, margin, y); y += 10;
 
-        const cols = [['#',8],['Test Case',80],['UIW',16],['UIW Time',20],['VIP',16],['VIP Time',20],['Diff',18],['Verdict',30]];
+        const cols = [['#',7],['Test Case',65],['UIW',14],['UIW Time',18],['VIP',14],['VIP Time',18],['Diff',16],['Verdict',26]];
         doc.setFillColor(240,240,238);
         doc.rect(margin, y-4, pageW-margin*2, 7, 'F');
         doc.setFontSize(7.5);
@@ -1561,18 +1561,18 @@ async function exportPDF(section) {
           const vipColor = r.vip_result.toUpperCase() === 'PASS' ? [39,80,10] : [121,31,31];
           cx = margin;
           doc.setTextColor(107,106,101);
-          doc.text(String(i+1), cx+1, y); cx+=8;
+          doc.text(String(i+1), cx+1, y); cx+=7;
           doc.setTextColor(26,26,24);
-          doc.text(doc.splitTextToSize(r.test_case, 78)[0], cx+1, y); cx+=80;
+          doc.text(doc.splitTextToSize(r.test_case, 63)[0], cx+1, y); cx+=65;
           doc.setTextColor(...uiwColor);
-          doc.text(r.uiw_result, cx+1, y); cx+=16;
+          doc.text(r.uiw_result, cx+1, y); cx+=14;
           doc.setTextColor(107,106,101);
-          doc.text(r.uiw_time+'s', cx+1, y); cx+=20;
+          doc.text(r.uiw_time+'s', cx+1, y); cx+=18;
           doc.setTextColor(...vipColor);
-          doc.text(r.vip_result, cx+1, y); cx+=16;
+          doc.text(r.vip_result, cx+1, y); cx+=14;
           doc.setTextColor(107,106,101);
-          doc.text(r.vip_time+'s', cx+1, y); cx+=20;
-          doc.text(r.time_diff, cx+1, y); cx+=18;
+          doc.text(r.vip_time+'s', cx+1, y); cx+=18;
+          doc.text(r.time_diff, cx+1, y); cx+=16;
           doc.setTextColor(26,26,24);
           doc.text(r.verdict, cx+1, y);
           y += 5;
