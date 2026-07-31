@@ -1,4 +1,4 @@
-Software Version - UIW: 3.7.35-,VIP: n/a
+Software Version - UIW: 3.7.35 - Telus/Zenterio,VIP: 3.7.35 - Telus/Zenterio,MW Version - UIW: Zenterio OS 16.4 TELUS4K 1.12.1 debug build #397 142,VIP: Zenterio OS 16.4 TELUS4K 1.12.1 debug build #397 142
 Test Case,UIW Result,UIW Reason,UIW Time (s),VIP Result,VIP Reason,VIP Time (s),Time Diff (VIP vs UIW),Verdict
 Standby Cycle Checks,PASS,,56.45,PASS,,82.69,+46.5%,WARN (VIP slower)
 Menu Checks,FAIL,Reason: Menu is still shown after standby cycle.,57.6,FAIL,Reason: Menu is not displayed,12.19,N/A (different outcome),NOT COMPARABLE
