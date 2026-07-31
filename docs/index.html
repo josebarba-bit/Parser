@@ -1542,9 +1542,20 @@ async function exportPDF(section) {
 
       if (fullData?.sbs) {
         const s = fullData.sbs.summary;
+        const sbs = fullData.sbs;
         doc.setFontSize(9);
         doc.setFont('helvetica', 'normal');
         doc.setTextColor(107,106,101);
+
+        // Version info
+        if (sbs.sw_version_uiw || sbs.sw_version_vip) {
+          doc.text(`UIW SW: ${sbs.sw_version_uiw || 'N/A'}  |  VIP SW: ${sbs.sw_version_vip || 'N/A'}`, margin, y); y += 5;
+        }
+        if (sbs.mw_version_uiw || sbs.mw_version_vip) {
+          doc.text(`UIW MW: ${sbs.mw_version_uiw || 'N/A'}  |  VIP MW: ${sbs.mw_version_vip || 'N/A'}`, margin, y); y += 5;
+        }
+        y += 3;
+
         doc.text(`Total: ${s.total} | Comparable: ${s.comparable} | Not comparable: ${s.not_comparable}`, margin, y); y += 5;
         doc.text(`UIW: ${s.uiw_pass} pass / ${s.uiw_fail} fail  |  VIP: ${s.vip_pass} pass / ${s.vip_fail} fail`, margin, y); y += 5;
         doc.text(`OK: ${s.ok} | VIP slower: ${s.warn} | VIP faster: ${s.vip_faster}`, margin, y); y += 10;
