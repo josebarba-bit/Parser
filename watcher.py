@@ -232,49 +232,75 @@ def parse_sbs_report(filepath):
         return None
     try:
         rows = []
+        sw_version_uiw = None
+        sw_version_vip = None
+        mw_version_uiw = None
+        mw_version_vip = None
+
         with open(filepath, newline="", encoding="utf-8-sig") as f:
+            # Read version header from first line
+            first_line = f.readline().strip()
+            if first_line.startswith("Software Version"):
+                parts = first_line.split(",")
+                for part in parts:
+                    part = part.strip()
+                    if part.startswith("Software Version - UIW:"):
+                        sw_version_uiw = part.replace("Software Version - UIW:", "").strip()
+                    elif part.startswith("VIP:") and sw_version_vip is None:
+                        sw_version_vip = part.replace("VIP:", "").strip()
+                    elif part.startswith("MW Version - UIW:"):
+                        mw_version_uiw = part.replace("MW Version - UIW:", "").strip()
+                    elif part.startswith("VIP:") and mw_version_vip is None:
+                        mw_version_vip = part.replace("VIP:", "").strip()
+            else:
+                f.seek(0)
+
             reader = csv.DictReader(f)
             for row in reader:
                 rows.append({
-                    "test_case":    row.get("Test Case", "").strip(),
-                    "uiw_result":   row.get("UIW Result", "").strip(),
-                    "uiw_reason":   row.get("UIW Reason", "").strip(),
-                    "uiw_time":     row.get("UIW Time (s)", "").strip(),
-                    "vip_result":   row.get("VIP Result", "").strip(),
-                    "vip_reason":   row.get("VIP Reason", "").strip(),
-                    "vip_time":     row.get("VIP Time (s)", "").strip(),
-                    "time_diff":    row.get("Time Diff (VIP vs UIW)", "").strip(),
-                    "verdict":      row.get("Verdict", "").strip(),
+                    "test_case":    (row.get("Test Case") or "").strip(),
+                    "uiw_result":   (row.get("UIW Result") or "").strip(),
+                    "uiw_reason":   (row.get("UIW Reason") or "").strip(),
+                    "uiw_time":     (row.get("UIW Time (s)") or "").strip(),
+                    "vip_result":   (row.get("VIP Result") or "").strip(),
+                    "vip_reason":   (row.get("VIP Reason") or "").strip(),
+                    "vip_time":     (row.get("VIP Time (s)") or "").strip(),
+                    "time_diff":    (row.get("Time Diff (VIP vs UIW)") or "").strip(),
+                    "verdict":      (row.get("Verdict") or "").strip(),
                 })
 
         if not rows:
             return None
 
         # Build summary
-        total        = len(rows)
-        uiw_pass     = sum(1 for r in rows if r["uiw_result"].upper() == "PASS")
-        uiw_fail     = sum(1 for r in rows if r["uiw_result"].upper() == "FAIL")
-        vip_pass     = sum(1 for r in rows if r["vip_result"].upper() == "PASS")
-        vip_fail     = sum(1 for r in rows if r["vip_result"].upper() == "FAIL")
-        comparable   = sum(1 for r in rows if "NOT COMPARABLE" not in r["verdict"].upper())
-        ok           = sum(1 for r in rows if r["verdict"].upper() == "OK")
-        warn         = sum(1 for r in rows if "WARN" in r["verdict"].upper())
-        vip_faster   = sum(1 for r in rows if "NOTE" in r["verdict"].upper() and "FASTER" in r["verdict"].upper())
-        not_comp     = sum(1 for r in rows if "NOT COMPARABLE" in r["verdict"].upper())
+        total      = len(rows)
+        uiw_pass   = sum(1 for r in rows if r["uiw_result"].upper() == "PASS")
+        uiw_fail   = sum(1 for r in rows if r["uiw_result"].upper() == "FAIL")
+        vip_pass   = sum(1 for r in rows if r["vip_result"].upper() == "PASS")
+        vip_fail   = sum(1 for r in rows if r["vip_result"].upper() == "FAIL")
+        comparable = sum(1 for r in rows if "NOT COMPARABLE" not in r["verdict"].upper())
+        ok         = sum(1 for r in rows if r["verdict"].upper() == "OK")
+        warn       = sum(1 for r in rows if "WARN" in r["verdict"].upper())
+        vip_faster = sum(1 for r in rows if "NOTE" in r["verdict"].upper() and "FASTER" in r["verdict"].upper())
+        not_comp   = sum(1 for r in rows if "NOT COMPARABLE" in r["verdict"].upper())
 
         return {
-            "last_updated": get_file_mtime(filepath),
+            "last_updated":   get_file_mtime(filepath),
+            "sw_version_uiw": sw_version_uiw,
+            "sw_version_vip": sw_version_vip,
+            "mw_version_uiw": mw_version_uiw,
+            "mw_version_vip": mw_version_vip,
             "summary": {
-                "total":       total,
-                "comparable":  comparable,
+                "total":          total,
+                "comparable":     comparable,
                 "not_comparable": not_comp,
-                "uiw_pass":    uiw_pass,
-                "uiw_fail":    uiw_fail,
-                "vip_pass":    vip_pass,
-                "vip_fail":    vip_fail,
-                "ok":          ok,
-                "warn":        warn,
-                "vip_faster":  vip_faster,
+                "uiw_pass":       uiw_pass,
+                "uiw_fail":       uiw_fail,
+                "vip_pass":       vip_pass,
+                "vip_fail":       vip_fail,
+                "ok":             ok,
+                "warn":           warn,
+                "vip_faster":     vip_faster,
             },
             "rows": rows,
         }

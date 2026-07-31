@@ -1185,7 +1185,15 @@ function renderSBSContent(sbs) {
   if (!sbs) return;
 
   // Update title and last run
-  document.getElementById('sbs-lastrun').textContent = sbs.last_updated ? 'Last updated: ' + sbs.last_updated : '';
+  const versionInfo = [
+    sbs.sw_version_uiw ? `UIW SW: ${sbs.sw_version_uiw}` : '',
+    sbs.sw_version_vip ? `VIP SW: ${sbs.sw_version_vip}` : '',
+    sbs.mw_version_uiw ? `UIW MW: ${sbs.mw_version_uiw}` : '',
+    sbs.mw_version_vip ? `VIP MW: ${sbs.mw_version_vip}` : '',
+  ].filter(Boolean).join('  |  ');
+  document.getElementById('sbs-lastrun').textContent =
+    (versionInfo ? versionInfo + '  |  ' : '') +
+    (sbs.last_updated ? 'Last updated: ' + sbs.last_updated : '');
 
   // Summary cards
   const s = sbs.summary;
