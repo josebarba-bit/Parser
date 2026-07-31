@@ -1185,15 +1185,17 @@ function renderSBSContent(sbs) {
   if (!sbs) return;
 
   // Update title and last run
-  const versionInfo = [
+  const swLine = [
     sbs.sw_version_uiw ? `UIW SW: ${sbs.sw_version_uiw}` : '',
     sbs.sw_version_vip ? `VIP SW: ${sbs.sw_version_vip}` : '',
+  ].filter(Boolean).join('  |  ');
+  const mwLine = [
     sbs.mw_version_uiw ? `UIW MW: ${sbs.mw_version_uiw}` : '',
     sbs.mw_version_vip ? `VIP MW: ${sbs.mw_version_vip}` : '',
   ].filter(Boolean).join('  |  ');
-  document.getElementById('sbs-lastrun').textContent =
-    (versionInfo ? versionInfo + '  |  ' : '') +
-    (sbs.last_updated ? 'Last updated: ' + sbs.last_updated : '');
+  const lastRun = sbs.last_updated ? `Last updated: ${sbs.last_updated}` : '';
+  document.getElementById('sbs-lastrun').innerHTML =
+    [swLine, mwLine, lastRun].filter(Boolean).join('<br>');
 
   // Summary cards
   const s = sbs.summary;
