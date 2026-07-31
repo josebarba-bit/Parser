@@ -1572,13 +1572,51 @@ async function exportPDF(section) {
         doc.text(`Total: ${s.total} | Comparable: ${s.comparable} | Not comparable: ${s.not_comparable}`, margin, y); y += 5;
         doc.text(`UIW: ${s.uiw_pass} pass / ${s.uiw_fail} fail  |  VIP: ${s.vip_pass} pass / ${s.vip_fail} fail`, margin, y); y += 5;
         doc.text(`OK: ${s.ok} | VIP slower: ${s.warn} | VIP faster: ${s.vip_faster}`, margin, y); y += 10;
-
-        // Table
+// Table
         const cols = [['#',7],['Test Case',65],['UIW',14],['UIW Time',18],['VIP',14],['VIP Time',18],['Diff',16],['Verdict',26]];
         doc.setFillColor(240,240,238);
         doc.rect(margin, y-4, pageW-margin*2, 7, 'F');
         doc.setFontSize(7.5);
         doc.setFont('helvetica','bold');
+        doc.setTextColor(107,106,101);
+        let cx = margin;
+        cols.forEach(([lbl,w]) => { doc.text(lbl, cx+1, y); cx+=w; });
+        y += 4;
+        doc.setLineWidth(0.2);
+        doc.setDrawColor(220,220,220);
+        doc.line(margin, y, pageW-margin, y);
+        y += 3;
+
+        doc.setFont('helvetica','normal');
+        doc.setFontSize(7.5);
+        sbs.rows.forEach((r, i) => {
+          checkPage(6);
+          const uiwColor = r.uiw_result.toUpperCase() === 'PASS' ? [39,80,10] : [121,31,31];
+          const vipColor = r.vip_result.toUpperCase() === 'PASS' ? [39,80,10] : [121,31,31];
+          cx = margin;
+          doc.setTextColor(107,106,101);
+          doc.text(String(i+1), cx+1, y); cx+=7;
+          doc.setTextColor(26,26,24);
+          doc.text(doc.splitTextToSize(r.test_case, 63)[0], cx+1, y); cx+=65;
+          doc.setTextColor(...uiwColor);
+          doc.text(r.uiw_result, cx+1, y); cx+=14;
+          doc.setTextColor(107,106,101);
+          doc.text(r.uiw_time+'s', cx+1, y); cx+=18;
+          doc.setTextColor(...vipColor);
+          doc.text(r.vip_result, cx+1, y); cx+=14;
+          doc.setTextColor(107,106,101);
+          doc.text(r.vip_time+'s', cx+1, y); cx+=18;
+          doc.text(doc.splitTextToSize(r.time_diff, 14)[0], cx+1, y); cx+=16;
+          doc.setTextColor(26,26,24);
+          doc.text(r.verdict, cx+1, y);
+          y += 5;
+          doc.setDrawColor(235,235,233);
+          doc.line(margin, y-1, pageW-margin, y-1);
+        });
+      }
+    }
+
+    // Footer
 
     // Footer
     const pages = doc.getNumberOfPages();
