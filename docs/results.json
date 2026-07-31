@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T06:01:07.280028",
+  "generated_at": "2026-07-30T23:05:04.633087",
   "date": "2026-07-30",
   "clients": [
     "telus",
@@ -70,189 +70,200 @@
     "uiw": {
       "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
-        "total_iterations": 4269,
-        "hangs": 524,
-        "success_rate": 87.7
+        "total_iterations": 4874,
+        "hangs": 224,
+        "success_rate": 95.4
       },
       "performance": {
-        "avg_response_time": 2.66,
-        "max_response_time": 16.57,
-        "min_response_time": 2.04,
-        "total_iterations": 3690
+        "avg_response_time": 2.62,
+        "max_response_time": 16.4,
+        "min_response_time": 2.05,
+        "total_iterations": 4620
       },
       "resource_contention": {
-        "avg_drift_pct": 4.46,
-        "max_drift_pct": 681.6,
-        "out_of_baseline": 1060,
-        "total_iterations": 3690,
+        "avg_drift_pct": -12.61,
+        "max_drift_pct": 692.3,
+        "out_of_baseline": 2334,
+        "total_iterations": 4620,
         "drift_threshold_pct": 20
       },
       "last_updated": {
-        "longevity": "2026-07-29 23:05",
-        "performance": "2026-07-29 23:05",
-        "resource_contention": "2026-07-29 23:05"
+        "longevity": "2026-07-30 23:05",
+        "performance": "2026-07-30 23:05",
+        "resource_contention": "2026-07-30 23:05"
       }
     },
     "vip": {
       "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
-        "total_iterations": 5350,
-        "hangs": 412,
-        "success_rate": 92.3
+        "total_iterations": 5973,
+        "hangs": 147,
+        "success_rate": 97.5
       },
       "performance": {
-        "avg_response_time": 2.65,
-        "max_response_time": 15.24,
+        "avg_response_time": 2.6,
+        "max_response_time": 16.45,
         "min_response_time": 2.06,
-        "total_iterations": 4873
+        "total_iterations": 5819
       },
       "resource_contention": {
-        "avg_drift_pct": 4.72,
-        "max_drift_pct": 625.0,
-        "out_of_baseline": 1245,
-        "total_iterations": 4873,
+        "avg_drift_pct": 2.11,
+        "max_drift_pct": 540.2,
+        "out_of_baseline": 1570,
+        "total_iterations": 5819,
         "drift_threshold_pct": 20
       },
       "last_updated": {
-        "longevity": "2026-07-29 23:05",
-        "performance": "2026-07-29 23:05",
-        "resource_contention": "2026-07-29 23:05"
+        "longevity": "2026-07-30 23:05",
+        "performance": "2026-07-30 23:05",
+        "resource_contention": "2026-07-30 23:05"
       }
     }
   },
   "sbs": {
-    "last_updated": "2026-07-29 16:08",
+    "last_updated": "2026-07-30 23:05",
     "summary": {
-      "total": 19,
-      "comparable": 16,
-      "not_comparable": 3,
-      "uiw_pass": 16,
-      "uiw_fail": 3,
-      "vip_pass": 19,
-      "vip_fail": 0,
-      "ok": 13,
-      "warn": 3,
-      "vip_faster": 0
+      "total": 22,
+      "comparable": 14,
+      "not_comparable": 8,
+      "uiw_pass": 14,
+      "uiw_fail": 8,
+      "vip_pass": 15,
+      "vip_fail": 7,
+      "ok": 10,
+      "warn": 0,
+      "vip_faster": 4
     },
     "rows": [
       {
         "test_case": "Standby Cycle Checks",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "55.85",
+        "uiw_time": "57.44",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "56.23",
-        "time_diff": "+0.7%",
+        "vip_time": "57.91",
+        "time_diff": "+0.8%",
         "verdict": "OK"
       },
       {
         "test_case": "Menu Checks",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "71.29",
+        "uiw_time": "71.94",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "71.07",
-        "time_diff": "-0.3%",
+        "vip_time": "72.19",
+        "time_diff": "+0.3%",
         "verdict": "OK"
       },
       {
         "test_case": "Verify Guide Opens by Key",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "43.61",
-        "vip_result": "PASS",
-        "vip_reason": "",
-        "vip_time": "43.95",
-        "time_diff": "+0.8%",
-        "verdict": "OK"
+        "uiw_time": "88.33",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "82.76",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
         "test_case": "Verify Guide Opens from Menu",
-        "uiw_result": "PASS",
-        "uiw_reason": "",
-        "uiw_time": "42.64",
-        "vip_result": "PASS",
-        "vip_reason": "",
-        "vip_time": "43.03",
-        "time_diff": "+0.9%",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "69.34",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "69.82",
+        "time_diff": "+0.7%",
         "verdict": "OK"
       },
       {
         "test_case": "Verify Channel Zap AV Playback",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "94.53",
-        "vip_result": "PASS",
-        "vip_reason": "",
-        "vip_time": "94.94",
-        "time_diff": "+0.4%",
-        "verdict": "OK"
+        "uiw_time": "117.86",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "72.56",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
         "test_case": "Verify Menu Does Not Auto-Dismiss",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "31.5",
+        "uiw_time": "31.3",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "36.72",
-        "time_diff": "+16.6%",
-        "verdict": "WARN (VIP slower)"
+        "vip_time": "32.94",
+        "time_diff": "+5.2%",
+        "verdict": "OK"
       },
       {
         "test_case": "Verify Live TV Background During PVR",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "37.27",
+        "uiw_time": "49.77",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "37.86",
-        "time_diff": "+1.6%",
-        "verdict": "OK"
+        "vip_time": "43.58",
+        "time_diff": "-12.4%",
+        "verdict": "NOTE (VIP faster)"
       },
       {
         "test_case": "Verify Audio Playback on Settings Page",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "21.91",
+        "uiw_time": "22.36",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "31.95",
-        "time_diff": "+45.8%",
-        "verdict": "WARN (VIP slower)"
+        "vip_time": "22.43",
+        "time_diff": "+0.3%",
+        "verdict": "OK"
       },
       {
         "test_case": "Play a Recording",
-        "uiw_result": "PASS",
-        "uiw_reason": "",
-        "uiw_time": "61.68",
-        "vip_result": "PASS",
-        "vip_reason": "",
-        "vip_time": "70.17",
-        "time_diff": "+13.8%",
-        "verdict": "WARN (VIP slower)"
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE cannot have more than one condition.",
+        "uiw_time": "38.18",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE cannot have more than one condition.",
+        "vip_time": "39.0",
+        "time_diff": "+2.2%",
+        "verdict": "OK"
       },
       {
         "test_case": "Verify AV Playback on LiveTV",
-        "uiw_result": "FAIL",
-        "uiw_reason": "Reason: Video playback no detected.",
-        "uiw_time": "46.44",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "47.52",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "54.24",
+        "vip_time": "42.17",
+        "time_diff": "-11.3%",
+        "verdict": "NOTE (VIP faster)"
+      },
+      {
+        "test_case": "Adjust the LiveTV Volume",
+        "uiw_result": "FAIL",
+        "uiw_reason": "Reason: Audio playback detected.",
+        "uiw_time": "128.16",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "275.0",
         "time_diff": "N/A (different outcome)",
         "verdict": "NOT COMPARABLE"
       },
       {
         "test_case": "Verify AV background with Menu",
         "uiw_result": "FAIL",
-        "uiw_reason": "Reason: Video playback no detected.",
-        "uiw_time": "42.96",
+        "uiw_reason": "Reason: Audio playback no detected.",
+        "uiw_time": "19.9",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "38.37",
+        "vip_time": "20.5",
         "time_diff": "N/A (different outcome)",
         "verdict": "NOT COMPARABLE"
       },
@@ -260,88 +271,110 @@
         "test_case": "Verify Guide Opens & Bkgn Video",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "70.19",
+        "uiw_time": "69.22",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "71.13",
+        "vip_time": "70.09",
         "time_diff": "+1.3%",
         "verdict": "OK"
       },
       {
         "test_case": "Verify Guide Opens from Menu & Bkgn Video",
-        "uiw_result": "FAIL",
-        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
-        "uiw_time": "85.07",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "96.4",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "76.13",
-        "time_diff": "N/A (different outcome)",
-        "verdict": "NOT COMPARABLE"
+        "vip_time": "86.61",
+        "time_diff": "-10.2%",
+        "verdict": "NOTE (VIP faster)"
       },
       {
         "test_case": "Verify Settings Opens from Menu",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "28.48",
+        "uiw_time": "28.89",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "27.54",
-        "time_diff": "-3.3%",
+        "vip_time": "27.4",
+        "time_diff": "-5.2%",
         "verdict": "OK"
       },
       {
         "test_case": "Select and Play a content from Guide",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "66.85",
-        "vip_result": "PASS",
-        "vip_reason": "",
-        "vip_time": "63.48",
-        "time_diff": "-5.0%",
+        "uiw_time": "79.0",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "72.75",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Audio mute on Live TV",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "91.01",
+        "vip_result": "FAIL",
+        "vip_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "vip_time": "99.97",
+        "time_diff": "+9.8%",
         "verdict": "OK"
+      },
+      {
+        "test_case": "Audio mute on Guide",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "89.77",
+        "vip_result": "FAIL",
+        "vip_reason": "Reason: Audio playback detected.",
+        "vip_time": "107.74",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
         "test_case": "Progress Bar on Live TV by Channel Zap",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "27.23",
+        "uiw_time": "62.38",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "26.38",
-        "time_diff": "-3.1%",
-        "verdict": "OK"
+        "vip_time": "27.11",
+        "time_diff": "-56.5%",
+        "verdict": "NOTE (VIP faster)"
       },
       {
         "test_case": "Progress Bar on Live TV by OK Key",
-        "uiw_result": "PASS",
-        "uiw_reason": "",
-        "uiw_time": "11.75",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "32.6",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "11.54",
-        "time_diff": "-1.8%",
-        "verdict": "OK"
+        "vip_time": "11.41",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
         "test_case": "Progress Bar on Live TV by Dpad Up",
-        "uiw_result": "PASS",
-        "uiw_reason": "",
-        "uiw_time": "25.38",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "50.43",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "25.51",
-        "time_diff": "+0.5%",
-        "verdict": "OK"
+        "vip_time": "25.68",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
         "test_case": "Launch PVR via Button",
         "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "16.63",
+        "uiw_time": "16.81",
         "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "16.84",
-        "time_diff": "+1.3%",
+        "vip_time": "16.08",
+        "time_diff": "-4.3%",
         "verdict": "OK"
       }
     ]
