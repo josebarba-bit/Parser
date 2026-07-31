@@ -1545,23 +1545,24 @@ async function exportPDF(section) {
         const s   = fullData.sbs.summary;
 
         // Version info
+        doc.setFontSize(8);
         if (sbs.sw_version_uiw || sbs.sw_version_vip) {
           doc.setFont('helvetica','bold');
           doc.setTextColor(26,26,24);
-          doc.text('SW Version:', margin, y); y += 5;
+          doc.text('SW Version:', margin, y); y += 4;
           doc.setFont('helvetica','normal');
           doc.setTextColor(107,106,101);
-          if (sbs.sw_version_uiw) { doc.text(`  UIW: ${sbs.sw_version_uiw}`, margin, y); y += 5; }
-          if (sbs.sw_version_vip) { doc.text(`  VIP: ${sbs.sw_version_vip}`, margin, y); y += 5; }
+          if (sbs.sw_version_uiw) { doc.text(`  UIW: ${sbs.sw_version_uiw}`, margin, y); y += 4; }
+          if (sbs.sw_version_vip) { doc.text(`  VIP: ${sbs.sw_version_vip}`, margin, y); y += 4; }
         }
         if (sbs.mw_version_uiw || sbs.mw_version_vip) {
           doc.setFont('helvetica','bold');
           doc.setTextColor(26,26,24);
-          doc.text('MW Version:', margin, y); y += 5;
+          doc.text('MW Version:', margin, y); y += 4;
           doc.setFont('helvetica','normal');
           doc.setTextColor(107,106,101);
-          if (sbs.mw_version_uiw) { doc.text(`  UIW: ${sbs.mw_version_uiw}`, margin, y); y += 5; }
-          if (sbs.mw_version_vip) { doc.text(`  VIP: ${sbs.mw_version_vip}`, margin, y); y += 5; }
+          if (sbs.mw_version_uiw) { doc.text(`  UIW: ${sbs.mw_version_uiw}`, margin, y); y += 4; }
+          if (sbs.mw_version_vip) { doc.text(`  VIP: ${sbs.mw_version_vip}`, margin, y); y += 4; }
         }
         y += 3;
 
@@ -1572,7 +1573,7 @@ async function exportPDF(section) {
         doc.text(`Total: ${s.total} | Comparable: ${s.comparable} | Not comparable: ${s.not_comparable}`, margin, y); y += 5;
         doc.text(`UIW: ${s.uiw_pass} pass / ${s.uiw_fail} fail  |  VIP: ${s.vip_pass} pass / ${s.vip_fail} fail`, margin, y); y += 5;
         doc.text(`OK: ${s.ok} | VIP slower: ${s.warn} | VIP faster: ${s.vip_faster}`, margin, y); y += 10;
-// Table
+		// Table
         const cols = [['#',7],['Test Case',65],['UIW',14],['UIW Time',18],['VIP',14],['VIP Time',18],['Diff',16],['Verdict',26]];
         doc.setFillColor(240,240,238);
         doc.rect(margin, y-4, pageW-margin*2, 7, 'F');
