@@ -1,0 +1,2991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 5.0.1 (Python 3.11.4 on win32)" generated="20260804 00:16:59.285" rpa="false" schemaversion="3">
+<suite id="s1" name="TELUS-SANITY-ONYX" source="C:\Users\QA-Automation\.jenkins\workspace\TELUS-SANITY-STB\ONYX\TELUS\TELUS-STB\TELUS-SANITY-STB\TELUS-SANITY-ONYX.robot">
+<test id="s1-t1" name="Standby Cycle Checks" line="35">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:14:58.342" endtime="20260804 00:14:59.344"/>
+</kw>
+<status status="PASS" starttime="20260804 00:14:58.341" endtime="20260804 00:14:59.344"/>
+</kw>
+<kw name="Active Mode Checks" library="keywords-optik">
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>stdby</arg>
+<status status="PASS" starttime="20260804 00:14:59.344" endtime="20260804 00:14:59.981"/>
+</kw>
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:14:59.981" endtime="20260804 00:15:00.561"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:02.561" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:00.561" endtime="20260804 00:15:02.561"/>
+</kw>
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:02.561" endtime="20260804 00:15:03.563"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:05.563" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:03.563" endtime="20260804 00:15:05.563"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260804 00:15:05.563" endtime="20260804 00:15:06.095"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:09.096" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:06.095" endtime="20260804 00:15:09.096"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260804 00:15:13.128" level="INFO">Text found: 
+Text found:</msg>
+<msg timestamp="20260804 00:15:13.128" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260804 00:15:09.096" endtime="20260804 00:15:13.128"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="15">
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>"STB is in Standby DBG message"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20260804 00:15:13.129" level="INFO">"STB is in Standby DBG message"</msg>
+<status status="PASS" starttime="20260804 00:15:13.128" endtime="20260804 00:15:13.129"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>stdby</arg>
+<status status="PASS" starttime="20260804 00:15:13.129" endtime="20260804 00:15:13.659"/>
+</kw>
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:13.659" endtime="20260804 00:15:14.221"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:16.222" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:14.221" endtime="20260804 00:15:16.222"/>
+</kw>
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:16.222" endtime="20260804 00:15:17.223"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:19.223" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:17.223" endtime="20260804 00:15:19.223"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260804 00:15:19.223" endtime="20260804 00:15:19.752"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:21.753" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:19.752" endtime="20260804 00:15:21.753"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260804 00:15:25.795" level="INFO">Text found: 
+Text found:</msg>
+<msg timestamp="20260804 00:15:25.796" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260804 00:15:21.753" endtime="20260804 00:15:25.796"/>
+</kw>
+<status status="PASS" starttime="20260804 00:15:13.128" endtime="20260804 00:15:25.796"/>
+</iter>
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>"STB is in Standby DBG message"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20260804 00:15:25.796" level="INFO">"STB is in Standby DBG message"</msg>
+<status status="PASS" starttime="20260804 00:15:25.796" endtime="20260804 00:15:25.796"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>stdby</arg>
+<status status="PASS" starttime="20260804 00:15:25.796" endtime="20260804 00:15:26.325"/>
+</kw>
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:26.325" endtime="20260804 00:15:26.896"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:28.897" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:26.896" endtime="20260804 00:15:28.897"/>
+</kw>
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:28.897" endtime="20260804 00:15:29.898"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:31.899" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:29.898" endtime="20260804 00:15:31.899"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260804 00:15:31.899" endtime="20260804 00:15:32.427"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:34.428" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:32.427" endtime="20260804 00:15:34.428"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260804 00:15:38.441" level="INFO">Text found: 
+Text found:</msg>
+<msg timestamp="20260804 00:15:38.441" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260804 00:15:34.428" endtime="20260804 00:15:38.441"/>
+</kw>
+<status status="PASS" starttime="20260804 00:15:25.796" endtime="20260804 00:15:38.441"/>
+</iter>
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>"STB is in Standby DBG message"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20260804 00:15:38.441" level="INFO">"STB is in Standby DBG message"</msg>
+<status status="PASS" starttime="20260804 00:15:38.441" endtime="20260804 00:15:38.441"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>stdby</arg>
+<status status="PASS" starttime="20260804 00:15:38.441" endtime="20260804 00:15:38.976"/>
+</kw>
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:38.976" endtime="20260804 00:15:39.591"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:41.591" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:39.591" endtime="20260804 00:15:41.591"/>
+</kw>
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:41.591" endtime="20260804 00:15:42.592"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:44.593" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:42.592" endtime="20260804 00:15:44.593"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260804 00:15:44.593" endtime="20260804 00:15:45.125"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:47.125" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:45.125" endtime="20260804 00:15:47.125"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260804 00:15:48.619" level="INFO">Text found: Optik</msg>
+<msg timestamp="20260804 00:15:48.619" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260804 00:15:47.125" endtime="20260804 00:15:48.619"/>
+</kw>
+<status status="PASS" starttime="20260804 00:15:38.441" endtime="20260804 00:15:48.619"/>
+</iter>
+<status status="PASS" starttime="20260804 00:15:13.128" endtime="20260804 00:15:48.619"/>
+</while>
+<kw name="Log" library="BuiltIn">
+<arg>"STB is in Active mode DBG message"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20260804 00:15:48.620" level="INFO">"STB is in Active mode DBG message"</msg>
+<status status="PASS" starttime="20260804 00:15:48.620" endtime="20260804 00:15:48.620"/>
+</kw>
+<status status="PASS" starttime="20260804 00:14:59.344" endtime="20260804 00:15:48.620"/>
+</kw>
+<kw name="Standby Mode Checks" library="keywords-optik">
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>stdby</arg>
+<status status="PASS" starttime="20260804 00:15:48.620" endtime="20260804 00:15:49.148"/>
+</kw>
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:49.148" endtime="20260804 00:15:49.722"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:51.722" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:49.722" endtime="20260804 00:15:51.722"/>
+</kw>
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:15:51.722" endtime="20260804 00:15:52.724"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:54.724" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:52.724" endtime="20260804 00:15:54.724"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260804 00:15:54.724" endtime="20260804 00:15:55.256"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:15:58.257" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20260804 00:15:55.256" endtime="20260804 00:15:58.257"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260804 00:16:02.282" level="INFO">Text found: 
+Text found:</msg>
+<msg timestamp="20260804 00:16:02.282" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260804 00:15:58.257" endtime="20260804 00:16:02.282"/>
+</kw>
+<while condition="${ui_element} == ${True}" limit="15">
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>"STB is in Active DBG message"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:02.282" endtime="20260804 00:16:02.282"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>stdby</arg>
+<status status="NOT RUN" starttime="20260804 00:16:02.282" endtime="20260804 00:16:02.282"/>
+</kw>
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:02.282" endtime="20260804 00:16:02.282"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:02.283" endtime="20260804 00:16:02.283"/>
+</kw>
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:02.283" endtime="20260804 00:16:02.283"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:02.283" endtime="20260804 00:16:02.283"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="NOT RUN" starttime="20260804 00:16:02.283" endtime="20260804 00:16:02.283"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:02.283" endtime="20260804 00:16:02.283"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:02.283" endtime="20260804 00:16:02.283"/>
+</kw>
+<status status="NOT RUN" starttime="20260804 00:16:02.282" endtime="20260804 00:16:02.283"/>
+</iter>
+<status status="NOT RUN" starttime="20260804 00:16:02.282" endtime="20260804 00:16:02.283"/>
+</while>
+<kw name="Log" library="BuiltIn">
+<arg>"STB is in Standby mode DBG message"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20260804 00:16:02.283" level="INFO">"STB is in Standby mode DBG message"</msg>
+<status status="PASS" starttime="20260804 00:16:02.283" endtime="20260804 00:16:02.283"/>
+</kw>
+<status status="PASS" starttime="20260804 00:15:48.620" endtime="20260804 00:16:02.284"/>
+</kw>
+<kw name="Active Mode Checks" library="keywords-optik">
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>stdby</arg>
+<status status="PASS" starttime="20260804 00:16:02.284" endtime="20260804 00:16:02.814"/>
+</kw>
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:16:02.814" endtime="20260804 00:16:03.424"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:16:05.424" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:16:03.424" endtime="20260804 00:16:05.424"/>
+</kw>
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:16:05.424" endtime="20260804 00:16:06.426"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:16:08.427" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:16:06.426" endtime="20260804 00:16:08.427"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260804 00:16:08.427" endtime="20260804 00:16:08.957"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:16:11.957" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20260804 00:16:08.957" endtime="20260804 00:16:11.957"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260804 00:16:13.457" level="INFO">Text found: Optik</msg>
+<msg timestamp="20260804 00:16:13.457" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260804 00:16:11.957" endtime="20260804 00:16:13.457"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="15">
+<iter>
+<kw name="Log" library="BuiltIn">
+<arg>"STB is in Standby DBG message"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:13.457" endtime="20260804 00:16:13.457"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>stdby</arg>
+<status status="NOT RUN" starttime="20260804 00:16:13.457" endtime="20260804 00:16:13.458"/>
+</kw>
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:13.458" endtime="20260804 00:16:13.458"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:13.458" endtime="20260804 00:16:13.458"/>
+</kw>
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:13.458" endtime="20260804 00:16:13.458"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:13.458" endtime="20260804 00:16:13.458"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="NOT RUN" starttime="20260804 00:16:13.458" endtime="20260804 00:16:13.458"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:13.458" endtime="20260804 00:16:13.458"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<status status="NOT RUN" starttime="20260804 00:16:13.458" endtime="20260804 00:16:13.458"/>
+</kw>
+<status status="NOT RUN" starttime="20260804 00:16:13.457" endtime="20260804 00:16:13.458"/>
+</iter>
+<status status="NOT RUN" starttime="20260804 00:16:13.457" endtime="20260804 00:16:13.458"/>
+</while>
+<kw name="Log" library="BuiltIn">
+<arg>"STB is in Active mode DBG message"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20260804 00:16:13.459" level="INFO">"STB is in Active mode DBG message"</msg>
+<status status="PASS" starttime="20260804 00:16:13.458" endtime="20260804 00:16:13.459"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:02.284" endtime="20260804 00:16:13.459"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:16:13.459" endtime="20260804 00:16:14.023"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:13.459" endtime="20260804 00:16:14.023"/>
+</kw>
+<doc>STB should enter/exit standby and live TV should reproduce AV on full screen.</doc>
+<tag>Robot</tag>
+<tag>Standby</tag>
+<tag>TUT-2181</tag>
+<status status="PASS" starttime="20260804 00:14:58.341" endtime="20260804 00:16:14.023">*HTML* &lt;span class="merge"&gt;Test has been re-executed and results merged.&lt;/span&gt;&lt;hr&gt;&lt;span class="new-status"&gt;New status:&lt;/span&gt; &lt;span class="pass"&gt;PASS&lt;/span&gt;&lt;br&gt;&lt;hr&gt;&lt;span class="old-status"&gt;Old status:&lt;/span&gt; &lt;span class="fail"&gt;FAIL&lt;/span&gt;&lt;br&gt;&lt;span class="old-message"&gt;Old message:&lt;/span&gt; WHILE loop was aborted because it did not finish within the limit of 15 iterations. Use the 'limit' argument to increase or remove the limit if needed.&lt;br&gt;</status>
+</test>
+<test id="s1-t2" name="Menu Checks" line="41">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:16:29.416" endtime="20260804 00:16:30.417"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:29.416" endtime="20260804 00:16:30.417"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260804 00:16:30.417" endtime="20260804 00:16:35.818"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:30.417" endtime="20260804 00:16:35.818"/>
+</kw>
+<kw name="Verify Menu" library="keywords-optik">
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260804 00:16:35.818" endtime="20260804 00:16:36.347"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:16:37.348" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260804 00:16:36.347" endtime="20260804 00:16:37.348"/>
+</kw>
+<kw name="Wait Pixel V3" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${250}</arg>
+<arg>${80}</arg>
+<arg>${80}</arg>
+<arg>${1}</arg>
+<doc>Waits until a defined pixel gets the given RGB values within a timeout.</doc>
+<msg timestamp="20260804 00:16:38.681" level="INFO">78</msg>
+<msg timestamp="20260804 00:16:38.681" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260804 00:16:37.348" endtime="20260804 00:16:38.681"/>
+</kw>
+<kw name="Should Not Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Reason: Menu overlay is not completely opaque.</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" starttime="20260804 00:16:38.681" endtime="20260804 00:16:38.681"/>
+</kw>
+<kw name="Find Text V2" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${422}</arg>
+<arg>${716}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet, on the last screenshot taken, this should make the validation to be quicker.</doc>
+<msg timestamp="20260804 00:16:38.957" level="INFO">Text found: Optik TV
+
+Search
+Guide
+Recordings
+
+Settings</msg>
+<msg timestamp="20260804 00:16:38.958" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260804 00:16:38.681" endtime="20260804 00:16:38.958"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Reason: Menu is not displayed</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260804 00:16:38.958" endtime="20260804 00:16:38.958"/>
+</kw>
+<kw name="Find Text V2" library="oreganlibs.VideoCapturer">
+<var>${Guide}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${422}</arg>
+<arg>${716}</arg>
+<arg>Guide</arg>
+<arg>${1}</arg>
+<doc>Waits for a given text until timout is meet, on the last screenshot taken, this should make the validation to be quicker.</doc>
+<msg timestamp="20260804 00:16:39.243" level="INFO">Text found: Optik TV
+
+Search
+Guide
+Recordings
+
+Settings</msg>
+<msg timestamp="20260804 00:16:39.243" level="INFO">${Guide} = True</msg>
+<status status="PASS" starttime="20260804 00:16:38.958" endtime="20260804 00:16:39.243"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Guide}</arg>
+<arg>msg=Reason: Guide text is not displayed</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260804 00:16:39.243" endtime="20260804 00:16:39.243"/>
+</kw>
+<kw name="Find Text V2" library="oreganlibs.VideoCapturer">
+<var>${Recordings}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${422}</arg>
+<arg>${716}</arg>
+<arg>Recordings</arg>
+<arg>${1}</arg>
+<doc>Waits for a given text until timout is meet, on the last screenshot taken, this should make the validation to be quicker.</doc>
+<msg timestamp="20260804 00:16:39.519" level="INFO">Text found: Optik TV
+
+Search
+Guide
+Recordings
+
+Settings</msg>
+<msg timestamp="20260804 00:16:39.519" level="INFO">${Recordings} = True</msg>
+<status status="PASS" starttime="20260804 00:16:39.243" endtime="20260804 00:16:39.519"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Recordings}</arg>
+<arg>msg=Reason: Recordings text is not displayed</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260804 00:16:39.520" endtime="20260804 00:16:39.520"/>
+</kw>
+<kw name="Find Text V2" library="oreganlibs.VideoCapturer">
+<var>${Settings}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${422}</arg>
+<arg>${716}</arg>
+<arg>Settings</arg>
+<arg>${1}</arg>
+<doc>Waits for a given text until timout is meet, on the last screenshot taken, this should make the validation to be quicker.</doc>
+<msg timestamp="20260804 00:16:39.799" level="INFO">Text found: Optik TV
+
+Search
+Guide
+Recordings
+
+Settings</msg>
+<msg timestamp="20260804 00:16:39.799" level="INFO">${Settings} = True</msg>
+<status status="PASS" starttime="20260804 00:16:39.520" endtime="20260804 00:16:39.799"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Settings}</arg>
+<arg>msg=Reason: Settings text is not displayed</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260804 00:16:39.799" endtime="20260804 00:16:39.799"/>
+</kw>
+<kw name="Find Text V2" library="oreganlibs.VideoCapturer">
+<var>${Guide}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${422}</arg>
+<arg>${716}</arg>
+<arg>Search</arg>
+<arg>${1}</arg>
+<doc>Waits for a given text until timout is meet, on the last screenshot taken, this should make the validation to be quicker.</doc>
+<msg timestamp="20260804 00:16:40.080" level="INFO">Text found: Optik TV
+
+Search
+Guide
+Recordings
+
+Settings</msg>
+<msg timestamp="20260804 00:16:40.080" level="INFO">${Guide} = True</msg>
+<status status="PASS" starttime="20260804 00:16:39.799" endtime="20260804 00:16:40.080"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Guide}</arg>
+<arg>msg=Reason: Search text is not displayed</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260804 00:16:40.080" endtime="20260804 00:16:40.080"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:35.818" endtime="20260804 00:16:40.081"/>
+</kw>
+<kw name="STB Get Info" library="keywords-optik">
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260804 00:16:40.081" endtime="20260804 00:16:45.369"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:40.081" endtime="20260804 00:16:45.369"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260804 00:16:45.369" endtime="20260804 00:16:45.902"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>4</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:45.902" endtime="20260804 00:16:46.433"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:45.902" endtime="20260804 00:16:46.433"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:46.433" endtime="20260804 00:16:46.962"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:46.433" endtime="20260804 00:16:46.962"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:46.962" endtime="20260804 00:16:47.491"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:46.962" endtime="20260804 00:16:47.491"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:47.491" endtime="20260804 00:16:48.020"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:47.491" endtime="20260804 00:16:48.020"/>
+</iter>
+<status status="PASS" starttime="20260804 00:16:45.902" endtime="20260804 00:16:48.020"/>
+</for>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260804 00:16:48.020" endtime="20260804 00:16:48.551"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>4</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:48.551" endtime="20260804 00:16:49.079"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:48.551" endtime="20260804 00:16:49.079"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:49.079" endtime="20260804 00:16:49.608"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:49.079" endtime="20260804 00:16:49.608"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:49.608" endtime="20260804 00:16:50.140"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:49.608" endtime="20260804 00:16:50.140"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:50.140" endtime="20260804 00:16:50.668"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:50.140" endtime="20260804 00:16:50.668"/>
+</iter>
+<status status="PASS" starttime="20260804 00:16:48.551" endtime="20260804 00:16:50.668"/>
+</for>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>right</arg>
+<status status="PASS" starttime="20260804 00:16:50.668" endtime="20260804 00:16:51.196"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>3</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:51.196" endtime="20260804 00:16:51.732"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:51.196" endtime="20260804 00:16:51.732"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:51.732" endtime="20260804 00:16:52.266"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:51.732" endtime="20260804 00:16:52.266"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260804 00:16:52.266" endtime="20260804 00:16:52.795"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:52.266" endtime="20260804 00:16:52.795"/>
+</iter>
+<status status="PASS" starttime="20260804 00:16:51.196" endtime="20260804 00:16:52.795"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:16:54.795" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260804 00:16:52.795" endtime="20260804 00:16:54.795"/>
+</kw>
+<kw name="Take Screenshot" library="oreganlibs.VideoCapturer">
+<doc>Takes and screenshot.</doc>
+<status status="PASS" starttime="20260804 00:16:54.795" endtime="20260804 00:16:55.796"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:16:56.297" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20260804 00:16:55.796" endtime="20260804 00:16:56.297"/>
+</kw>
+<kw name="Crop Picture And Apply Inverse Color" library="oreganlibs.VideoCapturer">
+<arg>${507}</arg>
+<arg>${635}</arg>
+<arg>${578}</arg>
+<arg>${668}</arg>
+<arg>./${project}/${test_plan}/temp/screenshot.png</arg>
+<arg>./${project}/${test_plan}/temp/cropped.png</arg>
+<doc>Crops and inverse color for a picture with the given coordinates.</doc>
+<status status="PASS" starttime="20260804 00:16:56.297" endtime="20260804 00:16:56.321"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:16:56.821" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20260804 00:16:56.321" endtime="20260804 00:16:56.821"/>
+</kw>
+<kw name="Get Txt From Img" library="oreganlibs.VideoCapturer">
+<var>${version}</var>
+<arg>./${project}/${test_plan}/temp/cropped.png</arg>
+<doc>OCR gets the text found in a picture.</doc>
+<msg timestamp="20260804 00:16:57.189" level="INFO">${version} = 3,7.35-F
+</msg>
+<status status="PASS" starttime="20260804 00:16:56.821" endtime="20260804 00:16:57.189"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${today}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20260804 00:16:57.189" level="INFO">${today} = 2026-08-04</msg>
+<status status="PASS" starttime="20260804 00:16:57.189" endtime="20260804 00:16:57.189"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>./${project}/${test_plan}/TestResults/${today}/device_info.txt</arg>
+<arg>UI Version: ${version}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20260804 00:16:57.190" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\QA-Automation\.jenkins\workspace\TELUS-SANITY-STB\ONYX\TELUS\TELUS-STB\TELUS-SANITY-STB\TestResults\2026-08-04\device_info.txt"&gt;C:\Users\QA-Automation\.jenkins\workspace\TELUS-SANITY-STB\ONYX\TELUS\TELUS-STB\TELUS-SANITY-STB\TestResults\2026-08-04\device_info.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20260804 00:16:57.189" endtime="20260804 00:16:57.190"/>
+</kw>
+<kw name="Create Json" library="Ir">
+<arg>TUT</arg>
+<arg>5fa03affb38e6100713cd81b</arg>
+<arg>${version}</arg>
+<doc>Creates a JSON file containing the datails required to post the test results on devices with not ADB</doc>
+<status status="PASS" starttime="20260804 00:16:57.190" endtime="20260804 00:16:58.193"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:40.081" endtime="20260804 00:16:58.193"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:16:58.194" endtime="20260804 00:16:58.760"/>
+</kw>
+<status status="PASS" starttime="20260804 00:16:58.193" endtime="20260804 00:16:58.760"/>
+</kw>
+<doc>STB should display menu correctly</doc>
+<tag>Menu</tag>
+<tag>Robot</tag>
+<tag>TUT-2182</tag>
+<status status="PASS" starttime="20260804 00:16:29.415" endtime="20260804 00:16:58.760">*HTML* &lt;span class="merge"&gt;Test has been re-executed and results merged.&lt;/span&gt;&lt;hr&gt;&lt;span class="new-status"&gt;New status:&lt;/span&gt; &lt;span class="pass"&gt;PASS&lt;/span&gt;&lt;br&gt;&lt;hr&gt;&lt;span class="old-status"&gt;Old status:&lt;/span&gt; &lt;span class="fail"&gt;FAIL&lt;/span&gt;&lt;br&gt;&lt;span class="old-message"&gt;Old message:&lt;/span&gt; Reason: Menu is not displayed&lt;br&gt;&lt;hr&gt;&lt;span class="old-status"&gt;Old status:&lt;/span&gt; &lt;span class="fail"&gt;FAIL&lt;/span&gt;&lt;br&gt;&lt;span class="old-message"&gt;Old message:&lt;/span&gt; Reason: Menu overlay is not completely opaque.&lt;br&gt;</status>
+</test>
+<test id="s1-t3" name="Verify Guide Opens by Key" line="47">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:37:08.400" endtime="20260803 23:37:09.402"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:08.400" endtime="20260803 23:37:09.402"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:37:09.402" endtime="20260803 23:37:14.793"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:09.402" endtime="20260803 23:37:14.793"/>
+</kw>
+<kw name="Tune a Channel" library="keywords-optik">
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>1</arg>
+<status status="PASS" starttime="20260803 23:37:14.793" endtime="20260803 23:37:15.326"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:37:15.326" endtime="20260803 23:37:15.853"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:37:15.853" endtime="20260803 23:37:16.384"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:37:16.384" endtime="20260803 23:37:16.914"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:37:16.914" endtime="20260803 23:37:17.441"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:37:20.441" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20260803 23:37:17.441" endtime="20260803 23:37:20.441"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${40}</arg>
+<arg>${610}</arg>
+<arg>${120}</arg>
+<arg>${660}</arg>
+<arg>10</arg>
+<arg>${5}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:37:26.523" level="INFO">Text found: 
+Text found: 
+Text found:</msg>
+<msg timestamp="20260803 23:37:26.523" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260803 23:37:20.441" endtime="20260803 23:37:26.523"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="5">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:37:27.524" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260803 23:37:26.523" endtime="20260803 23:37:27.524"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>1</arg>
+<status status="PASS" starttime="20260803 23:37:27.524" endtime="20260803 23:37:28.053"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:37:28.053" endtime="20260803 23:37:28.585"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:37:28.585" endtime="20260803 23:37:29.115"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:37:29.115" endtime="20260803 23:37:29.644"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${40}</arg>
+<arg>${610}</arg>
+<arg>${120}</arg>
+<arg>${660}</arg>
+<arg>10</arg>
+<arg>${5}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:37:35.697" level="INFO">Text found: 
+Text found: 
+Text found:</msg>
+<msg timestamp="20260803 23:37:35.697" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260803 23:37:29.644" endtime="20260803 23:37:35.697"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:26.523" endtime="20260803 23:37:35.697"/>
+</iter>
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:37:36.699" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260803 23:37:35.698" endtime="20260803 23:37:36.699"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>1</arg>
+<status status="PASS" starttime="20260803 23:37:36.699" endtime="20260803 23:37:37.229"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:37:37.229" endtime="20260803 23:37:37.759"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:37:37.759" endtime="20260803 23:37:38.287"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:37:38.287" endtime="20260803 23:37:38.816"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${40}</arg>
+<arg>${610}</arg>
+<arg>${120}</arg>
+<arg>${660}</arg>
+<arg>10</arg>
+<arg>${5}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:37:40.337" level="INFO">Text found: 100</msg>
+<msg timestamp="20260803 23:37:40.337" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:37:38.816" endtime="20260803 23:37:40.337"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:35.698" endtime="20260803 23:37:40.337"/>
+</iter>
+<status status="PASS" starttime="20260803 23:37:26.523" endtime="20260803 23:37:40.337"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Channel not tunned.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:37:40.337" endtime="20260803 23:37:40.338"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:14.793" endtime="20260803 23:37:40.338"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:37:45.338" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:37:40.338" endtime="20260803 23:37:45.338"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>guide</arg>
+<status status="PASS" starttime="20260803 23:37:45.338" endtime="20260803 23:37:45.870"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:37:47.871" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260803 23:37:45.870" endtime="20260803 23:37:47.871"/>
+</kw>
+<kw name="Verify Guide" library="keywords-optik">
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${55}</arg>
+<arg>${300}</arg>
+<arg>${190}</arg>
+<arg>${350}</arg>
+<arg>Today</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:37:49.388" level="INFO">Text found: Today</msg>
+<msg timestamp="20260803 23:37:49.388" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:37:47.871" endtime="20260803 23:37:49.388"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Reason: Guide is not open, string "Today" not detected</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:37:49.388" endtime="20260803 23:37:49.388"/>
+</kw>
+<kw name="Text Available V1" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${280}</arg>
+<arg>${90}</arg>
+<arg>${1210}</arg>
+<arg>${240}</arg>
+<arg>${5}</arg>
+<doc>Verifies if there are subtitles options on LiveTV UI.</doc>
+<msg timestamp="20260803 23:37:50.776" level="INFO">The National
+[NEW Ie
+~ §2026 E185 - CBCs flaqsinip night y news rogram, featuring the day's top stor es</msg>
+<msg timestamp="20260803 23:37:50.777" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:37:49.389" endtime="20260803 23:37:50.777"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Reason: Guide is not open description not detected</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:37:50.777" endtime="20260803 23:37:50.777"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:47.871" endtime="20260803 23:37:50.777"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:37:50.778" endtime="20260803 23:37:51.340"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:50.777" endtime="20260803 23:37:51.340"/>
+</kw>
+<doc>Guide should open correctly after pressing "Guide" key on RCU.</doc>
+<tag>Guide</tag>
+<tag>Robot</tag>
+<tag>TUT-2183</tag>
+<status status="PASS" starttime="20260803 23:37:08.399" endtime="20260803 23:37:51.340"/>
+</test>
+<test id="s1-t4" name="Verify Guide Opens from Menu" line="56">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:37:51.341" endtime="20260803 23:37:52.343"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:51.341" endtime="20260803 23:37:52.343"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:37:55.344" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20260803 23:37:52.343" endtime="20260803 23:37:55.344"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:37:55.344" endtime="20260803 23:38:00.754"/>
+</kw>
+<status status="PASS" starttime="20260803 23:37:55.344" endtime="20260803 23:38:00.754"/>
+</kw>
+<kw name="Tune a Channel" library="keywords-optik">
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>1</arg>
+<status status="PASS" starttime="20260803 23:38:00.754" endtime="20260803 23:38:01.285"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:38:01.285" endtime="20260803 23:38:01.817"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:38:01.817" endtime="20260803 23:38:02.351"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:38:02.351" endtime="20260803 23:38:02.880"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:38:02.880" endtime="20260803 23:38:03.408"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:38:06.408" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20260803 23:38:03.408" endtime="20260803 23:38:06.408"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${40}</arg>
+<arg>${610}</arg>
+<arg>${120}</arg>
+<arg>${660}</arg>
+<arg>10</arg>
+<arg>${5}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:38:12.557" level="INFO">Text found: 
+Text found: 
+Text found:</msg>
+<msg timestamp="20260803 23:38:12.557" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260803 23:38:06.408" endtime="20260803 23:38:12.557"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="5">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:38:13.557" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260803 23:38:12.557" endtime="20260803 23:38:13.557"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>1</arg>
+<status status="PASS" starttime="20260803 23:38:13.557" endtime="20260803 23:38:14.086"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:38:14.086" endtime="20260803 23:38:14.615"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:38:14.615" endtime="20260803 23:38:15.147"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:38:15.147" endtime="20260803 23:38:15.680"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${40}</arg>
+<arg>${610}</arg>
+<arg>${120}</arg>
+<arg>${660}</arg>
+<arg>10</arg>
+<arg>${5}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:38:17.195" level="INFO">Text found: 100</msg>
+<msg timestamp="20260803 23:38:17.195" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:38:15.680" endtime="20260803 23:38:17.195"/>
+</kw>
+<status status="PASS" starttime="20260803 23:38:12.557" endtime="20260803 23:38:17.195"/>
+</iter>
+<status status="PASS" starttime="20260803 23:38:12.557" endtime="20260803 23:38:17.196"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Channel not tunned.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:38:17.196" endtime="20260803 23:38:17.196"/>
+</kw>
+<status status="PASS" starttime="20260803 23:38:00.754" endtime="20260803 23:38:17.196"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:38:22.196" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:38:17.196" endtime="20260803 23:38:22.196"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260803 23:38:22.196" endtime="20260803 23:38:22.727"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:38:24.728" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260803 23:38:22.727" endtime="20260803 23:38:24.728"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:38:24.728" endtime="20260803 23:38:25.257"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:38:27.258" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260803 23:38:25.257" endtime="20260803 23:38:27.258"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:38:27.258" endtime="20260803 23:38:27.786"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:38:28.787" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260803 23:38:27.786" endtime="20260803 23:38:28.787"/>
+</kw>
+<kw name="Verify Guide" library="keywords-optik">
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${55}</arg>
+<arg>${300}</arg>
+<arg>${190}</arg>
+<arg>${350}</arg>
+<arg>Today</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:38:30.304" level="INFO">Text found: Today</msg>
+<msg timestamp="20260803 23:38:30.304" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:38:28.787" endtime="20260803 23:38:30.304"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Reason: Guide is not open, string "Today" not detected</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:38:30.304" endtime="20260803 23:38:30.305"/>
+</kw>
+<kw name="Text Available V1" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${280}</arg>
+<arg>${90}</arg>
+<arg>${1210}</arg>
+<arg>${240}</arg>
+<arg>${5}</arg>
+<doc>Verifies if there are subtitles options on LiveTV UI.</doc>
+<msg timestamp="20260803 23:38:31.679" level="INFO">The National
+iNEW Ie
+~ §2026 E185 - CBC s flaqsvip night y vews vrodram, featuring tae day's top stor es</msg>
+<msg timestamp="20260803 23:38:31.679" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:38:30.305" endtime="20260803 23:38:31.679"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Reason: Guide is not open description not detected</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:38:31.680" endtime="20260803 23:38:31.680"/>
+</kw>
+<status status="PASS" starttime="20260803 23:38:28.787" endtime="20260803 23:38:31.680"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:38:31.680" endtime="20260803 23:38:32.224"/>
+</kw>
+<status status="PASS" starttime="20260803 23:38:31.680" endtime="20260803 23:38:32.224"/>
+</kw>
+<doc>Guide should open correctly from Menu.</doc>
+<tag>Guide</tag>
+<tag>Robot</tag>
+<tag>TUT-2184</tag>
+<status status="PASS" starttime="20260803 23:37:51.340" endtime="20260803 23:38:32.224"/>
+</test>
+<test id="s1-t5" name="Verify Channel Zap AV Playback" line="70">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:38:32.225" endtime="20260803 23:38:33.228"/>
+</kw>
+<status status="PASS" starttime="20260803 23:38:32.225" endtime="20260803 23:38:33.228"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:38:33.228" endtime="20260803 23:38:38.633"/>
+</kw>
+<status status="PASS" starttime="20260803 23:38:33.228" endtime="20260803 23:38:38.633"/>
+</kw>
+<kw name="Press Vol Up" library="Ir">
+<arg>${20}</arg>
+<doc>Sends keyevent KEYCODE_VOLUME_UP "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:38:38.633" endtime="20260803 23:38:55.472"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:38:57.473" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260803 23:38:55.472" endtime="20260803 23:38:57.473"/>
+</kw>
+<kw name="Tune a Channel" library="keywords-optik">
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>1</arg>
+<status status="PASS" starttime="20260803 23:38:57.473" endtime="20260803 23:38:58.007"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:38:58.007" endtime="20260803 23:38:58.536"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:38:58.536" endtime="20260803 23:38:59.066"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:38:59.066" endtime="20260803 23:38:59.594"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:38:59.594" endtime="20260803 23:39:00.123"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:39:03.124" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20260803 23:39:00.123" endtime="20260803 23:39:03.124"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${40}</arg>
+<arg>${610}</arg>
+<arg>${120}</arg>
+<arg>${660}</arg>
+<arg>10</arg>
+<arg>${5}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:39:09.251" level="INFO">Text found: 
+Text found: 
+Text found:</msg>
+<msg timestamp="20260803 23:39:09.251" level="INFO">${ui_element} = False</msg>
+<status status="PASS" starttime="20260803 23:39:03.124" endtime="20260803 23:39:09.251"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="5">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:39:10.253" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260803 23:39:09.252" endtime="20260803 23:39:10.253"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>1</arg>
+<status status="PASS" starttime="20260803 23:39:10.253" endtime="20260803 23:39:10.784"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:39:10.784" endtime="20260803 23:39:11.315"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:39:11.315" endtime="20260803 23:39:11.844"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>0</arg>
+<status status="PASS" starttime="20260803 23:39:11.844" endtime="20260803 23:39:12.378"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${40}</arg>
+<arg>${610}</arg>
+<arg>${120}</arg>
+<arg>${660}</arg>
+<arg>10</arg>
+<arg>${5}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:39:13.895" level="INFO">Text found: 100</msg>
+<msg timestamp="20260803 23:39:13.895" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:39:12.378" endtime="20260803 23:39:13.895"/>
+</kw>
+<status status="PASS" starttime="20260803 23:39:09.252" endtime="20260803 23:39:13.896"/>
+</iter>
+<status status="PASS" starttime="20260803 23:39:09.252" endtime="20260803 23:39:13.896"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Channel not tunned.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:39:13.896" endtime="20260803 23:39:13.896"/>
+</kw>
+<status status="PASS" starttime="20260803 23:38:57.473" endtime="20260803 23:39:13.896"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:39:14.897" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260803 23:39:13.896" endtime="20260803 23:39:14.897"/>
+</kw>
+<kw name="Verify AV playback Limit Loop" library="keywords-optik">
+<kw name="Video Detection" library="oreganlibs.VideoCapturer">
+<var>${Video_Playback}</var>
+<doc>Verifies if there is video playback by taking samples of hash values from different frames.</doc>
+<msg timestamp="20260803 23:39:21.645" level="INFO">${Video_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:39:14.897" endtime="20260803 23:39:21.645"/>
+</kw>
+<while condition="${Video_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:21.645" endtime="20260803 23:39:21.645"/>
+</kw>
+<kw name="Video Detection" library="oreganlibs.VideoCapturer">
+<var>${Video_Playback}</var>
+<doc>Verifies if there is video playback by taking samples of hash values from different frames.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:21.645" endtime="20260803 23:39:21.646"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:39:21.645" endtime="20260803 23:39:21.646"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:39:21.645" endtime="20260803 23:39:21.646"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Video_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:39:21.646" endtime="20260803 23:39:21.646"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<msg timestamp="20260803 23:39:26.662" level="INFO">${record_audio} = None</msg>
+<status status="PASS" starttime="20260803 23:39:21.646" endtime="20260803 23:39:26.663"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<msg timestamp="20260803 23:39:26.964" level="INFO">${Audio_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:39:26.663" endtime="20260803 23:39:26.964"/>
+</kw>
+<while condition="${Audio_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:26.964" endtime="20260803 23:39:26.964"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<status status="NOT RUN" starttime="20260803 23:39:26.965" endtime="20260803 23:39:26.965"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:26.965" endtime="20260803 23:39:26.965"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:39:26.964" endtime="20260803 23:39:26.965"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:39:26.964" endtime="20260803 23:39:26.965"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Audio_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:39:26.965" endtime="20260803 23:39:26.965"/>
+</kw>
+<status status="PASS" starttime="20260803 23:39:14.897" endtime="20260803 23:39:26.965"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="PASS" starttime="20260803 23:39:26.965" endtime="20260803 23:39:27.495"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:39:27.495" endtime="20260803 23:39:28.023"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:39:33.024" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:39:28.023" endtime="20260803 23:39:33.024"/>
+</kw>
+<kw name="Channel Available Zap" library="keywords-optik">
+<kw name="Wait Pixel V3" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${1130}</arg>
+<arg>${190}</arg>
+<arg>${20}</arg>
+<arg>${6}</arg>
+<doc>Waits until a defined pixel gets the given RGB values within a timeout.</doc>
+<msg timestamp="20260803 23:39:36.963" level="INFO">13
+18
+80</msg>
+<msg timestamp="20260803 23:39:36.963" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:39:33.024" endtime="20260803 23:39:36.963"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="10">
+<iter>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.964"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.964"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.964"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.964"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.964"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.964"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.964"/>
+</kw>
+<kw name="Wait Pixel V3" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${1130}</arg>
+<arg>${190}</arg>
+<arg>${20}</arg>
+<arg>${6}</arg>
+<doc>Waits until a defined pixel gets the given RGB values within a timeout.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.964"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:39:36.963" endtime="20260803 23:39:36.964"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:39:36.963" endtime="20260803 23:39:36.964"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Channel Unavailable.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:39:36.964" endtime="20260803 23:39:36.965"/>
+</kw>
+<status status="PASS" starttime="20260803 23:39:33.024" endtime="20260803 23:39:36.965"/>
+</kw>
+<kw name="Verify AV playback Limit Loop" library="keywords-optik">
+<kw name="Video Detection" library="oreganlibs.VideoCapturer">
+<var>${Video_Playback}</var>
+<doc>Verifies if there is video playback by taking samples of hash values from different frames.</doc>
+<msg timestamp="20260803 23:39:43.700" level="INFO">${Video_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:39:36.965" endtime="20260803 23:39:43.700"/>
+</kw>
+<while condition="${Video_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:43.700" endtime="20260803 23:39:43.700"/>
+</kw>
+<kw name="Video Detection" library="oreganlibs.VideoCapturer">
+<var>${Video_Playback}</var>
+<doc>Verifies if there is video playback by taking samples of hash values from different frames.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:43.700" endtime="20260803 23:39:43.701"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:39:43.700" endtime="20260803 23:39:43.701"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:39:43.700" endtime="20260803 23:39:43.701"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Video_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:39:43.701" endtime="20260803 23:39:43.701"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<msg timestamp="20260803 23:39:48.721" level="INFO">${record_audio} = None</msg>
+<status status="PASS" starttime="20260803 23:39:43.701" endtime="20260803 23:39:48.721"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<msg timestamp="20260803 23:39:49.021" level="INFO">${Audio_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:39:48.721" endtime="20260803 23:39:49.021"/>
+</kw>
+<while condition="${Audio_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:49.022" endtime="20260803 23:39:49.022"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<status status="NOT RUN" starttime="20260803 23:39:49.022" endtime="20260803 23:39:49.022"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<status status="NOT RUN" starttime="20260803 23:39:49.022" endtime="20260803 23:39:49.022"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:39:49.022" endtime="20260803 23:39:49.022"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:39:49.021" endtime="20260803 23:39:49.022"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Audio_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:39:49.022" endtime="20260803 23:39:49.022"/>
+</kw>
+<status status="PASS" starttime="20260803 23:39:36.965" endtime="20260803 23:39:49.022"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="PASS" starttime="20260803 23:39:49.022" endtime="20260803 23:39:49.552"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:39:49.552" endtime="20260803 23:39:50.081"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:39:55.081" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:39:50.081" endtime="20260803 23:39:55.081"/>
+</kw>
+<kw name="Channel Available Zap" library="keywords-optik">
+<kw name="Wait Pixel V3" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${1130}</arg>
+<arg>${190}</arg>
+<arg>${20}</arg>
+<arg>${6}</arg>
+<doc>Waits until a defined pixel gets the given RGB values within a timeout.</doc>
+<msg timestamp="20260803 23:40:00.344" level="INFO">18
+18
+18
+49</msg>
+<msg timestamp="20260803 23:40:00.344" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:39:55.081" endtime="20260803 23:40:00.344"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="10">
+<iter>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:40:00.344" endtime="20260803 23:40:00.344"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:40:00.344" endtime="20260803 23:40:00.344"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:40:00.345" endtime="20260803 23:40:00.345"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:40:00.345" endtime="20260803 23:40:00.345"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:40:00.345" endtime="20260803 23:40:00.345"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:40:00.345" endtime="20260803 23:40:00.345"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:00.345" endtime="20260803 23:40:00.345"/>
+</kw>
+<kw name="Wait Pixel V3" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${1130}</arg>
+<arg>${190}</arg>
+<arg>${20}</arg>
+<arg>${6}</arg>
+<doc>Waits until a defined pixel gets the given RGB values within a timeout.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:00.345" endtime="20260803 23:40:00.345"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:40:00.344" endtime="20260803 23:40:00.345"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:40:00.344" endtime="20260803 23:40:00.345"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Channel Unavailable.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:40:00.345" endtime="20260803 23:40:00.347"/>
+</kw>
+<status status="PASS" starttime="20260803 23:39:55.081" endtime="20260803 23:40:00.347"/>
+</kw>
+<kw name="Verify AV playback Limit Loop" library="keywords-optik">
+<kw name="Video Detection" library="oreganlibs.VideoCapturer">
+<var>${Video_Playback}</var>
+<doc>Verifies if there is video playback by taking samples of hash values from different frames.</doc>
+<msg timestamp="20260803 23:40:07.090" level="INFO">${Video_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:40:00.347" endtime="20260803 23:40:07.090"/>
+</kw>
+<while condition="${Video_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:07.091" endtime="20260803 23:40:07.091"/>
+</kw>
+<kw name="Video Detection" library="oreganlibs.VideoCapturer">
+<var>${Video_Playback}</var>
+<doc>Verifies if there is video playback by taking samples of hash values from different frames.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:07.091" endtime="20260803 23:40:07.091"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:40:07.091" endtime="20260803 23:40:07.091"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:40:07.090" endtime="20260803 23:40:07.091"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Video_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:40:07.091" endtime="20260803 23:40:07.091"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<msg timestamp="20260803 23:40:12.101" level="INFO">${record_audio} = None</msg>
+<status status="PASS" starttime="20260803 23:40:07.091" endtime="20260803 23:40:12.101"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<msg timestamp="20260803 23:40:12.406" level="INFO">${Audio_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:40:12.101" endtime="20260803 23:40:12.406"/>
+</kw>
+<while condition="${Audio_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:12.406" endtime="20260803 23:40:12.406"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<status status="NOT RUN" starttime="20260803 23:40:12.406" endtime="20260803 23:40:12.406"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:12.406" endtime="20260803 23:40:12.407"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:40:12.406" endtime="20260803 23:40:12.407"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:40:12.406" endtime="20260803 23:40:12.407"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Audio_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:40:12.407" endtime="20260803 23:40:12.407"/>
+</kw>
+<status status="PASS" starttime="20260803 23:40:00.347" endtime="20260803 23:40:12.407"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="PASS" starttime="20260803 23:40:12.407" endtime="20260803 23:40:12.938"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:40:12.938" endtime="20260803 23:40:13.468"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:40:18.469" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:40:13.468" endtime="20260803 23:40:18.469"/>
+</kw>
+<kw name="Channel Available Zap" library="keywords-optik">
+<kw name="Wait Pixel V3" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${1130}</arg>
+<arg>${190}</arg>
+<arg>${20}</arg>
+<arg>${6}</arg>
+<doc>Waits until a defined pixel gets the given RGB values within a timeout.</doc>
+<msg timestamp="20260803 23:40:21.097" level="INFO">18
+584</msg>
+<msg timestamp="20260803 23:40:21.097" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:40:18.469" endtime="20260803 23:40:21.097"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="10">
+<iter>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:40:21.097" endtime="20260803 23:40:21.097"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:40:21.097" endtime="20260803 23:40:21.097"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:40:21.097" endtime="20260803 23:40:21.098"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:40:21.098" endtime="20260803 23:40:21.098"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>channelplus</arg>
+<status status="NOT RUN" starttime="20260803 23:40:21.098" endtime="20260803 23:40:21.098"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:40:21.098" endtime="20260803 23:40:21.098"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:21.098" endtime="20260803 23:40:21.098"/>
+</kw>
+<kw name="Wait Pixel V3" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${1130}</arg>
+<arg>${190}</arg>
+<arg>${20}</arg>
+<arg>${6}</arg>
+<doc>Waits until a defined pixel gets the given RGB values within a timeout.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:21.098" endtime="20260803 23:40:21.098"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:40:21.097" endtime="20260803 23:40:21.098"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:40:21.097" endtime="20260803 23:40:21.098"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Channel Unavailable.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:40:21.098" endtime="20260803 23:40:21.098"/>
+</kw>
+<status status="PASS" starttime="20260803 23:40:18.469" endtime="20260803 23:40:21.098"/>
+</kw>
+<kw name="Verify AV playback Limit Loop" library="keywords-optik">
+<kw name="Video Detection" library="oreganlibs.VideoCapturer">
+<var>${Video_Playback}</var>
+<doc>Verifies if there is video playback by taking samples of hash values from different frames.</doc>
+<msg timestamp="20260803 23:40:27.837" level="INFO">${Video_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:40:21.099" endtime="20260803 23:40:27.837"/>
+</kw>
+<while condition="${Video_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:27.838" endtime="20260803 23:40:27.838"/>
+</kw>
+<kw name="Video Detection" library="oreganlibs.VideoCapturer">
+<var>${Video_Playback}</var>
+<doc>Verifies if there is video playback by taking samples of hash values from different frames.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:27.838" endtime="20260803 23:40:27.838"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:40:27.838" endtime="20260803 23:40:27.838"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:40:27.837" endtime="20260803 23:40:27.838"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Video_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:40:27.838" endtime="20260803 23:40:27.838"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<msg timestamp="20260803 23:40:32.856" level="INFO">${record_audio} = None</msg>
+<status status="PASS" starttime="20260803 23:40:27.838" endtime="20260803 23:40:32.856"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<msg timestamp="20260803 23:40:33.155" level="INFO">${Audio_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:40:32.856" endtime="20260803 23:40:33.155"/>
+</kw>
+<while condition="${Audio_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:33.156" endtime="20260803 23:40:33.156"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<status status="NOT RUN" starttime="20260803 23:40:33.156" endtime="20260803 23:40:33.156"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:33.156" endtime="20260803 23:40:33.156"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:40:33.156" endtime="20260803 23:40:33.156"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:40:33.155" endtime="20260803 23:40:33.156"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Audio_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:40:33.156" endtime="20260803 23:40:33.156"/>
+</kw>
+<status status="PASS" starttime="20260803 23:40:21.098" endtime="20260803 23:40:33.156"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:40:33.157" endtime="20260803 23:40:33.722"/>
+</kw>
+<status status="PASS" starttime="20260803 23:40:33.156" endtime="20260803 23:40:33.722"/>
+</kw>
+<doc>Channel Zap playback.</doc>
+<tag>AV Playback</tag>
+<tag>Robot</tag>
+<tag>TUT-404</tag>
+<status status="PASS" starttime="20260803 23:38:32.224" endtime="20260803 23:40:33.722"/>
+</test>
+<test id="s1-t6" name="Verify Menu panel is not autodismissed" line="94">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:40:33.723" endtime="20260803 23:40:34.725"/>
+</kw>
+<status status="PASS" starttime="20260803 23:40:33.723" endtime="20260803 23:40:34.725"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:40:34.725" endtime="20260803 23:40:40.128"/>
+</kw>
+<status status="PASS" starttime="20260803 23:40:34.725" endtime="20260803 23:40:40.128"/>
+</kw>
+<kw name="Verify Menu is shown" library="keywords-optik">
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260803 23:40:40.128" endtime="20260803 23:40:40.658"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:40:40.658" endtime="20260803 23:40:41.189"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:40:42.712" level="INFO">Text found: Optik</msg>
+<msg timestamp="20260803 23:40:42.712" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:40:41.189" endtime="20260803 23:40:42.712"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="3">
+<iter>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="NOT RUN" starttime="20260803 23:40:42.713" endtime="20260803 23:40:42.713"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:40:42.713" endtime="20260803 23:40:42.713"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<status status="NOT RUN" starttime="20260803 23:40:42.713" endtime="20260803 23:40:42.713"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:40:42.713" endtime="20260803 23:40:42.713"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:40:42.712" endtime="20260803 23:40:42.713"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Reason: Menu is not shown</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:40:42.713" endtime="20260803 23:40:42.713"/>
+</kw>
+<status status="PASS" starttime="20260803 23:40:40.128" endtime="20260803 23:40:42.714"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>16s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:40:58.715" level="INFO">Slept 16 seconds</msg>
+<status status="PASS" starttime="20260803 23:40:42.714" endtime="20260803 23:40:58.715"/>
+</kw>
+<kw name="Verify Menu is not dismissed" library="keywords-optik">
+<doc>Passive check only - does not resend any IR command, so it
+won't mask an actual auto-dismiss regression the way calling
+Verify Menu is shown again would.</doc>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${57}</arg>
+<arg>${67}</arg>
+<arg>${157}</arg>
+<arg>${120}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:41:00.233" level="INFO">Text found: Optik</msg>
+<msg timestamp="20260803 23:41:00.233" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:40:58.715" endtime="20260803 23:41:00.233"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Reason: Menu was dismissed</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:41:00.233" endtime="20260803 23:41:00.233"/>
+</kw>
+<status status="PASS" starttime="20260803 23:40:58.715" endtime="20260803 23:41:00.234"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:41:00.234" endtime="20260803 23:41:00.785"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:00.234" endtime="20260803 23:41:00.785"/>
+</kw>
+<doc>STB should NOT auto dismiss Menu after 15 seconds</doc>
+<tag>Menu</tag>
+<tag>Robot</tag>
+<tag>TUT-3516</tag>
+<status status="PASS" starttime="20260803 23:40:33.722" endtime="20260803 23:41:00.785"/>
+</test>
+<test id="s1-t7" name="Verify Live TV AV Playback in the background with PVR opened" line="101">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:41:00.786" endtime="20260803 23:41:01.788"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:00.786" endtime="20260803 23:41:01.788"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:41:01.788" endtime="20260803 23:41:07.188"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:01.788" endtime="20260803 23:41:07.188"/>
+</kw>
+<kw name="Verify PVR by Button" library="keywords-optik">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:41:12.189" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:41:07.188" endtime="20260803 23:41:12.189"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>pvr</arg>
+<status status="PASS" starttime="20260803 23:41:12.189" endtime="20260803 23:41:12.718"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="PASS" starttime="20260803 23:41:12.718" endtime="20260803 23:41:13.248"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:41:16.248" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20260803 23:41:13.248" endtime="20260803 23:41:16.248"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${60}</arg>
+<arg>${80}</arg>
+<arg>${192}</arg>
+<arg>${115}</arg>
+<arg>Recorded</arg>
+<arg>${10}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:41:17.767" level="INFO">Text found: Recorded</msg>
+<msg timestamp="20260803 23:41:17.767" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:41:16.248" endtime="20260803 23:41:17.767"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="5">
+<iter>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>pvr</arg>
+<status status="NOT RUN" starttime="20260803 23:41:17.767" endtime="20260803 23:41:17.767"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>up</arg>
+<status status="NOT RUN" starttime="20260803 23:41:17.767" endtime="20260803 23:41:17.767"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:17.768" endtime="20260803 23:41:17.768"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${60}</arg>
+<arg>${80}</arg>
+<arg>${192}</arg>
+<arg>${115}</arg>
+<arg>Recorded</arg>
+<arg>${10}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:17.768" endtime="20260803 23:41:17.768"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:41:17.767" endtime="20260803 23:41:17.768"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:41:17.767" endtime="20260803 23:41:17.768"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=Asset not available</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:41:17.768" endtime="20260803 23:41:17.768"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:07.188" endtime="20260803 23:41:17.768"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:41:27.769" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20260803 23:41:17.768" endtime="20260803 23:41:27.769"/>
+</kw>
+<kw name="Verify AV Bkgd PVR" library="keywords-optik">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:41:32.769" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:41:27.769" endtime="20260803 23:41:32.769"/>
+</kw>
+<kw name="Stop Frames" library="oreganlibs.VideoCapturer">
+<doc>Stops the video frames recording.</doc>
+<status status="PASS" starttime="20260803 23:41:32.769" endtime="20260803 23:41:33.270"/>
+</kw>
+<kw name="Crop Picture And Apply Inverse Color" library="oreganlibs.VideoCapturer">
+<arg>${0}</arg>
+<arg>${173}</arg>
+<arg>${369}</arg>
+<arg>${589}</arg>
+<arg>./${project}/${test_plan}/temp/frame_sample1.png</arg>
+<arg>./${project}/${test_plan}/temp/frame_snip1.png</arg>
+<doc>Crops and inverse color for a picture with the given coordinates.</doc>
+<status status="PASS" starttime="20260803 23:41:33.270" endtime="20260803 23:41:33.345"/>
+</kw>
+<kw name="Crop Picture And Apply Inverse Color" library="oreganlibs.VideoCapturer">
+<arg>${0}</arg>
+<arg>${173}</arg>
+<arg>${369}</arg>
+<arg>${589}</arg>
+<arg>./${project}/${test_plan}/temp/frame_sample2.png</arg>
+<arg>./${project}/${test_plan}/temp/frame_snip2.png</arg>
+<doc>Crops and inverse color for a picture with the given coordinates.</doc>
+<status status="PASS" starttime="20260803 23:41:33.345" endtime="20260803 23:41:33.391"/>
+</kw>
+<kw name="Start Frames" library="oreganlibs.VideoCapturer">
+<doc>Starts the video frames recording.</doc>
+<status status="PASS" starttime="20260803 23:41:33.391" endtime="20260803 23:41:33.893"/>
+</kw>
+<kw name="Compare Pictures" library="oreganlibs.VideoCapturer">
+<var>${video_playback}</var>
+<arg>./${project}/${test_plan}/temp/frame_snip1.png</arg>
+<arg>./${project}/${test_plan}/temp/frame_snip2.png</arg>
+<arg>${100}</arg>
+<doc>Compares two pictures by checking its hash values.</doc>
+<msg timestamp="20260803 23:41:33.901" level="INFO">Similar in 75%</msg>
+<msg timestamp="20260803 23:41:33.901" level="INFO">${video_playback} = False</msg>
+<status status="PASS" starttime="20260803 23:41:33.893" endtime="20260803 23:41:33.901"/>
+</kw>
+<while condition="${video_playback} == ${True}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:33.901" endtime="20260803 23:41:33.901"/>
+</kw>
+<kw name="Stop Frames" library="oreganlibs.VideoCapturer">
+<doc>Stops the video frames recording.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:33.901" endtime="20260803 23:41:33.901"/>
+</kw>
+<kw name="Crop Picture And Apply Inverse Color" library="oreganlibs.VideoCapturer">
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${1280}</arg>
+<arg>${108}</arg>
+<arg>./${project}/${test_plan}/temp/frame_sample1.png</arg>
+<arg>./${project}/${test_plan}/temp/frame_snip1.png</arg>
+<doc>Crops and inverse color for a picture with the given coordinates.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:33.901" endtime="20260803 23:41:33.902"/>
+</kw>
+<kw name="Crop Picture And Apply Inverse Color" library="oreganlibs.VideoCapturer">
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${1280}</arg>
+<arg>${108}</arg>
+<arg>./${project}/${test_plan}/temp/frame_sample2.png</arg>
+<arg>./${project}/${test_plan}/temp/frame_snip2.png</arg>
+<doc>Crops and inverse color for a picture with the given coordinates.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:33.902" endtime="20260803 23:41:33.902"/>
+</kw>
+<kw name="Start Frames" library="oreganlibs.VideoCapturer">
+<doc>Starts the video frames recording.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:33.902" endtime="20260803 23:41:33.902"/>
+</kw>
+<kw name="Compare Pictures" library="oreganlibs.VideoCapturer">
+<var>${video_playback}</var>
+<arg>./${project}/${test_plan}/temp/frame_snip1.png</arg>
+<arg>./${project}/${test_plan}/temp/frame_snip2.png</arg>
+<arg>${100}</arg>
+<doc>Compares two pictures by checking its hash values.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:33.902" endtime="20260803 23:41:33.902"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:41:33.901" endtime="20260803 23:41:33.902"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:41:33.901" endtime="20260803 23:41:33.902"/>
+</while>
+<kw name="Should Not Be True" library="BuiltIn">
+<arg>${video_playback}</arg>
+<arg>msg=Reason: Video playback no detected in Guide.</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" starttime="20260803 23:41:33.902" endtime="20260803 23:41:33.902"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<msg timestamp="20260803 23:41:38.914" level="INFO">${record_audio} = None</msg>
+<status status="PASS" starttime="20260803 23:41:33.902" endtime="20260803 23:41:38.914"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<msg timestamp="20260803 23:41:39.217" level="INFO">${Audio_Playback} = True</msg>
+<status status="PASS" starttime="20260803 23:41:38.914" endtime="20260803 23:41:39.217"/>
+</kw>
+<while condition="${Audio_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:39.218" endtime="20260803 23:41:39.218"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<status status="NOT RUN" starttime="20260803 23:41:39.218" endtime="20260803 23:41:39.218"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:39.218" endtime="20260803 23:41:39.218"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:41:39.218" endtime="20260803 23:41:39.218"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:41:39.217" endtime="20260803 23:41:39.218"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Audio_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:41:39.218" endtime="20260803 23:41:39.218"/>
+</kw>
+<while condition="${Audio_Playback} == ${False}" limit="6">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:39.219" endtime="20260803 23:41:39.219"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<status status="NOT RUN" starttime="20260803 23:41:39.219" endtime="20260803 23:41:39.219"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${Audio_Playback}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<status status="NOT RUN" starttime="20260803 23:41:39.219" endtime="20260803 23:41:39.219"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:41:39.219" endtime="20260803 23:41:39.219"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:41:39.219" endtime="20260803 23:41:39.219"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${Audio_Playback}</arg>
+<arg>msg=Reason: Video playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:41:39.219" endtime="20260803 23:41:39.219"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:27.769" endtime="20260803 23:41:39.219"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:41:39.220" endtime="20260803 23:41:39.772"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:39.220" endtime="20260803 23:41:39.772"/>
+</kw>
+<doc>Live TV Playback should be played in the background when you open PVR</doc>
+<tag>PVR</tag>
+<tag>Robot</tag>
+<tag>TUT-3519</tag>
+<status status="PASS" starttime="20260803 23:41:00.785" endtime="20260803 23:41:39.772"/>
+</test>
+<test id="s1-t8" name="Verify Reboot by Settings Menu" line="108">
+<doc>Restart option from Menu should work correctly</doc>
+<tag>Menu</tag>
+<tag>Robot</tag>
+<tag>robot:skip</tag>
+<tag>TUT-3520</tag>
+<status status="SKIP" starttime="20260803 23:41:39.772" endtime="20260803 23:41:39.773">Test skipped using 'robot:skip' tag.</status>
+</test>
+<test id="s1-t9" name="Verify Audio playback is heard on settings page" line="115">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:41:39.774" endtime="20260803 23:41:40.776"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:39.774" endtime="20260803 23:41:40.776"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:41:40.776" endtime="20260803 23:41:46.178"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:40.776" endtime="20260803 23:41:46.178"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260803 23:41:46.178" endtime="20260803 23:41:46.715"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:41:51.716" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:41:46.715" endtime="20260803 23:41:51.716"/>
+</kw>
+<kw name="Move until Settings is Selected" library="keywords-optik">
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>10</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:51.717" endtime="20260803 23:41:52.246"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:51.717" endtime="20260803 23:41:52.246"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:52.246" endtime="20260803 23:41:52.777"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:52.246" endtime="20260803 23:41:52.777"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:52.777" endtime="20260803 23:41:53.304"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:52.777" endtime="20260803 23:41:53.304"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:53.304" endtime="20260803 23:41:53.837"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:53.304" endtime="20260803 23:41:53.837"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:53.837" endtime="20260803 23:41:54.371"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:53.837" endtime="20260803 23:41:54.371"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:54.371" endtime="20260803 23:41:54.900"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:54.371" endtime="20260803 23:41:54.900"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:54.900" endtime="20260803 23:41:55.430"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:54.900" endtime="20260803 23:41:55.430"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:55.430" endtime="20260803 23:41:55.959"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:55.430" endtime="20260803 23:41:55.959"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:55.959" endtime="20260803 23:41:56.488"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:55.959" endtime="20260803 23:41:56.488"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:41:56.488" endtime="20260803 23:41:57.017"/>
+</kw>
+<status status="PASS" starttime="20260803 23:41:56.488" endtime="20260803 23:41:57.017"/>
+</iter>
+<status status="PASS" starttime="20260803 23:41:51.716" endtime="20260803 23:41:57.017"/>
+</for>
+<status status="PASS" starttime="20260803 23:41:51.716" endtime="20260803 23:41:57.017"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:41:57.017" endtime="20260803 23:41:57.548"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:42:02.548" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:41:57.548" endtime="20260803 23:42:02.548"/>
+</kw>
+<kw name="Verify Audio playback" library="keywords-optik">
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<msg timestamp="20260803 23:42:07.567" level="INFO">${record_audio} = None</msg>
+<status status="PASS" starttime="20260803 23:42:02.548" endtime="20260803 23:42:07.567"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${test_audio}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<msg timestamp="20260803 23:42:07.870" level="INFO">${test_audio} = True</msg>
+<status status="PASS" starttime="20260803 23:42:07.567" endtime="20260803 23:42:07.870"/>
+</kw>
+<while condition="${test_audio} == ${False}" limit="3">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:42:07.870" endtime="20260803 23:42:07.871"/>
+</kw>
+<kw name="Record Audio" library="oreganlibs.VideoCapturer">
+<var>${record_audio}</var>
+<doc>Record an audio stream as output.wav</doc>
+<status status="NOT RUN" starttime="20260803 23:42:07.871" endtime="20260803 23:42:07.871"/>
+</kw>
+<kw name="Audio Detection" library="oreganlibs.VideoCapturer">
+<var>${test_audio}</var>
+<doc>Verifies if there is audio in the output.wav file.</doc>
+<status status="NOT RUN" starttime="20260803 23:42:07.871" endtime="20260803 23:42:07.871"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:42:07.870" endtime="20260803 23:42:07.871"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:42:07.870" endtime="20260803 23:42:07.871"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${test_audio}</arg>
+<arg>msg=Reason: Audio playback no detected.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:42:07.871" endtime="20260803 23:42:07.871"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:02.548" endtime="20260803 23:42:07.871"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:42:07.872" endtime="20260803 23:42:08.422"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:07.871" endtime="20260803 23:42:08.422"/>
+</kw>
+<doc>Verify that Live TV audio is heard when you Open Settings menu</doc>
+<tag>Menu</tag>
+<tag>Robot</tag>
+<tag>TUT-3521</tag>
+<status status="PASS" starttime="20260803 23:41:39.773" endtime="20260803 23:42:08.422"/>
+</test>
+<test id="s1-t10" name="Verify Screensaver triggers from Settings Menu" line="125">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:42:08.423" endtime="20260803 23:42:09.424"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:08.423" endtime="20260803 23:42:09.424"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:42:09.424" endtime="20260803 23:42:14.820"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:09.424" endtime="20260803 23:42:14.820"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>menu</arg>
+<status status="PASS" starttime="20260803 23:42:14.820" endtime="20260803 23:42:15.349"/>
+</kw>
+<kw name="Move until Settings is Selected" library="keywords-optik">
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>10</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:15.349" endtime="20260803 23:42:15.879"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:15.349" endtime="20260803 23:42:15.879"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:15.879" endtime="20260803 23:42:16.410"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:15.879" endtime="20260803 23:42:16.410"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:16.410" endtime="20260803 23:42:16.943"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:16.410" endtime="20260803 23:42:16.943"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:16.943" endtime="20260803 23:42:17.470"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:16.943" endtime="20260803 23:42:17.470"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:17.470" endtime="20260803 23:42:18.003"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:17.470" endtime="20260803 23:42:18.003"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:18.003" endtime="20260803 23:42:18.533"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:18.003" endtime="20260803 23:42:18.533"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:18.533" endtime="20260803 23:42:19.062"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:18.533" endtime="20260803 23:42:19.062"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:19.062" endtime="20260803 23:42:19.591"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:19.062" endtime="20260803 23:42:19.591"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:19.591" endtime="20260803 23:42:20.122"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:19.591" endtime="20260803 23:42:20.122"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>down</arg>
+<status status="PASS" starttime="20260803 23:42:20.122" endtime="20260803 23:42:20.656"/>
+</kw>
+<status status="PASS" starttime="20260803 23:42:20.122" endtime="20260803 23:42:20.656"/>
+</iter>
+<status status="PASS" starttime="20260803 23:42:15.349" endtime="20260803 23:42:20.656"/>
+</for>
+<status status="PASS" starttime="20260803 23:42:15.349" endtime="20260803 23:42:20.656"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:42:20.656" endtime="20260803 23:42:21.184"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>960s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:58:21.184" level="INFO">Slept 16 minutes</msg>
+<status status="PASS" starttime="20260803 23:42:21.184" endtime="20260803 23:58:21.184"/>
+</kw>
+<kw name="Verify Screensaver" library="keywords-optik">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260803 23:58:26.185" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260803 23:58:21.184" endtime="20260803 23:58:26.185"/>
+</kw>
+<kw name="Stop Frames" library="oreganlibs.VideoCapturer">
+<doc>Stops the video frames recording.</doc>
+<status status="PASS" starttime="20260803 23:58:26.185" endtime="20260803 23:58:26.686"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${1279}</arg>
+<arg>${713}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260803 23:58:28.507" level="INFO">Text found: Optik TV
+
+Press OK to turn on TV
+
+Optik TV
+
+Press OK to turn on TV</msg>
+<msg timestamp="20260803 23:58:28.507" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260803 23:58:26.686" endtime="20260803 23:58:28.507"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="3">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260803 23:58:28.508" endtime="20260803 23:58:28.508"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${1279}</arg>
+<arg>${713}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<status status="NOT RUN" starttime="20260803 23:58:28.508" endtime="20260803 23:58:28.508"/>
+</kw>
+<status status="NOT RUN" starttime="20260803 23:58:28.508" endtime="20260803 23:58:28.508"/>
+</iter>
+<status status="NOT RUN" starttime="20260803 23:58:28.507" endtime="20260803 23:58:28.508"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=No screensaver detected</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260803 23:58:28.508" endtime="20260803 23:58:28.508"/>
+</kw>
+<status status="PASS" starttime="20260803 23:58:21.184" endtime="20260803 23:58:28.508"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260803 23:58:28.509" endtime="20260803 23:58:29.041"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:58:29.041" endtime="20260803 23:58:34.341"/>
+</kw>
+<status status="PASS" starttime="20260803 23:58:29.041" endtime="20260803 23:58:34.341"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:58:34.341" endtime="20260803 23:58:34.903"/>
+</kw>
+<status status="PASS" starttime="20260803 23:58:34.341" endtime="20260803 23:58:34.903"/>
+</kw>
+<doc>Verify that screensaver can be triggered from Settings Menu</doc>
+<tag>Menu</tag>
+<tag>Robot</tag>
+<tag>TUT-3522</tag>
+<status status="PASS" starttime="20260803 23:42:08.422" endtime="20260803 23:58:34.903"/>
+</test>
+<test id="s1-t11" name="Verify Screensaver triggers from Guide" line="136">
+<kw name="Start Test Execution" library="keywords-optik" type="SETUP">
+<kw name="Start Recording" library="oreganlibs.VideoCapturer">
+<doc>Triggers the video and audio recording.</doc>
+<status status="PASS" starttime="20260803 23:58:34.904" endtime="20260803 23:58:35.905"/>
+</kw>
+<status status="PASS" starttime="20260803 23:58:34.904" endtime="20260803 23:58:35.905"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260803 23:58:35.905" endtime="20260803 23:58:41.317"/>
+</kw>
+<status status="PASS" starttime="20260803 23:58:35.905" endtime="20260803 23:58:41.317"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>guide</arg>
+<status status="PASS" starttime="20260803 23:58:41.317" endtime="20260803 23:58:41.845"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>960s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:14:41.845" level="INFO">Slept 16 minutes</msg>
+<status status="PASS" starttime="20260803 23:58:41.845" endtime="20260804 00:14:41.845"/>
+</kw>
+<kw name="Verify Screensaver" library="keywords-optik">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260804 00:14:46.846" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20260804 00:14:41.845" endtime="20260804 00:14:46.846"/>
+</kw>
+<kw name="Stop Frames" library="oreganlibs.VideoCapturer">
+<doc>Stops the video frames recording.</doc>
+<status status="PASS" starttime="20260804 00:14:46.846" endtime="20260804 00:14:47.347"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${1279}</arg>
+<arg>${713}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<msg timestamp="20260804 00:14:49.186" level="INFO">Text found: Optik TV
+
+Press OK to turn on TV
+
+Optik TV
+
+Press OK to turn on TV</msg>
+<msg timestamp="20260804 00:14:49.186" level="INFO">${ui_element} = True</msg>
+<status status="PASS" starttime="20260804 00:14:47.347" endtime="20260804 00:14:49.186"/>
+</kw>
+<while condition="${ui_element} == ${False}" limit="3">
+<iter>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20260804 00:14:49.186" endtime="20260804 00:14:49.186"/>
+</kw>
+<kw name="Wait Text" library="oreganlibs.VideoCapturer">
+<var>${ui_element}</var>
+<arg>${0}</arg>
+<arg>${0}</arg>
+<arg>${1279}</arg>
+<arg>${713}</arg>
+<arg>Opt</arg>
+<arg>${3}</arg>
+<doc>Waits for a given text until timout is meet.</doc>
+<status status="NOT RUN" starttime="20260804 00:14:49.186" endtime="20260804 00:14:49.186"/>
+</kw>
+<status status="NOT RUN" starttime="20260804 00:14:49.186" endtime="20260804 00:14:49.187"/>
+</iter>
+<status status="NOT RUN" starttime="20260804 00:14:49.186" endtime="20260804 00:14:49.187"/>
+</while>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${ui_element}</arg>
+<arg>msg=No screensaver detected</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260804 00:14:49.187" endtime="20260804 00:14:49.187"/>
+</kw>
+<status status="PASS" starttime="20260804 00:14:41.845" endtime="20260804 00:14:49.187"/>
+</kw>
+<kw name="Send Ir New" library="Ir">
+<arg>optik_ir_new</arg>
+<arg>ok</arg>
+<status status="PASS" starttime="20260804 00:14:49.187" endtime="20260804 00:14:49.716"/>
+</kw>
+<kw name="Return To Live TV" library="keywords-optik">
+<doc>Returns the STB to a known Live TV state before/after a test.</doc>
+<kw name="Press Back" library="Ir">
+<arg>${10}</arg>
+<doc>Sends keyevent KEYCODE_BACK "n" number of times through IR.</doc>
+<status status="PASS" starttime="20260804 00:14:49.716" endtime="20260804 00:14:55.013"/>
+</kw>
+<status status="PASS" starttime="20260804 00:14:49.716" endtime="20260804 00:14:55.013"/>
+</kw>
+<kw name="Stop Test Execution" library="keywords-optik" type="TEARDOWN">
+<kw name="Stop Recording" library="oreganlibs.VideoCapturer">
+<doc>Stops the video and audio recording.</doc>
+<status status="PASS" starttime="20260804 00:14:55.014" endtime="20260804 00:14:55.564"/>
+</kw>
+<status status="PASS" starttime="20260804 00:14:55.013" endtime="20260804 00:14:55.564"/>
+</kw>
+<doc>Verify that screensaver can be triggered from Guide</doc>
+<tag>Guide</tag>
+<tag>Robot</tag>
+<tag>TUT-3523</tag>
+<status status="PASS" starttime="20260803 23:58:34.903" endtime="20260804 00:14:55.564"/>
+</test>
+<doc>TELUS ONYX STB - Sanity regression suite</doc>
+<status status="PASS" starttime="N/A" endtime="N/A" elapsedtime="2372192"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">AV Playback</stat>
+<stat pass="3" fail="0" skip="0">Guide</stat>
+<stat pass="4" fail="0" skip="1">Menu</stat>
+<stat pass="1" fail="0" skip="0">PVR</stat>
+<stat pass="10" fail="0" skip="1">Robot</stat>
+<stat pass="1" fail="0" skip="0">Standby</stat>
+<stat pass="1" fail="0" skip="0">TUT-2181</stat>
+<stat pass="1" fail="0" skip="0">TUT-2182</stat>
+<stat pass="1" fail="0" skip="0">TUT-2183</stat>
+<stat pass="1" fail="0" skip="0">TUT-2184</stat>
+<stat pass="1" fail="0" skip="0">TUT-3516</stat>
+<stat pass="1" fail="0" skip="0">TUT-3519</stat>
+<stat pass="0" fail="0" skip="1">TUT-3520</stat>
+<stat pass="1" fail="0" skip="0">TUT-3521</stat>
+<stat pass="1" fail="0" skip="0">TUT-3522</stat>
+<stat pass="1" fail="0" skip="0">TUT-3523</stat>
+<stat pass="1" fail="0" skip="0">TUT-404</stat>
+</tag>
+<suite>
+<stat pass="10" fail="0" skip="1" id="s1" name="TELUS-SANITY-ONYX">TELUS-SANITY-ONYX</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20260803 23:33:30.870" level="WARN">C:\Users\QA-Automation\.jenkins\workspace\TELUS-SANITY-STB\env\Lib\site-packages\pydub\utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+</msg>
+<msg timestamp="20260804 00:14:58.028" level="WARN">C:\Users\QA-Automation\.jenkins\workspace\TELUS-SANITY-STB\env\Lib\site-packages\pydub\utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+</msg>
+<msg timestamp="20260804 00:16:29.070" level="WARN">C:\Users\QA-Automation\.jenkins\workspace\TELUS-SANITY-STB\env\Lib\site-packages\pydub\utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+</msg>
+</errors>
+</robot>
