@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T15:11:29.927119",
+  "generated_at": "2026-08-04T15:11:33.190569",
   "date": "2026-08-04",
   "clients": [
     "telus",
@@ -935,84 +935,6 @@
       "name": "Verifying VOD Posters Match with Dashboard on Tizen platform build",
       "suite": "—",
       "status": "SKIP",
-      "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260804 05:54:56.836",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    },
-    {
-      "name": "Verifying EPG Content Match with Dashboard on Tizen platform build",
-      "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260804 05:54:56.836",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    },
-    {
-      "name": "Verifying Changing the Profile and check My Contents Railview on Tizen platform build",
-      "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260804 05:55:44.680",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    },
-    {
-      "name": "Verifying Adding VODs to My Favorites are reflect on MyContents on Tizen platform build",
-      "suite": "—",
-      "status": "SKIP",
-      "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260804 05:56:12.379",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    },
-    {
-      "name": "Verifying VOD Highlights Match with Dashboard on Tizen platform build",
-      "suite": "—",
-      "status": "SKIP",
-      "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260804 05:56:12.380",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    },
-    {
-      "name": "Verifying Scheduled Recordings in My Contents",
-      "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260804 05:56:12.380",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    },
-    {
-      "name": "Verifying EPG Date Changes when Navigating to the Past",
-      "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260804 05:57:12.519",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    },
-    {
-      "name": "Verifying EPG Date Changes when Navigating to the Future",
-      "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260804 05:58:07.741",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    }
-  ]
-}IP",
       "message": "Test skipped using 'robot:skip' tag.",
       "time": "20260804 05:54:56.836",
       "source": "RF",
