@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T11:45:32.581055",
+  "generated_at": "2026-08-04T12:30:42.622113",
   "date": "2026-08-04",
   "clients": [
     "telus",
@@ -59,7 +59,7 @@
   },
   "last_run": {
     "telus": {
-      "sanity": "2026-08-04 00:16",
+      "sanity": "2026-08-04 12:30",
       "smoke": "2026-08-04 00:40"
     },
     "mega": {
@@ -388,7 +388,7 @@
       "name": "Standby Cycle Checks",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 15 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
       "time": "20260804 00:14:58.341",
       "source": "RF",
       "client": "telus",
@@ -398,8 +398,8 @@
       "name": "Menu Checks",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is not displayed<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu overlay is not completely opaque.<br>",
-      "time": "20260804 00:16:29.415",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is not displayed<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260804 12:30:09.090",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -409,7 +409,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260803 23:37:08.399",
+      "time": "20260804 11:52:25.389",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -419,7 +419,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260803 23:37:51.340",
+      "time": "20260804 11:52:59.650",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -429,7 +429,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260803 23:38:32.224",
+      "time": "20260804 11:53:40.954",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -439,7 +439,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260803 23:40:33.722",
+      "time": "20260804 11:55:43.854",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -449,7 +449,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260803 23:41:00.785",
+      "time": "20260804 11:56:11.010",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -459,7 +459,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260803 23:41:39.772",
+      "time": "20260804 11:56:50.161",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -469,7 +469,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260803 23:41:39.773",
+      "time": "20260804 11:56:50.162",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -479,7 +479,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260803 23:42:08.422",
+      "time": "20260804 11:57:18.833",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -489,7 +489,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260803 23:58:34.903",
+      "time": "20260804 12:13:45.542",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
