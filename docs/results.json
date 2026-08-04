@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T12:51:38.530609",
+  "generated_at": "2026-08-04T12:51:41.781742",
   "date": "2026-08-04",
   "clients": [
     "telus",
@@ -288,8 +288,7 @@
         "uiw_reason": "",
         "uiw_time": "71.43",
         "vip_result": "PASS",
-    ,
- "vip_reason": "",
+        "vip_reason": "",
         "vip_time": "95.78",
         "time_diff": "+34.1%",
         "verdict": "WARN (VIP slower)"
