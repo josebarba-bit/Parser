@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T14:03:12.743384",
+  "generated_at": "2026-08-04T14:25:08.862094",
   "date": "2026-08-04",
   "clients": [
     "telus",
@@ -121,7 +121,7 @@
     }
   },
   "sbs": {
-    "last_updated": "2026-08-04 11:42",
+    "last_updated": "2026-08-04 14:25",
     "summary": {
       "total": 23,
       "comparable": 23,
@@ -567,6 +567,84 @@
       "status": "PASS",
       "message": "",
       "time": "20260804 13:48:06.236",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Select and Play a content from Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260804 13:50:13.683",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Live TV",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Audio playback detected.<br>",
+      "time": "20260804 13:59:37.656",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260804 13:52:58.871",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Channel Zap",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260804 13:54:30.652",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by OK Key",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260804 13:54:59.395",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Dpad Up",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260804 13:55:12.288",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260804 13:55:40.495",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Button",
+      "suite": "—",
+  "time": "20260804 13:48:06.236",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
