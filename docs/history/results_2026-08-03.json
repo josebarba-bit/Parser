@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T00:58:42.679380",
+  "generated_at": "2026-08-03T23:05:42.920039",
   "date": "2026-08-03",
   "clients": [
     "telus",
@@ -63,7 +63,7 @@
       "smoke": "2026-07-29 17:13"
     },
     "mega": {
-      "sanity": "2026-08-02 05:59"
+      "sanity": "2026-08-03 05:59"
     }
   },
   "stability": {
@@ -111,271 +111,264 @@
   },
   "sbs": {
     "last_updated": "2026-07-31 23:05",
+    "sw_version_uiw": "3.7.35 - Telus/Zenterio",
+    "sw_version_vip": "3.7.35 - Telus/Zenterio",
+    "mw_version_uiw": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #397 142",
+    "mw_version_vip": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #397 142",
     "summary": {
-      "total": 23,
-      "comparable": 23,
-      "not_comparable": 0,
-      "uiw_pass": 0,
-      "uiw_fail": 0,
-      "vip_pass": 0,
-      "vip_fail": 0,
-      "ok": 0,
-      "warn": 0,
-      "vip_faster": 0
+      "total": 22,
+      "comparable": 18,
+      "not_comparable": 4,
+      "uiw_pass": 19,
+      "uiw_fail": 3,
+      "vip_pass": 21,
+      "vip_fail": 1,
+      "ok": 10,
+      "warn": 6,
+      "vip_faster": 2
     },
     "rows": [
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Standby Cycle Checks",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "57.52",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "180.61",
+        "time_diff": "+214.0%",
+        "verdict": "WARN (VIP slower)"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Menu Checks",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "95.93",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "113.41",
+        "time_diff": "+18.2%",
+        "verdict": "WARN (VIP slower)"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Guide Opens by Key",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "45.19",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "54.18",
+        "time_diff": "+19.9%",
+        "verdict": "WARN (VIP slower)"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Guide Opens from Menu",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "39.08",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "39.58",
+        "time_diff": "+1.3%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Channel Zap AV Playback",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "92.06",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "101.99",
+        "time_diff": "+10.8%",
+        "verdict": "WARN (VIP slower)"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Menu Does Not Auto-Dismiss",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "32.67",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "32.99",
+        "time_diff": "+1.0%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Live TV Background During PVR",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "34.19",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "40.39",
+        "time_diff": "+18.1%",
+        "verdict": "WARN (VIP slower)"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Audio Playback on Settings Page",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "23.0",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "22.31",
+        "time_diff": "-3.0%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Play a Recording",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
-        "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "uiw_time": "67.8",
+        "vip_result": "FAIL",
+        "vip_reason": "Reason: Audio playback no detected.",
+        "vip_time": "62.43",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify AV Playback on LiveTV",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "51.39",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "40.66",
+        "time_diff": "-20.9%",
+        "verdict": "NOTE (VIP faster)"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Adjust the LiveTV Volume",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "296.03",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "296.53",
+        "time_diff": "+0.2%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify AV background with Menu",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "19.77",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "21.81",
+        "time_diff": "+10.3%",
+        "verdict": "WARN (VIP slower)"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Guide Opens & Bkgn Video",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "66.08",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "66.2",
+        "time_diff": "+0.2%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Guide Opens from Menu & Bkgn Video",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "83.59",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "71.69",
+        "time_diff": "-14.2%",
+        "verdict": "NOTE (VIP faster)"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Verify Settings Opens from Menu",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "29.59",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "27.06",
+        "time_diff": "-8.6%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
-        "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "test_case": "Select and Play a content from Guide",
+        "uiw_result": "FAIL",
+        "uiw_reason": "Reason: Guide is not open, string \"Today\" not detected",
+        "uiw_time": "117.9",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "62.71",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
-        "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "test_case": "Audio mute on Live TV",
+        "uiw_result": "FAIL",
+        "uiw_reason": "Reason: Mute does not appear.",
+        "uiw_time": "87.8",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "265.1",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
-        "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "test_case": "Audio mute on Guide",
+        "uiw_result": "FAIL",
+        "uiw_reason": "Reason: Mute does not appear.",
+        "uiw_time": "108.56",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "283.52",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Progress Bar on Live TV by Channel Zap",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "26.76",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "26.54",
+        "time_diff": "-0.8%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Progress Bar on Live TV by OK Key",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "11.82",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "11.24",
+        "time_diff": "-4.9%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Progress Bar on Live TV by Dpad Up",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "26.22",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "25.72",
+        "time_diff": "-1.9%",
+        "verdict": "OK"
       },
       {
-        "test_case": "",
-        "uiw_result": "",
+        "test_case": "Launch PVR via Button",
+        "uiw_result": "PASS",
         "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
+        "uiw_time": "16.27",
+        "vip_result": "PASS",
         "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
-      },
-      {
-        "test_case": "",
-        "uiw_result": "",
-        "uiw_reason": "",
-        "uiw_time": "",
-        "vip_result": "",
-        "vip_reason": "",
-        "vip_time": "",
-        "time_diff": "",
-        "verdict": ""
+        "vip_time": "16.13",
+        "time_diff": "-0.9%",
+        "verdict": "OK"
       }
     ]
   },
@@ -735,7 +728,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:43:00.542",
+      "time": "20260803 05:43:01.282",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -745,7 +738,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:43:10.482",
+      "time": "20260803 05:43:11.146",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -755,7 +748,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:43:31.611",
+      "time": "20260803 05:43:32.284",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -765,7 +758,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260802 05:43:49.115",
+      "time": "20260803 05:43:50.665",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -775,7 +768,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:43:49.116",
+      "time": "20260803 05:43:50.666",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -785,7 +778,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:44:17.458",
+      "time": "20260803 05:44:18.970",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -795,7 +788,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:45:22.242",
+      "time": "20260803 05:45:23.746",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -805,7 +798,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:45:46.930",
+      "time": "20260803 05:45:48.399",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -815,7 +808,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:46:15.491",
+      "time": "20260803 05:46:16.804",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -825,7 +818,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:46:45.837",
+      "time": "20260803 05:46:47.648",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -835,7 +828,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:47:29.014",
+      "time": "20260803 05:47:31.013",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -845,7 +838,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:47:52.785",
+      "time": "20260803 05:47:54.759",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -855,7 +848,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:48:17.168",
+      "time": "20260803 05:48:18.953",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -865,7 +858,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:49:18.062",
+      "time": "20260803 05:49:19.762",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -875,7 +868,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:49:41.475",
+      "time": "20260803 05:49:43.028",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -885,7 +878,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:50:09.976",
+      "time": "20260803 05:50:11.526",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -895,7 +888,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:50:33.990",
+      "time": "20260803 05:50:35.730",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -905,7 +898,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:50:58.390",
+      "time": "20260803 05:51:00.165",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -915,7 +908,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:51:39.534",
+      "time": "20260803 05:51:41.463",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -925,7 +918,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260802 05:52:33.119",
+      "time": "20260803 05:52:35.018",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -935,7 +928,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:52:33.119",
+      "time": "20260803 05:52:35.018",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -945,7 +938,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:52:59.509",
+      "time": "20260803 05:53:01.347",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -955,7 +948,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:53:59.362",
+      "time": "20260803 05:54:01.400",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -965,7 +958,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260802 05:54:55.458",
+      "time": "20260803 05:54:57.227",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -975,7 +968,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:54:55.458",
+      "time": "20260803 05:54:57.228",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -985,7 +978,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:55:43.421",
+      "time": "20260803 05:55:45.242",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -995,7 +988,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260802 05:56:11.342",
+      "time": "20260803 05:56:13.066",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1005,7 +998,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260802 05:56:11.342",
+      "time": "20260803 05:56:13.066",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1015,7 +1008,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:56:11.343",
+      "time": "20260803 05:56:13.067",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1025,7 +1018,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:57:03.775",
+      "time": "20260803 05:57:13.226",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1035,7 +1028,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260802 05:57:59.210",
+      "time": "20260803 05:58:07.690",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
