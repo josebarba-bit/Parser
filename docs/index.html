@@ -687,6 +687,102 @@ function selectModel(model) {
 }
 
 // ─── Render stability content ─────────────────────────────────
+function renderModelSection(model, meta, data) {
+  const mlData = fullData?.memory_leaks?.[model] || null;
+  const lu_ml  = fullData?.memory_leaks?.last_updated?.[model] || null;
+  if (!data) return `
+  <div class="stability-model-section">
+    <div class="stability-model-header">
+      <div class="stability-model-title">
+        <span class="model-tag" style="background:${meta.bg};color:${meta.color}">${meta.label}</span>
+      </div>
+    </div>
+    <div style="color:var(--muted);font-size:12px">No data available</div>
+  </div>`;
+
+  const long = data.longevity;
+  const perf = data.performance;
+  const cont = data.resource_contention;
+  const lu   = data.last_updated || {};
+  const ver  = data.version;
+
+  const oob     = cont ? oobRate(cont.out_of_baseline, cont.total_iterations) : null;
+  const oobCls  = oobClass(oob);
+  const oobLbl  = oobLabel(oob);
+
+  return `
+  <div class="stability-model-section">
+    <div class="stability-model-header">
+      <div class="stability-model-title">
+        <span class="model-tag" style="background:${meta.bg};color:${meta.color}">${meta.label}</span>
+        <span style="font-size:11px;font-weight:500;color:var(--text)">SW Version</span>
+      </div>
+      ${ver ? `<span class="stability-version">${esc(ver)}</span>` : '<span style="font-size:11px;color:var(--muted)">No version file</span>'}
+    </div>
+    <div class="stability-cards">
+
+      <div class="stability-card">
+        <div class="stability-card-header">
+          <div class="stability-card-title">📊 Longevity</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="stability-card-lastrun">${lu.longevity ? 'Updated: ' + lu.longevity : ''}</span>
+            <button class="help-btn" onclick="openModal('longevity')">?</button>
+          </div>
+        </div>
+        ${long ? `<div class="stability-metrics">
+          <div class="stability-metric"><div class="stability-metric-val">${long.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-fail">${long.hangs}</div><div class="stability-metric-lbl">HANGs</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-pass">${long.success_rate}%</div><div class="stability-metric-lbl">Success rate</div></div>
+        </div>` : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+      </div>
+
+      <div class="stability-card">
+        <div class="stability-card-header">
+          <div class="stability-card-title">⚡ Performance</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="stability-card-lastrun">${lu.performance ? 'Updated: ' + lu.performance : ''}</span>
+            <button class="help-btn" onclick="openModal('performance')">?</button>
+          </div>
+        </div>
+        ${perf ? `<div class="stability-metrics">
+          <div class="stability-metric"><div class="stability-metric-val">${perf.avg_response_time}s</div><div class="stability-metric-lbl">Avg response</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-fail">${perf.max_response_time}s</div><div class="stability-metric-lbl">Max response</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-pass">${perf.min_response_time}s</div><div class="stability-metric-lbl">Min response</div></div>
+          <div class="stability-metric"><div class="stability-metric-val">${perf.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
+        </div>` : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+      </div>
+
+      <div class="stability-card">
+        <div class="stability-card-header">
+          <div class="stability-card-title">🔀 Resource Contention</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="stability-card-lastrun">${lu.resource_contention ? 'Updated: ' + lu.resource_contention : ''}</span>
+            <button class="help-btn" onclick="openModal('contention')">?</button>
+          </div>
+        </div>
+        ${cont ? `<div class="stability-metrics">
+          <div class="stability-metric"><div class="stability-metric-val">${cont.avg_drift_pct}%</div><div class="stability-metric-lbl">Avg drift</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-fail">${cont.max_drift_pct}%</div><div class="stability-metric-lbl">Max drift</div></div>
+          <div class="stability-metric"><div class="stability-metric-val v-warn">${cont.out_of_baseline}</div><div class="stability-metric-lbl">Out of baseline</div></div>
+          ${oob !== null ? `<div class="stability-metric"><div class="stability-metric-val ${oobCls}">${oob}%</div><div class="stability-metric-lbl">OOB rate</div></div>` : ''}
+          <div class="stability-metric"><div class="stability-metric-val">${cont.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
+        </div>
+        ${oob !== null ? `<div style="font-size:11px;${oob >= 20 ? 'color:var(--fail)' : oob >= 10 ? 'color:var(--warn)' : 'color:var(--pass)'}">${oobLbl}</div>` : ''}` 
+        : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+      </div>
+
+      <div class="stability-card">
+        <div class="stability-card-header">
+          <div class="stability-card-title">🧠 Memory Leaks</div>
+          <span class="stability-card-lastrun">${mlData && lu_ml ? 'Updated: ' + lu_ml : ''}</span>
+        </div>
+        ${mlData ? renderMemoryLeakCard(mlData) : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+      </div>
+
+    </div>
+  </div>`;
+}
+
 function renderStabilityContent(stability) {
   if (!stability) return;
   const container = document.getElementById('stability-content');
