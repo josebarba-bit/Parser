@@ -427,11 +427,6 @@
 
       <div id="stability-content"></div>
 
-      <div class="trend-card">
-        <div class="card-title" id="stability-trend-title">Stability trend — last 7 days</div>
-        <div style="position:relative;height:220px"><canvas id="chartStabilityTrend"></canvas></div>
-      </div>
-
     </div>
 
     <!-- SBS sub-panel -->
@@ -788,10 +783,14 @@ function renderStabilityContent(stability) {
   const container = document.getElementById('stability-content');
   const models = knownModels.length ? knownModels : ['uiw', 'vip'];
   
-  let html = `<div class="stability-model-grid">${models.map(m => {
+  let html = `<div class="stability-model-grid" id="stability-model-grid-top">${models.map(m => {
     const meta = MODEL_META[m] || { label: m.toUpperCase(), color:'#444', bg:'#eee' };
     return renderModelSection(m, meta, stability[m]);
-  }).join('')}</div>`;
+  }).join('')}</div>
+  <div class="trend-card">
+    <div class="card-title" id="stability-trend-title">Stability trend — last 7 days</div>
+    <div style="position:relative;height:220px"><canvas id="chartStabilityTrend"></canvas></div>
+  </div>`;
 
   // Memory Comparison section
   const comp = fullData?.memory_leaks?.comparison;
