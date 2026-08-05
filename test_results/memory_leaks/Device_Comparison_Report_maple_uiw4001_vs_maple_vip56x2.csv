@@ -6,7 +6,7 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,10
+Iterations available,11
 
 maple_vip56x2 Identity
 Test Plan,TELUS_LONGEVITY_STB4
@@ -17,29 +17,29 @@ Iterations available,11
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001 Min,maple_uiw4001 Max,maple_uiw4001 Avg,maple_vip56x2 Min,maple_vip56x2 Max,maple_vip56x2 Avg
-Total (all components),418.78,432.73,424.43,490.90,499.31,494.42
-LXC container,203.62,213.58,208.15,238.19,246.76,241.30
-cobalt process,194.24,201.92,196.99,228.57,235.27,231.39
+Total (all components),418.66,432.73,423.91,490.90,499.31,494.42
+LXC container,203.62,213.58,207.87,238.19,246.76,241.30
+cobalt process,194.24,201.92,196.75,228.57,235.27,231.39
 zids process,19.07,19.45,19.29,21.45,21.83,21.73
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001 Growth %,maple_vip56x2 Growth %,Gap (pp)
-Total (all components),-2.64,-0.17,-2.47
-LXC container,-4.66,-1.36,-3.30
-cobalt process,-0.85,+0.93,-1.78
-zids process,+1.31,+1.35,-0.04
+Total (all components),-2.96,-0.17,-2.79
+LXC container,-3.98,-1.36,-2.62
+cobalt process,-2.25,+0.93,-3.18
+zids process,+1.00,+1.35,-0.35
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001 - maple_vip56x2) (MiB)
-Matched iterations,10,
+Matched iterations,11,
 First matched iteration,1,-60.54
-Latest matched iteration,10,-74.59
+Latest matched iteration,11,-72.47
 Minimum gap,8,-76.02
 Maximum gap,1,-60.54
-Average gap,,-70.32
-Gap change (first -> latest),,-14.05
+Average gap,,-70.52
+Gap change (first -> latest),,-11.93
 
 Evaluation
-Verdict,Similar behavior - both devices show comparable Total memory growth (-2.64% vs -0.17%).
+Verdict,Similar behavior - both devices show comparable Total memory growth (-2.96% vs -0.17%).
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_vs_maple_vip56x2.png in this same folder
