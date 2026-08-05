@@ -16,6 +16,12 @@ and the gathered Test_Summary_Report_Memory_Monitor_*.csv copies) from
 oreganqa-automation's Comparisons/<date> folder into the repo - CSV-only, no PNGs -
 using the same watch-and-push mechanism.
 
+Whenever either model's report shows a new degradation checkpoint (i.e. its
+"Checkpoints evaluated" count just went up - every 10th iteration), this also
+re-runs compare_devices_report.py itself before copying/pushing, so the
+Comparisons folder is regenerated with fresh data every 10 iterations instead
+of only whenever someone runs it by hand.
+
 Install dependencies:
     pip install watchdog
 
@@ -28,6 +34,7 @@ import os
 import csv
 import shutil
 import subprocess
+import sys
 import time
 from datetime import datetime
 from watchdog.observers import Observer
@@ -40,8 +47,12 @@ MODELS = {
     "vip": r"C:\Users\jesus\OneDrive\Escritorio\Automation\oreganqa-automation\ONYX\TELUS\TELUS-STB\TELUS_LONGEVITY_STB4\TestResults",
 }
 
+# oreganqa-automation repo root, and the comparison script within it
+OREGANQA_ROOT = r"C:\Users\jesus\OneDrive\Escritorio\Automation\oreganqa-automation"
+COMPARE_SCRIPT = os.path.join(OREGANQA_ROOT, "oreganlibs", "compare_devices_report.py")
+
 # Source folder for the STB3-vs-STB4 comparison CSVs (compare_devices_report.py's output)
-COMPARISONS_SRC = r"C:\Users\jesus\OneDrive\Escritorio\Automation\oreganqa-automation\ONYX\TELUS\TELUS-STB\Comparisons"
+COMPARISONS_SRC = os.path.join(OREGANQA_ROOT, "ONYX", "TELUS", "TELUS-STB", "Comparisons")
 
 # Path to the cloned dashboard repo on this PC
 REPO_PATH = r"C:\Users\jesus\OneDrive\Escritorio\Automation\Parser"
@@ -167,6 +178,72 @@ def copy_csvs():
     return total_copied > 0
 
 
+def _is_under(path, folder):
+    """True if path is folder itself or lives somewhere inside it."""
+    try:
+        return os.path.commonpath([os.path.abspath(path), os.path.abspath(folder)]) == os.path.abspath(folder)
+    except ValueError:
+        return False  # different drives on Windows
+
+
+def _model_for_path(path):
+    for model, base_path in MODELS.items():
+        if _is_under(path, base_path):
+            return model
+    return None
+
+
+def _current_checkpoint_count(model):
+    """Reads the "Checkpoints evaluated" count straight from that model's live report CSV."""
+    today_folder = get_today_folder(MODELS[model])
+    report_csv = _find_report_csv(today_folder)
+    if not report_csv:
+        return None
+    count_row = _extract_checkpoints(report_csv).get("Checkpoints evaluated")
+    if not count_row or not count_row[0]:
+        return 0
+    try:
+        return int(count_row[0])
+    except ValueError:
+        return 0
+
+
+# Last checkpoint count seen per model - only comparisons triggered by a genuine
+# increase (a new 10th-iteration checkpoint), not by every per-iteration rewrite.
+_last_checkpoint_count = {}
+
+
+def maybe_trigger_comparison(changed_path):
+    """If the report that just changed belongs to one of our models and its checkpoint
+    count went up, re-run compare_devices_report.py so the comparison reflects it."""
+    model = _model_for_path(changed_path)
+    if model is None:
+        return  # change came from the Comparisons folder itself, not a source report
+
+    count = _current_checkpoint_count(model)
+    if count is None:
+        return
+
+    previous = _last_checkpoint_count.get(model, count)
+    _last_checkpoint_count[model] = count
+    if count > previous:
+        run_comparison(reason=f"{model.upper()} reached checkpoint #{count}")
+
+
+def run_comparison(reason):
+    """Re-runs compare_devices_report.py so the Comparisons folder has fresh data."""
+    print(f"  Running compare_devices_report.py ({reason})...")
+    result = subprocess.run(
+        [sys.executable, COMPARE_SCRIPT],
+        cwd=OREGANQA_ROOT, capture_output=True, text=True,
+    )
+    for line in result.stdout.strip().splitlines():
+        print(f"    {line}")
+    if result.returncode != 0:
+        print(f"  [!] compare_devices_report.py failed:")
+        print(f"      {result.stderr.strip()}")
+
+
 def copy_comparisons():
     """Mirrors today's comparison CSVs (Device_Comparison_Report_*.csv and the gathered
     Test_Summary_Report_Memory_Monitor_*.csv copies) into the repo. CSV-only, no PNGs."""
@@ -251,6 +328,8 @@ class ReportChangeHandler(FileSystemEventHandler):
         if now - self._last_run < DEBOUNCE_SECONDS:
             return
         self._last_run = now
+        if fname.startswith("Test_Summary_Report_Memory_Monitor_"):
+            maybe_trigger_comparison(event.src_path)
         run_once(reason=f"change detected: {fname}")
 
     def on_modified(self, event):
@@ -273,6 +352,13 @@ if __name__ == "__main__":
 
     # Publish once at startup so the dashboard reflects the current state immediately
     run_once(reason="startup")
+
+    # Seed checkpoint counts so comparisons only trigger on a genuine new checkpoint
+    # detected after this point, not immediately on startup.
+    for model in MODELS:
+        count = _current_checkpoint_count(model)
+        if count is not None:
+            _last_checkpoint_count[model] = count
 
     handler = ReportChangeHandler()
     observer = Observer()
