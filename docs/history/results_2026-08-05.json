@@ -1,0 +1,1008 @@
+{
+  "generated_at": "2026-08-05T06:00:12.612743",
+  "date": "2026-08-05",
+  "clients": [
+    "telus",
+    "mega"
+  ],
+  "stability_models": [
+    "uiw",
+    "vip"
+  ],
+  "summary": {
+    "total": 62,
+    "passed": 45,
+    "failed": 9,
+    "skipped": 8,
+    "rate": 72.6
+  },
+  "summaries": {
+    "telus": {
+      "all": {
+        "total": 31,
+        "passed": 19,
+        "failed": 9,
+        "skipped": 3,
+        "rate": 61.3
+      },
+      "sanity": {
+        "total": 11,
+        "passed": 10,
+        "failed": 0,
+        "skipped": 1,
+        "rate": 90.9
+      },
+      "smoke": {
+        "total": 20,
+        "passed": 9,
+        "failed": 9,
+        "skipped": 2,
+        "rate": 45.0
+      }
+    },
+    "mega": {
+      "all": {
+        "total": 31,
+        "passed": 26,
+        "failed": 0,
+        "skipped": 5,
+        "rate": 83.9
+      },
+      "sanity": {
+        "total": 31,
+        "passed": 26,
+        "failed": 0,
+        "skipped": 5,
+        "rate": 83.9
+      }
+    }
+  },
+  "last_run": {
+    "telus": {
+      "sanity": "2026-08-04 15:11",
+      "smoke": "2026-08-05 01:02"
+    },
+    "mega": {
+      "sanity": "2026-08-05 05:59"
+    }
+  },
+  "stability": {
+    "uiw": {
+      "version": "TELUS4K 1.12.1 debug build #397 v142",
+      "longevity": {
+        "total_iterations": 4357,
+        "hangs": 889,
+        "success_rate": 79.6
+      },
+      "performance": {
+        "avg_response_time": 2.58,
+        "max_response_time": 16.47,
+        "min_response_time": 2.05,
+        "total_iterations": 3352
+      },
+      "resource_contention": {
+        "avg_drift_pct": 7.11,
+        "max_drift_pct": 676.2,
+        "out_of_baseline": 912,
+        "total_iterations": 3352,
+        "drift_threshold_pct": 20
+      },
+      "last_updated": {
+        "longevity": "2026-08-04 23:05",
+        "performance": "2026-08-04 23:05",
+        "resource_contention": "2026-08-04 23:05"
+      }
+    },
+    "vip": {
+      "version": "TELUS4K 1.12.1 debug build #397 v142",
+      "longevity": {
+        "total_iterations": 5149,
+        "hangs": 797,
+        "success_rate": 84.5
+      },
+      "performance": {
+        "avg_response_time": 2.59,
+        "max_response_time": 16.59,
+        "min_response_time": 2.06,
+        "total_iterations": 4198
+      },
+      "resource_contention": {
+        "avg_drift_pct": 12.98,
+        "max_drift_pct": 618.5,
+        "out_of_baseline": 814,
+        "total_iterations": 4198,
+        "drift_threshold_pct": 20
+      },
+      "last_updated": {
+        "longevity": "2026-08-04 23:05",
+        "performance": "2026-08-04 23:05",
+        "resource_contention": "2026-08-04 23:05"
+      }
+    }
+  },
+  "sbs": {
+    "last_updated": "2026-08-04 23:05",
+    "sw_version_uiw": "3.7.35 - Telus/Zenterio",
+    "sw_version_vip": "3.7.35 - Telus/Zenterio",
+    "mw_version_uiw": "Zenterio OS 16.4 TELUS4K 1.12.1 debug Bulle #397 142",
+    "mw_version_vip": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #397 142",
+    "summary": {
+      "total": 22,
+      "comparable": 17,
+      "not_comparable": 5,
+      "uiw_pass": 17,
+      "uiw_fail": 5,
+      "vip_pass": 22,
+      "vip_fail": 0,
+      "ok": 13,
+      "warn": 4,
+      "vip_faster": 0
+    },
+    "rows": [
+      {
+        "test_case": "Standby Cycle Checks",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "56.29",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "217.6",
+        "time_diff": "+286.5%",
+        "verdict": "WARN (VIP slower)"
+      },
+      {
+        "test_case": "Menu Checks",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "89.93",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "95.97",
+        "time_diff": "+6.7%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify Guide Opens by Key",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "46.87",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "56.77",
+        "time_diff": "+21.1%",
+        "verdict": "WARN (VIP slower)"
+      },
+      {
+        "test_case": "Verify Guide Opens from Menu",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "42.02",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "41.67",
+        "time_diff": "-0.8%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify Channel Zap AV Playback",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "93.95",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "115.99",
+        "time_diff": "+23.5%",
+        "verdict": "WARN (VIP slower)"
+      },
+      {
+        "test_case": "Verify Menu Does Not Auto-Dismiss",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "31.66",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "31.22",
+        "time_diff": "-1.4%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify Live TV Background During PVR",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "33.61",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "33.53",
+        "time_diff": "-0.2%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify Audio Playback on Settings Page",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "22.62",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "22.48",
+        "time_diff": "-0.6%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Play a Recording",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "64.99",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "65.52",
+        "time_diff": "+0.8%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify AV Playback on LiveTV",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "40.48",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "40.53",
+        "time_diff": "+0.1%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Adjust the LiveTV Volume",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "292.61",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "295.31",
+        "time_diff": "+0.9%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify AV background with Menu",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "20.76",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "19.89",
+        "time_diff": "-4.2%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify Guide Opens & Bkgn Video",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "59.7",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "65.66",
+        "time_diff": "+10.0%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Verify Guide Opens from Menu & Bkgn Video",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "73.85",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "83.08",
+        "time_diff": "+12.5%",
+        "verdict": "WARN (VIP slower)"
+      },
+      {
+        "test_case": "Verify Settings Opens from Menu",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "25.73",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "25.38",
+        "time_diff": "-1.4%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Select and Play a content from Guide",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "62.99",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "61.06",
+        "time_diff": "-3.1%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Audio mute on Live TV",
+        "uiw_result": "PASS",
+        "uiw_reason": "",
+        "uiw_time": "261.16",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "273.62",
+        "time_diff": "+4.8%",
+        "verdict": "OK"
+      },
+      {
+        "test_case": "Audio mute on Guide",
+        "uiw_result": "FAIL",
+        "uiw_reason": "Reason: Mute does not appear.",
+        "uiw_time": "109.48",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "273.77",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Progress Bar on Live TV by Channel Zap",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "75.35",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "26.86",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Progress Bar on Live TV by OK Key",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "32.37",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "11.07",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Progress Bar on Live TV by Dpad Up",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "50.3",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "25.95",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      },
+      {
+        "test_case": "Launch PVR via Button",
+        "uiw_result": "FAIL",
+        "uiw_reason": "WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+        "uiw_time": "101.12",
+        "vip_result": "PASS",
+        "vip_reason": "",
+        "vip_time": "18.78",
+        "time_diff": "N/A (different outcome)",
+        "verdict": "NOT COMPARABLE"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "name": "Standby Cycle Checks",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 15 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260804 00:14:58.341",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Menu Checks",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu is not displayed<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Menu overlay is not completely opaque.<br>",
+      "time": "20260804 00:16:29.415",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Guide Opens by Key",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260803 23:37:08.399",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Guide Opens from Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260803 23:37:51.340",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260803 23:38:32.224",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Menu panel is not autodismissed",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260803 23:40:33.722",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Live TV AV Playback in the background with PVR opened",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260803 23:41:00.785",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Reboot by Settings Menu",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260803 23:41:39.772",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Audio playback is heard on settings page",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260803 23:41:39.773",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Screensaver triggers from Settings Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260803 23:42:08.422",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify Screensaver triggers from Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260803 23:58:34.903",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verify AV Playback on LiveTV",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 00:21:23.469",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Adjust the LiveTV Volume",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 00:22:58.317",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify AV background with Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Video playback no detected.<br>",
+      "time": "20260805 00:39:46.564",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens & Bkgn Video",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 00:24:58.818",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens from Menu & Bkgn Video",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260805 00:52:19.028",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Settings Opens from Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 00:27:20.943",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260805 00:53:43.930",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Select and Play a content from Guide",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260805 00:55:07.656",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Live TV",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260805 00:56:31.720",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Guide",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260805 00:57:53.713",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Channel Zap",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260805 00:59:16.342",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by OK Key",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260805 01:00:33.709",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Dpad Up",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
+      "time": "20260805 01:01:06.874",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 00:36:03.842",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Button",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 00:36:52.843",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Play a Recording",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 00:37:10.406",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Progress bar on a series recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 00:38:12.781",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Progress bar on and on Single Recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 00:38:12.782",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check volume bar icons",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
+      "time": "20260805 01:01:59.276",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Mute button",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Mute does not appear.<br>",
+      "time": "20260805 00:50:50.872",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verifying the Login Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:43:01.037",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Login Screen error message on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:43:10.849",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Profiles Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:43:31.922",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Featured Contents can be Access on Tizen platform build",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 05:43:49.421",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Home Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:43:49.421",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the History State in Home Screen on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:44:17.818",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Epg Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:45:22.957",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Epg Categories on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:45:47.456",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Epg Reminder button on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:46:15.935",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the VOD Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:46:46.775",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Kids Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:47:30.168",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the My Contents Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:47:53.934",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Search Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:48:18.167",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Last Watched Channels Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:49:18.891",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Vod Recommendation Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:49:42.331",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the My Contents Screen UI from Rail Button on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:50:10.874",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the Settings Screen UI on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:50:35.188",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying the History State in Settings Screen on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:50:59.665",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying Adding a new Profile on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:51:40.966",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying Configure Profiles Pin on Tizen platform build",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 05:52:34.557",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying Changing the Profile on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:52:34.557",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying Updating a Profile on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:53:00.970",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying Removing a Profile on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:54:01.021",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying VOD Posters Match with Dashboard on Tizen platform build",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 05:54:56.767",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying EPG Content Match with Dashboard on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:54:56.767",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying Changing the Profile and check My Contents Railview on Tizen platform build",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:55:44.918",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying Adding VODs to My Favorites are reflect on MyContents on Tizen platform build",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 05:56:12.717",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying VOD Highlights Match with Dashboard on Tizen platform build",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 05:56:12.718",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying Scheduled Recordings in My Contents",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:56:12.718",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying EPG Date Changes when Navigating to the Past",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:57:12.587",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    },
+    {
+      "name": "Verifying EPG Date Changes when Navigating to the Future",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 05:58:07.655",
+      "source": "RF",
+      "client": "mega",
+      "suite_type": "sanity"
+    }
+  ]
+}
