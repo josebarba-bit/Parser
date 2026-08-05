@@ -1,0 +1,5 @@
+{
+  "ZBLD_SW_SID_BASE": "Zenterio OS 16.4",
+  "ZBLD_SW_SID_PRODUCT": "TELUS4K 1.12.1 debug build #406",
+  "ZIDS_SWVER": "142"
+}
