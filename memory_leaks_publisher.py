@@ -153,14 +153,15 @@ def copy_csvs():
 
         normalized = _normalize_checkpoints(checkpoints)
         os.makedirs(dest_folder, exist_ok=True)
-        dst = os.path.join(dest_folder, "memory_leaks.csv")
+        out_name = os.path.basename(report_csv)
+        dst = os.path.join(dest_folder, out_name)
         with open(dst, "w", newline="", encoding="utf-8-sig") as f:
             writer = csv.writer(f)
             writer.writerow(HEADER)
             writer.writerows(normalized)
 
         passed = sum(1 for r in normalized if r[1] == "PASS")
-        print(f"  {model.upper()} - Copied: memory_leaks.csv ({len(normalized)} checkpoints, {passed} pass / {len(normalized) - passed} fail)")
+        print(f"  {model.upper()} - Copied: {out_name} ({len(normalized)} checkpoints, {passed} pass / {len(normalized) - passed} fail)")
         total_copied += 1
 
     return total_copied > 0
