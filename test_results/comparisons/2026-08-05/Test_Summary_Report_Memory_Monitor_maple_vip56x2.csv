@@ -14,48 +14,48 @@ Test Item / Feature,LXC Memory Monitor (Longevity.py)
 
 2. Summary
 Objective,"Continuously sample memory usage (LXC container, kernel memory, Malloc, zids process, cobalt process) during an unattended longevity run and detect abnormal growth via periodic degradation checks."
-Test window,12:26:27 → 12:34:08 (in progress)
-Iterations executed,2
-Degradation checkpoints,0
+Test window,12:26:27 → 13:23:09 (in progress)
+Iterations executed,10
+Degradation checkpoints,1
 Status,Run in progress
 
 3. Variances
 Deviation from plan,"kmem and Malloc have read 0.0 MiB for all iterations so far - likely a firmware output-format mismatch in the device's command output, not genuinely zero usage. LXC and cobalt readings are unaffected and remain the primary growth indicators."
 
 4. Comprehensiveness Assessment
-Coverage vs. test basis,"2 iterations completed so far this run, no aborts or crashes recorded for this test area."
+Coverage vs. test basis,"10 iterations completed so far this run, no aborts or crashes recorded for this test area."
 Metrics covered,"LXC container memory, kernel memory (kmem), Malloc, zids VmRSS, cobalt VmRSS, computed Total."
 Metrics not effectively covered,"kmem, Malloc - no data captured (see Variances)"
-Degradation check coverage,0 checkpoints executed so far (every 10th iteration).
+Degradation check coverage,1 checkpoints executed so far (every 10th iteration).
 
 5. Summary of Results
 Table 1: Component Min/Max/Avg
 Component,Min (MiB),Min at,Max (MiB),Max at,Avg (MiB)
-LXC container,215.76,iter #2 · 12:34:08,226.94,iter #1 · 12:26:27,221.35
-zids process,21.44,iter #2 · 12:34:08,21.74,iter #1 · 12:26:27,21.59
-cobalt process,176.00,iter #2 · 12:34:08,220.16,iter #1 · 12:26:27,198.08
-Total (all components),413.19,iter #2 · 12:34:08,468.84,iter #1 · 12:26:27,441.01
+LXC container,191.01,iter #7 · 13:03:30,238.98,iter #8 · 13:12:39,224.25
+zids process,21.44,iter #2 · 12:34:08,21.74,iter #1 · 12:26:27,21.64
+cobalt process,176.00,iter #2 · 12:34:08,229.35,iter #3 · 12:41:18,213.90
+Total (all components),412.63,iter #7 · 13:03:30,485.05,iter #8 · 13:12:39,459.78
 
 Table 2: Overall Memory Change (Iteration 1 vs Latest)
 Component,Iteration 1 (MiB),Latest Iteration (MiB),Delta (MiB),Growth %
-LXC container,226.94,215.76,-11.18,-4.93
-zids process,21.74,21.44,-0.30,-1.38
-cobalt process,220.16,176.00,-44.16,-20.06
-Total (all components),468.84,413.19,-55.65,-11.87
+LXC container,226.94,236.41,+9.47,+4.17
+zids process,21.74,21.73,-0.01,-0.05
+cobalt process,220.16,220.82,+0.66,+0.30
+Total (all components),468.84,478.96,+10.12,+2.16
 
 Table 3: Degradation Checkpoints (Summary)
 Metric,Checkpoint (iter #),Growth %,Status
-Checkpoints evaluated,0,,
-Latest checkpoint,n/a,0.00,n/a
-Minimum growth %,n/a,0.00,n/a
-Maximum growth %,n/a,0.00,n/a
-Average growth %,,0.00,
+Checkpoints evaluated,1,,
+Latest checkpoint,10,-2.33,Stable
+Minimum growth %,10,-2.33,Stable
+Maximum growth %,10,-2.33,Stable
+Average growth %,,-2.33,
 
 6. Evaluation
-Verdict,WATCH
-Verdict detail,Fewer than 10 iterations completed; the first degradation checkpoint runs at iteration #10.
-Confidence in verdict,Low - based on 0 degradation checkpoint(s) so far.
-Primary contributor,zids process shows the largest growth so far (-1.38% vs. iteration #1).
-Most stable component,zids process changed the least (-1.38% vs. iteration #1).
+Verdict,PASS
+Verdict detail,Growth stayed within the +10% threshold (-2.33%) through checkpoint #10.
+Confidence in verdict,Low - based on 1 degradation checkpoint(s) so far.
+Primary contributor,LXC container shows the largest growth so far (+4.17% vs. iteration #1).
+Most stable component,zids process changed the least (-0.05% vs. iteration #1).
 Risk if unaddressed,No elevated risk identified from the data collected so far; continue monitoring as the run progresses.
-Recommendation,Continue the run - insufficient data yet to confirm a trend.
+Recommendation,No action needed; continue standard monitoring.
