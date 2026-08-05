@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T08:33:42.351114",
+  "generated_at": "2026-08-05T09:02:06.582933",
   "date": "2026-08-05",
   "clients": [
     "telus",
@@ -11,19 +11,19 @@
   ],
   "summary": {
     "total": 62,
-    "passed": 44,
-    "failed": 10,
+    "passed": 52,
+    "failed": 2,
     "skipped": 8,
-    "rate": 71.0
+    "rate": 83.9
   },
   "summaries": {
     "telus": {
       "all": {
         "total": 31,
-        "passed": 18,
-        "failed": 10,
+        "passed": 26,
+        "failed": 2,
         "skipped": 3,
-        "rate": 58.1
+        "rate": 83.9
       },
       "sanity": {
         "total": 11,
@@ -34,10 +34,10 @@
       },
       "smoke": {
         "total": 20,
-        "passed": 9,
-        "failed": 9,
+        "passed": 17,
+        "failed": 1,
         "skipped": 2,
-        "rate": 45.0
+        "rate": 85.0
       }
     },
     "mega": {
@@ -60,7 +60,7 @@
   "last_run": {
     "telus": {
       "sanity": "2026-08-05 08:32",
-      "smoke": "2026-08-05 01:02"
+      "smoke": "2026-08-05 09:01"
     },
     "mega": {
       "sanity": "2026-08-05 05:59"
@@ -499,7 +499,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 00:21:23.469",
+      "time": "20260805 08:33:34.740",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -509,7 +509,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 00:22:58.317",
+      "time": "20260805 08:34:38.686",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -518,7 +518,7 @@
       "name": "Verify AV background with Menu",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Video playback no detected.<br>",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
       "time": "20260805 00:39:46.564",
       "source": "RF",
       "client": "telus",
@@ -529,7 +529,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 00:24:58.818",
+      "time": "20260805 08:36:23.474",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -537,9 +537,9 @@
     {
       "name": "Verify Guide Opens from Menu & Bkgn Video",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260805 00:52:19.028",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 08:52:06.822",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -549,7 +549,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 00:27:20.943",
+      "time": "20260805 08:38:56.178",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -557,9 +557,9 @@
     {
       "name": "Verify Channel Zap AV Playback",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260805 00:53:43.930",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 08:54:00.415",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -567,9 +567,9 @@
     {
       "name": "Select and Play a content from Guide",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260805 00:55:07.656",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 08:55:45.874",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -577,9 +577,9 @@
     {
       "name": "Audio mute on Live TV",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260805 00:56:31.720",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 08:57:13.955",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -587,9 +587,9 @@
     {
       "name": "Audio mute on Guide",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260805 00:57:53.713",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 08:58:36.853",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -597,9 +597,9 @@
     {
       "name": "Progress Bar on Live TV by Channel Zap",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260805 00:59:16.342",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 09:00:09.316",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -607,9 +607,9 @@
     {
       "name": "Progress Bar on Live TV by OK Key",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260805 01:00:33.709",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 09:00:38.017",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -617,9 +617,9 @@
     {
       "name": "Progress Bar on Live TV by Dpad Up",
       "suite": "—",
-      "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br>",
-      "time": "20260805 01:01:06.874",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 09:00:50.849",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -629,7 +629,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 00:36:03.842",
+      "time": "20260805 08:47:07.364",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -639,7 +639,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 00:36:52.843",
+      "time": "20260805 08:47:56.047",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -649,7 +649,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 00:37:10.406",
+      "time": "20260805 08:48:13.591",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -659,7 +659,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 00:38:12.781",
+      "time": "20260805 08:49:15.809",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -669,7 +669,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 00:38:12.782",
+      "time": "20260805 08:49:15.809",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -678,8 +678,8 @@
       "name": "Check volume bar icons",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
-      "time": "20260805 01:01:59.276",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
+      "time": "20260805 09:01:19.018",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -688,7 +688,7 @@
       "name": "Check Mute button",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Mute does not appear.<br>",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
       "time": "20260805 00:50:50.872",
       "source": "RF",
       "client": "telus",
