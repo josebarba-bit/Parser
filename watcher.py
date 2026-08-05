@@ -320,7 +320,22 @@ def read_version(filepath):
     except Exception as e:
         print(f"  [!] Error reading version.txt: {e}")
         return None
-
+        
+def read_telus_sw_version(filepath):
+    """Reads SW version from sw_version.txt JSON file."""
+    if not os.path.exists(filepath):
+        return None
+    try:
+        import json
+        with open(filepath, encoding="utf-8") as f:
+            data = json.load(f)
+        base    = data.get("ZBLD_SW_SID_BASE", "").strip()
+        product = data.get("ZBLD_SW_SID_PRODUCT", "").strip()
+        ver     = data.get("ZIDS_SWVER", "").strip()
+        return f"{base} {product} {ver}".strip()
+    except Exception as e:
+        print(f"  [!] Error reading sw_version.txt: {e}")
+        return None
 
 def parse_stability_model(model):
     """Parses all stability files for a given model including version.txt."""
@@ -446,6 +461,12 @@ def generate_json():
     # Side-by-side report
     sbs = parse_sbs_report(SBS_FILE)
     print(f"  SBS report: {sbs['summary'] if sbs else 'No data'}")
+    
+    # Telus SW version
+    telus_sw_version = read_telus_sw_version(
+        os.path.join(WATCH_FOLDER, "telus", "sw_version.txt")
+    )
+    print(f"  Telus SW version: {telus_sw_version}")
 
     payload = {
         "generated_at":     datetime.now().isoformat(),
@@ -458,6 +479,7 @@ def generate_json():
         "stability":        stability,
         "sbs":              sbs,
         "tests":            all_tests,
+        "telus_sw_version": telus_sw_version,
     }
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
