@@ -29,31 +29,38 @@ GIT_BRANCH = "master"
 
 # Mensaje de commit (se agrega timestamp automáticamente)
 COMMIT_MSG_PREFIX = "chore: update test results"
+
+REPO_PATH = os.path.dirname(os.path.abspath(__file__))
 # ──────────────────────────────────────────────────────────────────
 
 
 def git_push():
     """Hace add + commit + push del results.json."""
+    # Remove index.lock if it exists
+    lock_file = os.path.join(REPO_PATH, ".git", "index.lock")
+    if os.path.exists(lock_file):
+        try:
+            os.remove(lock_file)
+            print("  — Removed stale index.lock")
+        except Exception as e:
+            print(f"  [!] Could not remove index.lock: {e}")
+
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     commit_msg = f"{COMMIT_MSG_PREFIX} [{timestamp}]"
-
     commands = [
         ["git", "add", "./docs/results.json", "./docs/history/"],
         ["git", "commit", "-m", commit_msg],
         ["git", "push", "origin", GIT_BRANCH],
     ]
-
     for cmd in commands:
-        result = subprocess.run(cmd, capture_output=True, text=True)
+        result = subprocess.run(cmd, capture_output=True, text=True, cwd=REPO_PATH)
         if result.returncode != 0:
-            # "nothing to commit" no es un error real
             if "nothing to commit" in result.stdout or "nothing to commit" in result.stderr:
                 print(f"  — Sin cambios nuevos para publicar.")
                 return
             print(f"  [!] Error en '{' '.join(cmd)}':")
             print(f"      {result.stderr.strip()}")
             return
-
     print(f"  ✓ Publicado en GitHub: {commit_msg}")
 
 

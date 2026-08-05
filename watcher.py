@@ -44,9 +44,10 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 # ─── CONFIGURATION ────────────────────────────────────────────────
-WATCH_FOLDER = "./test_results"
-OUTPUT_DIR   = "./docs/history"
-LATEST_JSON  = "./docs/results.json"
+BASE_DIR     = os.path.dirname(os.path.abspath(__file__))
+WATCH_FOLDER = os.path.join(BASE_DIR, "test_results")
+OUTPUT_DIR   = os.path.join(BASE_DIR, "docs", "history")
+LATEST_JSON  = os.path.join(BASE_DIR, "docs", "results.json")
 HISTORY_DAYS = 30
 
 # Automation clients and their suites

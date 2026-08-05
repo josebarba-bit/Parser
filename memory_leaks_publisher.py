@@ -3,7 +3,8 @@ memory_leaks_publisher.py - Runs on this PC
 Extracts the memory-leak degradation checkpoints (Stable / LEAK SUSPECTED) from
 each model's Test_Summary_Report_Memory_Monitor CSV (STB3 = maple_uiw4001,
 STB4 = maple_vip56x2), normalizes them into PASS/FAIL rows, copies them into the
-Parser dashboard repo, and pushes to GitHub automatically at a scheduled time.
+Parser dashboard repo, and pushes to GitHub - triggered every time the source
+report CSV actually changes, instead of on a fixed schedule.
 
 A "test" here is one degradation checkpoint (evaluated every 10th iteration):
 PASS ("Stable") if growth stayed within the +10% threshold vs. the first-5-
@@ -11,7 +12,7 @@ iteration baseline, FAIL ("LEAK SUSPECTED") otherwise - so a genuine memory
 leak shows up as a failing test on the dashboard.
 
 Install dependencies:
-    pip install schedule
+    pip install watchdog
 
 Usage:
     python memory_leaks_publisher.py
@@ -21,9 +22,10 @@ import glob
 import os
 import csv
 import subprocess
-import schedule
 import time
 from datetime import datetime
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
 
 # ─── CONFIGURATION ──────────────────────────────────────────────────
 # Base TestResults paths for each model
@@ -41,8 +43,9 @@ MEMORY_LEAKS_DEST = os.path.join(REPO_PATH, "test_results", "memory_leaks")
 # Git branch
 GIT_BRANCH = "master"
 
-# Publish time (24h format)
-PUBLISH_TIME = "23:00"
+# Minimum seconds between two publishes, so a burst of file-write events
+# (e.g. the report being rewritten every iteration) doesn't trigger repeated pushes
+DEBOUNCE_SECONDS = 5
 # ──────────────────────────────────────────────────────────────────────
 
 
@@ -159,13 +162,38 @@ def git_push():
     print(f"  Published to GitHub: {commit_msg}")
 
 
-def run_daily():
-    """Main task: extract+copy memory-leak checkpoints and publish to GitHub."""
-    print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Running memory leak publish...")
+def run_once(reason="startup"):
+    """Extract+copy memory-leak checkpoints and publish to GitHub."""
+    print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ({reason}) Running memory leak publish...")
     if copy_csvs():
         git_push()
     else:
         print("  [!] No CSV files copied, skipping push.")
+
+
+class ReportChangeHandler(FileSystemEventHandler):
+    """Triggers a publish whenever a Test_Summary_Report_Memory_Monitor_*.csv changes."""
+
+    def __init__(self):
+        self._last_run = 0
+
+    def _maybe_run(self, event):
+        if event.is_directory:
+            return
+        fname = os.path.basename(event.src_path)
+        if not (fname.startswith("Test_Summary_Report_Memory_Monitor_") and fname.endswith(".csv")):
+            return
+        now = time.time()
+        if now - self._last_run < DEBOUNCE_SECONDS:
+            return
+        self._last_run = now
+        run_once(reason=f"change detected: {fname}")
+
+    def on_modified(self, event):
+        self._maybe_run(event)
+
+    def on_created(self, event):
+        self._maybe_run(event)
 
 
 if __name__ == "__main__":
@@ -175,18 +203,29 @@ if __name__ == "__main__":
     for model, path in MODELS.items():
         print(f"  {model.upper()}: {path}")
     print(f"  Destination: {MEMORY_LEAKS_DEST}")
-    print(f"  Scheduled: {PUBLISH_TIME} daily")
     print("=" * 50)
 
-    schedule.every().day.at(PUBLISH_TIME).do(run_daily)
-    print(f"\nWaiting for {PUBLISH_TIME}... (Ctrl+C to stop)\n")
+    # Publish once at startup so the dashboard reflects the current state immediately
+    run_once(reason="startup")
 
-    # Uncomment to run immediately on startup (for testing)
-    # run_daily()
-
-    try:
-        while True:
-            schedule.run_pending()
-            time.sleep(30)
-    except KeyboardInterrupt:
-        print("\nPublisher stopped.")
+    handler = ReportChangeHandler()
+    observer = Observer()
+    watched_any = False
+    for model, path in MODELS.items():
+        if os.path.exists(path):
+            observer.schedule(handler, path, recursive=True)
+            watched_any = True
+        else:
+            print(f"  [!] {model.upper()} - path does not exist yet, not watching: {path}")
+    if not watched_any:
+        print("  [!] No valid model paths to watch - exiting.")
+    else:
+        observer.start()
+        print("\nWatching for report changes... (Ctrl+C to stop)\n")
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            observer.stop()
+            print("\nPublisher stopped.")
+        observer.join()
