@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T15:15:40.826611",
+  "generated_at": "2026-08-05T16:15:29.759947",
   "date": "2026-08-05",
   "clients": [
     "telus",
@@ -383,6 +383,117 @@
       }
     ]
   },
+  "memory_leaks": {
+    "uiw": {
+      "latest_growth_pct": -4.67,
+      "latest_status": "PASS",
+      "min_growth_pct": -8.17,
+      "min_status": "PASS",
+      "max_growth_pct": -4.67,
+      "max_status": "PASS",
+      "avg_growth_pct": -6.42,
+      "avg_status": "PASS"
+    },
+    "vip": {
+      "latest_growth_pct": -0.43,
+      "latest_status": "PASS",
+      "min_growth_pct": -2.33,
+      "min_status": "PASS",
+      "max_growth_pct": 1.49,
+      "max_status": "PASS",
+      "avg_growth_pct": -0.42,
+      "avg_status": "PASS"
+    },
+    "comparison": {
+      "devices": {
+        "maple_uiw4001": {
+          "Test Plan": "TELUS_LONGEVITY_STB3",
+          "Product Name": "maple_uiw4001",
+          "Build": "TELUS4K 1.12.1 debug build #404",
+          "ZIDS SW Version": "142",
+          "Iterations available": "34"
+        },
+        "maple_vip56x2": {
+          "Test Plan": "TELUS_LONGEVITY_STB4",
+          "Product Name": "maple_vip56x2",
+          "Build": "TELUS4K 1.12.1 debug build #404",
+          "ZIDS SW Version": "142",
+          "Iterations available": "30"
+        }
+      },
+      "table1": [
+        {
+          "component": "Total (all components)",
+          "uiw_min": 20.6,
+          "uiw_max": 443.77,
+          "uiw_avg": 406.76,
+          "vip_min": 408.5,
+          "vip_max": 499.02,
+          "vip_avg": 466.6
+        },
+        {
+          "component": "LXC container",
+          "uiw_min": 0.0,
+          "uiw_max": 217.88,
+          "uiw_avg": 198.29,
+          "vip_min": 191.01,
+          "vip_max": 245.04,
+          "vip_avg": 227.25
+        },
+        {
+          "component": "cobalt process",
+          "uiw_min": 0.0,
+          "uiw_max": 205.9,
+          "uiw_avg": 188.8,
+          "vip_min": 176.0,
+          "vip_max": 235.29,
+          "vip_avg": 217.73
+        },
+        {
+          "component": "zids process",
+          "uiw_min": 19.12,
+          "uiw_max": 20.72,
+          "uiw_avg": 19.67,
+          "vip_min": 21.44,
+          "vip_max": 21.79,
+          "vip_avg": 21.62
+        }
+      ],
+      "table2": [
+        {
+          "component": "Total (all components)",
+          "uiw_growth": -3.69,
+          "vip_growth": -11.21,
+          "gap": 7.52
+        },
+        {
+          "component": "LXC container",
+          "uiw_growth": -4.77,
+          "vip_growth": -12.29,
+          "gap": 7.52
+        },
+        {
+          "component": "cobalt process",
+          "uiw_growth": -2.31,
+          "vip_growth": -11.08,
+          "gap": 8.77
+        },
+        {
+          "component": "zids process",
+          "uiw_growth": -5.88,
+          "vip_growth": -1.38,
+          "gap": -4.5
+        }
+      ],
+      "verdict": "maple_uiw4001 shows more growth than maple_vip56x2 (-3.69% vs -11.21%) - worth investigating maple_uiw4001 specifically."
+    },
+    "last_updated": {
+      "uiw": "2026-08-05 16:15",
+      "vip": "2026-08-05 16:15",
+      "comparison": "2026-08-05 16:15"
+    }
+  },
+  "telus_sw_version": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #406 142",
   "tests": [
     {
       "name": "Standby Cycle Checks",
@@ -1004,6 +1115,5 @@
       "client": "mega",
       "suite_type": "sanity"
     }
-  ],
-  "telus_sw_version": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #406 142"
+  ]
 }
