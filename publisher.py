@@ -29,6 +29,8 @@ GIT_BRANCH = "master"
 
 # Mensaje de commit (se agrega timestamp automáticamente)
 COMMIT_MSG_PREFIX = "chore: update test results"
+
+REPO_PATH = os.path.dirname(os.path.abspath(__file__))
 # ──────────────────────────────────────────────────────────────────
 
 
@@ -51,7 +53,7 @@ def git_push():
         ["git", "push", "origin", GIT_BRANCH],
     ]
     for cmd in commands:
-        result = subprocess.run(cmd, capture_output=True, text=True)
+        result = subprocess.run(cmd, capture_output=True, text=True, cwd=REPO_PATH)
         if result.returncode != 0:
             if "nothing to commit" in result.stdout or "nothing to commit" in result.stderr:
                 print(f"  — Sin cambios nuevos para publicar.")
