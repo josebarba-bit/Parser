@@ -427,11 +427,6 @@
 
       <div id="stability-content"></div>
 
-      <div class="trend-card">
-        <div class="card-title" id="stability-trend-title">Stability trend — last 7 days</div>
-        <div style="position:relative;height:220px"><canvas id="chartStabilityTrend"></canvas></div>
-      </div>
-
     </div>
 
     <!-- SBS sub-panel -->
@@ -771,14 +766,6 @@ function renderModelSection(model, meta, data) {
         : '<div style="color:var(--muted);font-size:12px">No data</div>'}
       </div>
 
-      <div class="stability-card">
-        <div class="stability-card-header">
-          <div class="stability-card-title">🧠 Memory Leaks</div>
-          <span class="stability-card-lastrun">${mlData && lu_ml ? 'Updated: ' + lu_ml : ''}</span>
-        </div>
-        ${mlData ? renderMemoryLeakCard(mlData) : '<div style="color:var(--muted);font-size:12px">No data</div>'}
-      </div>
-
     </div>
   </div>`;
 }
@@ -788,9 +775,34 @@ function renderStabilityContent(stability) {
   const container = document.getElementById('stability-content');
   const models = knownModels.length ? knownModels : ['uiw', 'vip'];
   
-  let html = `<div class="stability-model-grid">${models.map(m => {
+  let html = `<div class="stability-model-grid" id="stability-model-grid-top">${models.map(m => {
     const meta = MODEL_META[m] || { label: m.toUpperCase(), color:'#444', bg:'#eee' };
     return renderModelSection(m, meta, stability[m]);
+  }).join('')}</div>
+  <div class="trend-card">
+    <div class="card-title" id="stability-trend-title">Stability trend — last 7 days</div>
+    <div style="position:relative;height:220px"><canvas id="chartStabilityTrend"></canvas></div>
+  </div>
+  <div class="stability-model-grid">${models.map(m => {
+    const meta   = MODEL_META[m] || { label: m.toUpperCase(), color:'#444', bg:'#eee' };
+    const mlData = fullData?.memory_leaks?.[m] || null;
+    const lu_ml  = fullData?.memory_leaks?.last_updated?.[m] || null;
+    return `<div class="stability-model-section">
+      <div class="stability-model-header">
+        <div class="stability-model-title">
+          <span class="model-tag" style="background:${meta.bg};color:${meta.color}">${meta.label}</span>
+        </div>
+      </div>
+      <div class="stability-cards">
+        <div class="stability-card">
+          <div class="stability-card-header">
+            <div class="stability-card-title">🧠 Memory Leaks</div>
+            <span class="stability-card-lastrun">${mlData && lu_ml ? 'Updated: ' + lu_ml : ''}</span>
+          </div>
+          ${mlData ? renderMemoryLeakCard(mlData) : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+        </div>
+      </div>
+    </div>`;
   }).join('')}</div>`;
 
   // Memory Comparison section
@@ -860,8 +872,15 @@ function renderStabilityContent(stability) {
       </div>
     </div>`;
   }
+  // Memory Leaks Trend chart
+  html += `<div class="trend-card" style="margin-top:4px">
+    <div class="card-title" id="ml-trend-title">Memory Leaks Trend — last 7 days</div>
+    <div style="position:relative;height:220px"><canvas id="chartMLTrend"></canvas></div>
+  </div>`;
 
   container.innerHTML = html;
+  // Load ML trend after DOM update
+  setTimeout(() => loadMLTrend(), 50);
 
   // Render memory charts after DOM update
   if (comp && comp.table1.length) {
@@ -989,6 +1008,48 @@ async function loadStabilityTrend() {
         x:  { ticks:{ font:{size:10} } }
       },
       plugins:{ legend:{ position:'bottom', labels:{ font:{size:10}, boxWidth:8, padding:8 } } }
+    }
+  });
+}
+
+async function loadMLTrend() {
+  const last7  = availableDates.slice(0,7).reverse();
+  const labels = [];
+  const uiwGrowth = [], vipGrowth = [];
+
+  for (const d of last7) {
+    let payload = historyCache[d];
+    if (!payload) {
+      try {
+        const r = await fetch(HISTORY_DIR + 'results_' + d + '.json');
+        if (r.ok) { payload = await r.json(); historyCache[d] = payload; }
+      } catch(e) {}
+    }
+    labels.push(formatDateLabel(d));
+    uiwGrowth.push(payload?.memory_leaks?.uiw?.avg_growth_pct ?? null);
+    vipGrowth.push(payload?.memory_leaks?.vip?.avg_growth_pct ?? null);
+  }
+
+  const canvas = document.getElementById('chartMLTrend');
+  if (!canvas) return;
+  if (window._chartMLTrend) window._chartMLTrend.destroy();
+
+  window._chartMLTrend = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        { label: 'UIW Avg Growth %', data: uiwGrowth, borderColor: '#0f5156', backgroundColor: 'rgba(15,81,86,0.1)', borderWidth: 2, pointRadius: 4, fill: true, tension: 0.3, spanGaps: true },
+        { label: 'VIP Avg Growth %', data: vipGrowth, borderColor: '#881337', backgroundColor: 'rgba(136,19,55,0.1)', borderWidth: 2, pointRadius: 4, fill: true, tension: 0.3, spanGaps: true },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        y: { ticks: { font: { size: 11 }, callback: v => v + '%' } },
+        x: { ticks: { font: { size: 11 } } }
+      },
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 10 } } }
     }
   });
 }

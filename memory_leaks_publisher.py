@@ -11,10 +11,13 @@ PASS ("Stable") if growth stayed within the +10% threshold vs. the first-5-
 iteration baseline, FAIL ("LEAK SUSPECTED") otherwise - so a genuine memory
 leak shows up as a failing test on the dashboard.
 
-It also mirrors the STB3-vs-STB4 Device_Comparison_Report_*.csv from oreganqa-automation's
-Comparisons/<date> folder directly into test_results/memory_leaks/ (flat, no per-model or
-per-date subfolders) - CSV-only, no PNGs, no separate comparisons/ folder - using the same
-watch-and-push mechanism.
+It also mirrors, from oreganqa-automation's Comparisons/<date> folder, the STB3-vs-STB4
+Device_Comparison_Report_*.csv and each device's gathered, device-labeled
+LXC_Memory_Monitor_*.csv (the full per-iteration memory time series: LXC, kmem, Malloc,
+zids, cobalt, Total, Time - so the dashboard has real numeric data to chart) - all
+directly into test_results/memory_leaks/ (flat, no per-model or per-date subfolders) -
+CSV-only, no PNGs, no separate comparisons/ folder - using the same watch-and-push
+mechanism.
 
 Whenever either model's report shows a new degradation checkpoint (i.e. its
 "Checkpoints evaluated" count just went up - every 10th iteration), this also
@@ -244,12 +247,17 @@ def run_comparison(reason):
         print(f"      {result.stderr.strip()}")
 
 
+COMPARISONS_PATTERNS = ("Device_Comparison_Report_*.csv", "LXC_Memory_Monitor_*.csv")
+
+
 def copy_comparisons():
-    """Mirrors today's Device_Comparison_Report_*.csv into test_results/memory_leaks/
-    (flat, no subfolders). The gathered per-model Test_Summary_Report_Memory_Monitor_*.csv
-    copies in that same source folder are skipped - copy_csvs() already publishes the
-    normalized version of that same data under the identical filename, and both writing
-    to the same flat folder would collide."""
+    """Mirrors today's Device_Comparison_Report_*.csv and device-labeled
+    LXC_Memory_Monitor_*.csv (the raw per-iteration memory time series, gathered by
+    compare_devices_report.py) into test_results/memory_leaks/ (flat, no subfolders).
+    The gathered per-model Test_Summary_Report_Memory_Monitor_*.csv copies in that same
+    source folder are skipped - copy_csvs() already publishes the normalized version of
+    that same data under the identical filename, and both writing to the same flat
+    folder would collide."""
     today = datetime.now().strftime("%Y-%m-%d")
     src_dir = os.path.join(COMPARISONS_SRC, today)
 
@@ -257,9 +265,11 @@ def copy_comparisons():
         print(f"  [!] Comparisons - no folder for today yet: {src_dir}")
         return False
 
-    csv_files = glob.glob(os.path.join(src_dir, "Device_Comparison_Report_*.csv"))
+    csv_files = []
+    for pattern in COMPARISONS_PATTERNS:
+        csv_files.extend(glob.glob(os.path.join(src_dir, pattern)))
     if not csv_files:
-        print(f"  [!] Comparisons - no Device_Comparison_Report CSV found in {src_dir}")
+        print(f"  [!] Comparisons - no matching CSV files found in {src_dir}")
         return False
 
     os.makedirs(MEMORY_LEAKS_DEST, exist_ok=True)
@@ -301,7 +311,7 @@ def git_push():
 
 
 def run_once(reason="startup"):
-    """Extract+copy memory-leak checkpoints and comparison CSVs, then publish to GitHub."""
+    """Extract+copy memory-leak checkpoints and comparison/memory-history CSVs, then publish to GitHub."""
     print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ({reason}) Running publish...")
     leaks_copied = copy_csvs()
     comparisons_copied = copy_comparisons()

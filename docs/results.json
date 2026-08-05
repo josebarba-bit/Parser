@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T17:28:33.911028",
+  "generated_at": "2026-08-05T17:39:20.385994",
   "date": "2026-08-05",
   "clients": [
     "telus",
@@ -384,26 +384,8 @@
     ]
   },
   "memory_leaks": {
-    "uiw": {
-      "latest_growth_pct": -4.67,
-      "latest_status": "PASS",
-      "min_growth_pct": -8.17,
-      "min_status": "PASS",
-      "max_growth_pct": -4.67,
-      "max_status": "PASS",
-      "avg_growth_pct": -6.42,
-      "avg_status": "PASS"
-    },
-    "vip": {
-      "latest_growth_pct": -0.43,
-      "latest_status": "PASS",
-      "min_growth_pct": -2.33,
-      "min_status": "PASS",
-      "max_growth_pct": 1.49,
-      "max_status": "PASS",
-      "avg_growth_pct": -0.42,
-      "avg_status": "PASS"
-    },
+    "uiw": null,
+    "vip": null,
     "comparison": {
       "devices": {
         "maple_uiw4001": {
@@ -411,86 +393,86 @@
           "Product Name": "maple_uiw4001",
           "Build": "TELUS4K 1.12.1 debug build #404",
           "ZIDS SW Version": "142",
-          "Iterations available": "34"
+          "Iterations available": "6"
         },
         "maple_vip56x2": {
           "Test Plan": "TELUS_LONGEVITY_STB4",
           "Product Name": "maple_vip56x2",
           "Build": "TELUS4K 1.12.1 debug build #404",
           "ZIDS SW Version": "142",
-          "Iterations available": "30"
+          "Iterations available": "6"
         }
       },
       "table1": [
         {
           "component": "Total (all components)",
-          "uiw_min": 20.6,
-          "uiw_max": 443.77,
-          "uiw_avg": 406.76,
-          "vip_min": 408.5,
-          "vip_max": 499.02,
-          "vip_avg": 466.6
+          "uiw_min": 418.78,
+          "uiw_max": 432.73,
+          "uiw_avg": 425.65,
+          "vip_min": 490.9,
+          "vip_max": 498.31,
+          "vip_avg": 493.69
         },
         {
           "component": "LXC container",
-          "uiw_min": 0.0,
-          "uiw_max": 217.88,
-          "uiw_avg": 198.29,
-          "vip_min": 191.01,
-          "vip_max": 245.04,
-          "vip_avg": 227.25
+          "uiw_min": 205.22,
+          "uiw_max": 213.58,
+          "uiw_avg": 209.02,
+          "vip_min": 238.19,
+          "vip_max": 246.76,
+          "vip_avg": 241.19
         },
         {
           "component": "cobalt process",
-          "uiw_min": 0.0,
-          "uiw_max": 205.9,
-          "uiw_avg": 188.8,
-          "vip_min": 176.0,
-          "vip_max": 235.29,
-          "vip_avg": 217.73
+          "uiw_min": 194.24,
+          "uiw_max": 201.92,
+          "uiw_avg": 197.34,
+          "vip_min": 228.57,
+          "vip_max": 232.65,
+          "vip_avg": 230.78
         },
         {
           "component": "zids process",
-          "uiw_min": 19.12,
-          "uiw_max": 20.72,
-          "uiw_avg": 19.67,
-          "vip_min": 21.44,
-          "vip_max": 21.79,
-          "vip_avg": 21.62
+          "uiw_min": 19.07,
+          "uiw_max": 19.45,
+          "uiw_avg": 19.28,
+          "vip_min": 21.45,
+          "vip_max": 21.83,
+          "vip_avg": 21.71
         }
       ],
       "table2": [
         {
           "component": "Total (all components)",
-          "uiw_growth": -3.69,
-          "vip_growth": -11.21,
-          "gap": 7.52
+          "uiw_growth": -2.94,
+          "vip_growth": -0.22,
+          "gap": -2.72
         },
         {
           "component": "LXC container",
-          "uiw_growth": -4.77,
-          "vip_growth": -12.29,
-          "gap": 7.52
+          "uiw_growth": -3.91,
+          "vip_growth": -1.56,
+          "gap": -2.35
         },
         {
           "component": "cobalt process",
-          "uiw_growth": -2.31,
-          "vip_growth": -11.08,
-          "gap": 8.77
+          "uiw_growth": -2.29,
+          "vip_growth": 1.02,
+          "gap": -3.31
         },
         {
           "component": "zids process",
-          "uiw_growth": -5.88,
-          "vip_growth": -1.38,
-          "gap": -4.5
+          "uiw_growth": 1.31,
+          "vip_growth": 1.63,
+          "gap": -0.32
         }
       ],
-      "verdict": "maple_uiw4001 shows more growth than maple_vip56x2 (-3.69% vs -11.21%) - worth investigating maple_uiw4001 specifically."
+      "verdict": "Similar behavior - both devices show comparable Total memory growth (-2.94% vs -0.22%)."
     },
     "last_updated": {
-      "uiw": "2026-08-05 16:15",
-      "vip": "2026-08-05 16:15",
-      "comparison": "2026-08-05 16:15"
+      "uiw": "2026-08-05 17:39",
+      "vip": "2026-08-05 17:39",
+      "comparison": "2026-08-05 17:39"
     }
   },
   "telus_sw_version": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #406 142",
