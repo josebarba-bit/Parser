@@ -11,10 +11,9 @@ PASS ("Stable") if growth stayed within the +10% threshold vs. the first-5-
 iteration baseline, FAIL ("LEAK SUSPECTED") otherwise - so a genuine memory
 leak shows up as a failing test on the dashboard.
 
-It also mirrors the STB3-vs-STB4 comparison CSVs (Device_Comparison_Report_*.csv
-and the gathered Test_Summary_Report_Memory_Monitor_*.csv copies) from
-oreganqa-automation's Comparisons/<date> folder into test_results/memory_leaks/<date>/
-in the repo - CSV-only, no PNGs, no separate comparisons/ folder - using the same
+It also mirrors the STB3-vs-STB4 Device_Comparison_Report_*.csv from oreganqa-automation's
+Comparisons/<date> folder directly into test_results/memory_leaks/ (flat, no per-model or
+per-date subfolders) - CSV-only, no PNGs, no separate comparisons/ folder - using the same
 watch-and-push mechanism.
 
 Whenever either model's report shows a new degradation checkpoint (i.e. its
@@ -148,7 +147,6 @@ def copy_csvs():
 
     for model, base_path in MODELS.items():
         today_folder = get_today_folder(base_path)
-        dest_folder = os.path.join(MEMORY_LEAKS_DEST, model)
 
         if not os.path.exists(today_folder):
             print(f"  [!] {model.upper()} folder not found: {today_folder}")
@@ -165,9 +163,9 @@ def copy_csvs():
             continue
 
         normalized = _normalize_checkpoints(checkpoints)
-        os.makedirs(dest_folder, exist_ok=True)
+        os.makedirs(MEMORY_LEAKS_DEST, exist_ok=True)
         out_name = os.path.basename(report_csv)
-        dst = os.path.join(dest_folder, out_name)
+        dst = os.path.join(MEMORY_LEAKS_DEST, out_name)
         with open(dst, "w", newline="", encoding="utf-8-sig") as f:
             writer = csv.writer(f)
             writer.writerow(HEADER)
@@ -247,9 +245,11 @@ def run_comparison(reason):
 
 
 def copy_comparisons():
-    """Mirrors today's comparison CSVs (Device_Comparison_Report_*.csv and the gathered
-    Test_Summary_Report_Memory_Monitor_*.csv copies) into memory_leaks/<date>/ in the
-    repo. CSV-only, no PNGs."""
+    """Mirrors today's Device_Comparison_Report_*.csv into test_results/memory_leaks/
+    (flat, no subfolders). The gathered per-model Test_Summary_Report_Memory_Monitor_*.csv
+    copies in that same source folder are skipped - copy_csvs() already publishes the
+    normalized version of that same data under the identical filename, and both writing
+    to the same flat folder would collide."""
     today = datetime.now().strftime("%Y-%m-%d")
     src_dir = os.path.join(COMPARISONS_SRC, today)
 
@@ -257,16 +257,15 @@ def copy_comparisons():
         print(f"  [!] Comparisons - no folder for today yet: {src_dir}")
         return False
 
-    csv_files = glob.glob(os.path.join(src_dir, "*.csv"))
+    csv_files = glob.glob(os.path.join(src_dir, "Device_Comparison_Report_*.csv"))
     if not csv_files:
-        print(f"  [!] Comparisons - no CSV files found in {src_dir}")
+        print(f"  [!] Comparisons - no Device_Comparison_Report CSV found in {src_dir}")
         return False
 
-    dest_dir = os.path.join(MEMORY_LEAKS_DEST, today)
-    os.makedirs(dest_dir, exist_ok=True)
+    os.makedirs(MEMORY_LEAKS_DEST, exist_ok=True)
     copied = 0
     for src in csv_files:
-        dst = os.path.join(dest_dir, os.path.basename(src))
+        dst = os.path.join(MEMORY_LEAKS_DEST, os.path.basename(src))
         shutil.copy2(src, dst)
         copied += 1
 
