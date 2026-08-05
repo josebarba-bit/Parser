@@ -766,14 +766,6 @@ function renderModelSection(model, meta, data) {
         : '<div style="color:var(--muted);font-size:12px">No data</div>'}
       </div>
 
-      <div class="stability-card">
-        <div class="stability-card-header">
-          <div class="stability-card-title">🧠 Memory Leaks</div>
-          <span class="stability-card-lastrun">${mlData && lu_ml ? 'Updated: ' + lu_ml : ''}</span>
-        </div>
-        ${mlData ? renderMemoryLeakCard(mlData) : '<div style="color:var(--muted);font-size:12px">No data</div>'}
-      </div>
-
     </div>
   </div>`;
 }
@@ -790,7 +782,28 @@ function renderStabilityContent(stability) {
   <div class="trend-card">
     <div class="card-title" id="stability-trend-title">Stability trend — last 7 days</div>
     <div style="position:relative;height:220px"><canvas id="chartStabilityTrend"></canvas></div>
-  </div>`;
+  </div>
+  <div class="stability-model-grid">${models.map(m => {
+    const meta   = MODEL_META[m] || { label: m.toUpperCase(), color:'#444', bg:'#eee' };
+    const mlData = fullData?.memory_leaks?.[m] || null;
+    const lu_ml  = fullData?.memory_leaks?.last_updated?.[m] || null;
+    return `<div class="stability-model-section">
+      <div class="stability-model-header">
+        <div class="stability-model-title">
+          <span class="model-tag" style="background:${meta.bg};color:${meta.color}">${meta.label}</span>
+        </div>
+      </div>
+      <div class="stability-cards">
+        <div class="stability-card">
+          <div class="stability-card-header">
+            <div class="stability-card-title">🧠 Memory Leaks</div>
+            <span class="stability-card-lastrun">${mlData && lu_ml ? 'Updated: ' + lu_ml : ''}</span>
+          </div>
+          ${mlData ? renderMemoryLeakCard(mlData) : '<div style="color:var(--muted);font-size:12px">No data</div>'}
+        </div>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
 
   // Memory Comparison section
   const comp = fullData?.memory_leaks?.comparison;
