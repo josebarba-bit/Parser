@@ -13,8 +13,9 @@ leak shows up as a failing test on the dashboard.
 
 It also mirrors the STB3-vs-STB4 comparison CSVs (Device_Comparison_Report_*.csv
 and the gathered Test_Summary_Report_Memory_Monitor_*.csv copies) from
-oreganqa-automation's Comparisons/<date> folder into the repo - CSV-only, no PNGs -
-using the same watch-and-push mechanism.
+oreganqa-automation's Comparisons/<date> folder into test_results/memory_leaks/<date>/
+in the repo - CSV-only, no PNGs, no separate comparisons/ folder - using the same
+watch-and-push mechanism.
 
 Whenever either model's report shows a new degradation checkpoint (i.e. its
 "Checkpoints evaluated" count just went up - every 10th iteration), this also
@@ -57,9 +58,10 @@ COMPARISONS_SRC = os.path.join(OREGANQA_ROOT, "ONYX", "TELUS", "TELUS-STB", "Com
 # Path to the cloned dashboard repo on this PC
 REPO_PATH = r"C:\Users\jesus\OneDrive\Escritorio\Automation\Parser"
 
-# Destination folders inside the repo
+# Destination folder inside the repo - comparison CSVs land in memory_leaks/<date>/
+# too (no separate comparisons/ folder), since they're a cross-device view of the
+# same memory-leak data.
 MEMORY_LEAKS_DEST = os.path.join(REPO_PATH, "test_results", "memory_leaks")
-COMPARISONS_DEST = os.path.join(REPO_PATH, "test_results", "comparisons")
 
 # Git branch
 GIT_BRANCH = "master"
@@ -246,7 +248,8 @@ def run_comparison(reason):
 
 def copy_comparisons():
     """Mirrors today's comparison CSVs (Device_Comparison_Report_*.csv and the gathered
-    Test_Summary_Report_Memory_Monitor_*.csv copies) into the repo. CSV-only, no PNGs."""
+    Test_Summary_Report_Memory_Monitor_*.csv copies) into memory_leaks/<date>/ in the
+    repo. CSV-only, no PNGs."""
     today = datetime.now().strftime("%Y-%m-%d")
     src_dir = os.path.join(COMPARISONS_SRC, today)
 
@@ -259,7 +262,7 @@ def copy_comparisons():
         print(f"  [!] Comparisons - no CSV files found in {src_dir}")
         return False
 
-    dest_dir = os.path.join(COMPARISONS_DEST, today)
+    dest_dir = os.path.join(MEMORY_LEAKS_DEST, today)
     os.makedirs(dest_dir, exist_ok=True)
     copied = 0
     for src in csv_files:
@@ -278,7 +281,7 @@ def git_push():
 
     commands = [
         ["git", "-C", REPO_PATH, "pull", "origin", GIT_BRANCH],
-        ["git", "-C", REPO_PATH, "add", "test_results/memory_leaks/", "test_results/comparisons/"],
+        ["git", "-C", REPO_PATH, "add", "test_results/memory_leaks/"],
         ["git", "-C", REPO_PATH, "commit", "-m", commit_msg],
         ["git", "-C", REPO_PATH, "push", "origin", GIT_BRANCH],
     ]
@@ -347,7 +350,6 @@ if __name__ == "__main__":
         print(f"  {model.upper()}: {path}")
     print(f"  Comparisons source: {COMPARISONS_SRC}")
     print(f"  Destination: {MEMORY_LEAKS_DEST}")
-    print(f"  Destination: {COMPARISONS_DEST}")
     print("=" * 50)
 
     # Publish once at startup so the dashboard reflects the current state immediately
