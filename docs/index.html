@@ -232,6 +232,26 @@
     .verdict-warn     { background: var(--warn-bg);   color: var(--warn);   }
     .verdict-note     { background: var(--blue-bg);   color: var(--blue);   }
     .verdict-nocomp   { background: var(--bg);        color: var(--muted);  border: 0.5px solid var(--border); }
+
+    /* Memory Leaks */
+    .ml-summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .ml-metric { display: flex; flex-direction: column; gap: 2px; }
+    .ml-metric-val { font-size: 18px; font-weight: 500; }
+    .ml-metric-lbl { font-size: 10px; color: var(--muted); }
+    .ml-grow-pos { color: var(--fail); }
+    .ml-grow-neg { color: var(--pass); }
+    .ml-grow-neu { color: var(--muted); }
+    .ml-verdict { font-size: 11px; color: var(--muted); padding: 8px; background: var(--bg); border-radius: 6px; margin-top: 4px; }
+    .ml-comparison { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; margin-top: 4px; }
+    .ml-comparison-title { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+    .ml-comparison-meta { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+    .ml-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .ml-table-wrap { overflow-x: auto; }
+    .ml-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .ml-table th { text-align: left; padding: 6px 8px; font-size: 10px; font-weight: 500; color: var(--muted); border-bottom: 0.5px solid var(--border); white-space: nowrap; }
+    .ml-table td { padding: 6px 8px; border-bottom: 0.5px solid var(--border); }
+    .ml-table tr:last-child td { border-bottom: none; }
+    .ml-table tr:hover td { background: var(--bg); }
   </style>
 </head>
 <body>
@@ -279,8 +299,7 @@
     <span class="export-label">📄 Export PDF:</span>
     <button class="export-btn" onclick="exportPDF('automation')" id="btn-export-auto">🤖 Automation</button>
     <button class="export-btn" onclick="exportPDF('stability')" id="btn-export-stab">🔬 Stability</button>
-    <button class="export-btn" onclick="exportPDF('sbs')" id="btn-export-sbs">⚡ Side-by-Side</button>
-	<button class="export-btn" onclick="exportPDF('full')" id="btn-export-full">📋 Full Report</button>
+    <button class="export-btn" onclick="exportPDF('full')" id="btn-export-full">📋 Full Report</button>
   </div>
 
   <!-- ═══ AUTOMATION ═══ -->
@@ -308,7 +327,6 @@
           <span class="pill src-sanity">Sanity</span>
           <span style="font-size:11px;color:var(--muted);margin-left:auto" id="s-sanity-lastrun"></span>
         </div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:8px;font-family:monospace;display:none" id="s-telus-version"></div>
         <div class="suite-stats">
           <div class="suite-stat"><div class="suite-stat-val" id="s-sanity-total">—</div><div class="suite-stat-lbl">Total</div></div>
           <div class="suite-stat"><div class="suite-stat-val v-pass" id="s-sanity-pass">—</div><div class="suite-stat-lbl">Passed</div></div>
@@ -322,7 +340,6 @@
           <span class="pill src-smoke">Smoke</span>
           <span style="font-size:11px;color:var(--muted);margin-left:auto" id="s-smoke-lastrun"></span>
         </div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:8px;font-family:monospace;display:none" id="s-telus-version-smoke"></div>
         <div class="suite-stats">
           <div class="suite-stat"><div class="suite-stat-val" id="s-smoke-total">—</div><div class="suite-stat-lbl">Total</div></div>
           <div class="suite-stat"><div class="suite-stat-val v-pass" id="s-smoke-pass">—</div><div class="suite-stat-lbl">Passed</div></div>
@@ -674,96 +691,155 @@ function renderStabilityContent(stability) {
   if (!stability) return;
   const container = document.getElementById('stability-content');
   const models = knownModels.length ? knownModels : ['uiw', 'vip'];
-  container.innerHTML = `<div class="stability-model-grid">${models.map(m => {
+  
+  let html = `<div class="stability-model-grid">${models.map(m => {
     const meta = MODEL_META[m] || { label: m.toUpperCase(), color:'#444', bg:'#eee' };
     return renderModelSection(m, meta, stability[m]);
   }).join('')}</div>`;
+
+  // Memory Comparison section
+  const comp = fullData?.memory_leaks?.comparison;
+  if (comp) {
+    const devices     = Object.keys(comp.devices);
+    const d1          = devices[0] || 'UIW';
+    const d2          = devices[1] || 'VIP';
+    const d1info      = comp.devices[d1] || {};
+    const d2info      = comp.devices[d2] || {};
+    const lastUpdComp = fullData?.memory_leaks?.last_updated?.comparison || '';
+
+    html += `<div class="ml-comparison">
+      <div class="ml-comparison-title">🧠 Memory Comparison — UIW vs VIP</div>
+      <div class="ml-comparison-meta">
+        Build: ${d1info['Build'] || '—'}  |  SW: ${d1info['ZIDS SW Version'] || '—'}  |  
+        UIW iterations: ${d1info['Iterations available'] || '—'}  |  VIP iterations: ${d2info['Iterations available'] || '—'}
+        ${lastUpdComp ? '  |  Updated: ' + lastUpdComp : ''}
+      </div>
+      ${comp.verdict ? `<div class="ml-verdict">⚖️ ${esc(comp.verdict)}</div>` : ''}
+      
+      <div class="ml-charts">
+        <div class="card" style="padding:12px">
+          <div class="card-title" style="font-size:12px;margin-bottom:10px">Memory Usage Avg (MiB)</div>
+          <div style="position:relative;height:200px"><canvas id="chartMLAvg"></canvas></div>
+        </div>
+        <div class="card" style="padding:12px">
+          <div class="card-title" style="font-size:12px;margin-bottom:10px">Growth % by Component</div>
+          <div style="position:relative;height:200px"><canvas id="chartMLGrowth"></canvas></div>
+        </div>
+      </div>
+
+      <div class="ml-table-wrap">
+        <table class="ml-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>UIW Min</th><th>UIW Max</th><th>UIW Avg</th>
+              <th>VIP Min</th><th>VIP Max</th><th>VIP Avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${comp.table1.map(r => `<tr>
+              <td style="font-weight:500">${esc(r.component)}</td>
+              <td>${r.uiw_min ?? '—'}</td><td>${r.uiw_max ?? '—'}</td><td style="font-weight:500">${r.uiw_avg ?? '—'}</td>
+              <td>${r.vip_min ?? '—'}</td><td>${r.vip_max ?? '—'}</td><td style="font-weight:500">${r.vip_avg ?? '—'}</td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:12px">
+        <div style="font-size:12px;font-weight:500;margin-bottom:8px;color:var(--muted)">Growth % (First vs Latest Iteration)</div>
+        <div class="ml-table-wrap">
+          <table class="ml-table">
+            <thead><tr><th>Component</th><th>UIW Growth %</th><th>VIP Growth %</th><th>Gap (pp)</th></tr></thead>
+            <tbody>
+              ${comp.table2.map(r => `<tr>
+                <td style="font-weight:500">${esc(r.component)}</td>
+                <td class="${growthClass(r.uiw_growth)}">${growthStr(r.uiw_growth)}</td>
+                <td class="${growthClass(r.vip_growth)}">${growthStr(r.vip_growth)}</td>
+                <td style="color:var(--muted)">${r.gap !== null ? (r.gap > 0 ? '+' : '') + r.gap : '—'}</td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  container.innerHTML = html;
+
+  // Render memory charts after DOM update
+  if (comp && comp.table1.length) {
+    setTimeout(() => renderMemoryCharts(comp), 50);
+  }
 }
 
-function renderModelSection(model, meta, data) {
-  if (!data) return `
-  <div class="stability-model-section">
-    <div class="stability-model-header">
-      <div class="stability-model-title">
-        <span class="model-tag" style="background:${meta.bg};color:${meta.color}">${meta.label}</span>
-      </div>
-    </div>
-    <div style="color:var(--muted);font-size:12px">No data available</div>
-  </div>`;
+function renderMemoryCharts(comp) {
+  const labels = comp.table1.map(r => r.component);
+  const uiwAvg = comp.table1.map(r => r.uiw_avg);
+  const vipAvg = comp.table1.map(r => r.vip_avg);
+  const uiwGro = comp.table2.map(r => r.uiw_growth);
+  const vipGro = comp.table2.map(r => r.vip_growth);
 
-  const long = data.longevity;
-  const perf = data.performance;
-  const cont = data.resource_contention;
-  const lu   = data.last_updated || {};
-  const ver  = data.version;
+  const avgCanvas = document.getElementById('chartMLAvg');
+  const groCanvas = document.getElementById('chartMLGrowth');
+  if (!avgCanvas || !groCanvas) return;
 
-  // OOB rate
-  const oob     = cont ? oobRate(cont.out_of_baseline, cont.total_iterations) : null;
-  const oobCls  = oobClass(oob);
-  const oobLbl  = oobLabel(oob);
+  if (window._chartMLAvg) window._chartMLAvg.destroy();
+  if (window._chartMLGrowth) window._chartMLGrowth.destroy();
 
-  return `
-  <div class="stability-model-section">
-    <div class="stability-model-header">
-      <div class="stability-model-title">
-        <span class="model-tag" style="background:${meta.bg};color:${meta.color}">${meta.label}</span>
-        <span style="font-size:11px;font-weight:500;color:var(--text)">SW Version</span>
-      </div>
-      ${ver ? `<span class="stability-version">${esc(ver)}</span>` : '<span style="font-size:11px;color:var(--muted)">No version file</span>'}
-    </div>
-    <div class="stability-cards">
+  window._chartMLAvg = new Chart(avgCanvas, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'UIW Avg (MiB)', data: uiwAvg, backgroundColor: '#0f5156' },
+        { label: 'VIP Avg (MiB)', data: vipAvg, backgroundColor: '#881337' },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { x: { ticks: { font: { size: 9 } } }, y: { beginAtZero: false, ticks: { font: { size: 9 } } } },
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 10 } } }
+    }
+  });
 
-      <div class="stability-card">
-        <div class="stability-card-header">
-          <div class="stability-card-title">📊 Longevity</div>
-          <div style="display:flex;align-items:center;gap:6px">
-            <span class="stability-card-lastrun">${lu.longevity ? 'Updated: ' + lu.longevity : ''}</span>
-            <button class="help-btn" onclick="openModal('longevity')">?</button>
-          </div>
-        </div>
-        ${long ? `<div class="stability-metrics">
-          <div class="stability-metric"><div class="stability-metric-val">${long.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-fail">${long.hangs}</div><div class="stability-metric-lbl">HANGs</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-pass">${long.success_rate}%</div><div class="stability-metric-lbl">Success rate</div></div>
-        </div>` : '<div style="color:var(--muted);font-size:12px">No data</div>'}
-      </div>
+  window._chartMLGrowth = new Chart(groCanvas, {
+    type: 'bar',
+    data: {
+      labels: comp.table2.map(r => r.component),
+      datasets: [
+        { label: 'UIW Growth %', data: uiwGro, backgroundColor: '#0f5156' },
+        { label: 'VIP Growth %', data: vipGro, backgroundColor: '#881337' },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { x: { ticks: { font: { size: 9 } } }, y: { ticks: { font: { size: 9 }, callback: v => v + '%' } } },
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 10 } } }
+    }
+  });
+}
 
-      <div class="stability-card">
-        <div class="stability-card-header">
-          <div class="stability-card-title">⚡ Performance</div>
-          <div style="display:flex;align-items:center;gap:6px">
-            <span class="stability-card-lastrun">${lu.performance ? 'Updated: ' + lu.performance : ''}</span>
-            <button class="help-btn" onclick="openModal('performance')">?</button>
-          </div>
-        </div>
-        ${perf ? `<div class="stability-metrics">
-          <div class="stability-metric"><div class="stability-metric-val">${perf.avg_response_time}s</div><div class="stability-metric-lbl">Avg response</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-fail">${perf.max_response_time}s</div><div class="stability-metric-lbl">Max response</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-pass">${perf.min_response_time}s</div><div class="stability-metric-lbl">Min response</div></div>
-          <div class="stability-metric"><div class="stability-metric-val">${perf.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
-        </div>` : '<div style="color:var(--muted);font-size:12px">No data</div>'}
-      </div>
 
-      <div class="stability-card">
-        <div class="stability-card-header">
-          <div class="stability-card-title">🔀 Resource Contention</div>
-          <div style="display:flex;align-items:center;gap:6px">
-            <span class="stability-card-lastrun">${lu.resource_contention ? 'Updated: ' + lu.resource_contention : ''}</span>
-            <button class="help-btn" onclick="openModal('contention')">?</button>
-          </div>
-        </div>
-        ${cont ? `<div class="stability-metrics">
-          <div class="stability-metric"><div class="stability-metric-val">${cont.avg_drift_pct}%</div><div class="stability-metric-lbl">Avg drift</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-fail">${cont.max_drift_pct}%</div><div class="stability-metric-lbl">Max drift</div></div>
-          <div class="stability-metric"><div class="stability-metric-val v-warn">${cont.out_of_baseline}</div><div class="stability-metric-lbl">Out of baseline</div></div>
-          ${oob !== null ? `<div class="stability-metric"><div class="stability-metric-val ${oobCls}">${oob}%</div><div class="stability-metric-lbl">OOB rate</div></div>` : ''}
-          <div class="stability-metric"><div class="stability-metric-val">${cont.total_iterations}</div><div class="stability-metric-lbl">Iterations</div></div>
-        </div>
-        ${oob !== null ? `<div style="font-size:11px;${oob >= 20 ? 'color:var(--fail)' : oob >= 10 ? 'color:var(--warn)' : 'color:var(--pass)'}">${oobLbl}</div>` : ''}` 
-        : '<div style="color:var(--muted);font-size:12px">No data</div>'}
-      </div>
 
-    </div>
+function growthClass(val) {
+  if (val === null || val === undefined) return 'ml-grow-neu';
+  if (val > 0) return 'ml-grow-pos';
+  if (val < 0) return 'ml-grow-neg';
+  return 'ml-grow-neu';
+}
+
+function growthStr(val) {
+  if (val === null || val === undefined) return '—';
+  return (val > 0 ? '+' : '') + val + '%';
+}
+
+function renderMemoryLeakCard(ml) {
+  return `<div class="ml-summary-grid">
+    <div class="ml-metric"><div class="ml-metric-val ${growthClass(ml.latest_growth_pct)}">${growthStr(ml.latest_growth_pct)}</div><div class="ml-metric-lbl">Latest checkpoint</div></div>
+    <div class="ml-metric"><div class="ml-metric-val ${growthClass(ml.avg_growth_pct)}">${growthStr(ml.avg_growth_pct)}</div><div class="ml-metric-lbl">Avg growth</div></div>
+    <div class="ml-metric"><div class="ml-metric-val ${growthClass(ml.min_growth_pct)}">${growthStr(ml.min_growth_pct)}</div><div class="ml-metric-lbl">Min growth</div></div>
+    <div class="ml-metric"><div class="ml-metric-val ${growthClass(ml.max_growth_pct)}">${growthStr(ml.max_growth_pct)}</div><div class="ml-metric-lbl">Max growth</div></div>
   </div>`;
 }
 
@@ -1019,16 +1095,6 @@ function updateSuiteSummary(data) {
   const fmtRun = d => d ? 'Last run: ' + d : 'Not run yet';
   document.getElementById('s-sanity-lastrun').textContent = fmtRun(sanityRun);
   document.getElementById('s-smoke-lastrun').textContent  = fmtRun(smokeRun);
-  // Telus SW version
-  const versionEl1 = document.getElementById('s-telus-version');
-  const versionEl2 = document.getElementById('s-telus-version-smoke');
-  if (data.telus_sw_version && (activeClient === 'all' || activeClient === 'telus')) {
-    if (versionEl1) { versionEl1.textContent = '🔖 ' + data.telus_sw_version; versionEl1.style.display = 'block'; }
-    if (versionEl2) { versionEl2.textContent = '🔖 ' + data.telus_sw_version; versionEl2.style.display = 'block'; }
-  } else {
-    if (versionEl1) versionEl1.style.display = 'none';
-    if (versionEl2) versionEl2.style.display = 'none';
-  }
 }
 
 function updateMetrics() {
@@ -1197,17 +1263,7 @@ function renderSBSContent(sbs) {
   if (!sbs) return;
 
   // Update title and last run
-  const swLine = [
-    sbs.sw_version_uiw ? `UIW SW: ${sbs.sw_version_uiw}` : '',
-    sbs.sw_version_vip ? `VIP SW: ${sbs.sw_version_vip}` : '',
-  ].filter(Boolean).join('  |  ');
-  const mwLine = [
-    sbs.mw_version_uiw ? `UIW MW: ${sbs.mw_version_uiw}` : '',
-    sbs.mw_version_vip ? `VIP MW: ${sbs.mw_version_vip}` : '',
-  ].filter(Boolean).join('  |  ');
-  const lastRun = sbs.last_updated ? `Last updated: ${sbs.last_updated}` : '';
-  document.getElementById('sbs-lastrun').innerHTML =
-    [swLine, mwLine, lastRun].filter(Boolean).join('<br>');
+  document.getElementById('sbs-lastrun').textContent = sbs.last_updated ? 'Last updated: ' + sbs.last_updated : '';
 
   // Summary cards
   const s = sbs.summary;
@@ -1547,89 +1603,6 @@ async function exportPDF(section) {
         } catch(e) { console.warn('Could not capture stability trend chart:', e); }
       }
     }
-	// SBS
-    if (section === 'sbs' || section === 'full') {
-      checkPage(20);
-      sectionTitle('Side-by-Side Comparison — UIW vs VIP');
-
-      if (fullData?.sbs) {
-        const sbs = fullData.sbs;
-        const s   = fullData.sbs.summary;
-
-        // Version info
-        doc.setFontSize(8);
-        if (sbs.sw_version_uiw || sbs.sw_version_vip) {
-          doc.setFont('helvetica','bold');
-          doc.setTextColor(26,26,24);
-          doc.text('SW Version:', margin, y); y += 4;
-          doc.setFont('helvetica','normal');
-          doc.setTextColor(107,106,101);
-          if (sbs.sw_version_uiw) { doc.text(`  UIW: ${sbs.sw_version_uiw}`, margin, y); y += 4; }
-          if (sbs.sw_version_vip) { doc.text(`  VIP: ${sbs.sw_version_vip}`, margin, y); y += 4; }
-        }
-        if (sbs.mw_version_uiw || sbs.mw_version_vip) {
-          doc.setFont('helvetica','bold');
-          doc.setTextColor(26,26,24);
-          doc.text('MW Version:', margin, y); y += 4;
-          doc.setFont('helvetica','normal');
-          doc.setTextColor(107,106,101);
-          if (sbs.mw_version_uiw) { doc.text(`  UIW: ${sbs.mw_version_uiw}`, margin, y); y += 4; }
-          if (sbs.mw_version_vip) { doc.text(`  VIP: ${sbs.mw_version_vip}`, margin, y); y += 4; }
-        }
-        y += 3;
-
-        // Summary
-        doc.setFontSize(9);
-        doc.setFont('helvetica','normal');
-        doc.setTextColor(107,106,101);
-        doc.text(`Total: ${s.total} | Comparable: ${s.comparable} | Not comparable: ${s.not_comparable}`, margin, y); y += 5;
-        doc.text(`UIW: ${s.uiw_pass} pass / ${s.uiw_fail} fail  |  VIP: ${s.vip_pass} pass / ${s.vip_fail} fail`, margin, y); y += 5;
-        doc.text(`OK: ${s.ok} | VIP slower: ${s.warn} | VIP faster: ${s.vip_faster}`, margin, y); y += 10;
-		// Table
-        const cols = [['#',7],['Test Case',65],['UIW',14],['UIW Time',18],['VIP',14],['VIP Time',18],['Diff',16],['Verdict',26]];
-        doc.setFillColor(240,240,238);
-        doc.rect(margin, y-4, pageW-margin*2, 7, 'F');
-        doc.setFontSize(7.5);
-        doc.setFont('helvetica','bold');
-        doc.setTextColor(107,106,101);
-        let cx = margin;
-        cols.forEach(([lbl,w]) => { doc.text(lbl, cx+1, y); cx+=w; });
-        y += 4;
-        doc.setLineWidth(0.2);
-        doc.setDrawColor(220,220,220);
-        doc.line(margin, y, pageW-margin, y);
-        y += 3;
-
-        doc.setFont('helvetica','normal');
-        doc.setFontSize(7.5);
-        sbs.rows.forEach((r, i) => {
-          checkPage(6);
-          const uiwColor = r.uiw_result.toUpperCase() === 'PASS' ? [39,80,10] : [121,31,31];
-          const vipColor = r.vip_result.toUpperCase() === 'PASS' ? [39,80,10] : [121,31,31];
-          cx = margin;
-          doc.setTextColor(107,106,101);
-          doc.text(String(i+1), cx+1, y); cx+=7;
-          doc.setTextColor(26,26,24);
-          doc.text(doc.splitTextToSize(r.test_case, 63)[0], cx+1, y); cx+=65;
-          doc.setTextColor(...uiwColor);
-          doc.text(r.uiw_result, cx+1, y); cx+=14;
-          doc.setTextColor(107,106,101);
-          doc.text(r.uiw_time+'s', cx+1, y); cx+=18;
-          doc.setTextColor(...vipColor);
-          doc.text(r.vip_result, cx+1, y); cx+=14;
-          doc.setTextColor(107,106,101);
-          doc.text(r.vip_time+'s', cx+1, y); cx+=18;
-          doc.text(doc.splitTextToSize(r.time_diff, 14)[0], cx+1, y); cx+=16;
-          doc.setTextColor(26,26,24);
-          doc.text(r.verdict, cx+1, y);
-          y += 5;
-          doc.setDrawColor(235,235,233);
-          doc.line(margin, y-1, pageW-margin, y-1);
-        });
-      }
-    }
-
-    // Footer
 
     // Footer
     const pages = doc.getNumberOfPages();
@@ -1656,7 +1629,6 @@ async function exportPDF(section) {
   btns.forEach(b => { b.disabled = false; });
   document.getElementById('btn-export-auto').textContent = '🤖 Automation';
   document.getElementById('btn-export-stab').textContent = '🔬 Stability';
-  document.getElementById('btn-export-sbs').textContent = '⚡ Side-by-Side';
   document.getElementById('btn-export-full').textContent = '📋 Full Report';
 }
 
