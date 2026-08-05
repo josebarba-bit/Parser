@@ -1,0 +1,61 @@
+﻿Test Summary Report - Memory Monitor
+Report ID,TELUS_LONGEVITY_STB4-MEM-2026-08-05-01
+
+Middleware Version
+Product Name,maple_vip56x2
+OS Base,Zenterio OS 16.4
+Build,TELUS4K 1.12.1 debug build #404
+ZIDS SW Version,142
+
+1. Report Identifier
+Project,ONYX/TELUS/TELUS-STB
+Test Plan,TELUS_LONGEVITY_STB4
+Test Item / Feature,LXC Memory Monitor (Longevity.py)
+
+2. Summary
+Objective,"Continuously sample memory usage (LXC container, kernel memory, Malloc, zids process, cobalt process) during an unattended longevity run and detect abnormal growth via periodic degradation checks."
+Test window,10:58:53 → 11:06:08 (in progress)
+Iterations executed,2
+Degradation checkpoints,0
+Status,Run in progress
+
+3. Variances
+Deviation from plan,"kmem and Malloc have read 0.0 MiB for all iterations so far - likely a firmware output-format mismatch in the device's command output, not genuinely zero usage. LXC and cobalt readings are unaffected and remain the primary growth indicators."
+
+4. Comprehensiveness Assessment
+Coverage vs. test basis,"2 iterations completed so far this run, no aborts or crashes recorded for this test area."
+Metrics covered,"LXC container memory, kernel memory (kmem), Malloc, zids VmRSS, cobalt VmRSS, computed Total."
+Metrics not effectively covered,"kmem, Malloc - no data captured (see Variances)"
+Degradation check coverage,0 checkpoints executed so far (every 10th iteration).
+
+5. Summary of Results
+Table 1: Component Min/Max/Avg
+Component,Min (MiB),Min at,Max (MiB),Max at,Avg (MiB)
+LXC container,167.95,iter #1 · 10:58:53,177.26,iter #2 · 11:06:08,172.60
+zids process,20.78,iter #2 · 11:06:08,20.85,iter #1 · 10:58:53,20.81
+cobalt process,151.13,iter #2 · 11:06:08,156.58,iter #1 · 10:58:53,153.85
+Total (all components),345.38,iter #1 · 10:58:53,349.17,iter #2 · 11:06:08,347.27
+
+Table 2: Overall Memory Change (Iteration 1 vs Latest)
+Component,Iteration 1 (MiB),Latest Iteration (MiB),Delta (MiB),Growth %
+LXC container,167.95,177.26,+9.31,+5.54
+zids process,20.85,20.78,-0.07,-0.34
+cobalt process,156.58,151.13,-5.45,-3.48
+Total (all components),345.38,349.17,+3.79,+1.10
+
+Table 3: Degradation Checkpoints (Summary)
+Metric,Checkpoint (iter #),Growth %,Status
+Checkpoints evaluated,0,,
+Latest checkpoint,n/a,0.00,n/a
+Minimum growth %,n/a,0.00,n/a
+Maximum growth %,n/a,0.00,n/a
+Average growth %,,0.00,
+
+6. Evaluation
+Verdict,WATCH
+Verdict detail,Fewer than 10 iterations completed; the first degradation checkpoint runs at iteration #10.
+Confidence in verdict,Low - based on 0 degradation checkpoint(s) so far.
+Primary contributor,LXC container shows the largest growth so far (+5.54% vs. iteration #1).
+Most stable component,zids process changed the least (-0.34% vs. iteration #1).
+Risk if unaddressed,No elevated risk identified from the data collected so far; continue monitoring as the run progresses.
+Recommendation,Continue the run - insufficient data yet to confirm a trend.
