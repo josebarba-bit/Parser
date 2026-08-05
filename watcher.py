@@ -330,10 +330,12 @@ def parse_memory_comparison(filepath):
 def find_memory_leak_files(folder):
     """Finds memory leak CSV files in the folder."""
     if not os.path.exists(folder):
-        return None, None, None
+        return None, None, None, None, None
     uiw_summary  = None
     vip_summary  = None
     comparison   = None
+    uiw_lxc      = None
+    vip_lxc      = None
     for fname in os.listdir(folder):
         fpath = os.path.join(folder, fname)
         if fname.startswith("Test_Summary") and "uiw" in fname.lower():
@@ -342,7 +344,42 @@ def find_memory_leak_files(folder):
             vip_summary = fpath
         elif fname.startswith("Device_Comparison"):
             comparison = fpath
-    return uiw_summary, vip_summary, comparison
+        elif fname.startswith("LXC_Memory_Monitor") and "uiw" in fname.lower():
+            uiw_lxc = fpath
+        elif fname.startswith("LXC_Memory_Monitor") and "vip" in fname.lower():
+            vip_lxc = fpath
+    return uiw_summary, vip_summary, comparison, uiw_lxc, vip_lxc
+    
+def parse_lxc_monitor(filepath):
+    """Parses LXC_Memory_Monitor_*.csv"""
+    if not os.path.exists(filepath):
+        return None
+    try:
+        iterations = []
+        times      = []
+        totals     = []
+        with open(filepath, newline="", encoding="utf-8-sig") as f:
+            # First line starts with # so skip it and use as header
+            first_line = f.readline().strip().lstrip('#').strip()
+            headers    = [h.strip() for h in first_line.split(',')]
+            reader     = csv.DictReader(f, fieldnames=headers)
+            for row in reader:
+                try:
+                    iterations.append(int(row.get("Iteration", 0)))
+                    times.append((row.get("Time") or "").strip())
+                    totals.append(float(row.get("Total (MiB)", 0) or 0))
+                except (ValueError, TypeError):
+                    pass
+        if not iterations:
+            return None
+        return {
+            "iterations": iterations,
+            "times":      times,
+            "totals":     totals,
+        }
+    except Exception as e:
+        print(f"  [!] Error parsing LXC monitor {filepath}: {e}")
+        return None
 
 
 def parse_sbs_report(filepath):
@@ -561,10 +598,14 @@ def generate_json():
         "uiw":        parse_memory_leak_summary(uiw_path) if uiw_path else None,
         "vip":        parse_memory_leak_summary(vip_path) if vip_path else None,
         "comparison": parse_memory_comparison(comp_path) if comp_path else None,
+        "uiw_lxc":    parse_lxc_monitor(uiw_lxc_path) if uiw_lxc_path else None,
+        "vip_lxc":    parse_lxc_monitor(vip_lxc_path) if vip_lxc_path else None,
         "last_updated": {
             "uiw":        get_file_mtime(uiw_path) if uiw_path else None,
             "vip":        get_file_mtime(vip_path) if vip_path else None,
             "comparison": get_file_mtime(comp_path) if comp_path else None,
+            "uiw_lxc":    get_file_mtime(uiw_lxc_path) if uiw_lxc_path else None,
+            "vip_lxc":    get_file_mtime(vip_lxc_path) if vip_lxc_path else None,
         }
     }
     print(f"  Memory leaks UIW:        {memory_leaks['uiw']}")
