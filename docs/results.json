@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T11:46:43.039675",
+  "generated_at": "2026-08-05T11:47:43.660518",
   "date": "2026-08-05",
   "clients": [
     "telus",
@@ -1004,5 +1004,6 @@
       "client": "mega",
       "suite_type": "sanity"
     }
-  ]
+  ],
+  "telus_sw_version": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #406 142"
 }
