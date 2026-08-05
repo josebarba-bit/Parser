@@ -872,17 +872,23 @@ function renderStabilityContent(stability) {
       </div>
     </div>`;
   }
+  // LXC Memory Monitor chart
+  html += `<div class="trend-card" style="margin-top:4px">
+    <div class="card-title">🖥️ LXC Memory Monitor — Total (MiB) per Iteration</div>
+    <div style="position:relative;height:260px"><canvas id="chartLXC"></canvas></div>
+  </div>`;
+  
   // Memory Leaks Trend chart
   html += `<div class="trend-card" style="margin-top:4px">
     <div class="card-title" id="ml-trend-title">Memory Leaks Trend — last 7 days</div>
     <div style="position:relative;height:220px"><canvas id="chartMLTrend"></canvas></div>
   </div>`;
 
-  container.innerHTML = html;
-  // Load ML trend after DOM update
+ container.innerHTML = html;
+  // Load charts after DOM update
   setTimeout(() => loadMLTrend(), 50);
-
-  // Render memory charts after DOM update
+  setTimeout(() => renderLXCChart(), 100);
+  setTimeout(() => renderLXCChart(), 100);
   if (comp && comp.table1.length) {
     setTimeout(() => renderMemoryCharts(comp), 50);
   }
@@ -1050,6 +1056,52 @@ async function loadMLTrend() {
         x: { ticks: { font: { size: 11 } } }
       },
       plugins: { legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 10 } } }
+    }
+  });
+}
+
+function renderLXCChart() {
+  const uiw = fullData?.memory_leaks?.uiw_lxc;
+  const vip = fullData?.memory_leaks?.vip_lxc;
+  const canvas = document.getElementById('chartLXC');
+  if (!canvas) return;
+  if (window._chartLXC) window._chartLXC.destroy();
+
+  const datasets = [];
+  if (uiw) datasets.push({
+    label: 'UIW Total (MiB)',
+    data: uiw.iterations.map((it, i) => ({ x: it, y: uiw.totals[i], t: uiw.times[i] })),
+    borderColor: '#0f5156', backgroundColor: 'rgba(15,81,86,0.1)',
+    borderWidth: 2, pointRadius: 2, fill: true, tension: 0.3, yAxisID: 'y',
+  });
+  if (vip) datasets.push({
+    label: 'VIP Total (MiB)',
+    data: vip.iterations.map((it, i) => ({ x: it, y: vip.totals[i], t: vip.times[i] })),
+    borderColor: '#881337', backgroundColor: 'rgba(136,19,55,0.1)',
+    borderWidth: 2, pointRadius: 2, fill: true, tension: 0.3, yAxisID: 'y',
+  });
+
+  window._chartLXC = new Chart(canvas, {
+    type: 'line',
+    data: { datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      parsing: { xAxisKey: 'x', yAxisKey: 'y' },
+      scales: {
+        x: { type: 'linear', title: { display: true, text: 'Iteration', font: { size: 10 } }, ticks: { font: { size: 10 } } },
+        y: { position: 'right', title: { display: true, text: 'Total (MiB)', font: { size: 10 } }, ticks: { font: { size: 10 } } },
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 10 } },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const d = ctx.raw;
+              return `${ctx.dataset.label}: ${d.y} MiB  |  Time: ${d.t}  |  Iter: ${d.x}`;
+            }
+          }
+        }
+      }
     }
   });
 }
