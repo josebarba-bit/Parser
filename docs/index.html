@@ -1019,6 +1019,16 @@ function updateSuiteSummary(data) {
   const fmtRun = d => d ? 'Last run: ' + d : 'Not run yet';
   document.getElementById('s-sanity-lastrun').textContent = fmtRun(sanityRun);
   document.getElementById('s-smoke-lastrun').textContent  = fmtRun(smokeRun);
+  // Telus SW version
+  const versionEl1 = document.getElementById('s-telus-version');
+  const versionEl2 = document.getElementById('s-telus-version-smoke');
+  if (data.telus_sw_version && (activeClient === 'all' || activeClient === 'telus')) {
+    if (versionEl1) { versionEl1.textContent = '🔖 ' + data.telus_sw_version; versionEl1.style.display = 'block'; }
+    if (versionEl2) { versionEl2.textContent = '🔖 ' + data.telus_sw_version; versionEl2.style.display = 'block'; }
+  } else {
+    if (versionEl1) versionEl1.style.display = 'none';
+    if (versionEl2) versionEl2.style.display = 'none';
+  }
 }
 
 function updateMetrics() {
