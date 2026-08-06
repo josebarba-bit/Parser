@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T14:41:28.752384",
+  "generated_at": "2026-08-06T15:11:23.966085",
   "date": "2026-08-06",
   "clients": [
     "telus",
@@ -60,7 +60,7 @@
   "last_run": {
     "telus": {
       "sanity": "2026-08-06 14:39",
-      "smoke": "2026-08-06 13:24"
+      "smoke": "2026-08-06 15:11"
     },
     "mega": {
       "sanity": "2026-08-06 13:45"
@@ -683,7 +683,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 12:54:58.363",
+      "time": "20260806 14:40:51.567",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -693,7 +693,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 12:56:42.664",
+      "time": "20260806 14:42:26.172",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -703,7 +703,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 12:58:14.283",
+      "time": "20260806 14:44:07.834",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -713,7 +713,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 12:59:19.907",
+      "time": "20260806 14:45:20.175",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -723,7 +723,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:01:06.669",
+      "time": "20260806 14:46:50.057",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -733,7 +733,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:02:57.769",
+      "time": "20260806 14:48:45.122",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -743,7 +743,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:04:05.760",
+      "time": "20260806 14:49:58.291",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -753,7 +753,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:06:36.276",
+      "time": "20260806 14:53:35.799",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -763,7 +763,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:08:21.785",
+      "time": "20260806 14:55:29.195",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -773,7 +773,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:10:09.271",
+      "time": "20260806 14:57:20.642",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -783,7 +783,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:12:18.628",
+      "time": "20260806 14:59:30.153",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -793,7 +793,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:13:12.671",
+      "time": "20260806 15:01:14.493",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -803,7 +803,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:13:50.431",
+      "time": "20260806 15:01:55.183",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -813,7 +813,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:14:50.063",
+      "time": "20260806 15:02:51.122",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -823,7 +823,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:16:18.835",
+      "time": "20260806 15:04:10.332",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -833,7 +833,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:17:03.076",
+      "time": "20260806 15:04:55.407",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -843,7 +843,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260806 13:18:40.396",
+      "time": "20260806 15:06:21.207",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -853,7 +853,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260806 13:18:40.397",
+      "time": "20260806 15:06:21.207",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -862,7 +862,7 @@
       "name": "Check volume bar icons",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
       "time": "20260805 12:32:35.358",
       "source": "RF",
       "client": "telus",
@@ -873,7 +873,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260806 13:20:10.985",
+      "time": "20260806 15:08:30.156",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
