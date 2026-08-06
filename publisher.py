@@ -48,6 +48,7 @@ def git_push():
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     commit_msg = f"{COMMIT_MSG_PREFIX} [{timestamp}]"
     commands = [
+        ["git", "pull", "origin", GIT_BRANCH],
         ["git", "add", "./docs/results.json", "./docs/history/"],
         ["git", "commit", "-m", commit_msg],
         ["git", "push", "origin", GIT_BRANCH],
