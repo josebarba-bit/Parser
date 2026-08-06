@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 watcher.py — Detects changes in test result files by client and suite,
 generates a JSON per day and keeps 30 days of history.
