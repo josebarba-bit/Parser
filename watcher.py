@@ -229,7 +229,7 @@ def parse_memory_leak_summary(filepath):
                 status    = (row.get("status") or "").strip().upper()
                 message   = (row.get("message") or "").strip()
                 pct_match = re.search(r'([+-]?\d+\.?\d*)%', message)
-                pct = float(pct_match.group(1)) if pct_match else None
+                pct = round(float(pct_match.group(1)), 2) if pct_match else None
                 if iteration == "avg":
                     result["avg_growth_pct"] = pct
                     result["avg_status"]     = status
