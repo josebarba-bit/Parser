@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T13:21:21.678663",
+  "generated_at": "2026-08-06T13:24:42.758484",
   "date": "2026-08-06",
   "clients": [
     "telus",
@@ -60,7 +60,7 @@
   "last_run": {
     "telus": {
       "sanity": "2026-08-06 12:53",
-      "smoke": "2026-08-05 12:34"
+      "smoke": "2026-08-06 13:24"
     },
     "mega": {
       "sanity": "2026-08-06 13:12"
@@ -665,7 +665,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:01:37.089",
+      "time": "20260806 12:54:58.363",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -675,7 +675,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:03:10.329",
+      "time": "20260806 12:56:42.664",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -685,7 +685,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:04:44.071",
+      "time": "20260806 12:58:14.283",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -695,7 +695,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:05:48.368",
+      "time": "20260806 12:59:19.907",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -705,7 +705,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:07:17.604",
+      "time": "20260806 13:01:06.669",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -715,7 +715,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:09:06.246",
+      "time": "20260806 13:02:57.769",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -725,7 +725,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:10:38.882",
+      "time": "20260806 13:04:05.760",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -735,7 +735,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:13:39.375",
+      "time": "20260806 13:06:36.276",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -745,7 +745,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:15:28.889",
+      "time": "20260806 13:08:21.785",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -754,8 +754,8 @@
       "name": "Audio mute on Guide",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Audio playback detected.<br>",
-      "time": "20260805 12:29:09.700",
+      "message": "",
+      "time": "20260806 13:10:09.271",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -765,7 +765,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:19:09.376",
+      "time": "20260806 13:12:18.628",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -775,7 +775,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:20:03.713",
+      "time": "20260806 13:13:12.671",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -785,7 +785,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:20:41.698",
+      "time": "20260806 13:13:50.431",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -795,7 +795,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:21:37.485",
+      "time": "20260806 13:14:50.063",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -805,7 +805,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:23:10.218",
+      "time": "20260806 13:16:18.835",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -815,7 +815,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:23:59.082",
+      "time": "20260806 13:17:03.076",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -825,7 +825,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 12:25:34.187",
+      "time": "20260806 13:18:40.396",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -835,7 +835,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 12:25:34.188",
+      "time": "20260806 13:18:40.397",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -844,7 +844,7 @@
       "name": "Check volume bar icons",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
       "time": "20260805 12:32:35.358",
       "source": "RF",
       "client": "telus",
@@ -855,7 +855,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 12:27:00.597",
+      "time": "20260806 13:20:10.985",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
