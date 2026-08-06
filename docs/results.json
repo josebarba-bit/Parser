@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T18:22:59.003148",
+  "generated_at": "2026-08-05T18:23:04.510163",
   "date": "2026-08-05",
   "clients": [
     "telus",
@@ -10,20 +10,20 @@
     "vip"
   ],
   "summary": {
-    "total": 43,
-    "passed": 35,
-    "failed": 2,
-    "skipped": 6,
-    "rate": 81.4
+    "total": 63,
+    "passed": 52,
+    "failed": 3,
+    "skipped": 8,
+    "rate": 82.5
   },
   "summaries": {
     "telus": {
       "all": {
-        "total": 11,
-        "passed": 9,
-        "failed": 1,
-        "skipped": 1,
-        "rate": 81.8
+        "total": 31,
+        "passed": 26,
+        "failed": 2,
+        "skipped": 3,
+        "rate": 83.9
       },
       "sanity": {
         "total": 11,
@@ -33,11 +33,11 @@
         "rate": 81.8
       },
       "smoke": {
-        "total": 0,
-        "passed": 0,
-        "failed": 0,
-        "skipped": 0,
-        "rate": 0
+        "total": 20,
+        "passed": 17,
+        "failed": 1,
+        "skipped": 2,
+        "rate": 85.0
       }
     },
     "mega": {
@@ -60,7 +60,7 @@
   "last_run": {
     "telus": {
       "sanity": "2026-08-05 12:00",
-      "smoke": null
+      "smoke": "2026-08-05 12:34"
     },
     "mega": {
       "sanity": "2026-08-05 17:55"
@@ -688,6 +688,206 @@
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
+    },
+    {
+      "name": "Verify AV Playback on LiveTV",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:01:37.089",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Adjust the LiveTV Volume",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:03:10.329",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify AV background with Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:04:44.071",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens & Bkgn Video",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:05:48.368",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Guide Opens from Menu & Bkgn Video",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:07:17.604",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Settings Opens from Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:09:06.246",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Verify Channel Zap AV Playback",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:10:38.882",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Select and Play a content from Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:13:39.375",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Live TV",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:15:28.889",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Audio mute on Guide",
+      "suite": "—",
+      "status": "PASS",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Audio playback detected.<br>",
+      "time": "20260805 12:29:09.700",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Channel Zap",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:19:09.376",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by OK Key",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:20:03.713",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Progress Bar on Live TV by Dpad Up",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:20:41.698",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Menu",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:21:37.485",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Launch PVR via Button",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:23:10.218",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Play a Recording",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:23:59.082",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Progress bar on a series recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 12:25:34.187",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Progress bar on and on Single Recording",
+      "suite": "—",
+      "status": "SKIP",
+      "message": "Test skipped using 'robot:skip' tag.",
+      "time": "20260805 12:25:34.188",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check volume bar icons",
+      "suite": "—",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
+      "time": "20260805 12:32:35.358",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
+    },
+    {
+      "name": "Check Mute button",
+      "suite": "—",
+      "status": "PASS",
+      "message": "",
+      "time": "20260805 12:27:00.597",
+      "source": "RF",
+      "client": "telus",
+      "suite_type": "smoke"
     },
     {
       "name": "Verifying the Login Screen UI on Tizen platform build",
