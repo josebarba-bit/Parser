@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T13:05:44.667510",
+  "generated_at": "2026-08-06T13:12:25.046303",
   "date": "2026-08-06",
   "clients": [
     "telus",
@@ -10,11 +10,11 @@
     "vip"
   ],
   "summary": {
-    "total": 63,
-    "passed": 52,
+    "total": 62,
+    "passed": 51,
     "failed": 3,
     "skipped": 8,
-    "rate": 82.5
+    "rate": 82.3
   },
   "summaries": {
     "telus": {
@@ -42,18 +42,18 @@
     },
     "mega": {
       "all": {
-        "total": 32,
-        "passed": 26,
+        "total": 31,
+        "passed": 25,
         "failed": 1,
         "skipped": 5,
-        "rate": 81.2
+        "rate": 80.6
       },
       "sanity": {
-        "total": 32,
-        "passed": 26,
+        "total": 31,
+        "passed": 25,
         "failed": 1,
         "skipped": 5,
-        "rate": 81.2
+        "rate": 80.6
       }
     }
   },
@@ -63,7 +63,7 @@
       "smoke": "2026-08-05 12:34"
     },
     "mega": {
-      "sanity": "2026-08-06 08:27"
+      "sanity": "2026-08-06 13:12"
     }
   },
   "stability": {
@@ -883,7 +883,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:37:35.202",
+      "time": "20260806 12:53:56.888",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -893,7 +893,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:37:45.276",
+      "time": "20260806 12:54:07.020",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -903,17 +903,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:38:06.412",
-      "source": "RF",
-      "client": "mega",
-      "suite_type": "sanity"
-    },
-    {
-      "name": "Verifying Logout functionality",
-      "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260805 17:38:24.448",
+      "time": "20260806 12:54:29.319",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -923,7 +913,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 17:38:53.194",
+      "time": "20260806 12:54:50.101",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -933,7 +923,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:38:53.196",
+      "time": "20260806 12:54:50.102",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -943,7 +933,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:39:23.331",
+      "time": "20260806 12:55:20.880",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -953,7 +943,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:40:28.984",
+      "time": "20260806 12:56:27.554",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -963,7 +953,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:40:53.990",
+      "time": "20260806 12:56:53.939",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -973,7 +963,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:41:22.413",
+      "time": "20260806 12:57:24.098",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -983,7 +973,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:41:53.544",
+      "time": "20260806 12:57:57.024",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -993,7 +983,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:42:36.838",
+      "time": "20260806 12:58:41.814",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1003,7 +993,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:43:00.556",
+      "time": "20260806 12:59:08.626",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1013,7 +1003,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:43:24.928",
+      "time": "20260806 12:59:34.184",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1021,9 +1011,9 @@
     {
       "name": "Verifying the Last Watched Channels Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260805 17:44:25.686",
+      "status": "FAIL",
+      "message": "Element '//div[@name='Button' and @data-icon-type='vod']' not visible after 30 seconds.",
+      "time": "20260806 13:00:35.949",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1033,7 +1023,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:44:49.118",
+      "time": "20260806 13:01:30.320",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1043,7 +1033,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:45:17.621",
+      "time": "20260806 13:01:59.833",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1053,7 +1043,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:45:41.417",
+      "time": "20260806 13:02:25.457",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1063,7 +1053,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:46:05.666",
+      "time": "20260806 13:02:50.872",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1073,7 +1063,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:46:46.848",
+      "time": "20260806 13:03:33.964",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1083,7 +1073,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 17:47:40.285",
+      "time": "20260806 13:04:29.243",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1093,7 +1083,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:47:40.285",
+      "time": "20260806 13:04:29.244",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1103,7 +1093,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:48:06.606",
+      "time": "20260806 13:04:56.819",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1113,7 +1103,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:49:06.592",
+      "time": "20260806 13:05:57.899",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1123,7 +1113,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 17:50:02.766",
+      "time": "20260806 13:06:54.920",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1133,7 +1123,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:50:02.766",
+      "time": "20260806 13:06:54.921",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1143,7 +1133,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:50:50.647",
+      "time": "20260806 13:07:45.473",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1153,7 +1143,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 17:51:18.316",
+      "time": "20260806 13:08:15.477",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1163,7 +1153,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260805 17:51:18.317",
+      "time": "20260806 13:08:15.477",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1171,9 +1161,9 @@
     {
       "name": "Verifying Scheduled Recordings in My Contents",
       "suite": "—",
-      "status": "FAIL",
-      "message": "Several failures occurred:\n\n1) Element with locator '//div[@name='Button' and @data-icon-type='record']' not found.\n\n2) Element with locator '//div[@name='Button' and @data-icon-type='record']' not found.\n\n3) WHILE loop was aborted because it did not finish within the limit of 30 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
-      "time": "20260805 17:51:18.317",
+      "status": "PASS",
+      "message": "",
+      "time": "20260806 13:08:15.478",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1183,7 +1173,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:52:59.411",
+      "time": "20260806 13:09:16.453",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1193,7 +1183,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260805 17:54:06.838",
+      "time": "20260806 13:10:21.136",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
