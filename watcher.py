@@ -646,7 +646,7 @@ def generate_json():
     total  = payload["summary"]["total"]
     passed = payload["summary"]["passed"]
     failed = payload["summary"]["failed"]
-    print(f"  ✓ results_{today}.json saved — {total} tests ({passed} pass / {failed} fail)")
+    print(f"  [OK] results_{today}.json saved -- {total} tests ({passed} pass / {failed} fail)")
 
     cleanup_old_files()
     update_index()
