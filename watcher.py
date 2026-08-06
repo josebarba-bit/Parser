@@ -594,7 +594,7 @@ def generate_json():
     print(f"  SBS report: {sbs['summary'] if sbs else 'No data'}")
 
     # Memory leaks
-    uiw_path, vip_path, comp_path = find_memory_leak_files(MEMORY_LEAKS_DIR)
+    uiw_path, vip_path, comp_path, uiw_lxc_path, vip_lxc_path = find_memory_leak_files(MEMORY_LEAKS_DIR)
     memory_leaks = {
         "uiw":        parse_memory_leak_summary(uiw_path) if uiw_path else None,
         "vip":        parse_memory_leak_summary(vip_path) if vip_path else None,
