@@ -1,24 +1,24 @@
-Software Version - UIW: 3.7.36 - Telus/Zenterio,VIP: 3.7.36 - Telus/Zenterio,MW Version - UIW: Zenterio OS 16.4 TELUS4K 1.12.1 debug Bulle #397 142,VIP: Zenterio OS 16.4 TELUS4K 1.12.1 debug build #397 142
+Software Version - UIW: 3.7.38 - Telus/Zenterio,VIP: 3.7.38 - Telus/Zenterio,MW Version - UIW: Zenterio OS 16.4 TELUS4K 1.12.1 debug Bulle #397 142,VIP: Zenterio OS 16.4 TELUS4K 1.12.1 debug build #397 142
 Test Case,UIW Result,UIW Reason,UIW Time (s),VIP Result,VIP Reason,VIP Time (s),Time Diff (VIP vs UIW),Verdict
-Standby Cycle Checks,PASS,,56.54,PASS,,56.97,+0.8%,OK
-Menu Checks,PASS,,108.54,PASS,,83.0,-23.5%,NOTE (VIP faster)
-Verify Guide Opens by Key,PASS,,57.14,PASS,,46.8,-18.1%,NOTE (VIP faster)
-Verify Guide Opens from Menu,PASS,,42.11,PASS,,51.86,+23.1%,WARN (VIP slower)
-Verify Channel Zap AV Playback,PASS,,93.96,PASS,,94.15,+0.2%,OK
-Verify Menu Does Not Auto-Dismiss,PASS,,31.3,PASS,,31.62,+1.0%,OK
-Verify Live TV Background During PVR,PASS,,34.25,PASS,,52.4,+53.0%,WARN (VIP slower)
-Verify Audio Playback on Settings Page,PASS,,23.77,PASS,,23.41,-1.5%,OK
-Play a Recording,PASS,,65.41,PASS,,65.12,-0.4%,OK
-Verify AV Playback on LiveTV,PASS,,40.7,PASS,,40.41,-0.7%,OK
-Adjust the LiveTV Volume,PASS,,297.55,PASS,,292.77,-1.6%,OK
-Verify AV background with Menu,PASS,,20.21,PASS,,20.2,-0.0%,OK
-Verify Guide Opens & Bkgn Video,PASS,,69.24,PASS,,60.84,-12.1%,NOTE (VIP faster)
-Verify Guide Opens from Menu & Bkgn Video,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,142.28,PASS,,74.01,N/A (different outcome),NOT COMPARABLE
-Verify Settings Opens from Menu,PASS,,30.07,PASS,,27.16,-9.7%,OK
-Select and Play a content from Guide,PASS,,63.96,PASS,,65.16,+1.9%,OK
-Audio mute on Live TV,PASS,,268.07,PASS,,256.16,-4.4%,OK
-Audio mute on Guide,FAIL,Reason: Mute does not appear.,177.75,PASS,,286.17,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by Channel Zap,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,75.41,PASS,,26.02,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by OK Key,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,32.02,PASS,,13.31,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by Dpad Up,PASS,,30.97,PASS,,26.61,-14.1%,NOTE (VIP faster)
-Launch PVR via Button,PASS,,16.74,PASS,,16.52,-1.3%,OK
+Standby Cycle Checks,PASS,,43.97,PASS,,56.71,+29.0%,WARN (VIP slower)
+Menu Checks,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,223.41,PASS,,82.45,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens by Key,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,188.26,PASS,,46.68,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens from Menu,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,175.46,PASS,,41.38,N/A (different outcome),NOT COMPARABLE
+Verify Channel Zap AV Playback,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,178.59,PASS,,94.59,N/A (different outcome),NOT COMPARABLE
+Verify Menu Does Not Auto-Dismiss,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,23.95,PASS,,31.45,N/A (different outcome),NOT COMPARABLE
+Verify Live TV Background During PVR,FAIL,Reason: PVR/Recordings screen not displayed,21.91,PASS,,34.3,N/A (different outcome),NOT COMPARABLE
+Verify Audio Playback on Settings Page,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,40.99,PASS,,21.71,N/A (different outcome),NOT COMPARABLE
+Play a Recording,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,115.08,PASS,,65.4,N/A (different outcome),NOT COMPARABLE
+Verify AV Playback on LiveTV,FAIL,Reason: Video playback no detected.,46.59,FAIL,Reason: Video playback no detected.,45.92,-1.4%,OK
+Adjust the LiveTV Volume,FAIL,"Reason: ""Audio does not change"".",173.69,FAIL,"Reason: ""Audio does not change"".",176.22,+1.5%,OK
+Verify AV background with Menu,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,24.0,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,24.68,+2.8%,OK
+Verify Guide Opens & Bkgn Video,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,206.76,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,193.71,-6.3%,OK
+Verify Guide Opens from Menu & Bkgn Video,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,87.38,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,208.69,N/A (different outcome),NOT COMPARABLE
+Verify Settings Opens from Menu,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,30.1,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,29.78,-1.0%,OK
+Select and Play a content from Guide,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,175.85,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,176.4,+0.3%,OK
+Audio mute on Live TV,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,207.23,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,194.2,-6.3%,OK
+Audio mute on Guide,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,203.79,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,209.59,+2.8%,OK
+Progress Bar on Live TV by Channel Zap,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,75.58,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,75.41,-0.2%,OK
+Progress Bar on Live TV by OK Key,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,32.56,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,32.48,-0.3%,OK
+Progress Bar on Live TV by Dpad Up,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,50.42,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,51.3,+1.8%,OK
+Launch PVR via Button,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,99.31,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,102.65,+3.4%,OK
