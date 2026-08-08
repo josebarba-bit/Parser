@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T00:58:05.666201",
+  "generated_at": "2026-08-08T00:58:09.889578",
   "date": "2026-08-08",
   "clients": [
     "telus",
@@ -401,7 +401,7 @@
       "min_status": "PASS",
       "max_growth_pct": 6.03,
       "max_status": "PASS",
-      "avg_growth_pct": -34.68,
+      "avg_growth_pct": -44.68,
       "avg_status": "PASS"
     },
     "comparison": {
@@ -411,14 +411,14 @@
           "Product Name": "maple_uiw4001",
           "Build": "TELUS4K 1.12.1 debug build #404",
           "ZIDS SW Version": "142",
-          "Iterations available": "50"
+          "Iterations available": "58"
         },
         "maple_vip56x2": {
           "Test Plan": "TELUS_LONGEVITY_STB4",
           "Product Name": "maple_vip56x2",
           "Build": "TELUS4K 1.12.1 debug build #404",
           "ZIDS SW Version": "142",
-          "Iterations available": "52"
+          "Iterations available": "61"
         }
       },
       "table1": [
@@ -426,37 +426,37 @@
           "component": "Total (all components)",
           "uiw_min": 19.43,
           "uiw_max": 491.7,
-          "uiw_avg": 260.02,
+          "uiw_avg": 226.84,
           "vip_min": 21.23,
           "vip_max": 427.39,
-          "vip_avg": 257.14
+          "vip_avg": 222.33
         },
         {
           "component": "LXC container",
           "uiw_min": 0.0,
           "uiw_max": 243.03,
-          "uiw_avg": 123.43,
+          "uiw_avg": 106.4,
           "vip_min": 0.0,
           "vip_max": 207.52,
-          "vip_avg": 121.22
+          "vip_avg": 103.33
         },
         {
           "component": "cobalt process",
           "uiw_min": 0.0,
           "uiw_max": 230.36,
-          "uiw_avg": 117.24,
+          "uiw_avg": 101.07,
           "vip_min": 0.0,
           "vip_max": 199.81,
-          "vip_avg": 114.72
+          "vip_avg": 97.79
         },
         {
           "component": "zids process",
           "uiw_min": 18.88,
           "uiw_max": 19.45,
-          "uiw_avg": 19.36,
+          "uiw_avg": 19.37,
           "vip_min": 20.69,
           "vip_max": 21.29,
-          "vip_avg": 21.2
+          "vip_avg": 21.21
         }
       ],
       "table2": [
@@ -538,7 +538,15 @@
         47,
         48,
         49,
-        50
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
       ],
       "times": [
         "16:29:34",
@@ -590,7 +598,15 @@
         "22:13:03",
         "22:21:47",
         "22:32:13",
-        "22:41:17"
+        "22:41:17",
+        "22:47:53",
+        "22:54:35",
+        "23:03:55",
+        "23:13:55",
+        "23:22:24",
+        "23:36:08",
+        "23:42:13",
+        "23:50:48"
       ],
       "totals": [
         345.59,
@@ -620,6 +636,14 @@
         472.09,
         476.65,
         476.13,
+        19.43,
+        19.43,
+        19.43,
+        19.43,
+        19.43,
+        19.43,
+        19.43,
+        19.43,
         19.43,
         19.43,
         19.43,
@@ -698,7 +722,16 @@
         49,
         50,
         51,
-        52
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
       ],
       "times": [
         "16:29:33",
@@ -752,7 +785,16 @@
         "22:13:15",
         "22:21:59",
         "22:31:46",
-        "22:40:00"
+        "22:40:00",
+        "22:49:18",
+        "22:55:40",
+        "23:01:13",
+        "23:10:29",
+        "23:20:48",
+        "23:28:47",
+        "23:36:30",
+        "23:44:31",
+        "23:50:49"
       ],
       "totals": [
         347.66,
@@ -806,15 +848,24 @@
         21.23,
         21.23,
         21.23,
+        21.23,
+        21.23,
+        21.23,
+        21.23,
+        21.23,
+        21.23,
+        21.23,
+        21.23,
+        21.23,
         21.23
       ]
     },
     "last_updated": {
       "uiw": "2026-08-07 23:05",
-      "vip": "2026-08-07 23:05",
-      "comparison": "2026-08-07 23:05",
-      "uiw_lxc": "2026-08-07 23:05",
-      "vip_lxc": "2026-08-07 23:05"
+      "vip": "2026-08-08 00:58",
+      "comparison": "2026-08-08 00:58",
+      "uiw_lxc": "2026-08-08 00:58",
+      "vip_lxc": "2026-08-08 00:58"
     }
   },
   "telus_sw_version": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #406 142",
