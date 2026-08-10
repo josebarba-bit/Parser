@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T09:17:30.772844",
+  "generated_at": "2026-08-10T11:28:13.216181",
   "date": "2026-08-10",
   "clients": [
     "telus",
@@ -11,10 +11,10 @@
   ],
   "summary": {
     "total": 63,
-    "passed": 50,
-    "failed": 5,
+    "passed": 47,
+    "failed": 8,
     "skipped": 8,
-    "rate": 79.4
+    "rate": 74.6
   },
   "summaries": {
     "telus": {
@@ -43,17 +43,17 @@
     "mega": {
       "all": {
         "total": 32,
-        "passed": 23,
-        "failed": 4,
+        "passed": 20,
+        "failed": 7,
         "skipped": 5,
-        "rate": 71.9
+        "rate": 62.5
       },
       "sanity": {
         "total": 32,
-        "passed": 23,
-        "failed": 4,
+        "passed": 20,
+        "failed": 7,
         "skipped": 5,
-        "rate": 71.9
+        "rate": 62.5
       }
     }
   },
@@ -63,7 +63,7 @@
       "smoke": "2026-08-06 15:11"
     },
     "mega": {
-      "sanity": "2026-08-10 09:16"
+      "sanity": "2026-08-10 11:27"
     }
   },
   "stability": {
@@ -1183,9 +1183,9 @@
     {
       "name": "Verifying the Login Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "Element '//div[@name='Icon' and @data-type='Eye']' not visible after 30 seconds.",
-      "time": "20260810 08:58:41.021",
+      "status": "PASS",
+      "message": "",
+      "time": "20260810 11:10:20.981",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1195,7 +1195,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 08:59:17.141",
+      "time": "20260810 11:10:30.800",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1205,7 +1205,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 08:59:37.722",
+      "time": "20260810 11:10:51.765",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1215,7 +1215,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 08:59:55.307",
+      "time": "20260810 11:11:11.156",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1225,7 +1225,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 09:00:20.143",
+      "time": "20260810 11:11:36.002",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1233,9 +1233,9 @@
     {
       "name": "Verifying the Home Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260810 09:00:20.143",
+      "status": "FAIL",
+      "message": "Reason: The Settings Rail doesn't match with the reference.",
+      "time": "20260810 11:11:36.003",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1243,9 +1243,9 @@
     {
       "name": "Verifying the History State in Home Screen on Tizen platform build",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260810 09:00:48.532",
+      "status": "FAIL",
+      "message": "The element VOD Recommendation Rail Button is not focused.",
+      "time": "20260810 11:12:06.440",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1255,7 +1255,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:01:53.492",
+      "time": "20260810 11:12:56.450",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1265,7 +1265,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:02:18.022",
+      "time": "20260810 11:13:21.478",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1275,7 +1275,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:02:46.697",
+      "time": "20260810 11:13:50.021",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1285,7 +1285,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:03:17.295",
+      "time": "20260810 11:14:21.053",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1295,7 +1295,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:04:00.838",
+      "time": "20260810 11:15:04.506",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1305,7 +1305,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "Several failures occurred:\n\n1) Element with locator '//div[@name='Button' and @data-primary-text='My Bookmarks']' not found.\n\n2) Element with locator '//div[@name='Button' and @data-primary-text='My Bookmarks']' not found.\n\n3) Element with locator '//div[@name='Button' and @data-primary-text='My Favorite Channels']' not found.\n\n4) Element with locator '//div[@name='Button' and @data-primary-text='My Favorite Channels']' not found.\n\n5) Element with locator '//div[@name='Button' and @data-primary-text='My Favorite VOD titles']' not found.\n\n6) Element with locator '//div[@name='Button' and @data-primary-text='My Favorite VOD titles']' not found.",
-      "time": "20260810 09:04:24.556",
+      "time": "20260810 11:15:28.436",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1315,7 +1315,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:04:50.248",
+      "time": "20260810 11:15:56.071",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1325,7 +1325,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:05:51.242",
+      "time": "20260810 11:16:57.333",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1333,9 +1333,9 @@
     {
       "name": "Verifying the Vod Recommendation Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260810 09:06:14.652",
+      "status": "FAIL",
+      "message": "Element 'VODCard' not visible after 30 seconds.",
+      "time": "20260810 11:17:20.855",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1345,7 +1345,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "Several failures occurred:\n\n1) Element with locator '//div[@name='Button' and @data-primary-text='My Bookmarks']' not found.\n\n2) Element with locator '//div[@name='Button' and @data-primary-text='My Bookmarks']' not found.\n\n3) Element with locator '//div[@name='Button' and @data-primary-text='My Favorite Channels']' not found.\n\n4) Element with locator '//div[@name='Button' and @data-primary-text='My Favorite Channels']' not found.\n\n5) Element with locator '//div[@name='Button' and @data-primary-text='My Favorite VOD titles']' not found.\n\n6) Element with locator '//div[@name='Button' and @data-primary-text='My Favorite VOD titles']' not found.",
-      "time": "20260810 09:06:43.296",
+      "time": "20260810 11:18:20.746",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1355,7 +1355,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:07:09.080",
+      "time": "20260810 11:18:48.297",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1363,9 +1363,9 @@
     {
       "name": "Verifying the History State in Settings Screen on Tizen platform build",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260810 09:07:33.460",
+      "status": "FAIL",
+      "message": "The element IP Information Button is not focused.",
+      "time": "20260810 11:19:13.166",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1375,7 +1375,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:08:14.833",
+      "time": "20260810 11:19:48.206",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1385,7 +1385,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 09:09:08.420",
+      "time": "20260810 11:20:42.042",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1395,7 +1395,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:09:08.421",
+      "time": "20260810 11:20:42.043",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1405,7 +1405,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:09:35.139",
+      "time": "20260810 11:21:08.358",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1415,7 +1415,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:10:35.118",
+      "time": "20260810 11:22:08.782",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1425,7 +1425,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 09:11:31.420",
+      "time": "20260810 11:23:05.157",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1435,7 +1435,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:11:31.420",
+      "time": "20260810 11:23:05.157",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1445,7 +1445,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:12:19.623",
+      "time": "20260810 11:23:53.400",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1455,7 +1455,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 09:12:47.554",
+      "time": "20260810 11:24:21.601",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1465,7 +1465,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 09:12:47.555",
+      "time": "20260810 11:24:21.602",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1475,7 +1475,7 @@
       "suite": "—",
       "status": "FAIL",
       "message": "Element with locator '//div[contains(@class, 'display') and //@name='PageHeader']' not found.",
-      "time": "20260810 09:12:47.555",
+      "time": "20260810 11:24:21.603",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1485,7 +1485,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:13:29.856",
+      "time": "20260810 11:25:04.756",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1495,7 +1495,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 09:14:28.150",
+      "time": "20260810 11:26:04.809",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
