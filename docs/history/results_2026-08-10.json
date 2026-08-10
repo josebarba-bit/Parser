@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T12:31:56.342894",
+  "generated_at": "2026-08-10T12:54:24.631444",
   "date": "2026-08-10",
   "clients": [
     "telus",
@@ -63,7 +63,7 @@
       "smoke": "2026-08-06 15:11"
     },
     "mega": {
-      "sanity": "2026-08-10 12:30"
+      "sanity": "2026-08-10 12:53"
     }
   },
   "stability": {
@@ -861,7 +861,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:13:07.123",
+      "time": "20260810 12:36:57.289",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -871,7 +871,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:13:16.747",
+      "time": "20260810 12:37:05.920",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -881,7 +881,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:13:37.817",
+      "time": "20260810 12:37:26.468",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -891,7 +891,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:13:55.388",
+      "time": "20260810 12:37:44.441",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -901,7 +901,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 12:14:20.092",
+      "time": "20260810 12:38:09.032",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -911,7 +911,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:14:20.093",
+      "time": "20260810 12:38:09.033",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -921,7 +921,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:14:48.398",
+      "time": "20260810 12:38:37.304",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -931,7 +931,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:15:53.239",
+      "time": "20260810 12:39:42.218",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -941,7 +941,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:16:17.931",
+      "time": "20260810 12:40:06.876",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -951,7 +951,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:16:46.367",
+      "time": "20260810 12:40:35.361",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -961,7 +961,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:17:17.063",
+      "time": "20260810 12:41:05.969",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -971,7 +971,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:18:00.394",
+      "time": "20260810 12:41:49.291",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -981,7 +981,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:18:24.175",
+      "time": "20260810 12:42:13.011",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -991,7 +991,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:18:48.373",
+      "time": "20260810 12:42:37.139",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1001,7 +1001,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:19:49.186",
+      "time": "20260810 12:43:38.084",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1011,7 +1011,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:20:12.733",
+      "time": "20260810 12:44:01.581",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1021,7 +1021,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:20:41.271",
+      "time": "20260810 12:44:30.084",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1031,7 +1031,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:21:05.175",
+      "time": "20260810 12:44:54.172",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1041,7 +1041,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:21:29.646",
+      "time": "20260810 12:45:18.698",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1051,7 +1051,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:22:10.767",
+      "time": "20260810 12:46:00.042",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1061,7 +1061,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 12:23:04.354",
+      "time": "20260810 12:46:53.845",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1071,7 +1071,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:23:04.355",
+      "time": "20260810 12:46:53.845",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1081,7 +1081,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:23:30.645",
+      "time": "20260810 12:47:20.178",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1091,7 +1091,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:24:30.672",
+      "time": "20260810 12:48:20.202",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1101,7 +1101,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 12:25:26.365",
+      "time": "20260810 12:49:16.398",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1111,7 +1111,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:25:26.365",
+      "time": "20260810 12:49:16.399",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1121,7 +1121,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:26:14.442",
+      "time": "20260810 12:50:04.497",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1131,7 +1131,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 12:26:42.388",
+      "time": "20260810 12:50:32.128",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1141,7 +1141,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260810 12:26:42.388",
+      "time": "20260810 12:50:32.128",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1150,8 +1150,8 @@
       "name": "Verifying Scheduled Recordings in My Contents",
       "suite": "—",
       "status": "FAIL",
-      "message": "Element with locator '//div[contains(@class, 'display') and //@name='PageHeader']' not found.",
-      "time": "20260810 12:26:42.389",
+      "message": "Several failures occurred:\n\n1) Element with locator '//div[@name='Button' and @data-icon-type='record']' not found.\n\n2) Element with locator '//div[@name='Button' and @data-icon-type='record']' not found.\n\n3) Element with locator '//div[contains(@class, 'display') and //@name='PageHeader']' not found.",
+      "time": "20260810 12:50:32.129",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1161,7 +1161,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:27:24.652",
+      "time": "20260810 12:51:14.707",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1171,7 +1171,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260810 12:28:25.523",
+      "time": "20260810 12:52:15.852",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
