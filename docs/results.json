@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T11:28:13.216181",
+  "generated_at": "2026-08-10T11:28:16.523550",
   "date": "2026-08-10",
   "clients": [
     "telus",
@@ -384,26 +384,8 @@
     ]
   },
   "memory_leaks": {
-    "uiw": {
-      "latest_growth_pct": -95.44,
-      "latest_status": "PASS",
-      "min_growth_pct": -95.44,
-      "min_status": "PASS",
-      "max_growth_pct": 12.43,
-      "max_status": "FAIL",
-      "avg_growth_pct": -44.27,
-      "avg_status": "PASS"
-    },
-    "vip": {
-      "latest_growth_pct": -94.68,
-      "latest_status": "PASS",
-      "min_growth_pct": -94.68,
-      "min_status": "PASS",
-      "max_growth_pct": 6.03,
-      "max_status": "PASS",
-      "avg_growth_pct": -44.68,
-      "avg_status": "PASS"
-    },
+    "uiw": null,
+    "vip": null,
     "comparison": {
       "devices": {
         "maple_uiw4001": {
@@ -861,8 +843,8 @@
       ]
     },
     "last_updated": {
-      "uiw": "2026-08-07 23:05",
-      "vip": "2026-08-08 00:58",
+      "uiw": "2026-08-10 11:28",
+      "vip": "2026-08-10 11:28",
       "comparison": "2026-08-08 00:58",
       "uiw_lxc": "2026-08-08 00:58",
       "vip_lxc": "2026-08-08 00:58"
