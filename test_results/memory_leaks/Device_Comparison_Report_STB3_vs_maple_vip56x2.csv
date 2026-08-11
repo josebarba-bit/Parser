@@ -1,0 +1,45 @@
+﻿Device Comparison Report - Memory Monitor
+Comparison ID,STB3-vs-maple_vip56x2-MEM-2026-08-11-01
+
+STB3 Identity
+Test Plan,TELUS_LONGEVITY_STB3
+Product Name,n/a
+Build,n/a
+ZIDS SW Version,n/a
+Iterations available,10
+
+maple_vip56x2 Identity
+Test Plan,TELUS_LONGEVITY_STB4
+Product Name,maple_vip56x2
+Build,TELUS4K 1.12.1 debug build #404
+ZIDS SW Version,142
+Iterations available,11
+
+Table 1: Comparison - Min/Max/Avg (MiB)
+Component,STB3 Min,STB3 Max,STB3 Avg,maple_vip56x2 Min,maple_vip56x2 Max,maple_vip56x2 Avg
+Total (all components),374.01,513.94,486.08,374.88,481.86,458.97
+LXC container,178.74,251.05,237.67,179.88,237.91,223.86
+cobalt process,175.43,244.79,228.35,173.67,225.32,213.46
+zids process,19.84,20.16,20.06,21.33,21.77,21.65
+
+Table 2: Comparison - Growth (First vs Latest Iteration)
+Component,STB3 Growth %,maple_vip56x2 Growth %,Gap (pp)
+Total (all components),+37.41,+28.54,+8.87
+LXC container,+39.30,+32.26,+7.04
+cobalt process,+39.54,+27.97,+11.57
+zids process,+1.61,+1.78,-0.17
+
+"Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
+Metric,Iteration,Gap (STB3 - maple_vip56x2) (MiB)
+Matched iterations,10,
+First matched iteration,1,-0.87
+Latest matched iteration,10,+35.06
+Minimum gap,1,-0.87
+Maximum gap,6,+92.42
+Average gap,,+29.40
+Gap change (first -> latest),,+35.93
+
+Evaluation
+Verdict,STB3 shows more growth than maple_vip56x2 (+37.41% vs +28.54%) - worth investigating STB3 specifically.
+
+Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_STB3_vs_maple_vip56x2.png in this same folder
