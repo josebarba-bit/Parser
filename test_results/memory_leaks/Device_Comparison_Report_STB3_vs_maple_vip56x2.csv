@@ -6,40 +6,40 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,n/a
 Build,n/a
 ZIDS SW Version,n/a
-Iterations available,19
+Iterations available,20
 
 maple_vip56x2 Identity
 Test Plan,TELUS_LONGEVITY_STB4
 Product Name,maple_vip56x2
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,20
+Iterations available,22
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,STB3 Min,STB3 Max,STB3 Avg,maple_vip56x2 Min,maple_vip56x2 Max,maple_vip56x2 Avg
-Total (all components),20.11,528.95,470.86,374.88,490.63,466.96
-LXC container,0.00,259.57,230.13,179.88,243.87,228.02
-cobalt process,0.00,250.70,220.68,173.67,230.35,217.29
-zids process,19.84,20.16,20.05,21.33,21.77,21.65
+Total (all components),20.11,528.95,448.32,374.88,490.63,468.93
+LXC container,0.00,259.57,218.63,179.88,243.87,229.09
+cobalt process,0.00,250.70,209.64,173.67,230.35,218.19
+zids process,19.84,20.16,20.06,21.33,21.77,21.65
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,STB3 Growth %,maple_vip56x2 Growth %,Gap (pp)
-Total (all components),-94.62,+29.03,-123.65
-LXC container,-100.00,+30.20,-130.20
-cobalt process,-100.00,+31.20,-131.20
-zids process,+1.36,+1.45,-0.09
+Total (all components),-94.62,+30.12,-124.74
+LXC container,-100.00,+32.77,-132.77
+cobalt process,-100.00,+30.90,-130.90
+zids process,+1.36,+1.41,-0.05
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (STB3 - maple_vip56x2) (MiB)
-Matched iterations,19,
+Matched iterations,20,
 First matched iteration,1,-0.87
-Latest matched iteration,19,-467.73
+Latest matched iteration,20,-463.61
 Minimum gap,19,-467.73
 Maximum gap,13,+97.16
-Average gap,,+4.78
-Gap change (first -> latest),,-466.86
+Average gap,,-18.64
+Gap change (first -> latest),,-462.74
 
 Evaluation
-Verdict,maple_vip56x2 shows more growth than STB3 (+29.03% vs -94.62%) - worth investigating maple_vip56x2 specifically.
+Verdict,maple_vip56x2 shows more growth than STB3 (+30.12% vs -94.62%) - worth investigating maple_vip56x2 specifically.
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_STB3_vs_maple_vip56x2.png in this same folder
