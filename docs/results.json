@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T00:58:05.901181",
+  "generated_at": "2026-08-11T00:58:10.182617",
   "date": "2026-08-11",
   "clients": [
     "telus",
@@ -385,14 +385,14 @@
   },
   "memory_leaks": {
     "uiw": {
-      "latest_growth_pct": -14.11,
+      "latest_growth_pct": -13.27,
       "latest_status": "PASS",
       "min_growth_pct": -14.11,
       "min_status": "PASS",
       "max_growth_pct": 25.54,
       "max_status": "FAIL",
-      "avg_growth_pct": 10.65,
-      "avg_status": "FAIL"
+      "avg_growth_pct": 8.47,
+      "avg_status": "PASS"
     },
     "vip": {
       "latest_growth_pct": 96.37,
@@ -411,7 +411,7 @@
           "Product Name": "maple_uiw4001",
           "Build": "TELUS4K 1.12.1 debug build #404",
           "ZIDS SW Version": "142",
-          "Iterations available": "89"
+          "Iterations available": "99"
         },
         "maple_vip56x2": {
           "Test Plan": "TELUS_LONGEVITY_STB4",
@@ -426,7 +426,7 @@
           "component": "Total (all components)",
           "uiw_min": 302.37,
           "uiw_max": 490.45,
-          "uiw_avg": 409.98,
+          "uiw_avg": 401.25,
           "vip_min": 21.24,
           "vip_max": 428.84,
           "vip_avg": 360.94
@@ -435,7 +435,7 @@
           "component": "LXC container",
           "uiw_min": 146.87,
           "uiw_max": 238.76,
-          "uiw_avg": 200.53,
+          "uiw_avg": 196.17,
           "vip_min": 0.0,
           "vip_max": 211.59,
           "vip_avg": 174.04
@@ -444,7 +444,7 @@
           "component": "cobalt process",
           "uiw_min": 135.66,
           "uiw_max": 232.05,
-          "uiw_avg": 189.63,
+          "uiw_avg": 185.26,
           "vip_min": 0.0,
           "vip_max": 200.77,
           "vip_avg": 166.48
@@ -462,21 +462,21 @@
       "table2": [
         {
           "component": "Total (all components)",
-          "uiw_growth": 5.2,
+          "uiw_growth": 5.68,
           "vip_growth": -74.79,
-          "gap": 79.99
+          "gap": 80.47
         },
         {
           "component": "LXC container",
-          "uiw_growth": 4.61,
+          "uiw_growth": 5.09,
           "vip_growth": -100.0,
-          "gap": 104.61
+          "gap": 105.09
         },
         {
           "component": "cobalt process",
-          "uiw_growth": 6.07,
+          "uiw_growth": 6.63,
           "vip_growth": -56.69,
-          "gap": 62.76
+          "gap": 63.32
         },
         {
           "component": "zids process",
@@ -485,7 +485,7 @@
           "gap": 13.81
         }
       ],
-      "verdict": "maple_uiw4001 shows more growth than maple_vip56x2 (+5.20% vs -74.79%) - worth investigating maple_uiw4001 specifically."
+      "verdict": "maple_uiw4001 shows more growth than maple_vip56x2 (+5.68% vs -74.79%) - worth investigating maple_uiw4001 specifically."
     },
     "uiw_lxc": {
       "iterations": [
@@ -577,7 +577,17 @@
         97,
         98,
         99,
-        100
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110
       ],
       "times": [
         "11:14:59",
@@ -668,7 +678,17 @@
         "22:09:55",
         "22:16:58",
         "22:23:03",
-        "22:30:33"
+        "22:30:33",
+        "22:37:25",
+        "22:43:37",
+        "22:52:54",
+        "22:58:51",
+        "23:05:09",
+        "23:11:06",
+        "23:18:10",
+        "23:24:17",
+        "23:30:38",
+        "23:37:58"
       ],
       "totals": [
         306.38,
@@ -759,7 +779,17 @@
         319.4,
         321.1,
         321.02,
-        322.31
+        322.31,
+        321.17,
+        322.42,
+        323.19,
+        323.21,
+        322.24,
+        324.7,
+        325.18,
+        325.06,
+        324.56,
+        323.79
       ]
     },
     "vip_lxc": {
@@ -891,10 +921,10 @@
       ]
     },
     "last_updated": {
-      "uiw": "2026-08-10 23:05",
+      "uiw": "2026-08-11 00:58",
       "vip": "2026-08-10 13:47",
-      "comparison": "2026-08-10 23:05",
-      "uiw_lxc": "2026-08-10 23:05",
+      "comparison": "2026-08-11 00:58",
+      "uiw_lxc": "2026-08-11 00:58",
       "vip_lxc": "2026-08-10 23:05"
     }
   },
