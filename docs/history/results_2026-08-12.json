@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T05:45:45.842831",
+  "generated_at": "2026-08-12T10:07:59.356014",
   "date": "2026-08-12",
   "clients": [
     "telus",
@@ -11,10 +11,10 @@
   ],
   "summary": {
     "total": 63,
-    "passed": 27,
-    "failed": 28,
+    "passed": 53,
+    "failed": 2,
     "skipped": 8,
-    "rate": 42.9
+    "rate": 84.1
   },
   "summaries": {
     "telus": {
@@ -43,17 +43,17 @@
     "mega": {
       "all": {
         "total": 32,
-        "passed": 0,
-        "failed": 27,
+        "passed": 26,
+        "failed": 1,
         "skipped": 5,
-        "rate": 0.0
+        "rate": 81.2
       },
       "sanity": {
         "total": 32,
-        "passed": 0,
-        "failed": 27,
+        "passed": 26,
+        "failed": 1,
         "skipped": 5,
-        "rate": 0.0
+        "rate": 81.2
       }
     }
   },
@@ -63,7 +63,7 @@
       "smoke": "2026-08-12 00:49"
     },
     "mega": {
-      "sanity": "2026-08-12 05:44"
+      "sanity": "2026-08-12 10:07"
     }
   },
   "stability": {
@@ -1480,9 +1480,9 @@
     {
       "name": "Verifying the Login Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:42:58.734",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:49:30.201",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1490,9 +1490,9 @@
     {
       "name": "Verifying the Login Screen error message on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:01.770",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:49:40.636",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1500,9 +1500,9 @@
     {
       "name": "Verifying the Profiles Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:04.761",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:50:01.577",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1510,9 +1510,9 @@
     {
       "name": "Verifying Logout functionality",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:07.715",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:50:19.277",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1522,7 +1522,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260812 05:43:10.610",
+      "time": "20260812 09:50:43.970",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1530,9 +1530,9 @@
     {
       "name": "Verifying the Home Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:10.611",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:50:43.971",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1540,9 +1540,9 @@
     {
       "name": "Verifying the History State in Home Screen on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:13.590",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:51:12.225",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1550,9 +1550,9 @@
     {
       "name": "Verifying the Epg Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:16.456",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:52:17.300",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1560,9 +1560,9 @@
     {
       "name": "Verifying the Epg Categories on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:19.384",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:52:41.972",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1570,9 +1570,9 @@
     {
       "name": "Verifying the Epg Reminder button on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:22.277",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:53:10.483",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1580,9 +1580,9 @@
     {
       "name": "Verifying the VOD Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:25.267",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:53:41.045",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1590,9 +1590,9 @@
     {
       "name": "Verifying the Kids Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:28.157",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:54:24.387",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1600,9 +1600,9 @@
     {
       "name": "Verifying the My Contents Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:31.093",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:54:48.837",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1610,9 +1610,9 @@
     {
       "name": "Verifying the Search Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:33.975",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:55:13.801",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1620,9 +1620,9 @@
     {
       "name": "Verifying the Last Watched Channels Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:36.845",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:56:14.506",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1630,9 +1630,9 @@
     {
       "name": "Verifying the Vod Recommendation Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:39.770",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:56:37.941",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1640,9 +1640,9 @@
     {
       "name": "Verifying the My Contents Screen UI from Rail Button on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:42.650",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:57:06.407",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1650,9 +1650,9 @@
     {
       "name": "Verifying the Settings Screen UI on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:45.624",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:57:30.391",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1660,9 +1660,9 @@
     {
       "name": "Verifying the History State in Settings Screen on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:48.508",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:57:54.739",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1670,9 +1670,9 @@
     {
       "name": "Verifying Adding a new Profile on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:51.388",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:58:35.976",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1682,7 +1682,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260812 05:43:54.267",
+      "time": "20260812 09:59:29.558",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1690,9 +1690,9 @@
     {
       "name": "Verifying Changing the Profile on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:54.268",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:59:29.558",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1700,9 +1700,9 @@
     {
       "name": "Verifying Updating a Profile on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:43:57.160",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 09:59:56.132",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1710,9 +1710,9 @@
     {
       "name": "Verifying Removing a Profile on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:44:00.047",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 10:00:56.062",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1722,7 +1722,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260812 05:44:02.953",
+      "time": "20260812 10:01:52.056",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1730,9 +1730,9 @@
     {
       "name": "Verifying EPG Content Match with Dashboard on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:44:02.953",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 10:01:52.056",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1740,9 +1740,9 @@
     {
       "name": "Verifying Changing the Profile and check My Contents Railview on Tizen platform build",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:44:05.893",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 10:02:40.721",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1752,7 +1752,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260812 05:44:08.809",
+      "time": "20260812 10:03:08.534",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1762,7 +1762,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260812 05:44:08.810",
+      "time": "20260812 10:03:08.534",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1771,8 +1771,8 @@
       "name": "Verifying Scheduled Recordings in My Contents",
       "suite": "—",
       "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:44:08.810",
+      "message": "WHILE loop was aborted because it did not finish within the limit of 30 iterations. Use the 'limit' argument to increase or remove the limit if needed.",
+      "time": "20260812 10:03:08.535",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1780,9 +1780,9 @@
     {
       "name": "Verifying EPG Date Changes when Navigating to the Past",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:44:11.761",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 10:04:53.451",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
@@ -1790,9 +1790,9 @@
     {
       "name": "Verifying EPG Date Changes when Navigating to the Future",
       "suite": "—",
-      "status": "FAIL",
-      "message": "InvalidArgumentException: Message: invalid argument: user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir\nStacktrace:\nBacktrace:\n\tOrdinal0 [0x0067C013+2474003]\n\tOrdinal0 [0x006129C1+2042305]\n\tOrdinal0 [0x00522F68+1060712]\n\tOrdinal0 [0x0053E7D5+1173461]\n\tOrdinal0 [0x0053AA83+1157763]\n\tOrdinal0 [0x0056A2A2+1352354]\n\tOrdinal0 [0x00568FAA+1347498]\n\tOrdinal0 [0x005666DB+1337051]\n\tOrdinal0 [0x00543427+1192999]\n\tOrdinal0 [0x005442EE+1196782]\n\tOrdinal0 [0x00544279+1196665]\n\tGetHandleVerifier [0x008096FC+1590332]\n\tGetHandleVerifier [0x008B8614+2306900]\n\tGetHandleVerifier [0x00709E93+543699]\n\tGetHandleVerifier [0x007092CE+540686]\n\tOrdinal0 [0x006186BA+2066106]\n\tOrdinal0 [0x0061D1C8+2085320]\n\tOrdinal0 [0x0061D308+2085640]\n\tOrdinal0 [0x006267F3+2123763]\n\tBaseThreadInitThunk [0x7638FCC9+25]\n\tRtlGetAppContainerNamedObjectPath [0x770482AE+286]\n\tRtlGetAppContainerNamedObjectPath [0x7704827E+238]\n\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) Variable '${today}' not found.\n\n2) No browser is open.",
-      "time": "20260812 05:44:14.639",
+      "status": "PASS",
+      "message": "",
+      "time": "20260812 10:05:53.250",
       "source": "RF",
       "client": "mega",
       "suite_type": "sanity"
