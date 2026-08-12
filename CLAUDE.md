@@ -10,7 +10,7 @@ Web-based QA Test Dashboard hosted on **GitHub Pages** (`josebarba-bit/Parser`).
 Aggregates Robot Framework and Python test results across multiple PCs and test types,
 displaying them in a single `index.html` dashboard with tabs per test category.
 
-**Owner:** Pepe Barba — QA Automation Engineer, Oregan Networks  
+**Owner:** Jose Barba — QA Automation Engineer, Oregan Networks  
 **Clients:** Telus, Mega/Tizen  
 **STB Models:** UIW, VIP, M12a
 
