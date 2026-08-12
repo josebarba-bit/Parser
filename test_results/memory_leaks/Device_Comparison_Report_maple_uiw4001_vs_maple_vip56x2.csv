@@ -6,40 +6,40 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,40
+Iterations available,43
 
 maple_vip56x2 Identity
 Test Plan,TELUS_LONGEVITY_STB4
 Product Name,maple_vip56x2
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,39
+Iterations available,40
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001 Min,maple_uiw4001 Max,maple_uiw4001 Avg,maple_vip56x2 Min,maple_vip56x2 Max,maple_vip56x2 Avg
-Total (all components),361.97,517.69,458.99,21.45,435.87,393.71
-LXC container,174.74,257.08,224.87,0.00,212.75,191.26
-cobalt process,168.20,244.21,214.61,0.00,203.20,181.68
-zids process,19.03,19.88,19.51,20.13,21.45,20.78
+Total (all components),361.97,528.23,463.65,21.45,435.87,394.56
+LXC container,174.74,261.67,227.24,0.00,212.75,191.63
+cobalt process,168.20,248.50,216.88,0.00,203.20,182.16
+zids process,19.03,19.88,19.53,20.13,21.45,20.78
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001 Growth %,maple_vip56x2 Growth %,Gap (pp)
-Total (all components),+42.12,+23.53,+18.59
-LXC container,+47.12,+24.19,+22.93
-cobalt process,+41.18,+26.14,+15.04
-zids process,+4.52,-1.53,+6.05
+Total (all components),+44.72,+23.08,+21.64
+LXC container,+47.67,+23.09,+24.58
+cobalt process,+46.21,+26.27,+19.94
+zids process,+4.52,-1.24,+5.76
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001 - maple_vip56x2) (MiB)
-Matched iterations,39,
+Matched iterations,40,
 First matched iteration,1,+14.54
-Latest matched iteration,39,+88.51
+Latest matched iteration,40,+86.82
 Minimum gap,16,-33.33
 Maximum gap,9,+402.45
-Average gap,,+63.85
-Gap change (first -> latest),,+73.97
+Average gap,,+64.43
+Gap change (first -> latest),,+72.28
 
 Evaluation
-Verdict,maple_uiw4001 shows more growth than maple_vip56x2 (+42.12% vs +23.53%) - worth investigating maple_uiw4001 specifically.
+Verdict,maple_uiw4001 shows more growth than maple_vip56x2 (+44.72% vs +23.08%) - worth investigating maple_uiw4001 specifically.
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_vs_maple_vip56x2.png in this same folder
