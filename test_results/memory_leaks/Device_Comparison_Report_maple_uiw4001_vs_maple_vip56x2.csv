@@ -6,40 +6,40 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,80
+Iterations available,82
 
 maple_vip56x2 Identity
 Test Plan,TELUS_LONGEVITY_STB4
 Product Name,maple_vip56x2
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,79
+Iterations available,80
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001 Min,maple_uiw4001 Max,maple_uiw4001 Avg,maple_vip56x2 Min,maple_vip56x2 Max,maple_vip56x2 Avg
-Total (all components),361.97,545.94,462.80,21.45,480.04,419.63
-LXC container,174.74,274.84,227.07,0.00,236.02,204.32
-cobalt process,162.78,254.35,216.02,0.00,225.68,194.48
-zids process,19.03,20.14,19.71,20.13,21.45,20.83
+Total (all components),361.97,545.94,463.72,21.45,480.04,420.24
+LXC container,174.74,274.84,227.50,0.00,236.02,204.63
+cobalt process,162.78,254.35,216.50,0.00,225.68,194.77
+zids process,19.03,20.14,19.72,20.13,21.45,20.84
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001 Growth %,maple_vip56x2 Growth %,Gap (pp)
-Total (all components),+37.23,+36.86,+0.37
-LXC container,+38.18,+40.25,-2.07
-cobalt process,+39.81,+38.01,+1.80
-zids process,+5.62,+1.19,+4.43
+Total (all components),+39.13,+34.88,+4.25
+LXC container,+40.03,+37.21,+2.82
+cobalt process,+42.02,+36.93,+5.09
+zids process,+5.31,+0.91,+4.40
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001 - maple_vip56x2) (MiB)
-Matched iterations,79,
+Matched iterations,80,
 First matched iteration,1,+14.54
-Latest matched iteration,79,+18.81
+Latest matched iteration,80,+28.09
 Minimum gap,78,-116.35
 Maximum gap,9,+402.45
-Average gap,,+42.74
-Gap change (first -> latest),,+4.27
+Average gap,,+42.56
+Gap change (first -> latest),,+13.55
 
 Evaluation
-Verdict,Similar behavior - both devices show comparable Total memory growth (+37.23% vs +36.86%).
+Verdict,Similar behavior - both devices show comparable Total memory growth (+39.13% vs +34.88%).
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_vs_maple_vip56x2.png in this same folder
