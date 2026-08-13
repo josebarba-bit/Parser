@@ -6,21 +6,21 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,110
+Iterations available,116
 
 maple_vip56x2 Identity
 Test Plan,TELUS_LONGEVITY_STB4
 Product Name,maple_vip56x2
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,105
+Iterations available,110
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001 Min,maple_uiw4001 Max,maple_uiw4001 Avg,maple_vip56x2 Min,maple_vip56x2 Max,maple_vip56x2 Avg
-Total (all components),20.23,568.56,440.90,21.26,482.15,376.55
-LXC container,0.00,278.43,215.60,0.00,236.29,182.04
-cobalt process,0.00,270.09,205.48,0.00,226.17,173.58
-zids process,19.03,20.23,19.82,20.13,21.45,20.93
+Total (all components),20.23,568.56,419.14,21.26,482.15,360.40
+LXC container,0.00,278.43,204.45,0.00,236.29,173.77
+cobalt process,0.00,270.09,194.85,0.00,226.17,165.69
+zids process,19.03,20.23,19.84,20.13,21.45,20.94
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001 Growth %,maple_vip56x2 Growth %,Gap (pp)
@@ -31,12 +31,12 @@ zids process,+6.31,+1.38,+4.93
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001 - maple_vip56x2) (MiB)
-Matched iterations,105,
+Matched iterations,110,
 First matched iteration,1,+14.54
-Latest matched iteration,105,-1.03
+Latest matched iteration,110,-1.03
 Minimum gap,78,-116.35
 Maximum gap,102,+547.30
-Average gap,,+84.38
+Average gap,,+80.49
 Gap change (first -> latest),,-15.57
 
 Evaluation
