@@ -12,7 +12,7 @@ displaying them in a single `index.html` dashboard with tabs per test category.
 
 **Owner:** Jose Barba — QA Automation Engineer, Oregan Networks  
 **Clients:** Telus, Mega/Tizen  
-**STB Models:** UIW, VIP, M12a
+**STB Models:** UIW, VIP
 
 ---
 
@@ -57,8 +57,8 @@ Parser/
 │       └── memory_results.csv
 │
 ├── assets/
-│   ├── oregan_logo.png         # Used in PDF export header
-│   └── alarm.mp3               # (if applicable)
+│   └── oregan_logo.png         # Used in PDF export header
+│
 │
 └── version.txt                 # Current SW build version (auto-updated by publisher)
     sw_version.txt              # Secondary SW version tracking
