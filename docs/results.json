@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T09:45:41.319906",
+  "generated_at": "2026-08-14T09:45:44.739907",
   "date": "2026-08-14",
   "clients": [
     "telus",
@@ -384,26 +384,8 @@
     ]
   },
   "memory_leaks": {
-    "uiw": {
-      "latest_growth_pct": -94.58,
-      "latest_status": "PASS",
-      "min_growth_pct": -94.58,
-      "min_status": "PASS",
-      "max_growth_pct": 25.36,
-      "max_status": "FAIL",
-      "avg_growth_pct": -1.88,
-      "avg_status": "PASS"
-    },
-    "vip": {
-      "latest_growth_pct": -11.79,
-      "latest_status": "PASS",
-      "min_growth_pct": -12.04,
-      "min_status": "PASS",
-      "max_growth_pct": 12.07,
-      "max_status": "FAIL",
-      "avg_growth_pct": 1.17,
-      "avg_status": "PASS"
-    },
+    "uiw": null,
+    "vip": null,
     "comparison": {
       "devices": {
         "STB3": {
@@ -1149,8 +1131,8 @@
       ]
     },
     "last_updated": {
-      "uiw": "2026-08-13 23:05",
-      "vip": "2026-08-13 23:05",
+      "uiw": "2026-08-14 09:45",
+      "vip": "2026-08-14 09:45",
       "comparison": "2026-08-11 23:05",
       "uiw_lxc": "2026-08-13 23:05",
       "vip_lxc": "2026-08-13 23:05"
