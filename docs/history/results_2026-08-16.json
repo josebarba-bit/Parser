@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T06:02:48.025342",
+  "generated_at": "2026-08-16T23:05:03.429956",
   "date": "2026-08-16",
   "clients": [
     "telus",
@@ -70,27 +70,27 @@
     "uiw": {
       "version": "TELUS4K 1.12.1 debug build #397 v142",
       "longevity": {
-        "total_iterations": 11892,
-        "hangs": 417,
-        "success_rate": 96.5
+        "total_iterations": 10073,
+        "hangs": 569,
+        "success_rate": 94.4
       },
       "performance": {
-        "avg_response_time": 2.7,
-        "max_response_time": 16.55,
+        "avg_response_time": 2.71,
+        "max_response_time": 16.61,
         "min_response_time": 2.04,
-        "total_iterations": 11454
+        "total_iterations": 9419
       },
       "resource_contention": {
-        "avg_drift_pct": -0.72,
-        "max_drift_pct": 696.4,
-        "out_of_baseline": 4220,
-        "total_iterations": 11454,
+        "avg_drift_pct": -1.07,
+        "max_drift_pct": 628.6,
+        "out_of_baseline": 3996,
+        "total_iterations": 9419,
         "drift_threshold_pct": 20
       },
       "last_updated": {
-        "longevity": "2026-08-15 23:05",
-        "performance": "2026-08-15 23:05",
-        "resource_contention": "2026-08-15 23:05"
+        "longevity": "2026-08-16 23:05",
+        "performance": "2026-08-16 23:05",
+        "resource_contention": "2026-08-16 23:05"
       }
     },
     "vip": {
