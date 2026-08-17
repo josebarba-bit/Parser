@@ -6,7 +6,7 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001
 Build,TELUS4K 1.12.1 debug build #404
 ZIDS SW Version,142
-Iterations available,48
+Iterations available,54
 
 maple_vip56x2 Identity
 Test Plan,TELUS_LONGEVITY_STB4
@@ -17,17 +17,17 @@ Iterations available,44
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001 Min,maple_uiw4001 Max,maple_uiw4001 Avg,maple_vip56x2 Min,maple_vip56x2 Max,maple_vip56x2 Avg
-Total (all components),336.90,414.47,398.32,21.35,422.21,333.14
-LXC container,166.54,205.45,195.25,0.00,206.23,160.18
-cobalt process,151.06,190.61,183.48,0.00,196.10,151.66
-zids process,19.30,20.12,19.60,20.16,21.57,21.30
+Total (all components),336.90,414.47,397.26,21.35,422.21,333.14
+LXC container,166.54,205.45,194.76,0.00,206.23,160.18
+cobalt process,151.06,190.61,182.89,0.00,196.10,151.66
+zids process,19.30,20.12,19.61,20.16,21.57,21.30
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001 Growth %,maple_vip56x2 Growth %,Gap (pp)
-Total (all components),+12.31,-39.64,+51.95
-LXC container,+10.12,-40.84,+50.96
-cobalt process,+16.03,-43.19,+59.22
-zids process,+2.02,-3.25,+5.27
+Total (all components),+14.04,-39.64,+53.68
+LXC container,+12.89,-40.84,+53.73
+cobalt process,+16.88,-43.19,+60.07
+zids process,+1.76,-3.25,+5.01
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001 - maple_vip56x2) (MiB)
@@ -40,6 +40,6 @@ Average gap,,+66.18
 Gap change (first -> latest),,+203.57
 
 Evaluation
-Verdict,maple_uiw4001 shows more growth than maple_vip56x2 (+12.31% vs -39.64%) - worth investigating maple_uiw4001 specifically.
+Verdict,maple_uiw4001 shows more growth than maple_vip56x2 (+14.04% vs -39.64%) - worth investigating maple_uiw4001 specifically.
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_vs_maple_vip56x2.png in this same folder
