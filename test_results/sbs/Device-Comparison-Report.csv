@@ -1,24 +1,24 @@
-Software Version - UIW: n/a,VIP: 3.7.46 - Telus/Zenterio,MW Version - UIW: n/a,VIP: Zenterio OS 16.4 TELUS4K 1.12.5 debug build #11412 15
+Software Version - UIW: feos,VIP: 3.7.46 - Telus/Zenterio,MW Version - UIW: n/a,VIP: Zenterio OS 16.4 TELUS4K 1.12.5 debug build #417 151
 Test Case,UIW Result,UIW Reason,UIW Time (s),VIP Result,VIP Reason,VIP Time (s),Time Diff (VIP vs UIW),Verdict
-Standby Cycle Checks,PASS,,56.74,PASS,,56.94,+0.3%,OK
-Menu Checks,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,152.64,PASS,,110.61,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens by Key,PASS,,57.54,PASS,,46.76,-18.7%,NOTE (VIP faster)
-Verify Guide Opens from Menu,FAIL,"Reason: Guide is not open, string ""Today"" not detected",72.85,PASS,,41.84,N/A (different outcome),NOT COMPARABLE
-Verify Channel Zap AV Playback,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,239.93,PASS,,95.22,N/A (different outcome),NOT COMPARABLE
-Verify Menu Does Not Auto-Dismiss,PASS,,32.91,PASS,,31.4,-4.6%,OK
-Verify Live TV Background During PVR,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,95.73,PASS,,34.16,N/A (different outcome),NOT COMPARABLE
-Verify Audio Playback on Settings Page,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,43.05,PASS,,22.93,N/A (different outcome),NOT COMPARABLE
-Play a Recording,FAIL,Reason: Audio playback no detected.,61.9,PASS,,65.71,N/A (different outcome),NOT COMPARABLE
-Verify AV Playback on LiveTV,FAIL,Reason: Video playback no detected.,46.22,PASS,,51.59,N/A (different outcome),NOT COMPARABLE
-Adjust the LiveTV Volume,FAIL,"Reason: ""Audio does not change"".",177.9,FAIL,Reason: Audio playback detected.,40.48,N/A (different outcome),NOT COMPARABLE
-Verify AV background with Menu,FAIL,Reason: Video playback no detected.,25.61,FAIL,Reason: Video playback no detected.,25.45,-0.6%,OK
-Verify Guide Opens & Bkgn Video,PASS,,105.53,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,102.18,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens from Menu & Bkgn Video,PASS,,106.0,PASS,,74.25,-30.0%,NOTE (VIP faster)
-Verify Settings Opens from Menu,PASS,,27.57,PASS,,27.46,-0.4%,OK
-Select and Play a content from Guide,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,174.31,PASS,,64.01,N/A (different outcome),NOT COMPARABLE
-Audio mute on Live TV,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,97.42,PASS,,266.64,N/A (different outcome),NOT COMPARABLE
-Audio mute on Guide,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,118.11,PASS,,290.54,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by Channel Zap,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,75.88,PASS,,35.2,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by OK Key,PASS,,11.37,PASS,,11.14,-2.0%,OK
-Progress Bar on Live TV by Dpad Up,PASS,,27.19,PASS,,45.59,+67.6%,WARN (VIP slower)
-Launch PVR via Button,PASS,,16.23,PASS,,16.78,+3.4%,OK
+Standby Cycle Checks,PASS,,58.92,FAIL,WHILE loop was aborted because it did not finish within the limit of 15 iterations. Use the 'limit' argument to increase or remove the limit if needed.,206.36,N/A (different outcome),NOT COMPARABLE
+Menu Checks,PASS,,138.95,FAIL,WHILE loop was aborted because it did not finish within the limit of 15 iterations. Use the 'limit' argument to increase or remove the limit if needed.,242.12,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens by Key,PASS,,46.92,PASS,,71.07,+51.5%,WARN (VIP slower)
+Verify Guide Opens from Menu,PASS,,42.28,PASS,,41.88,-0.9%,OK
+Verify Channel Zap AV Playback,PASS,,137.34,PASS,,95.04,-30.8%,NOTE (VIP faster)
+Verify Menu Does Not Auto-Dismiss,PASS,,33.4,PASS,,31.31,-6.2%,OK
+Verify Live TV Background During PVR,PASS,,34.68,PASS,,52.54,+51.5%,WARN (VIP slower)
+Verify Audio Playback on Settings Page,PASS,,41.85,PASS,,22.67,-45.8%,NOTE (VIP faster)
+Play a Recording,FAIL,Reason: Audio playback no detected.,61.65,PASS,,65.54,N/A (different outcome),NOT COMPARABLE
+Verify AV Playback on LiveTV,PASS,,40.7,PASS,,40.61,-0.2%,OK
+Adjust the LiveTV Volume,PASS,,297.26,PASS,,249.77,-16.0%,NOTE (VIP faster)
+Verify AV background with Menu,FAIL,Reason: Audio playback no detected.,20.44,PASS,,21.7,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens & Bkgn Video,PASS,,136.88,PASS,,77.28,-43.5%,NOTE (VIP faster)
+Verify Guide Opens from Menu & Bkgn Video,PASS,,135.45,PASS,,85.34,-37.0%,NOTE (VIP faster)
+Verify Settings Opens from Menu,PASS,,25.2,PASS,,28.26,+12.2%,WARN (VIP slower)
+Select and Play a content from Guide,PASS,,115.91,PASS,,63.05,-45.6%,NOTE (VIP faster)
+Audio mute on Live TV,FAIL,Reason: Mute does not appear.,97.26,PASS,,255.94,N/A (different outcome),NOT COMPARABLE
+Audio mute on Guide,FAIL,Reason: Mute does not appear.,122.03,PASS,,296.92,N/A (different outcome),NOT COMPARABLE
+Progress Bar on Live TV by Channel Zap,PASS,,27.27,PASS,,26.96,-1.1%,OK
+Progress Bar on Live TV by OK Key,PASS,,12.84,PASS,,11.45,-10.8%,NOTE (VIP faster)
+Progress Bar on Live TV by Dpad Up,PASS,,26.3,PASS,,26.05,-0.9%,OK
+Launch PVR via Button,PASS,,16.16,PASS,,16.84,+4.2%,OK
