@@ -1,0 +1,45 @@
+﻿Device Comparison Report - Memory Monitor
+Comparison ID,maple_uiw4001_cobaltqa-vs-maple_vip56x2_cobaltqa-MEM-2026-08-19-01
+
+maple_uiw4001_cobaltqa Identity
+Test Plan,TELUS_LONGEVITY_STB3
+Product Name,maple_uiw4001_cobaltqa
+Build,TELUS4K 1.12.1 debug build #419
+ZIDS SW Version,142
+Iterations available,10
+
+maple_vip56x2_cobaltqa Identity
+Test Plan,TELUS_LONGEVITY_STB4
+Product Name,maple_vip56x2_cobaltqa
+Build,TELUS4K 1.12.1 debug build #419
+ZIDS SW Version,142
+Iterations available,9
+
+Table 1: Comparison - Min/Max/Avg (MiB)
+Component,maple_uiw4001_cobaltqa Min,maple_uiw4001_cobaltqa Max,maple_uiw4001_cobaltqa Avg,maple_vip56x2_cobaltqa Min,maple_vip56x2_cobaltqa Max,maple_vip56x2_cobaltqa Avg
+Total (all components),404.66,499.38,471.05,371.35,464.47,423.79
+LXC container,197.89,246.20,232.05,180.82,226.12,207.18
+cobalt process,187.40,233.15,219.08,170.52,218.15,196.44
+zids process,19.37,20.04,19.92,20.01,20.33,20.17
+
+Table 2: Comparison - Growth (First vs Latest Iteration)
+Component,maple_uiw4001_cobaltqa Growth %,maple_vip56x2_cobaltqa Growth %,Gap (pp)
+Total (all components),+23.41,+8.62,+14.79
+LXC container,+24.41,+7.21,+17.20
+cobalt process,+24.41,+10.96,+13.45
+zids process,+3.41,+0.95,+2.46
+
+"Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
+Metric,Iteration,Gap (maple_uiw4001_cobaltqa - maple_vip56x2_cobaltqa) (MiB)
+Matched iterations,9,
+First matched iteration,1,-11.05
+Latest matched iteration,9,+29.36
+Minimum gap,1,-11.05
+Maximum gap,3,+91.19
+Average gap,,+44.12
+Gap change (first -> latest),,+40.41
+
+Evaluation
+Verdict,maple_uiw4001_cobaltqa shows more growth than maple_vip56x2_cobaltqa (+23.41% vs +8.62%) - worth investigating maple_uiw4001_cobaltqa specifically.
+
+Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_cobaltqa_vs_maple_vip56x2_cobaltqa.png in this same folder
