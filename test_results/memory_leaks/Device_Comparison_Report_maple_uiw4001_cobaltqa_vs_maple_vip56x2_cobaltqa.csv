@@ -6,40 +6,40 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001_cobaltqa
 Build,TELUS4K 1.12.1 debug build #419
 ZIDS SW Version,142
-Iterations available,110
+Iterations available,115
 
 maple_vip56x2_cobaltqa Identity
 Test Plan,TELUS_LONGEVITY_STB4
 Product Name,maple_vip56x2_cobaltqa
 Build,TELUS4K 1.12.1 debug build #419
 ZIDS SW Version,142
-Iterations available,85
+Iterations available,89
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001_cobaltqa Min,maple_uiw4001_cobaltqa Max,maple_uiw4001_cobaltqa Avg,maple_vip56x2_cobaltqa Min,maple_vip56x2_cobaltqa Max,maple_vip56x2_cobaltqa Avg
-Total (all components),374.91,591.65,496.64,20.57,473.99,417.96
-LXC container,183.43,293.32,244.33,0.00,232.34,204.16
-cobalt process,171.77,279.14,232.39,0.00,222.70,193.23
-zids process,19.37,20.05,19.91,20.01,21.37,20.58
+Total (all components),374.91,607.01,498.89,20.57,473.99,417.48
+LXC container,183.43,300.08,245.48,0.00,232.34,203.96
+cobalt process,171.77,287.05,233.49,0.00,222.70,192.91
+zids process,19.37,20.05,19.91,20.01,21.37,20.61
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001_cobaltqa Growth %,maple_vip56x2_cobaltqa Growth %,Gap (pp)
-Total (all components),+27.74,-15.52,+43.26
-LXC container,+28.24,-17.40,+45.64
-cobalt process,+29.86,-15.71,+45.57
-zids process,+2.17,+5.80,-3.63
+Total (all components),+15.91,+2.62,+13.29
+LXC container,+16.36,+2.36,+14.00
+cobalt process,+16.80,+2.52,+14.28
+zids process,+2.63,+6.15,-3.52
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001_cobaltqa - maple_vip56x2_cobaltqa) (MiB)
-Matched iterations,85,
+Matched iterations,89,
 First matched iteration,1,-11.05
-Latest matched iteration,85,+179.09
+Latest matched iteration,89,+119.01
 Minimum gap,48,-80.45
 Maximum gap,64,+452.52
-Average gap,,+61.03
-Gap change (first -> latest),,+190.14
+Average gap,,+64.29
+Gap change (first -> latest),,+130.06
 
 Evaluation
-Verdict,maple_uiw4001_cobaltqa shows more growth than maple_vip56x2_cobaltqa (+27.74% vs -15.52%) - worth investigating maple_uiw4001_cobaltqa specifically.
+Verdict,maple_uiw4001_cobaltqa shows more growth than maple_vip56x2_cobaltqa (+15.91% vs +2.62%) - worth investigating maple_uiw4001_cobaltqa specifically.
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_cobaltqa_vs_maple_vip56x2_cobaltqa.png in this same folder
