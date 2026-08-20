@@ -6,7 +6,7 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001_cobaltqa
 Build,TELUS4K 1.12.1 debug build #419
 ZIDS SW Version,142
-Iterations available,56
+Iterations available,57
 
 maple_vip56x2_cobaltqa Identity
 Test Plan,TELUS_LONGEVITY_STB4
@@ -17,17 +17,17 @@ Iterations available,51
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001_cobaltqa Min,maple_uiw4001_cobaltqa Max,maple_uiw4001_cobaltqa Avg,maple_vip56x2_cobaltqa Min,maple_vip56x2_cobaltqa Max,maple_vip56x2_cobaltqa Avg
-Total (all components),407.76,554.50,484.41,318.51,464.63,426.89
-LXC container,197.52,273.71,238.95,154.70,225.88,209.16
-cobalt process,186.49,261.06,225.60,142.44,224.49,196.22
+Total (all components),407.76,554.50,484.91,318.51,464.63,426.89
+LXC container,197.52,273.71,239.20,154.70,225.88,209.16
+cobalt process,186.49,261.06,225.85,142.44,224.49,196.22
 zids process,19.73,20.08,19.86,21.37,21.70,21.51
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001_cobaltqa Growth %,maple_vip56x2_cobaltqa Growth %,Gap (pp)
-Total (all components),-8.81,+39.63,-48.44
-LXC container,-7.56,+42.40,-49.96
-cobalt process,-10.84,+42.44,-53.28
-zids process,+0.35,+0.94,-0.59
+Total (all components),+5.64,+39.63,-33.99
+LXC container,+8.20,+42.40,-34.20
+cobalt process,+3.43,+42.44,-39.01
+zids process,+1.17,+0.94,+0.23
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001_cobaltqa - maple_vip56x2_cobaltqa) (MiB)
@@ -40,6 +40,6 @@ Average gap,,+58.23
 Gap change (first -> latest),,-113.11
 
 Evaluation
-Verdict,maple_vip56x2_cobaltqa shows more growth than maple_uiw4001_cobaltqa (+39.63% vs -8.81%) - worth investigating maple_vip56x2_cobaltqa specifically.
+Verdict,maple_vip56x2_cobaltqa shows more growth than maple_uiw4001_cobaltqa (+39.63% vs +5.64%) - worth investigating maple_vip56x2_cobaltqa specifically.
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_cobaltqa_vs_maple_vip56x2_cobaltqa.png in this same folder
