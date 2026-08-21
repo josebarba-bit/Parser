@@ -13,33 +13,33 @@ Test Plan,TELUS_LONGEVITY_STB4
 Product Name,maple_vip56x2_cobaltqa
 Build,TELUS4K 1.12.1 debug build #419
 ZIDS SW Version,142
-Iterations available,20
+Iterations available,21
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001_cobaltqa Min,maple_uiw4001_cobaltqa Max,maple_uiw4001_cobaltqa Avg,maple_vip56x2_cobaltqa Min,maple_vip56x2_cobaltqa Max,maple_vip56x2_cobaltqa Avg
-Total (all components),414.52,539.18,495.15,421.19,504.58,476.25
-LXC container,203.73,265.34,242.89,205.29,246.35,233.37
-cobalt process,190.91,254.78,232.28,188.18,237.97,221.23
+Total (all components),414.52,539.18,495.15,418.32,504.58,473.49
+LXC container,203.73,265.34,242.89,204.08,246.35,231.98
+cobalt process,190.91,254.78,232.28,188.18,237.97,219.87
 zids process,19.80,20.09,19.98,21.50,21.83,21.65
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001_cobaltqa Growth %,maple_vip56x2_cobaltqa Growth %,Gap (pp)
-Total (all components),+6.21,+4.31,+1.90
-LXC container,+7.47,+4.56,+2.91
-cobalt process,+5.39,+4.48,+0.91
-zids process,+0.81,+0.00,+0.81
+Total (all components),+6.21,-10.38,+16.59
+LXC container,+7.47,-9.96,+17.43
+cobalt process,+5.39,-11.87,+17.26
+zids process,+0.81,+0.33,+0.48
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001_cobaltqa - maple_vip56x2_cobaltqa) (MiB)
-Matched iterations,20,
+Matched iterations,21,
 First matched iteration,1,+6.19
-Latest matched iteration,20,+2.36
+Latest matched iteration,21,+77.63
 Minimum gap,8,-35.14
 Maximum gap,10,+104.38
-Average gap,,+18.50
-Gap change (first -> latest),,-3.83
+Average gap,,+21.32
+Gap change (first -> latest),,+71.44
 
 Evaluation
-Verdict,Similar behavior - both devices show comparable Total memory growth (+6.21% vs +4.31%).
+Verdict,maple_uiw4001_cobaltqa shows more growth than maple_vip56x2_cobaltqa (+6.21% vs -10.38%) - worth investigating maple_uiw4001_cobaltqa specifically.
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_cobaltqa_vs_maple_vip56x2_cobaltqa.png in this same folder
