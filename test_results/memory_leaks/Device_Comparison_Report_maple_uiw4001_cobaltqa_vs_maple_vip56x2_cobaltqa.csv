@@ -6,7 +6,7 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001_cobaltqa
 Build,TELUS4K 1.12.1 debug build #419
 ZIDS SW Version,142
-Iterations available,90
+Iterations available,91
 
 maple_vip56x2_cobaltqa Identity
 Test Plan,TELUS_LONGEVITY_STB4
@@ -17,17 +17,17 @@ Iterations available,80
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001_cobaltqa Min,maple_uiw4001_cobaltqa Max,maple_uiw4001_cobaltqa Avg,maple_vip56x2_cobaltqa Min,maple_vip56x2_cobaltqa Max,maple_vip56x2_cobaltqa Avg
-Total (all components),102.91,752.24,553.81,391.32,524.92,470.44
-LXC container,0.00,372.33,271.71,190.14,246.35,229.98
-cobalt process,85.00,364.01,262.28,181.77,263.68,219.75
+Total (all components),102.91,752.31,555.99,391.32,524.92,470.44
+LXC container,0.00,372.33,272.81,190.14,246.35,229.98
+cobalt process,85.00,364.01,263.35,181.77,263.68,219.75
 zids process,17.91,20.09,19.82,0.00,21.83,20.71
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001_cobaltqa Growth %,maple_vip56x2_cobaltqa Growth %,Gap (pp)
-Total (all components),+59.05,+4.80,+54.25
-LXC container,+61.31,+4.61,+56.70
-cobalt process,+61.93,+5.85,+56.08
-zids process,+0.35,-3.81,+4.16
+Total (all components),+59.06,+4.80,+54.26
+LXC container,+61.24,+4.61,+56.63
+cobalt process,+62.00,+5.85,+56.15
+zids process,+0.66,-3.81,+4.47
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001_cobaltqa - maple_vip56x2_cobaltqa) (MiB)
@@ -40,6 +40,6 @@ Average gap,,+62.44
 Gap change (first -> latest),,+205.08
 
 Evaluation
-Verdict,maple_uiw4001_cobaltqa shows more growth than maple_vip56x2_cobaltqa (+59.05% vs +4.80%) - worth investigating maple_uiw4001_cobaltqa specifically.
+Verdict,maple_uiw4001_cobaltqa shows more growth than maple_vip56x2_cobaltqa (+59.06% vs +4.80%) - worth investigating maple_uiw4001_cobaltqa specifically.
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_cobaltqa_vs_maple_vip56x2_cobaltqa.png in this same folder
