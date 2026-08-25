@@ -1,24 +1,24 @@
-Software Version - UIW: a,VIP: 3.7.48-PROD_TEST - Telus/Zenterio,MW Version - UIW: ae,VIP: Zenterio OS 16.4 TELUS4K 1.12.6 debug build #423 152
+Software Version - UIW: 3.7.48 - Telus/Zenterio,VIP: 3.7.48 - Telus/Zenterio,MW Version - UIW: Zenterio OS 16.4 TELUS4K 1.12.6 debug build #423 152,VIP: Zenterio OS 16.4 TELUS4K 1.12.6 debug build #423 152
 Test Case,UIW Result,UIW Reason,UIW Time (s),VIP Result,VIP Reason,VIP Time (s),Time Diff (VIP vs UIW),Verdict
-Standby Cycle Checks,PASS,,83.1,PASS,,57.29,-31.1%,NOTE (VIP faster)
-Menu Checks,PASS,,79.41,PASS,,79.57,+0.2%,OK
-Verify Guide Opens by Key,PASS,,46.45,PASS,,57.31,+23.4%,WARN (VIP slower)
-Verify Guide Opens from Menu,PASS,,39.16,PASS,,39.48,+0.8%,OK
-Verify Channel Zap AV Playback,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,197.46,PASS,,91.55,N/A (different outcome),NOT COMPARABLE
-Verify Menu Does Not Auto-Dismiss,PASS,,33.56,PASS,,28.68,-14.5%,NOTE (VIP faster)
-Verify Live TV Background During PVR,FAIL,WHILE loop was aborted because it did not finish within the limit of 6 iterations. Use the 'limit' argument to increase or remove the limit if needed.,62.05,PASS,,30.99,N/A (different outcome),NOT COMPARABLE
-Verify Audio Playback on Settings Page,PASS,,26.04,PASS,,19.68,-24.4%,NOTE (VIP faster)
-Play a Recording,PASS,,62.92,PASS,,63.18,+0.4%,OK
-Verify AV Playback on LiveTV,FAIL,WHILE loop was aborted because it did not finish within the limit of 10 iterations. Use the 'limit' argument to increase or remove the limit if needed.,200.43,FAIL,Reason: Video playback no detected.,45.97,N/A (different outcome),NOT COMPARABLE
-Adjust the LiveTV Volume,PASS,,295.83,PASS,,294.61,-0.4%,OK
-Verify AV background with Menu,PASS,,27.85,PASS,,17.22,-38.2%,NOTE (VIP faster)
-Verify Guide Opens & Bkgn Video,PASS,,68.59,PASS,,62.92,-8.3%,OK
-Verify Guide Opens from Menu & Bkgn Video,PASS,,82.94,PASS,,107.4,+29.5%,WARN (VIP slower)
-Verify Settings Opens from Menu,PASS,,24.58,PASS,,24.57,-0.0%,OK
-Select and Play a content from Guide,PASS,,71.45,PASS,,58.82,-17.7%,NOTE (VIP faster)
-Audio mute on Live TV,PASS,,274.0,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,280.9,N/A (different outcome),NOT COMPARABLE
-Audio mute on Guide,FAIL,"Reason: Guide is not open, string ""Today"" not detected",101.32,FAIL,Test timeout 5 minutes exceeded.,299.29,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by Channel Zap,PASS,,23.86,PASS,,23.51,-1.5%,OK
-Progress Bar on Live TV by OK Key,PASS,,8.46,PASS,,8.98,+6.1%,OK
-Progress Bar on Live TV by Dpad Up,PASS,,23.3,PASS,,23.02,-1.2%,OK
-Launch PVR via Button,PASS,,13.45,PASS,,13.71,+1.9%,OK
+Standby Cycle Checks,PASS,,70.93,PASS,,57.51,-18.9%,NOTE (VIP faster)
+Menu Checks,PASS,,78.82,PASS,,79.37,+0.7%,OK
+Verify Guide Opens by Key,PASS,,47.19,PASS,,46.77,-0.9%,OK
+Verify Guide Opens from Menu,PASS,,51.42,PASS,,50.18,-2.4%,OK
+Verify Channel Zap AV Playback,PASS,,91.88,PASS,,102.81,+11.9%,WARN (VIP slower)
+Verify Menu Does Not Auto-Dismiss,PASS,,30.18,PASS,,29.74,-1.5%,OK
+Verify Live TV Background During PVR,PASS,,31.31,PASS,,31.52,+0.7%,OK
+Verify Audio Playback on Settings Page,PASS,,20.52,PASS,,19.84,-3.3%,OK
+Play a Recording,PASS,,64.35,PASS,,62.69,-2.6%,OK
+Verify AV Playback on LiveTV,PASS,,40.87,PASS,,41.4,+1.3%,OK
+Adjust the LiveTV Volume,FAIL,Reason: Audio playback detected.,79.89,FAIL,Test timeout 5 minutes exceeded.,299.07,N/A (different outcome),NOT COMPARABLE
+Verify AV background with Menu,PASS,,17.43,PASS,,17.98,+3.2%,OK
+Verify Guide Opens & Bkgn Video,PASS,,64.02,PASS,,57.6,-10.0%,NOTE (VIP faster)
+Verify Guide Opens from Menu & Bkgn Video,PASS,,78.26,PASS,,71.56,-8.6%,OK
+Verify Settings Opens from Menu,PASS,,29.81,PASS,,24.52,-17.7%,NOTE (VIP faster)
+Select and Play a content from Guide,PASS,,71.76,PASS,,75.59,+5.3%,OK
+Audio mute on Live TV,PASS,,264.67,PASS,,275.15,+4.0%,OK
+Audio mute on Guide,PASS,,286.29,PASS,,296.89,+3.7%,OK
+Progress Bar on Live TV by Channel Zap,PASS,,24.67,PASS,,24.18,-2.0%,OK
+Progress Bar on Live TV by OK Key,PASS,,9.15,PASS,,9.22,+0.7%,OK
+Progress Bar on Live TV by Dpad Up,PASS,,22.96,PASS,,23.35,+1.7%,OK
+Launch PVR via Button,PASS,,14.02,PASS,,14.2,+1.3%,OK
