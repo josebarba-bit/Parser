@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T12:33:58.265147",
+  "generated_at": "2026-08-26T13:20:02.883005",
   "date": "2026-08-26",
   "clients": [
     "telus",
@@ -59,7 +59,7 @@
   },
   "last_run": {
     "telus": {
-      "sanity": "2026-08-26 11:43",
+      "sanity": "2026-08-26 13:19",
       "smoke": "2026-08-21 00:46"
     },
     "mega": {
@@ -1271,7 +1271,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260820 23:33:26.986",
+      "time": "20260826 12:36:01.997",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1281,7 +1281,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260820 23:35:30.306",
+      "time": "20260826 12:37:24.132",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1291,7 +1291,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260820 23:36:25.541",
+      "time": "20260826 12:38:25.789",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1300,7 +1300,7 @@
       "name": "Verify Guide Opens from Menu",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Guide is not open, string \"Today\" not detected<br>",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Guide is not open, string \"Today\" not detected<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
       "time": "20260821 00:18:46.109",
       "source": "RF",
       "client": "telus",
@@ -1311,7 +1311,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260820 23:38:28.268",
+      "time": "20260826 12:40:41.427",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1321,7 +1321,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260820 23:41:10.864",
+      "time": "20260826 12:43:09.398",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1331,7 +1331,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260820 23:42:02.894",
+      "time": "20260826 12:44:12.688",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1341,7 +1341,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260820 23:43:05.677",
+      "time": "20260826 12:45:20.414",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1351,7 +1351,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260820 23:43:05.677",
+      "time": "20260826 12:45:20.414",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1361,7 +1361,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260820 23:44:00.480",
+      "time": "20260826 12:46:14.295",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
@@ -1371,7 +1371,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:00:52.020",
+      "time": "20260826 13:03:09.541",
       "source": "RF",
       "client": "telus",
       "suite_type": "sanity"
