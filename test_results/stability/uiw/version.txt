@@ -1,1 +1,1 @@
-TELUS4K 1.12.1 debug build #397 v142
+TELUS4K 1.12.6 debug build #423 v152
