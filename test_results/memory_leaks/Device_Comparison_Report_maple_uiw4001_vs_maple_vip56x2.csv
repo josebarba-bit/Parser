@@ -6,40 +6,40 @@ Test Plan,TELUS_LONGEVITY_STB3
 Product Name,maple_uiw4001
 Build,TELUS4K 1.12.6 debug build #423
 ZIDS SW Version,152
-Iterations available,61
+Iterations available,64
 
 maple_vip56x2 Identity
 Test Plan,TELUS_LONGEVITY_STB4
 Product Name,maple_vip56x2
 Build,TELUS4K 1.12.6 debug build #423
 ZIDS SW Version,152
-Iterations available,50
+Iterations available,52
 
 Table 1: Comparison - Min/Max/Avg (MiB)
 Component,maple_uiw4001 Min,maple_uiw4001 Max,maple_uiw4001 Avg,maple_vip56x2 Min,maple_vip56x2 Max,maple_vip56x2 Avg
-Total (all components),495.40,596.15,569.68,393.00,526.72,486.32
-LXC container,241.92,295.58,279.75,186.64,253.49,237.58
-cobalt process,233.59,284.12,269.86,185.80,253.05,228.04
+Total (all components),495.40,596.15,570.69,393.00,526.72,487.21
+LXC container,241.92,295.58,280.26,186.64,253.94,238.06
+cobalt process,233.59,284.12,270.35,185.80,253.05,228.46
 zids process,19.82,20.25,20.07,20.55,20.98,20.69
 
 Table 2: Comparison - Growth (First vs Latest Iteration)
 Component,maple_uiw4001 Growth %,maple_vip56x2 Growth %,Gap (pp)
-Total (all components),+12.17,+13.47,-1.30
-LXC container,+10.43,+12.54,-2.11
-cobalt process,+14.94,+15.68,-0.74
-zids process,+1.16,+0.92,+0.24
+Total (all components),+11.87,+14.49,-2.62
+LXC container,+10.84,+15.98,-5.14
+cobalt process,+13.82,+14.25,-0.43
+zids process,+1.51,+1.22,+0.29
 
 "Table 3: Comparison - Gap Over Time (Total, matched by iteration, summarized)"
 Metric,Iteration,Gap (maple_uiw4001 - maple_vip56x2) (MiB)
-Matched iterations,50,
+Matched iterations,52,
 First matched iteration,1,+78.69
-Latest matched iteration,50,+72.51
+Latest matched iteration,52,+81.48
 Minimum gap,25,-15.95
 Maximum gap,2,+171.27
-Average gap,,+80.39
-Gap change (first -> latest),,-6.18
+Average gap,,+80.28
+Gap change (first -> latest),,+2.79
 
 Evaluation
-Verdict,Similar behavior - both devices show comparable Total memory growth (+12.17% vs +13.47%).
+Verdict,Similar behavior - both devices show comparable Total memory growth (+11.87% vs +14.49%).
 
 Figure 1: Total Memory Over Time + Gap,Device_Comparison_Chart_maple_uiw4001_vs_maple_vip56x2.png in this same folder
