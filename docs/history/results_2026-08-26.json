@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T13:21:26.751229",
+  "generated_at": "2026-08-26T13:53:37.934299",
   "date": "2026-08-26",
   "clients": [
     "telus",
@@ -11,19 +11,19 @@
   ],
   "summary": {
     "total": 68,
-    "passed": 58,
-    "failed": 2,
+    "passed": 57,
+    "failed": 3,
     "skipped": 8,
-    "rate": 85.3
+    "rate": 83.8
   },
   "summaries": {
     "telus": {
       "all": {
         "total": 31,
-        "passed": 26,
-        "failed": 2,
+        "passed": 25,
+        "failed": 3,
         "skipped": 3,
-        "rate": 83.9
+        "rate": 80.6
       },
       "sanity": {
         "total": 11,
@@ -34,10 +34,10 @@
       },
       "smoke": {
         "total": 20,
-        "passed": 17,
-        "failed": 1,
+        "passed": 16,
+        "failed": 2,
         "skipped": 2,
-        "rate": 85.0
+        "rate": 80.0
       }
     },
     "mega": {
@@ -60,7 +60,7 @@
   "last_run": {
     "telus": {
       "sanity": "2026-08-26 13:19",
-      "smoke": "2026-08-21 00:46"
+      "smoke": "2026-08-26 13:53"
     },
     "mega": {
       "sanity": "2026-08-25 06:03"
@@ -1381,7 +1381,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:20:47.364",
+      "time": "20260826 13:20:54.272",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1391,7 +1391,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:22:47.580",
+      "time": "20260826 13:22:24.885",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1401,7 +1401,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:24:17.048",
+      "time": "20260826 13:24:03.948",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1411,7 +1411,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:25:20.098",
+      "time": "20260826 13:25:18.769",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1421,7 +1421,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:26:45.956",
+      "time": "20260826 13:27:03.059",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1431,7 +1431,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:28:34.786",
+      "time": "20260826 13:29:05.218",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1441,7 +1441,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:29:27.774",
+      "time": "20260826 13:30:03.322",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1451,7 +1451,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:31:57.069",
+      "time": "20260826 13:33:33.028",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1461,7 +1461,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:33:46.649",
+      "time": "20260826 13:35:27.340",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1471,7 +1471,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:35:34.540",
+      "time": "20260826 13:37:19.006",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1481,7 +1481,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:37:39.643",
+      "time": "20260826 13:39:23.948",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1491,7 +1491,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:38:32.715",
+      "time": "20260826 13:40:23.915",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1501,7 +1501,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:39:10.636",
+      "time": "20260826 13:41:01.485",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1511,7 +1511,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:40:02.950",
+      "time": "20260826 13:42:03.976",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1521,7 +1521,7 @@
       "suite": "—",
       "status": "PASS",
       "message": "",
-      "time": "20260821 00:41:03.271",
+      "time": "20260826 13:43:17.915",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1529,9 +1529,9 @@
     {
       "name": "Play a Recording",
       "suite": "—",
-      "status": "PASS",
-      "message": "",
-      "time": "20260821 00:41:44.974",
+      "status": "FAIL",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Audio playback no detected.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Audio playback no detected.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Audio playback no detected.<br>",
+      "time": "20260826 13:51:03.926",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1541,7 +1541,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260821 00:43:10.447",
+      "time": "20260826 13:45:35.862",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1551,7 +1551,7 @@
       "suite": "—",
       "status": "SKIP",
       "message": "Test skipped using 'robot:skip' tag.",
-      "time": "20260821 00:43:10.448",
+      "time": "20260826 13:45:35.863",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1560,8 +1560,8 @@
       "name": "Check volume bar icons",
       "suite": "—",
       "status": "FAIL",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260805 12:32:35.358",
+      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"fail\">FAIL</span><br><span class=\"new-message\">New message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br><hr><span class=\"old-status\">Old status:</span> <span class=\"fail\">FAIL</span><br><span class=\"old-message\">Old message:</span> Reason: Volume min animation does not appear.<br>",
+      "time": "20260826 13:52:28.319",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
@@ -1570,8 +1570,8 @@
       "name": "Check Mute button",
       "suite": "—",
       "status": "PASS",
-      "message": "*HTML* <span class=\"merge\">Test has been re-executed and results merged.</span><hr><span class=\"new-status\">New status:</span> <span class=\"pass\">PASS</span><br><hr><span class=\"old-status\">Old status:</span> <span class=\"pass\">PASS</span><br>",
-      "time": "20260812 00:47:57.845",
+      "message": "",
+      "time": "20260826 13:46:35.389",
       "source": "RF",
       "client": "telus",
       "suite_type": "smoke"
