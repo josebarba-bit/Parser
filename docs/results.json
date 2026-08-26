@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T12:05:33.995066",
+  "generated_at": "2026-08-26T12:07:49.042981",
   "date": "2026-08-26",
   "clients": [
     "telus",
@@ -1264,7 +1264,7 @@
       "vip_lxc": "2026-08-22 00:58"
     }
   },
-  "telus_sw_version": "Zenterio OS 16.4 TELUS4K 1.12.1 debug build #406 142",
+  "telus_sw_version": "Zenterio OS 16.4 TELUS4K 1.12.5 debug build #425 150",
   "tests": [
     {
       "name": "Standby Cycle Checks",
