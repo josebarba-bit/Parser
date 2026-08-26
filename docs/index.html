@@ -1306,7 +1306,7 @@ function updateSuiteSummary(data) {
   const fmtRun = d => d ? 'Last run: ' + d : 'Not run yet';
   document.getElementById('s-sanity-lastrun').textContent = fmtRun(sanityRun);
   document.getElementById('s-smoke-lastrun').textContent  = fmtRun(smokeRun);
-  // Telus SW version
+  // Telus SW version!
   const versionEl1 = document.getElementById('s-telus-version');
   const versionEl2 = document.getElementById('s-telus-version-smoke');
   if (data.telus_sw_version && (activeClient === 'all' || activeClient === 'telus')) {
