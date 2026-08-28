@@ -1,24 +1,24 @@
-Software Version - UIW: 3.7.48 - Telus/Zenterio,VIP: 3.7.48 - Telus/Zenterio,MW Version - UIW: Zenterio OS 16.4 TELUS4K 1.12.6 debug build #423 152,VIP: Zenterio OS 16.4 TELUS4K 1.12.6 debug build #423 152
+Software Version - UIW: n/a,VIP: 3.7.48 - Telus/Zenterio,MW Version - UIW: n/a,VIP: Zenterio OS 16.4 TELUS4K 1.12.6 debug build #423 152
 Test Case,UIW Result,UIW Reason,UIW Time (s),VIP Result,VIP Reason,VIP Time (s),Time Diff (VIP vs UIW),Verdict
-Standby Cycle Checks,FAIL,Test timeout 5 minutes exceeded.,304.25,FAIL,WHILE loop was aborted because it did not finish within the limit of 15 iterations. Use the 'limit' argument to increase or remove the limit if needed.,288.73,N/A (different outcome),NOT COMPARABLE
-Menu Checks,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,33.27,FAIL,Reason: Menu overlay is not completely opaque.,16.09,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens by Key,PASS,,56.81,PASS,,46.64,-17.9%,NOTE (VIP faster)
-Verify Guide Opens from Menu,PASS,,41.89,FAIL,"Reason: Guide is not open, string ""Today"" not detected",68.46,N/A (different outcome),NOT COMPARABLE
-Verify Channel Zap AV Playback,FAIL,OSError: [Errno -9999] Unanticipated host error,27.37,FAIL,OSError: [Errno -9999] Unanticipated host error,28.05,+2.5%,OK
-Verify Menu Does Not Auto-Dismiss,PASS,,37.81,PASS,,23.91,-36.8%,NOTE (VIP faster)
-Verify Live TV Background During PVR,FAIL,OSError: [Errno -9999] Unanticipated host error,34.47,FAIL,OSError: [Errno -9999] Unanticipated host error,33.49,-2.8%,OK
-Verify Audio Playback on Settings Page,FAIL,OSError: [Errno -9999] Unanticipated host error,14.31,FAIL,OSError: [Errno -9999] Unanticipated host error,14.75,+3.1%,OK
-Play a Recording,FAIL,OSError: [Errno -9999] Unanticipated host error,54.35,FAIL,OSError: [Errno -9999] Unanticipated host error,70.12,+29.0%,WARN (VIP slower)
-Verify AV Playback on LiveTV,FAIL,OSError: [Errno -9999] Unanticipated host error,35.6,FAIL,OSError: [Errno -9999] Unanticipated host error,35.88,+0.8%,OK
-Adjust the LiveTV Volume,FAIL,OSError: [Errno -9999] Unanticipated host error,136.4,FAIL,OSError: [Errno -9999] Unanticipated host error,140.39,+2.9%,OK
-Verify AV background with Menu,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,21.8,FAIL,OSError: [Errno -9999] Unanticipated host error,26.61,N/A (different outcome),NOT COMPARABLE
-Verify Guide Opens & Bkgn Video,FAIL,OSError: [Errno -9999] Unanticipated host error,51.69,FAIL,OSError: [Errno -9999] Unanticipated host error,64.12,+24.0%,WARN (VIP slower)
-Verify Guide Opens from Menu & Bkgn Video,FAIL,"Reason: Guide is not open, string ""Today"" not detected",109.23,FAIL,"Reason: Guide is not open, string ""Today"" not detected",102.67,-6.0%,OK
-Verify Settings Opens from Menu,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,26.59,FAIL,Reason: The settings page is not shown.,33.21,N/A (different outcome),NOT COMPARABLE
-Select and Play a content from Guide,FAIL,"Reason: Guide is not open, string ""Today"" not detected",34.96,FAIL,OSError: [Errno -9999] Unanticipated host error,65.5,N/A (different outcome),NOT COMPARABLE
-Audio mute on Live TV,FAIL,OSError: [Errno -9999] Unanticipated host error,61.41,FAIL,OSError: [Errno -9999] Unanticipated host error,72.86,+18.7%,WARN (VIP slower)
-Audio mute on Guide,FAIL,OSError: [Errno -9999] Unanticipated host error,69.3,FAIL,"Reason: Guide is not open, string ""Today"" not detected",56.6,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by Channel Zap,FAIL,WHILE loop was aborted because it did not finish within the limit of 5 iterations. Use the 'limit' argument to increase or remove the limit if needed.,72.35,PASS,,23.86,N/A (different outcome),NOT COMPARABLE
-Progress Bar on Live TV by OK Key,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,29.53,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,29.12,-1.4%,OK
-Progress Bar on Live TV by Dpad Up,PASS,,32.99,PASS,,23.29,-29.4%,NOTE (VIP faster)
-Launch PVR via Button,PASS,,28.02,PASS,,42.87,+53.0%,WARN (VIP slower)
+Standby Cycle Checks,FAIL,Test timeout 5 minutes exceeded.,304.32,FAIL,Test timeout 5 minutes exceeded.,301.88,-0.8%,OK
+Menu Checks,FAIL,Reason: Menu overlay is not completely opaque.,16.08,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,34.2,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens by Key,PASS,,57.76,PASS,,46.43,-19.6%,NOTE (VIP faster)
+Verify Guide Opens from Menu,PASS,,39.23,PASS,,50.07,+27.6%,WARN (VIP slower)
+Verify Channel Zap AV Playback,FAIL,OSError: [Errno -9998] Invalid number of channels,27.91,FAIL,OSError: [Errno -9998] Invalid number of channels,27.74,-0.6%,OK
+Verify Menu Does Not Auto-Dismiss,PASS,,41.05,PASS,,40.66,-1.0%,OK
+Verify Live TV Background During PVR,FAIL,OSError: [Errno -9998] Invalid number of channels,34.82,FAIL,OSError: [Errno -9998] Invalid number of channels,41.02,+17.8%,WARN (VIP slower)
+Verify Audio Playback on Settings Page,FAIL,OSError: [Errno -9998] Invalid number of channels,14.72,FAIL,OSError: [Errno -9998] Invalid number of channels,14.78,+0.5%,OK
+Play a Recording,FAIL,OSError: [Errno -9998] Invalid number of channels,70.45,FAIL,OSError: [Errno -9998] Invalid number of channels,53.47,-24.1%,NOTE (VIP faster)
+Verify AV Playback on LiveTV,FAIL,OSError: [Errno -9998] Invalid number of channels,35.94,FAIL,Reason: Video playback no detected.,46.37,N/A (different outcome),NOT COMPARABLE
+Adjust the LiveTV Volume,FAIL,OSError: [Errno -9998] Invalid number of channels,142.67,FAIL,OSError: [Errno -9998] Invalid number of channels,30.56,-78.6%,NOTE (VIP faster)
+Verify AV background with Menu,FAIL,OSError: [Errno -9998] Invalid number of channels,27.11,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,21.9,N/A (different outcome),NOT COMPARABLE
+Verify Guide Opens & Bkgn Video,FAIL,OSError: [Errno -9998] Invalid number of channels,51.73,FAIL,OSError: [Errno -9998] Invalid number of channels,63.32,+22.4%,WARN (VIP slower)
+Verify Guide Opens from Menu & Bkgn Video,FAIL,OSError: [Errno -9998] Invalid number of channels,140.89,FAIL,OSError: [Errno -9998] Invalid number of channels,72.05,-48.9%,NOTE (VIP faster)
+Verify Settings Opens from Menu,PASS,,30.53,PASS,,30.07,-1.5%,OK
+Select and Play a content from Guide,FAIL,"Reason: Guide is not open, string ""Today"" not detected",34.75,FAIL,OSError: [Errno -9998] Invalid number of channels,75.14,N/A (different outcome),NOT COMPARABLE
+Audio mute on Live TV,FAIL,OSError: [Errno -9998] Invalid number of channels,131.39,FAIL,OSError: [Errno -9998] Invalid number of channels,61.75,-53.0%,NOTE (VIP faster)
+Audio mute on Guide,FAIL,OSError: [Errno -9998] Invalid number of channels,77.91,FAIL,OSError: [Errno -9998] Invalid number of channels,80.21,+3.0%,OK
+Progress Bar on Live TV by Channel Zap,PASS,,23.46,PASS,,23.78,+1.3%,OK
+Progress Bar on Live TV by OK Key,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,29.58,FAIL,WHILE loop was aborted because it did not finish within the limit of 3 iterations. Use the 'limit' argument to increase or remove the limit if needed.,30.05,+1.6%,OK
+Progress Bar on Live TV by Dpad Up,PASS,,23.68,PASS,,23.17,-2.2%,OK
+Launch PVR via Button,PASS,,17.4,PASS,,17.31,-0.5%,OK
