@@ -874,10 +874,10 @@ function renderStabilityContent(stability) {
       </div>
     </div>`;
   }
-  // LXC Memory Monitor chart
+  // Browser LXC Memory Monitor chart
   html += `<div class="trend-card" style="margin-top:4px">
-    <div class="card-title">🖥️ LXC Memory Monitor — Total (MiB) per Iteration</div>
-    <div style="position:relative;height:260px"><canvas id="chartLXC"></canvas></div>
+    <div class="card-title">🖥️ Browser LXC Memory Monitor — Total (MiB) per Iteration</div>
+    <div style="position:relative;height:260px"><canvas id="chartBrowserLXC"></canvas></div>
   </div>`;
   
   // Memory Leaks Trend chart
@@ -889,8 +889,8 @@ function renderStabilityContent(stability) {
  container.innerHTML = html;
   // Load charts after DOM update
   setTimeout(() => loadMLTrend(), 50);
-  setTimeout(() => renderLXCChart(), 100);
-  setTimeout(() => renderLXCChart(), 100);
+  setTimeout(() => renderBrowserLxcChart(), 100);
+  setTimeout(() => renderBrowserLxcChart(), 100);
   if (comp && comp.table1.length) {
     setTimeout(() => renderMemoryCharts(comp), 50);
   }
@@ -1062,12 +1062,12 @@ async function loadMLTrend() {
   });
 }
 
-function renderLXCChart() {
-  const uiw = fullData?.memory_leaks?.uiw_lxc;
-  const vip = fullData?.memory_leaks?.vip_lxc;
-  const canvas = document.getElementById('chartLXC');
+function renderBrowserLxcChart() {
+  const uiw = fullData?.memory_leaks?.uiw_browser_lxc ?? fullData?.memory_leaks?.uiw_lxc;
+  const vip = fullData?.memory_leaks?.vip_browser_lxc ?? fullData?.memory_leaks?.vip_lxc;
+  const canvas = document.getElementById('chartBrowserLXC');
   if (!canvas) return;
-  if (window._chartLXC) window._chartLXC.destroy();
+  if (window._chartBrowserLxc) window._chartBrowserLxc.destroy();
 
   const datasets = [];
   if (uiw) datasets.push({
@@ -1083,7 +1083,7 @@ function renderLXCChart() {
     borderWidth: 2, pointRadius: 2, fill: true, tension: 0.3, yAxisID: 'y',
   });
 
-  window._chartLXC = new Chart(canvas, {
+  window._chartBrowserLxc = new Chart(canvas, {
     type: 'line',
     data: { datasets },
     options: {

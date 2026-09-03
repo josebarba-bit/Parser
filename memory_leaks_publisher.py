@@ -13,7 +13,7 @@ leak shows up as a failing test on the dashboard.
 
 It also mirrors, from oreganqa-automation's Comparisons/<date> folder, the STB3-vs-STB4
 Device_Comparison_Report_*.csv and each device's gathered, device-labeled
-LXC_Memory_Monitor_*.csv (the full per-iteration memory time series: LXC, kmem, Malloc,
+Browser_LXC_Memory_Monitor_*.csv (the full per-iteration memory time series: Browser LXC, kmem, Malloc,
 zids, cobalt, Total, Time - so the dashboard has real numeric data to chart) - all
 directly into test_results/memory_leaks/ (flat, no per-model or per-date subfolders) -
 CSV-only, no PNGs, no separate comparisons/ folder - using the same watch-and-push
@@ -247,12 +247,12 @@ def run_comparison(reason):
         print(f"      {result.stderr.strip()}")
 
 
-COMPARISONS_PATTERNS = ("Device_Comparison_Report_*.csv", "LXC_Memory_Monitor_*.csv")
+COMPARISONS_PATTERNS = ("Device_Comparison_Report_*.csv", "Browser_LXC_Memory_Monitor_*.csv")
 
 
 def copy_comparisons():
     """Mirrors today's Device_Comparison_Report_*.csv and device-labeled
-    LXC_Memory_Monitor_*.csv (the raw per-iteration memory time series, gathered by
+    Browser_LXC_Memory_Monitor_*.csv (the raw per-iteration memory time series, gathered by
     compare_devices_report.py) into test_results/memory_leaks/ (flat, no subfolders).
     The gathered per-model Test_Summary_Report_Memory_Monitor_*.csv copies in that same
     source folder are skipped - copy_csvs() already publishes the normalized version of

@@ -352,14 +352,14 @@ def find_memory_leak_files(folder):
 
     uiw_summary = exact_path("Test_Summary_Report_Memory_Monitor", uiw_label)
     vip_summary = exact_path("Test_Summary_Report_Memory_Monitor", vip_label)
-    uiw_lxc     = exact_path("LXC_Memory_Monitor", uiw_label)
-    vip_lxc     = exact_path("LXC_Memory_Monitor", vip_label)
+    uiw_browser_lxc     = exact_path("Browser_LXC_Memory_Monitor", uiw_label)
+    vip_browser_lxc     = exact_path("Browser_LXC_Memory_Monitor", vip_label)
     comparison  = exact_path("Device_Comparison_Report", f"{uiw_label}_vs_{vip_label}")
 
-    return uiw_summary, vip_summary, comparison, uiw_lxc, vip_lxc
+    return uiw_summary, vip_summary, comparison, uiw_browser_lxc, vip_browser_lxc
     
-def parse_lxc_monitor(filepath):
-    """Parses LXC_Memory_Monitor_*.csv"""
+def parse_browser_lxc_monitor(filepath):
+    """Parses Browser_LXC_Memory_Monitor_*.csv"""
     if not os.path.exists(filepath):
         return None
     try:
@@ -386,7 +386,7 @@ def parse_lxc_monitor(filepath):
             "totals":     totals,
         }
     except Exception as e:
-        print(f"  [!] Error parsing LXC monitor {filepath}: {e}")
+        print(f"  [!] Error parsing Browser LXC monitor {filepath}: {e}")
         return None
 
 
@@ -601,19 +601,19 @@ def generate_json():
     print(f"  SBS report: {sbs['summary'] if sbs else 'No data'}")
 
     # Memory leaks
-    uiw_path, vip_path, comp_path, uiw_lxc_path, vip_lxc_path = find_memory_leak_files(MEMORY_LEAKS_DIR)
+    uiw_path, vip_path, comp_path, uiw_browser_lxc_path, vip_browser_lxc_path = find_memory_leak_files(MEMORY_LEAKS_DIR)
     memory_leaks = {
         "uiw":        parse_memory_leak_summary(uiw_path) if uiw_path else None,
         "vip":        parse_memory_leak_summary(vip_path) if vip_path else None,
         "comparison": parse_memory_comparison(comp_path) if comp_path else None,
-        "uiw_lxc":    parse_lxc_monitor(uiw_lxc_path) if uiw_lxc_path else None,
-        "vip_lxc":    parse_lxc_monitor(vip_lxc_path) if vip_lxc_path else None,
+        "uiw_browser_lxc": parse_browser_lxc_monitor(uiw_browser_lxc_path) if uiw_browser_lxc_path else None,
+        "vip_browser_lxc": parse_browser_lxc_monitor(vip_browser_lxc_path) if vip_browser_lxc_path else None,
         "last_updated": {
             "uiw":        get_file_mtime(uiw_path) if uiw_path else None,
             "vip":        get_file_mtime(vip_path) if vip_path else None,
             "comparison": get_file_mtime(comp_path) if comp_path else None,
-            "uiw_lxc":    get_file_mtime(uiw_lxc_path) if uiw_lxc_path else None,
-            "vip_lxc":    get_file_mtime(vip_lxc_path) if vip_lxc_path else None,
+            "uiw_browser_lxc": get_file_mtime(uiw_browser_lxc_path) if uiw_browser_lxc_path else None,
+            "vip_browser_lxc": get_file_mtime(vip_browser_lxc_path) if vip_browser_lxc_path else None,
         }
     }
     print(f"  Memory leaks UIW:        {memory_leaks['uiw']}")
