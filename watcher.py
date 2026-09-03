@@ -328,27 +328,34 @@ def parse_memory_comparison(filepath):
         return None
 
 
+# Canonical device labels, matching the exact filenames memory_leaks_publisher.py
+# writes (MODELS = {"uiw": maple_uiw4001, "vip": maple_vip56x2} on the publisher side).
+# The folder can also contain older, one-off labeled copies (e.g. "..._cobaltqa.csv",
+# "..._STB3.csv") from manual comparison runs; matching by loose substring ("uiw" in
+# fname) used to pick whichever file os.listdir() happened to return last, which could
+# silently pin the dashboard to a stale file indefinitely. Exact-name matching removes
+# that ambiguity regardless of what else is sitting in the folder.
+MEMORY_LEAK_MODEL_LABELS = {"uiw": "maple_uiw4001", "vip": "maple_vip56x2"}
+
+
 def find_memory_leak_files(folder):
-    """Finds memory leak CSV files in the folder."""
+    """Finds memory leak CSV files in the folder, by exact canonical filename."""
     if not os.path.exists(folder):
         return None, None, None, None, None
-    uiw_summary  = None
-    vip_summary  = None
-    comparison   = None
-    uiw_lxc      = None
-    vip_lxc      = None
-    for fname in os.listdir(folder):
-        fpath = os.path.join(folder, fname)
-        if fname.startswith("Test_Summary") and "uiw" in fname.lower():
-            uiw_summary = fpath
-        elif fname.startswith("Test_Summary") and "vip" in fname.lower():
-            vip_summary = fpath
-        elif fname.startswith("Device_Comparison"):
-            comparison = fpath
-        elif fname.startswith("LXC_Memory_Monitor") and "uiw" in fname.lower():
-            uiw_lxc = fpath
-        elif fname.startswith("LXC_Memory_Monitor") and "vip" in fname.lower():
-            vip_lxc = fpath
+
+    uiw_label = MEMORY_LEAK_MODEL_LABELS["uiw"]
+    vip_label = MEMORY_LEAK_MODEL_LABELS["vip"]
+
+    def exact_path(prefix, label):
+        fpath = os.path.join(folder, f"{prefix}_{label}.csv")
+        return fpath if os.path.exists(fpath) else None
+
+    uiw_summary = exact_path("Test_Summary_Report_Memory_Monitor", uiw_label)
+    vip_summary = exact_path("Test_Summary_Report_Memory_Monitor", vip_label)
+    uiw_lxc     = exact_path("LXC_Memory_Monitor", uiw_label)
+    vip_lxc     = exact_path("LXC_Memory_Monitor", vip_label)
+    comparison  = exact_path("Device_Comparison_Report", f"{uiw_label}_vs_{vip_label}")
+
     return uiw_summary, vip_summary, comparison, uiw_lxc, vip_lxc
     
 def parse_lxc_monitor(filepath):

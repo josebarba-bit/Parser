@@ -385,23 +385,23 @@
   },
   "memory_leaks": {
     "uiw": {
-      "latest_growth_pct": 21.78,
+      "latest_growth_pct": 10.39,
       "latest_status": "FAIL",
-      "min_growth_pct": -24.81,
+      "min_growth_pct": -0.47,
       "min_status": "PASS",
-      "max_growth_pct": 46.69,
+      "max_growth_pct": 10.39,
       "max_status": "FAIL",
-      "avg_growth_pct": 11.45,
-      "avg_status": "FAIL"
+      "avg_growth_pct": 4.63,
+      "avg_status": "PASS"
     },
     "vip": {
-      "latest_growth_pct": -0.04,
+      "latest_growth_pct": -95.57,
       "latest_status": "PASS",
-      "min_growth_pct": -7.41,
+      "min_growth_pct": -95.57,
       "min_status": "PASS",
-      "max_growth_pct": 0.19,
-      "max_status": "PASS",
-      "avg_growth_pct": -2.74,
+      "max_growth_pct": 13.37,
+      "max_status": "FAIL",
+      "avg_growth_pct": 1.1,
       "avg_status": "PASS"
     },
     "comparison": {
@@ -1257,8 +1257,8 @@
       ]
     },
     "last_updated": {
-      "uiw": "2026-08-22 00:58",
-      "vip": "2026-08-22 00:58",
+      "uiw": "2026-08-26 09:07",
+      "vip": "2026-08-26 09:00",
       "comparison": "2026-08-11 23:05",
       "uiw_lxc": "2026-08-22 00:58",
       "vip_lxc": "2026-08-22 00:58"

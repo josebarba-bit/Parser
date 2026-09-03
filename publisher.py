@@ -15,6 +15,7 @@ Ejecutar junto con watcher.py (en otra terminal o en paralelo).
 
 import os
 import time
+import threading
 import subprocess
 from datetime import datetime
 from watchdog.observers import Observer
@@ -33,36 +34,50 @@ COMMIT_MSG_PREFIX = "chore: update test results"
 REPO_PATH = os.path.dirname(os.path.abspath(__file__))
 # ──────────────────────────────────────────────────────────────────
 
+# Prevents overlapping push cycles. Without this, `git pull` inside git_push()
+# can rewrite the very file this script watches (e.g. on a merge), re-firing
+# on_modified while a push is already running and causing a feedback loop of
+# rapid-fire commits (observed as bursts of ~15-18 commits, 3-4s apart).
+_push_lock = threading.Lock()
+
 
 def git_push():
     """Hace add + commit + push del results.json."""
-    # Remove index.lock if it exists
-    lock_file = os.path.join(REPO_PATH, ".git", "index.lock")
-    if os.path.exists(lock_file):
-        try:
-            os.remove(lock_file)
-            print("  — Removed stale index.lock")
-        except Exception as e:
-            print(f"  [!] Could not remove index.lock: {e}")
+    if not _push_lock.acquire(blocking=False):
+        print("  — Push ya en curso, se omite este disparo.")
+        return
+    try:
+        # Remove index.lock if it exists
+        lock_file = os.path.join(REPO_PATH, ".git", "index.lock")
+        if os.path.exists(lock_file):
+            try:
+                os.remove(lock_file)
+                print("  — Removed stale index.lock")
+            except Exception as e:
+                print(f"  [!] Could not remove index.lock: {e}")
 
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    commit_msg = f"{COMMIT_MSG_PREFIX} [{timestamp}]"
-    commands = [
-        ["git", "pull", "origin", GIT_BRANCH],
-        ["git", "add", "./docs/results.json", "./docs/history/"],
-        ["git", "commit", "-m", commit_msg],
-        ["git", "push", "origin", GIT_BRANCH],
-    ]
-    for cmd in commands:
-        result = subprocess.run(cmd, capture_output=True, text=True, cwd=REPO_PATH)
-        if result.returncode != 0:
-            if "nothing to commit" in result.stdout or "nothing to commit" in result.stderr:
-                print(f"  — Sin cambios nuevos para publicar.")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        commit_msg = f"{COMMIT_MSG_PREFIX} [{timestamp}]"
+        # No 'git pull' here on purpose: pulling inside this reactive handler
+        # is what caused the self-triggering loop (see comment on _push_lock).
+        # Remote sync is handled separately by watcher.py's scheduled auto_pull.
+        commands = [
+            ["git", "add", "./docs/results.json", "./docs/history/"],
+            ["git", "commit", "-m", commit_msg],
+            ["git", "push", "origin", GIT_BRANCH],
+        ]
+        for cmd in commands:
+            result = subprocess.run(cmd, capture_output=True, text=True, cwd=REPO_PATH)
+            if result.returncode != 0:
+                if "nothing to commit" in result.stdout or "nothing to commit" in result.stderr:
+                    print(f"  — Sin cambios nuevos para publicar.")
+                    return
+                print(f"  [!] Error en '{' '.join(cmd)}':")
+                print(f"      {result.stderr.strip()}")
                 return
-            print(f"  [!] Error en '{' '.join(cmd)}':")
-            print(f"      {result.stderr.strip()}")
-            return
-    print(f"  ✓ Publicado en GitHub: {commit_msg}")
+        print(f"  ✓ Publicado en GitHub: {commit_msg}")
+    finally:
+        _push_lock.release()
 
 
 class JsonHandler(FileSystemEventHandler):
@@ -74,7 +89,7 @@ class JsonHandler(FileSystemEventHandler):
             return
         if os.path.abspath(event.src_path) == os.path.abspath(WATCH_FILE):
             now = time.time()
-            if now - self._last_push < 3:  # debounce 3s
+            if now - self._last_push < 5:  # debounce 5s
                 return
             self._last_push = now
             print(f"\n[{datetime.now().strftime('%H:%M:%S')}] results.json actualizado — publicando...")
