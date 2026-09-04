@@ -1,5 +1,5 @@
 ﻿iteration,status,message,timestamp
-90,FAIL,Latest checkpoint: +26.78% growth,
+100,FAIL,Latest checkpoint: +27.65% growth,
 10,PASS,Minimum growth %: +2.22% growth,
-90,FAIL,Maximum growth %: +26.78% growth,
-avg,FAIL,Average growth % across all checkpoints: +18.48% growth,
+100,FAIL,Maximum growth %: +27.65% growth,
+avg,FAIL,Average growth % across all checkpoints: +19.40% growth,
